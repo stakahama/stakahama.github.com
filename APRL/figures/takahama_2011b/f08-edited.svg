@@ -4,10 +4,10 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="360.569" height="313.25" viewBox="0 0 360.569 313.25"
-	 overflow="visible" enable-background="new 0 0 360.569 313.25" xml:space="preserve">
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="360.569" height="324" viewBox="0 0 360.569 324"
+	 overflow="visible" enable-background="new 0 0 360.569 324" xml:space="preserve">
 <g id="Layer_2">
-	<rect x="0.24" y="0.054" fill="#FFFFFF" width="360" height="302.4"/>
+	<rect x="0.24" fill="#FFFFFF" width="360" height="324"/>
 </g>
 <g id="Layer_1">
 	<g>
@@ -1051,7 +1051,7 @@ oD8BCrD+fcgWkAAJkAAJaEiAAqxhp9FkEiABEiAB/QlQgPXvQ7aABEiABEhAQwIUYA07jSaTAAmQ
 AAnoT4ACrH8fsgUkQAIkQAIaEqAAa9hpNJkESIAESEB/AhRg/fuQLSABEiABEtCQAAVYw06jySRA
 AiRAAvoToADr34dsAQmQAAmQgIYEKMAadhpNJgESIAES0J8ABVj/PmQLSIAESIAENCRAAdaw02gy
 CZAACZCA/gQowPr3IVtAAiRAAiSgIQEKsIadRpNJgARIgAT0J0AB1r8P2QISIAESIAENCVCANew0
-mkwCJEACJKA/gf8PKd+S+PO5IBAAAAAASUVORK5CYII=" transform="matrix(0.33 0 0 0.33 4.0581 9.4658)">
+mkwCJEACJKA/gf8PKd+S+PO5IBAAAAAASUVORK5CYII=" transform="matrix(0.33 0 0 0.33 4.0581 17.8936)">
 		</image>
 		
 			<image width="480" height="480" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAADJWlDQ1BJQ0MgUHJvZmlsZQAAeAGF
@@ -2125,7 +2125,7 @@ KBQEQAAEQMDqBCDAVn8C0H4QAAEQAAFNCECANcGOQkEABEAABKxOAAJs9ScA7QcBEAABENCEAARY
 E+woFARAAARAwOoEIMBWfwLQfhAAARAAAU0IQIA1wY5CQQAEQAAErE4AAmz1JwDtBwEQAAEQ0IQA
 BFgT7CgUBEAABEDA6gQgwFZ/AtB+EAABEAABTQhAgDXBjkJBAARAAASsTgACbPUnAO0HARAAARDQ
 hAAEWBPsKBQEQAAEQMDqBCDAVn8C0H4QAAEQAAFNCECANcGOQkEABEAABKxOAAJs9ScA7QcBEAAB
-ENCEAARYE+woFARAAARAwOoEIMBWfwLQfhAAARAAAU0I/B92o7qUqKoiZgAAAABJRU5ErkJggg==" transform="matrix(0.33 0 0 0.33 162.9556 9.4668)">
+ENCEAARYE+woFARAAARAwOoEIMBWfwLQfhAAARAAAU0I/B92o7qUqKoiZgAAAABJRU5ErkJggg==" transform="matrix(0.33 0 0 0.33 162.9556 17.8945)">
 		</image>
 	</g>
 	
@@ -3888,128 +3888,128 @@ JAgI4AR0JQkQIECAgADWAwQIECBAIEFAACegK0mAAAECBASwHiBAgAABAgkCAjgBXUkCBAgQICCA
 9QABAgQIEEgQEMAJ6EoSIECAAAEBrAcIECBAgECCgABOQFeSAAECBAgIYD1AgAABAgQSBARwArqS
 BAgQIEBAAOsBAgQIECCQICCAE9CVJECAAAECAlgPECBAgACBBAEBnICuJAECBAgQEMB6gAABAgQI
 JAgI4AR0JQkQIECAgADWAwQIECBAIEFAACegK0mAAAECBASwHiBAgAABAgkCAjgBXUkCBAgQICCA
-9QABAgQIEEgQEMAJ6EoSIECAAIF/AUxoKM92MvDRAAAAAElFTkSuQmCC" transform="matrix(0.33 0 0 0.33 83.5063 154.8496)">
+9QABAgQIEEgQEMAJ6EoSIECAAIF/AUxoKM92MvDRAAAAAElFTkSuQmCC" transform="matrix(0.33 0 0 0.33 83.5063 163.2773)">
 	</image>
 	<g>
 		<g>
 			<defs>
-				<rect id="XMLID_1_" x="322.053" y="21.632" width="38.516" height="273.279"/>
+				<rect id="XMLID_1_" x="322.053" y="30.059" width="38.516" height="273.279"/>
 			</defs>
 			<clipPath id="XMLID_5_">
 				<use xlink:href="#XMLID_1_" />
 			</clipPath>
 			<g clip-path="url(#XMLID_5_)">
 				<defs>
-					<rect id="XMLID_3_" x="322.431" y="27.723" width="9.298" height="258.477"/>
+					<rect id="XMLID_3_" x="322.431" y="36.149" width="9.298" height="258.477"/>
 				</defs>
 				<clipPath id="XMLID_6_">
 					<use xlink:href="#XMLID_3_" />
 				</clipPath>
-				<rect x="322.431" y="282.165" clip-path="url(#XMLID_6_)" fill="#2A2E7F" width="9.298" height="4.034"/>
-				<rect x="322.431" y="278.121" clip-path="url(#XMLID_6_)" fill="#2B318B" width="9.298" height="4.044"/>
-				<rect x="322.431" y="274.087" clip-path="url(#XMLID_6_)" fill="#2A3794" width="9.298" height="4.034"/>
-				<rect x="322.431" y="270.044" clip-path="url(#XMLID_6_)" fill="#2E409A" width="9.298" height="4.043"/>
-				<rect x="322.431" y="266" clip-path="url(#XMLID_6_)" fill="#35469D" width="9.298" height="4.044"/>
-				<rect x="322.431" y="261.977" clip-path="url(#XMLID_6_)" fill="#374B9F" width="9.298" height="4.033"/>
-				<rect x="322.431" y="257.923" clip-path="url(#XMLID_6_)" fill="#394FA2" width="9.298" height="4.044"/>
-				<rect x="322.431" y="253.89" clip-path="url(#XMLID_6_)" fill="#3953A4" width="9.298" height="4.043"/>
-				<rect x="322.431" y="249.855" clip-path="url(#XMLID_6_)" fill="#3A53A4" width="9.298" height="4.034"/>
-				<rect x="322.431" y="245.812" clip-path="url(#XMLID_6_)" fill="#3B55A5" width="9.298" height="4.044"/>
-				<rect x="322.431" y="241.768" clip-path="url(#XMLID_6_)" fill="#3C57A7" width="9.298" height="4.044"/>
-				<rect x="322.431" y="237.734" clip-path="url(#XMLID_6_)" fill="#3D5BA9" width="9.298" height="4.033"/>
-				<rect x="322.431" y="233.69" clip-path="url(#XMLID_6_)" fill="#3F60AC" width="9.298" height="4.044"/>
-				<rect x="322.431" y="229.667" clip-path="url(#XMLID_6_)" fill="#3F65B0" width="9.298" height="4.033"/>
-				<rect x="322.431" y="225.623" clip-path="url(#XMLID_6_)" fill="#416EB5" width="9.298" height="4.034"/>
-				<rect x="322.431" y="221.59" clip-path="url(#XMLID_6_)" fill="#4378BC" width="9.298" height="4.033"/>
-				<rect x="322.431" y="217.546" clip-path="url(#XMLID_6_)" fill="#4685C5" width="9.298" height="4.034"/>
-				<rect x="322.431" y="213.502" clip-path="url(#XMLID_6_)" fill="#4996D1" width="9.298" height="4.044"/>
-				<rect x="322.431" y="209.468" clip-path="url(#XMLID_6_)" fill="#45A8DE" width="9.298" height="4.034"/>
-				<rect x="322.431" y="205.425" clip-path="url(#XMLID_6_)" fill="#40BAEC" width="9.298" height="4.043"/>
-				<rect x="322.431" y="201.391" clip-path="url(#XMLID_6_)" fill="#39C6F4" width="9.298" height="4.034"/>
-				<rect x="322.431" y="197.348" clip-path="url(#XMLID_6_)" fill="#55C8E9" width="9.298" height="4.043"/>
-				<rect x="322.431" y="193.313" clip-path="url(#XMLID_6_)" fill="#67CBE3" width="9.298" height="4.034"/>
-				<rect x="322.431" y="189.271" clip-path="url(#XMLID_6_)" fill="#6FCCDD" width="9.298" height="4.043"/>
-				<rect x="322.431" y="185.236" clip-path="url(#XMLID_6_)" fill="#72CBD0" width="9.298" height="4.034"/>
-				<rect x="322.431" y="181.193" clip-path="url(#XMLID_6_)" fill="#72CAC3" width="9.298" height="4.043"/>
-				<rect x="322.431" y="177.159" clip-path="url(#XMLID_6_)" fill="#76C9B6" width="9.298" height="4.034"/>
-				<rect x="322.431" y="173.115" clip-path="url(#XMLID_6_)" fill="#7BC9A9" width="9.298" height="4.044"/>
-				<rect x="322.431" y="169.081" clip-path="url(#XMLID_6_)" fill="#81C99B" width="9.298" height="4.034"/>
-				<rect x="322.431" y="165.038" clip-path="url(#XMLID_6_)" fill="#87CA8D" width="9.298" height="4.043"/>
-				<rect x="322.431" y="161.004" clip-path="url(#XMLID_6_)" fill="#8FCB7E" width="9.298" height="4.034"/>
-				<rect x="322.431" y="156.971" clip-path="url(#XMLID_6_)" fill="#99CD71" width="9.298" height="4.033"/>
-				<rect x="322.431" y="152.927" clip-path="url(#XMLID_6_)" fill="#A2CF61" width="9.298" height="4.034"/>
-				<rect x="322.431" y="148.884" clip-path="url(#XMLID_6_)" fill="#ABD152" width="9.298" height="4.043"/>
-				<rect x="322.431" y="144.85" clip-path="url(#XMLID_6_)" fill="#B6D43F" width="9.298" height="4.034"/>
-				<rect x="322.431" y="140.806" clip-path="url(#XMLID_6_)" fill="#C2D832" width="9.298" height="4.044"/>
-				<rect x="322.431" y="136.772" clip-path="url(#XMLID_6_)" fill="#CEDC28" width="9.298" height="4.034"/>
-				<rect x="322.431" y="132.738" clip-path="url(#XMLID_6_)" fill="#DBE120" width="9.298" height="4.034"/>
-				<rect x="322.431" y="128.685" clip-path="url(#XMLID_6_)" fill="#E9E612" width="9.298" height="4.043"/>
-				<rect x="322.431" y="124.661" clip-path="url(#XMLID_6_)" fill="#F6EB13" width="9.298" height="4.034"/>
-				<rect x="322.431" y="120.618" clip-path="url(#XMLID_6_)" fill="#FDEE14" width="9.298" height="4.034"/>
-				<rect x="322.431" y="116.574" clip-path="url(#XMLID_6_)" fill="#FEDF00" width="9.298" height="4.043"/>
-				<rect x="322.431" y="112.53" clip-path="url(#XMLID_6_)" fill="#FECF07" width="9.298" height="4.044"/>
-				<rect x="322.431" y="108.507" clip-path="url(#XMLID_6_)" fill="#FEBF10" width="9.298" height="4.034"/>
-				<rect x="322.431" y="104.462" clip-path="url(#XMLID_6_)" fill="#FBAE17" width="9.298" height="4.034"/>
-				<rect x="322.431" y="100.429" clip-path="url(#XMLID_6_)" fill="#F99E1B" width="9.298" height="4.034"/>
-				<rect x="322.431" y="96.375" clip-path="url(#XMLID_6_)" fill="#F78F1E" width="9.298" height="4.043"/>
-				<rect x="322.431" y="92.342" clip-path="url(#XMLID_6_)" fill="#F58020" width="9.298" height="4.043"/>
-				<rect x="322.431" y="88.308" clip-path="url(#XMLID_6_)" fill="#F37121" width="9.298" height="4.034"/>
-				<rect x="322.431" y="84.274" clip-path="url(#XMLID_6_)" fill="#F16122" width="9.298" height="4.034"/>
-				<rect x="322.431" y="80.22" clip-path="url(#XMLID_6_)" fill="#F05323" width="9.298" height="4.044"/>
-				<rect x="322.431" y="76.197" clip-path="url(#XMLID_6_)" fill="#EF4623" width="9.298" height="4.034"/>
-				<rect x="322.431" y="72.153" clip-path="url(#XMLID_6_)" fill="#EE3A24" width="9.298" height="4.034"/>
-				<rect x="322.431" y="68.109" clip-path="url(#XMLID_6_)" fill="#EE2F24" width="9.298" height="4.044"/>
-				<rect x="322.431" y="64.066" clip-path="url(#XMLID_6_)" fill="#EE2524" width="9.298" height="4.043"/>
-				<rect x="322.431" y="60.042" clip-path="url(#XMLID_6_)" fill="#ED2024" width="9.298" height="4.034"/>
-				<rect x="322.431" y="55.999" clip-path="url(#XMLID_6_)" fill="#ED1C24" width="9.298" height="4.034"/>
-				<rect x="322.431" y="51.965" clip-path="url(#XMLID_6_)" fill="#DD1F26" width="9.298" height="4.034"/>
-				<rect x="322.431" y="47.911" clip-path="url(#XMLID_6_)" fill="#CE2027" width="9.298" height="4.043"/>
-				<rect x="322.431" y="43.887" clip-path="url(#XMLID_6_)" fill="#BE2025" width="9.298" height="4.034"/>
-				<rect x="322.431" y="39.844" clip-path="url(#XMLID_6_)" fill="#AE1F23" width="9.298" height="4.034"/>
-				<rect x="322.431" y="35.81" clip-path="url(#XMLID_6_)" fill="#9E1C20" width="9.298" height="4.034"/>
-				<rect x="322.431" y="31.756" clip-path="url(#XMLID_6_)" fill="#8E191B" width="9.298" height="4.043"/>
-				<rect x="322.431" y="27.732" clip-path="url(#XMLID_6_)" fill="#7F1416" width="9.298" height="4.034"/>
+				<rect x="322.431" y="290.592" clip-path="url(#XMLID_6_)" fill="#2A2E7F" width="9.298" height="4.034"/>
+				<rect x="322.431" y="286.548" clip-path="url(#XMLID_6_)" fill="#2B318B" width="9.298" height="4.044"/>
+				<rect x="322.431" y="282.514" clip-path="url(#XMLID_6_)" fill="#2A3794" width="9.298" height="4.034"/>
+				<rect x="322.431" y="278.471" clip-path="url(#XMLID_6_)" fill="#2E409A" width="9.298" height="4.043"/>
+				<rect x="322.431" y="274.427" clip-path="url(#XMLID_6_)" fill="#35469D" width="9.298" height="4.044"/>
+				<rect x="322.431" y="270.403" clip-path="url(#XMLID_6_)" fill="#374B9F" width="9.298" height="4.033"/>
+				<rect x="322.431" y="266.35" clip-path="url(#XMLID_6_)" fill="#394FA2" width="9.298" height="4.044"/>
+				<rect x="322.431" y="262.316" clip-path="url(#XMLID_6_)" fill="#3953A4" width="9.298" height="4.043"/>
+				<rect x="322.431" y="258.282" clip-path="url(#XMLID_6_)" fill="#3A53A4" width="9.298" height="4.034"/>
+				<rect x="322.431" y="254.238" clip-path="url(#XMLID_6_)" fill="#3B55A5" width="9.298" height="4.044"/>
+				<rect x="322.431" y="250.194" clip-path="url(#XMLID_6_)" fill="#3C57A7" width="9.298" height="4.044"/>
+				<rect x="322.431" y="246.161" clip-path="url(#XMLID_6_)" fill="#3D5BA9" width="9.298" height="4.033"/>
+				<rect x="322.431" y="242.117" clip-path="url(#XMLID_6_)" fill="#3F60AC" width="9.298" height="4.044"/>
+				<rect x="322.431" y="238.094" clip-path="url(#XMLID_6_)" fill="#3F65B0" width="9.298" height="4.033"/>
+				<rect x="322.431" y="234.05" clip-path="url(#XMLID_6_)" fill="#416EB5" width="9.298" height="4.034"/>
+				<rect x="322.431" y="230.017" clip-path="url(#XMLID_6_)" fill="#4378BC" width="9.298" height="4.033"/>
+				<rect x="322.431" y="225.973" clip-path="url(#XMLID_6_)" fill="#4685C5" width="9.298" height="4.034"/>
+				<rect x="322.431" y="221.929" clip-path="url(#XMLID_6_)" fill="#4996D1" width="9.298" height="4.044"/>
+				<rect x="322.431" y="217.895" clip-path="url(#XMLID_6_)" fill="#45A8DE" width="9.298" height="4.034"/>
+				<rect x="322.431" y="213.852" clip-path="url(#XMLID_6_)" fill="#40BAEC" width="9.298" height="4.043"/>
+				<rect x="322.431" y="209.817" clip-path="url(#XMLID_6_)" fill="#39C6F4" width="9.298" height="4.034"/>
+				<rect x="322.431" y="205.774" clip-path="url(#XMLID_6_)" fill="#55C8E9" width="9.298" height="4.043"/>
+				<rect x="322.431" y="201.74" clip-path="url(#XMLID_6_)" fill="#67CBE3" width="9.298" height="4.034"/>
+				<rect x="322.431" y="197.697" clip-path="url(#XMLID_6_)" fill="#6FCCDD" width="9.298" height="4.043"/>
+				<rect x="322.431" y="193.663" clip-path="url(#XMLID_6_)" fill="#72CBD0" width="9.298" height="4.034"/>
+				<rect x="322.431" y="189.62" clip-path="url(#XMLID_6_)" fill="#72CAC3" width="9.298" height="4.043"/>
+				<rect x="322.431" y="185.586" clip-path="url(#XMLID_6_)" fill="#76C9B6" width="9.298" height="4.034"/>
+				<rect x="322.431" y="181.542" clip-path="url(#XMLID_6_)" fill="#7BC9A9" width="9.298" height="4.044"/>
+				<rect x="322.431" y="177.508" clip-path="url(#XMLID_6_)" fill="#81C99B" width="9.298" height="4.034"/>
+				<rect x="322.431" y="173.465" clip-path="url(#XMLID_6_)" fill="#87CA8D" width="9.298" height="4.043"/>
+				<rect x="322.431" y="169.431" clip-path="url(#XMLID_6_)" fill="#8FCB7E" width="9.298" height="4.034"/>
+				<rect x="322.431" y="165.397" clip-path="url(#XMLID_6_)" fill="#99CD71" width="9.298" height="4.033"/>
+				<rect x="322.431" y="161.354" clip-path="url(#XMLID_6_)" fill="#A2CF61" width="9.298" height="4.034"/>
+				<rect x="322.431" y="157.311" clip-path="url(#XMLID_6_)" fill="#ABD152" width="9.298" height="4.043"/>
+				<rect x="322.431" y="153.277" clip-path="url(#XMLID_6_)" fill="#B6D43F" width="9.298" height="4.034"/>
+				<rect x="322.431" y="149.232" clip-path="url(#XMLID_6_)" fill="#C2D832" width="9.298" height="4.044"/>
+				<rect x="322.431" y="145.199" clip-path="url(#XMLID_6_)" fill="#CEDC28" width="9.298" height="4.034"/>
+				<rect x="322.431" y="141.165" clip-path="url(#XMLID_6_)" fill="#DBE120" width="9.298" height="4.034"/>
+				<rect x="322.431" y="137.112" clip-path="url(#XMLID_6_)" fill="#E9E612" width="9.298" height="4.043"/>
+				<rect x="322.431" y="133.088" clip-path="url(#XMLID_6_)" fill="#F6EB13" width="9.298" height="4.034"/>
+				<rect x="322.431" y="129.044" clip-path="url(#XMLID_6_)" fill="#FDEE14" width="9.298" height="4.034"/>
+				<rect x="322.431" y="125.001" clip-path="url(#XMLID_6_)" fill="#FEDF00" width="9.298" height="4.043"/>
+				<rect x="322.431" y="120.957" clip-path="url(#XMLID_6_)" fill="#FECF07" width="9.298" height="4.044"/>
+				<rect x="322.431" y="116.934" clip-path="url(#XMLID_6_)" fill="#FEBF10" width="9.298" height="4.034"/>
+				<rect x="322.431" y="112.889" clip-path="url(#XMLID_6_)" fill="#FBAE17" width="9.298" height="4.034"/>
+				<rect x="322.431" y="108.855" clip-path="url(#XMLID_6_)" fill="#F99E1B" width="9.298" height="4.034"/>
+				<rect x="322.431" y="104.802" clip-path="url(#XMLID_6_)" fill="#F78F1E" width="9.298" height="4.043"/>
+				<rect x="322.431" y="100.769" clip-path="url(#XMLID_6_)" fill="#F58020" width="9.298" height="4.043"/>
+				<rect x="322.431" y="96.735" clip-path="url(#XMLID_6_)" fill="#F37121" width="9.298" height="4.034"/>
+				<rect x="322.431" y="92.701" clip-path="url(#XMLID_6_)" fill="#F16122" width="9.298" height="4.034"/>
+				<rect x="322.431" y="88.647" clip-path="url(#XMLID_6_)" fill="#F05323" width="9.298" height="4.044"/>
+				<rect x="322.431" y="84.624" clip-path="url(#XMLID_6_)" fill="#EF4623" width="9.298" height="4.034"/>
+				<rect x="322.431" y="80.58" clip-path="url(#XMLID_6_)" fill="#EE3A24" width="9.298" height="4.034"/>
+				<rect x="322.431" y="76.536" clip-path="url(#XMLID_6_)" fill="#EE2F24" width="9.298" height="4.044"/>
+				<rect x="322.431" y="72.493" clip-path="url(#XMLID_6_)" fill="#EE2524" width="9.298" height="4.043"/>
+				<rect x="322.431" y="68.469" clip-path="url(#XMLID_6_)" fill="#ED2024" width="9.298" height="4.034"/>
+				<rect x="322.431" y="64.425" clip-path="url(#XMLID_6_)" fill="#ED1C24" width="9.298" height="4.034"/>
+				<rect x="322.431" y="60.392" clip-path="url(#XMLID_6_)" fill="#DD1F26" width="9.298" height="4.034"/>
+				<rect x="322.431" y="56.338" clip-path="url(#XMLID_6_)" fill="#CE2027" width="9.298" height="4.043"/>
+				<rect x="322.431" y="52.314" clip-path="url(#XMLID_6_)" fill="#BE2025" width="9.298" height="4.034"/>
+				<rect x="322.431" y="48.271" clip-path="url(#XMLID_6_)" fill="#AE1F23" width="9.298" height="4.034"/>
+				<rect x="322.431" y="44.237" clip-path="url(#XMLID_6_)" fill="#9E1C20" width="9.298" height="4.034"/>
+				<rect x="322.431" y="40.183" clip-path="url(#XMLID_6_)" fill="#8E191B" width="9.298" height="4.043"/>
+				<rect x="322.431" y="36.159" clip-path="url(#XMLID_6_)" fill="#7F1416" width="9.298" height="4.034"/>
 			</g>
 			
 				<polyline clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" points="
-				322.431,286.199 331.729,286.199 331.729,27.723 322.431,27.723 322.431,286.199 			"/>
+				322.431,294.626 331.729,294.626 331.729,36.149 322.431,36.149 322.431,294.626 			"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="284.182" x2="331.729" y2="29.74"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="292.608" x2="331.729" y2="38.167"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="284.182" x2="338.99" y2="284.182"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="292.608" x2="338.99" y2="292.608"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="233.287" x2="338.99" y2="233.287"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="241.714" x2="338.99" y2="241.714"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="182.402" x2="338.99" y2="182.402"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="190.829" x2="338.99" y2="190.829"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="131.518" x2="338.99" y2="131.518"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="139.945" x2="338.99" y2="139.945"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="80.634" x2="338.99" y2="80.634"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="89.061" x2="338.99" y2="89.061"/>
 			
-				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="29.74" x2="338.99" y2="29.74"/>
+				<line clip-path="url(#XMLID_5_)" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="331.729" y1="38.167" x2="338.99" y2="38.167"/>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 288.5273)" font-family="'Helvetica'" font-size="12.1009">0.0</text>
+				<text transform="matrix(1 0 0 1 338.9897 296.9541)" font-family="'Helvetica'" font-size="12.1009">0.0</text>
 			</g>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 237.6328)" font-family="'Helvetica'" font-size="12.1009">0.2</text>
+				<text transform="matrix(1 0 0 1 338.9897 246.0596)" font-family="'Helvetica'" font-size="12.1009">0.2</text>
 			</g>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 186.749)" font-family="'Helvetica'" font-size="12.1009">0.4</text>
+				<text transform="matrix(1 0 0 1 338.9897 195.1758)" font-family="'Helvetica'" font-size="12.1009">0.4</text>
 			</g>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 135.8643)" font-family="'Helvetica'" font-size="12.1009">0.6</text>
+				<text transform="matrix(1 0 0 1 338.9897 144.291)" font-family="'Helvetica'" font-size="12.1009">0.6</text>
 			</g>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 84.9697)" font-family="'Helvetica'" font-size="12.1009">0.8</text>
+				<text transform="matrix(1 0 0 1 338.9897 93.3965)" font-family="'Helvetica'" font-size="12.1009">0.8</text>
 			</g>
 			<g clip-path="url(#XMLID_5_)">
-				<text transform="matrix(1 0 0 1 338.9897 34.0859)" font-family="'Helvetica'" font-size="12.1009">1.0</text>
+				<text transform="matrix(1 0 0 1 338.9897 42.5127)" font-family="'Helvetica'" font-size="12.1009">1.0</text>
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 0.3638 11.7183)"><tspan x="0" y="0" font-family="'Myriad-Italic'" font-size="14">Anthropogenic</tspan><tspan x="0" y="10" font-family="'Myriad-Italic'" font-size="14">combustion (AC, white*)</tspan></text>
-	<text transform="matrix(1 0 0 1 159.7466 11.7183)"><tspan x="0" y="0" font-family="'Myriad-Italic'" font-size="14">Forest biogenic</tspan><tspan x="0" y="10" font-family="'Myriad-Italic'" font-size="14">(Bio, green)</tspan></text>
-	<text transform="matrix(1 0 0 1 83.6938 170.1064)" font-family="'Myriad-Italic'" font-size="14">Biomass burning (BB, pink)</text>
-	<text transform="matrix(1 0 0 1 296.7417 11.7178)" font-family="'Myriad-Italic'" font-size="14">Probability</text>
+	<text transform="matrix(1 0 0 1 0.3638 22.6646)"><tspan x="0" y="0" font-family="'Myriad-Italic'" font-size="14">Anthropogenic</tspan><tspan x="0" y="10" font-family="'Myriad-Italic'" font-size="14">combustion (AC, white*)</tspan></text>
+	<text transform="matrix(1 0 0 1 159.7466 22.6646)"><tspan x="0" y="0" font-family="'Myriad-Italic'" font-size="14">Forest biogenic</tspan><tspan x="0" y="10" font-family="'Myriad-Italic'" font-size="14">(Bio, green)</tspan></text>
+	<text transform="matrix(1 0 0 1 83.6938 178.5322)" font-family="'Myriad-Italic'" font-size="14">Biomass burning (BB, pink)</text>
+	<text transform="matrix(1 0 0 1 296.7417 22.6641)" font-family="'Myriad-Italic'" font-size="14">Probability</text>
 </g>
 </svg>
