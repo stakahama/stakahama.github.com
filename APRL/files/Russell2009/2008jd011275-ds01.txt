@@ -1,0 +1,19 @@
+Absorbance frequencies, quantified peak ranges, absorptivity coefficients and detection limits used in quantifying organic functional groups from FTIR spectra.
+Functional Group	Absorption Frequencies	Quantified Peak Range (cm-1)	Absorptivity coefficient	Detection Limits
+	(cm-1)		(mu mol bond/area)	(mu mol bond)
+Alkane (saturated aliphatic)	"1450,"	2790-2930	0.6	0.09
+C-C-H	2800-3000			
+Carboxylic Acid	2400-3100	-	0.015	0.0008
+C-OH				
+Alcohol (including phenol)	3100-3700	3200-3600	0.057	0.02
+C-OH				
+Non-Acid Carbonyl	1640-1850	1720	0.067	0.005
+C=O				
+Amine	"3400, 1630"	1630	0.11	0.01
+C-NH				
+Aromatic	3000-3100	3050	8.7	1
+C=C-H				
+Alkene (unsaturated aliphatic)	2900-3100	2980	3.8	0.3
+C=C-H				
+Organosulfate	876	876	0.031	0.002
+C-O-SO3				

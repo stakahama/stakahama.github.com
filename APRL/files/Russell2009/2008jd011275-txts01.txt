@@ -1,0 +1,20 @@
+Appendix 1. Revised FTIR Algorithm for Functional Group Identification
+      FTIR spectra were analyzed using a revised algorithm for baselining and spectral smoothing, fitting overlapping peaks, and integrating absorbance before converting to mass with standard calibrations. Data Set S1 summarizes the regions and parameters used in the algorithm.
+1. Baselining and spectral smoothing
+      A third-order polynomial is used to baseline each spectra, in order to reduce both bias (with respect to zero) and variance in baselines of blank filter spectra over a linear baseline. CO2 interference is removed with an interpolated spline, and interference from H{_2}O is minimized with wavelet denoising methods.
+2. Spectral resolution of carboxylic acid absorption 
+      The O-H stretching band in carboxyl groups is very broad and span between 3100 and 2400 per cm [Lambert et al., 1998]; overlapping with a significant number of peaks that we quantify. To resolve the shape of peaks within this type of spectra, we retrieved a series of carboxylic acids with varying quantities of aliphatic C-H and COOH groups (adipic, glutaric, malonic, azelaic, decanoic, stearic, and succinic acids) from the NIST Chemistry Webbook (http://webbook.nist.gov/chemistry/) and searched for a two-factor solutions using Positive Matrix Factorization as our factor analysis technique. A sum of Gaussian peaks were selected to represent the COOH component such that when fitted to adipic acid reference spectra produced in our laboratory, quantitatively reproduced the saturated aliphatic C-H absorptivity observed in noncarboxylic acid species (docosanol and docosene).
+3. Band-fitting
+      Fixed carboxylic C-OH and ammonium spectra are subtracted from each spectrum on the basis of a simple scaling algorithm. Absorption peaks for the remaining groups are fitted using box constraints primarily determined from reference spectra analyzed in the laboratory [Gilardoni et al., 2007]; multiple sets of initial values are provided to the least squares fitting routine and the final set of parameters is selected on the basis of the analysis of residuals.
+4. Oxygenated groups 
+      The quantity of carboxylic COOH (“acid groups”) is determined from examining mole ratios of carboxylic C = O and carboxylic C-OH. The acid group is quantified by averaging moles of carbonyl and carboxylic C-OH when they are approximately equal, or the minimum of either group when their molar quantities significantly differ. Noncarboxylic carbonyl is determined as the carbonyl in significant excess of carboxylic C-OH, and this is interpreted to be carbonyls associated with aldehyde and ketonic species. “Excess Acid” is defined as carboxylic C-OH in excess of reported carbonyl, as can occur when we miss quantification of amino acid and conjugated carbonyls because of significant shifts in peak absorption, and is included in the reported carboxylic acid group fraction.
+      “Excess Alcohol” is determined by area of unidentified residuals in the region approximately between 3400 and 2900 per cm. While alcohol and phenolic absorbance generally occurs in the region 3600–3200 per cm [Lambert et al., 1998], we report the total absorbance in this region in mass units of alcohol C-OH to provide an upper bound to the concentration.
+5. Detection Limits
+      Detection limits are determined as the minimum area statistically distinguishable (2?) above errors estimated from baselining and ammonium subtraction for each spectrum.
+      
+      References
+      
+Lambert, J. B., H. F. Shurvell, D. A. Lightner, and R. G. Cooks (1998), Organic Structural Spectroscopy, Prentice Hall, Upper Saddle River, N. J. 
+Gilardoni, S., et al. (2007), Regional variation of organic functional groups in aerosol particles on four U.S. east coast platforms during the International Consortium for Atmospheric Research on Transport and Transformation 2004 campaign, J. Geophys. Res., 112, D10S27, doi:10.1029/2006JD007737.
+      
+
