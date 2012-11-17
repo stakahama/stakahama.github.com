@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Extending Emacs</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Extending Emacs"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-17T20:03+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Extending Emacs</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Setting up</a>
+<ul>
+<li><a href="#sec-1-1">Directory structure</a></li>
+<li><a href="#sec-1-2">Package types</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Customizations</a>
+<ul>
+<li><a href="#sec-2-1">Key bindings</a></li>
+<li><a href="#sec-2-2">Changing custom variable values</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Preserving customizations across machines</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Setting up</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Directory structure</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Emacs Wiki says that the <code>~/.emacs.d/</code> directory is for add-on packages, etc., but this has only been a recent development. Many old-time emacs users roll their own package directory (e.g., 
+<a href="http://bc.tech.coop/blog/081205.html">Bill Clementson's setup for clojure</a>), like <code>~/elisp</code>. I've moved everything to <code>~/.emacs.d/</code> to include all customization files: user-configured files, lisp code, and standard packages.
+</p>
+<p>
+These are all added to my path with <code>(add-to-list 'load-path "~/.emacs.d")</code> and so on.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Package types</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Can be
+</p><ol>
+<li>distributed a single file or directory of emacs-lisp files
+</li>
+<li>distributed as a collection of files (emacs lisp and other) with a
+   config and makefile with typical args:
+<ul>
+<li><code>--with-emacs</code>
+</li>
+<li><code>--with-prefix</code>
+</li>
+</ul>
+
+</li>
+<li>ELPA (now distributed with Emacs 24)
+</li>
+</ol>
+
+
+<p>
+The type also affects portability across machines.
+</p>
+<ul>
+<li>The first type - use <code>M-x byte-compile-file</code> or <code>M-x byte-recompile-directory</code>. Use <code>C-u M-x byte-recompile-directory</code> or <code>C-u 0 M-x byte-recompile-directory</code>.
+</li>
+<li>Second type: compile as desired
+</li>
+<li>Third type: &hellip;(no experience)
+</li>
+</ul>
+
+
+<p>
+Some of these are available through the Debian repository.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Customizations</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Key bindings</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+
+
+
+<pre class="example">As a user, you can redefine any key, but it is usually best to stick
+to key sequences that consist of `C-c' followed by a letter (upper or
+lower case). These keys are "reserved for users," so they won't
+conflict with any properly designed Emacs extension. The function keys
+F5 through F9 are also reserved for users. If you redefine some other
+key, your definition may be overridden by certain extensions or major
+modes which redefine the same key.
+</pre>
+
+
+<p>
+There are many ways in which people have customized their keybindings
+</p><ul>
+<li><a href="http://emacs-fu.blogspot.com/2009/07/keyboard-shortcuts.html">http://emacs-fu.blogspot.com/2009/07/keyboard-shortcuts.html</a>
+</li>
+<li><a href="http://steve.yegge.googlepages.com/effective-emacs">http://steve.yegge.googlepages.com/effective-emacs</a>
+</li>
+<li><a href="http://xahlee.org/emacs/keyboard_shortcuts.html">http://xahlee.org/emacs/keyboard_shortcuts.html</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Changing custom variable values</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+Note that <code>t</code> and values zero or greater are used to indicate non-nil values (<code>0</code> is equivalent to <code>t</code> for on/off t/f purposes); negative values are equivalent to <code>nil</code>.
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(cua-mode nil)
+(setq delete-active-region nil)
+(delete-selection-mode nil)
+(setq ring-bell-function 'ignore)
+(blink-cursor-mode nil)
+(normal-erase-is-backspace-mode t)
+(show-paren-mode t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message nil)
+(setq line-number-mode t)
+(setq column-number-mode t)
+(mouse-wheel-mode t)                    <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">activate mouse scrolling</span>
+(global-font-lock-mode t)               <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">syntax highlighting</span>
+(tool-bar-mode -1)
+(fset 'yes-or-no-p 'y-or-n-p)
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Preserving customizations across machines</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+I store my customizations on <a href="https://github.com">GitHub</a> and use <code>git</code> to synchronize my changes on different machines.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

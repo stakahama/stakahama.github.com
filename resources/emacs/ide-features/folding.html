@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Folding code or text</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Folding code or text"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-17T20:03+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Folding code or text</h1>
+
+<p>There are many different options and selection should be based on what context you want the program to recognize (they can even be combined, though some keybindings may have to be remapped). I use outline-mode and folding-mode regularly.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Outline-mode</a></li>
+<li><a href="#sec-2">Folding-mode</a></li>
+<li><a href="#sec-3">Hide-show</a></li>
+<li><a href="#sec-4">Allout-mode</a></li>
+<li><a href="#sec-5">Others</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Outline-mode</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+<code>outline-mode</code> (standard library). Based on headings (regular expression matches on code or comment lines). I use this to section off parts of a large file (though now switching to <code>allout-mode</code>, see below) - the following is an example with elisp that I use for my <code>.emacs</code> file (inspired by <a href="http://mail.python.org/pipermail/python-list/2002-May/147723.html">Python example1</a> and <a href="http://stackoverflow.com/questions/1085170/how-to-achieve-code-folding-effects-in-emacs">Python example2</a> which are essentially the same thing):
+</p>
+
+
+<pre class="src src-elisp">(add-hook 'emacs-lisp-mode-hook 'my-elisp-outline-hook)
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">elisp-outline-level</span> ()
+  (<span style="font-weight: bold;">let</span> (buffer-invisibility-spec)
+    (<span style="font-weight: bold;">save-excursion</span>
+      (skip-chars-forward <span style="font-style: italic;">";;"</span>)
+      (truncate (current-column) 2))))
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-elisp-outline-hook</span> ()
+  (setq outline-regexp <span style="font-style: italic;">"[ \\t]*;;[;]* ===== "</span>)
+  (setq outline-level 'elisp-outline-level)
+  (outline-minor-mode t)
+  (hide-body)
+)
+</pre>
+
+<p>
+<a href="outline-keys.html">Keybindings</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Folding-mode</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+<code>folding-mode</code> (requires import). Based on extraneous markers in text
+(<code>{{{</code>). I use this to "clean up" existing code, hiding alternative or
+old code that has been commented out but (these Ido not want to delete
+but also do not want to create a separatefile for archiving).  Have to
+download <code>folding.el</code> and put in~load-path~. Example for ESS:
+</p>
+
+
+<pre class="src src-elisp">(load <span style="font-style: italic;">"folding"</span> 'nomessage 'noerror)
+(folding-add-to-marks-list 'ess-mode <span style="font-style: italic;">"# {{{"</span>  <span style="font-style: italic;">"# }}}"</span> nil t)
+(add-hook 'ess-mode-hook 'turn-on-folding-mode)
+</pre>
+
+<p>
+<a href="folding-keys.html">Keybindings</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Hide-show</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+<code>hide-show</code> (<code>hs-minor-mode</code>; standard library). Sensible for folding
+code based on natural markers, blocks (e.g., "{|}" or
+"(region|end)"). Users can <a href="http://stackoverflow.com/questions/944614/emacs-does-hideshow-work-with-xml-mode-sgml-mode">define customized start/end markers for blocks</a> with <code>hide-show</code>. An <a href="http://stackoverflow.com/questions/1384953/emacs-adding-modes-to-hide-show-alist">example</a> for <code>tex-mode</code> (untested):
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(add-to-list 'hs-special-modes-alist
+             '(tex-mode <span style="font-style: italic;">"# {{{"</span> <span style="font-style: italic;">"# }}}"</span> <span style="font-style: italic;">"#[ #]?"</span>
+                         forward-sexp 
+                         hs-c-like-adjust-block-beginning))
+(add-hook tex-mode-hook 
+          '(<span style="font-weight: bold;">lambda</span>()
+             (hs-minor-mode 1)
+             (hs-hide-all)
+             (custom-set-variables
+              (hs-hide-comments-when-hiding-all 0))))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Allout-mode</h2>
+<div class="outline-text-2" id="text-4">
+
+<p><code>allout-mode</code> (standard library):
+</p>
+
+
+<pre class="example">"Allout outline mode provides extensive outline formatting and
+manipulation beyond standard emacs outline mode. It provides for
+structured editing of outlines, as well as navigation and exposure."
+-EmacsWiki
+</pre>
+
+<p>
+<a href="allout-mode.html">more&hellip;</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Others</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<ul>
+<li>set-selective-display (standard library). <a href="http://emacs.wordpress.com/2007/01/16/quick-and-dirty-code-folding/">Based on indentation</a>.
+</li>
+<li>tagging. <a href="http://www.lisperati.com/tagging.html">Based on tags</a> (obviously).
+</li>
+<li>ECB, CEDET. <a href="http://xtalk.msk.su/~ott/en/writings/emacs-devenv/EmacsCedet.html#sec13">global-semantic-tag-folding-mode</a> or global-semantic mode.
+</li>
+<li>Folding based on 'narrowing'? Don't know too much about this one.
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

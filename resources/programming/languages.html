@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Programming for scientific applications</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Programming for scientific applications"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-17T19:48+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Programming for scientific applications</h1>
+
+<p>MS Excel, LibreOffice Calc, and similar spreadsheet software are extremely useful for a wide range of tasks. However, as the required analysis becomes increasingly complex, there are several benefits to doing things programmatically. These advantages include scalability and reproducibility (though these advantages are not guaranteed). Your decisions are recorded your program (often lost in copy-paste processes used in spreadsheets), and provenance is maintained between original data set and results. And as programs are often simply text files, they are more amenable to archivable (along with the original data set) than computations saved in a spreadsheet. 
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Applications</a></li>
+<li><a href="#sec-2">2 Categorization of languages</a></li>
+<li><a href="#sec-3">3 Graphics</a></li>
+<li><a href="#sec-4">4 Languages</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Applications</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+<p align="center">
+<img src="./figures/venn_diagram.png" text-align="center" alt="./figures/venn_diagram.png" />
+</p>
+</p>
+<p>
+Non-exhaustive list of common tasks in science and engineering:
+</p><ul>
+<li>shell scripting/text processing
+</li>
+<li>numerical simulation: solving diff eqs, optimization, random sampling
+</li>
+<li>data analysis: graphics, statistical analysis (hypothesis testing)
+</li>
+<li>hardware integration (data acquisition and hardware control)
+</li>
+</ul>
+
+
+<p>
+Peripheral tasks:
+</p><ul>
+<li>web programming
+</li>
+<li>networking
+</li>
+<li>UI (user-interface) development (web platform)
+</li>
+</ul>
+
+
+<p>
+To paraphrase/summarize the works of <a href="http://paulgraham.com/articles.html">Paul Graham</a>, not all languages are the same. Otherwise, we would program everything in assembly language and programming languages would not have proliferated as it has. There is no single language which is the best at everything. Simulation requires a low-level language; a data analysis language requires high-level language with graphing and statistical analysis capabilities. 
+</p>
+<p>
+Tradeoffs:
+</p><ul>
+<li>high-level: save user time. choose based on
+<ul>
+<li>language expressiveness (natural data models)
+</li>
+<li>existing libraries
+</li>
+</ul>
+
+</li>
+<li>low-level: save computational time
+</li>
+</ul>
+
+
+<p>
+The scripting/data analysis options are more numerous than for simulation (where Fortran or C are the most common choices); my recommended strategy is to learn one go-to language; learn bits of other languages as necessary (to use their toolboxes or modify written by others in the community). Interop modules or common exchange formats can be used to pass data/functions back and forth between languages and software programs as necessary.
+</p>
+<p>
+There is often a tradeoff between succinctness/conciseness vs readability. Conciseness: quicker to write + less places for bugs, possibly easier to see overall structure of the code in a glance; readability: easier to maintain. This are some metrics for conciseness on the <a href="http://blog.wolfram.com/2012/11/14/code-length-measured-in-14-languages/">Wolfram Alpha Blog</a> (which touts the merits of Mathematica).
+</p>
+<p>
+To some extent, you will be most productive in the language you already know. However, while you can do a lot of things in every language, it may become prohibitively difficult to do more complicated tasks in particular languages not suited for the task.
+</p>
+<p>
+The following section lists a few categorizations which may determine how you structure your programs, or indicate the tradeoffs among convenience, robustness, and scalability.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Categorization of languages</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+<i>I will try to add examples in the future.</i>
+</p>
+
+
+<p>
+Paradigms:
+</p><ul>
+<li>procedural
+</li>
+<li>object-oriented
+</li>
+<li>functional
+</li>
+<li>logic
+</li>
+</ul>
+
+<p>Multi-paradigm languages are useful in that scientific applications require many tasks for which different paradigms are better suited (e.g., procedural for I/O, functional for computation, and object-oriented for UI or hardware integration).
+</p>
+<p>
+Imperative vs declarative
+</p><ul>
+<li>how to compute vs. what to compute
+</li>
+</ul>
+
+
+<p>
+Static vs dynamic
+</p><ul>
+<li>Variable types are declared and remain invariant.
+</li>
+</ul>
+
+
+<p>
+Strongly vs weakly typed
+</p><ul>
+<li>strict adherence to defined data type
+</li>
+</ul>
+
+
+<p>
+General purpose languages vs domain-specific languages (DSLs)
+</p><ul>
+<li>DSLs often shorter because programs are constructed within the context of a particular application domain. For instance, split() in R implies splitting a table or vector. In Python, split() can be for strings or something else, so the context must be explicitly defined (through the namespace/object). (I.e., namespaces are often implicit in DSLs). For array computation, Matlab is convenient because brackets define arrays, whereas they indicate lists in Python and additional syntax is necessary to recast them as arrays. Also, DSLs often use the idiom of the domain (indexing, lexicon). However, application of DSLs are mostly specific to their domain, as implied by the name.
+</li>
+</ul>
+
+
+<p>
+Zero-indexing vs one-indexing
+</p>
+<p>
+Prototyping vs production 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Graphics</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Purposes:
+</p><ul>
+<li>exploratory/diagnostic. requirements: rapid, programmatic, high-level
+</li>
+<li>publication: fine control
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Languages</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+There are of course many other acceptable languages, but some that I can recommend for tasks based on personal experience include the following:
+</p>
+<p>
+Scripting and/or data analysis:
+</p><ul>
+<li>Python with NumPy, SciPy, Matplotlib, and Pandas
+</li>
+<li>R
+</li>
+<li>Matlab
+</li>
+<li>IDL
+</li>
+<li>Igor Pro
+</li>
+</ul>
+
+
+<p>
+Simulation:
+</p><ul>
+<li>Fortran
+</li>
+<li>C/C++
+</li>
+</ul>
+
+
+<p>
+Hardware integration:
+</p><ul>
+<li>Labview
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-11-17T19:48+0100</p>
+<p class="author">Author: Satoshi Takahama</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.8.11 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

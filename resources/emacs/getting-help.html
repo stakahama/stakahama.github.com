@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Getting help</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Getting help"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-17T20:03+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Getting help</h1>
+
+<p>Type <code>C-h</code> and one of the following keys:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keys</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>?</code></td><td class="left">list keys and descriptions</td></tr>
+<tr><td class="left"><code>a</code> <i>PATTERN</i></td><td class="left">apropos on commands</td></tr>
+<tr><td class="left"><code>b</code></td><td class="left">display all keybindings</td></tr>
+<tr><td class="left"><code>c</code> <i>KEYS</i></td><td class="left">find function for keybinding</td></tr>
+<tr><td class="left"><code>d</code> <i>PATTERN</i></td><td class="left">apropos on functions and variables</td></tr>
+<tr><td class="left"><code>f</code> <i>FUNCTION</i></td><td class="left">describe function</td></tr>
+<tr><td class="left"><code>w</code> <i>FUNCTION</i></td><td class="left">find keybinding for function</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Of course, the GNU Emacs manual: <a href="http://www.gnu.org/software/emacs/manual/elisp.html">http://www.gnu.org/software/emacs/manual/elisp.html</a>
+</li>
+<li>I probably learned the most from this site, particularly regarding
+  emacs lisp (elisp): <a href="http://xahlee.org/emacs/emacs.html">http://xahlee.org/emacs/emacs.html</a>
+</li>
+<li>Emacs-related blogs or aggregators:
+<ul>
+<li><a href="http://emacs-fu.blogspot.com/">http://emacs-fu.blogspot.com/</a>
+</li>
+<li><a href="http://planet.emacsen.org/">http://planet.emacsen.org/</a>
+</li>
+<li><a href="http://www.reddit.com/r/emacs/">http://www.reddit.com/r/emacs/</a>
+</li>
+<li><a href="http://www.masteringemacs.org/">http://www.masteringemacs.org/</a> (relatively new but very good)
+</li>
+</ul>
+
+</li>
+<li>Not specific to emacs but contains useful information:
+<ul>
+<li><a href="http://stackoverflow.com/">http://stackoverflow.com/</a>
+</li>
+<li><a href="http://steve-yegge.blogspot.com/">http://steve-yegge.blogspot.com/</a>
+</li>
+<li><a href="http://bc.tech.coop/blog/">http://bc.tech.coop/blog/</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

@@ -2,3 +2,5 @@
 # > paste(collapse="",{set.seed(222); sample(c(letters,0:9),8,TRUE)})
 User-agent: *
 Disallow: /APRL/7cra68mp/
+Disallow: /personal/
+Disallow: /resources/

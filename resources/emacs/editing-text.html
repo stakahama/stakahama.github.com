@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Editing text</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Editing text"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-17T20:03+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Editing text</h1>
+
+<p>Emacs can be used for editing both unstructured (prose and code) and structured (data and code) text.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Text navigation with default keybindings</a>
+<ul>
+<li><a href="#sec-1-1">Navigation</a></li>
+<li><a href="#sec-1-2">Killing and yanking</a>
+<ul>
+<li><a href="#sec-1-2-1">Basic keybindings</a></li>
+<li><a href="#sec-1-2-2">Conservative killing and yanking</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">Highlighting</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Search and replace</a>
+<ul>
+<li><a href="#sec-2-1">in the buffer</a>
+<ul>
+<li><a href="#sec-2-1-1">emacs variables</a></li>
+<li><a href="#sec-2-1-2">hi-lock-mode</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">grep, egrep, and grep-find</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Processing text in a region</a>
+<ul>
+<li><a href="#sec-3-1">pass region to python script</a></li>
+<li><a href="#sec-3-2">text processing using emacs lisp</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">More interactive functions</a>
+<ul>
+<li><a href="#sec-4-1">keyboard macros</a></li>
+<li><a href="#sec-4-2">ediff</a></li>
+<li><a href="#sec-4-3">rectangle commands</a></li>
+<li><a href="#sec-4-4">align</a></li>
+<li><a href="#sec-4-5">registers</a></li>
+<li><a href="#sec-4-6">expansions</a>
+<ul>
+<li><a href="#sec-4-6-1">Word expansions</a></li>
+<li><a href="#sec-4-6-2">Templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Text navigation with default keybindings</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Navigation</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Movements:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">unit of increment</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">character</td><td class="left"><code>C-b</code> (<code>backward-char</code>)</td><td class="left"><code>C-f</code> (<code>forward-char</code>)</td></tr>
+<tr><td class="left">word</td><td class="left"><code>M-b</code> (<code>backward-word</code>)</td><td class="left"><code>M-f</code> (<code>forward-word</code>)</td></tr>
+<tr><td class="left">sentence</td><td class="left"><code>M-a</code> (<code>backward-sentence</code>)</td><td class="left"><code>M-e</code> (<code>forward-sentence</code>)</td></tr>
+<tr><td class="left">line</td><td class="left"><code>C-a</code> (<code>beginning-of-line</code>)</td><td class="left"><code>C-e</code> (<code>end-of-line</code>)</td></tr>
+<tr><td class="left">line</td><td class="left"><code>C-p</code> (<code>previous-line</code>)</td><td class="left"><code>C-n</code> (<code>next-line</code>)</td></tr>
+<tr><td class="left">paragraph</td><td class="left"><code>M-{</code> (<code>backward-paragraph</code>)</td><td class="left"><code>M-}</code> (<code>next-paragraph</code>)</td></tr>
+<tr><td class="left">page</td><td class="left"><code>M-v</code> (<code>scroll-up</code>)</td><td class="left"><code>C-v</code> (<code>scroll-down</code>)</td></tr>
+<tr><td class="left">buffer</td><td class="left"><code>M-&lt;</code> (<code>beginning-of-buffer</code>)</td><td class="left"><code>M-&gt;</code> (<code>end-of-buffer</code>)</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+Also use <code>M-r</code> to move to left margin on center line of page
+(<code>move-to-window-line</code>). I often use <code>M-r</code> immediately after scrolling
+with <code>C-v</code> or <code>M-v</code> (other option is to recenter the screen around the
+cursor - see below). I do not generally use <code>M-a</code> and <code>M-e</code> in
+text-mode but in shell mode and moving around in the minibuffer these
+keybindings are useful (they take you to the point after the (shell)
+prompt rather than the line)
+</p>
+<p>
+Another way to move around the buffer is through incremental searching (Yegge effective Emacs).
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>M-x goto-char</code></td><td class="left"><code>goto-char</code></td></tr>
+<tr><td class="left"><code>M-g g</code></td><td class="left"><code>goto-line</code></td></tr>
+<tr><td class="left"><code>C-s</code></td><td class="left"><code>isearch-forward</code></td></tr>
+<tr><td class="left"><code>C-r</code></td><td class="left"><code>isearch-backward</code></td></tr>
+<tr><td class="left"><code>C-u C-s</code></td><td class="left"><code>isearch-regexp-forward</code></td></tr>
+<tr><td class="left"><code>C-u C-r</code></td><td class="left"><code>isearch-regexp-backward</code></td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+Reposition window relative to cursor:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-l</code></td><td class="left"><code>recenter-top-bottom</code></td></tr>
+<tr><td class="left"><code>C-M-l</code></td><td class="left"><code>command-reposition-window</code></td></tr>
+<tr><td class="left"><code>M-r</code></td><td class="left"><code>move-to-window-line</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Killing and yanking</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Basic keybindings</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">unit of increment</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">character</td><td class="left"><code>DEL     (delete-backward-char)</code></td><td class="left"><code>C-d   (delete-forward-char)</code></td></tr>
+<tr><td class="left">word</td><td class="left"><code>M-DEL   (backward-kill-word)</code></td><td class="left"><code>M-d   (kill-word)</code></td></tr>
+<tr><td class="left">sentence</td><td class="left"><code>C-x DEL (backward-kill-sentence)</code></td><td class="left"><code>M-k   (kill-sentence)</code></td></tr>
+<tr><td class="left">line</td><td class="left"></td><td class="left"><code>C-k   (kill-line)</code></td></tr>
+<tr><td class="left">paragraph</td><td class="left"><code>(backward-kill-paragraph)</code></td><td class="left"><code>(kill-paragraph)</code></td></tr>
+<tr><td class="left">region</td><td class="left"></td><td class="left"><code>C-w   (kill-region)</code></td></tr>
+<tr><td class="left">buffer</td><td class="left"></td><td class="left"><code>C-x k (kill-buffer)</code></td></tr>
+<tr><td class="left">arbitrary</td><td class="left"></td><td class="left"><code>M-z   (zap-to-char)</code></td></tr>
+</tbody>
+</table>
+
+note: <code>DEL == &lt;backspace&gt;</code>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">Conservative killing and yanking</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+
+<p>
+Emacs requires a lot of keys to be pressed, some combinations of which
+will remove existing text. I try to protect myself by using these
+functions:
+</p><ul>
+<li>Set <code>(delete-selection-mode 0)</code>.
+</li>
+<li>Set <code>(setq delete-active-region nil)</code>.
+</li>
+<li>Define <code>my-kill-region</code>, rebind to <code>C-w</code>.
+</li>
+</ul>
+
+
+
+
+<pre class="src src-emacs-lisp">(global-set-key (kbd <span style="font-style: italic;">"C-w"</span>) 'my-kill-region)
+
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-kill-region</span> ()
+  (interactive)
+  <span style="font-style: italic;">"from stackoverflow"</span>
+  (<span style="font-weight: bold;">if</span> (region-active-p)
+      (call-interactively 'kill-region)
+    (message <span style="font-style: italic;">"Region not active, didn't kill"</span>)))
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Highlighting</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>Highlight by setting a mark (<code>C-SPC</code>) and then using the keybindings
+to move the cursor (point). The region between the mark and point is
+called the region (highlighted if <code>(transient-mark-mode 1)</code>) and is
+amenable to functions that operate on regions.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Search and replace</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">in the buffer</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<p>
+Criteria:
+</p><ul>
+<li>by string
+</li>
+<li>by regex
+</li>
+<li>query or no-query
+</li>
+<li>on region or on buffer (global)
+</li>
+<li>incremental or highlight
+</li>
+</ul>
+
+
+<p>
+Search:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">incremental</th><th scope="col" class="left">by region or buffer</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">string</td><td class="left"><code>isearch-forward</code>, <code>isearch-backward</code></td><td class="left">'*'</td></tr>
+<tr><td class="left">regex</td><td class="left"><code>isearch-forward</code>, <code>isearch-backward</code></td><td class="left">'*'</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Replace:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">incremental</th><th scope="col" class="left">by region or buffer</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">string</td><td class="left"><code>query-replace</code> (<code>M-%</code>)</td><td class="left"><code>replace-string</code></td></tr>
+<tr><td class="left">regex</td><td class="left"><code>query-replace-regex</code> (<code>C-M-%</code>)</td><td class="left"><code>replace-regex</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+'*' <code>search-forward</code>, <code>search-backward</code>, <code>search-forward-regexp</code>,
+<code>search-backward-regexp</code> are available (these non-incremental search
+options are seldom used.), but see <code>hi-lock-mode</code> for highlighting
+all regex matches in text.
+</p>
+<p>
+Special characters:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">character</th><th scope="col" class="left">key strokes</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">tab</td><td class="left"><code>C-q &lt;tab&gt;</code></td></tr>
+<tr><td class="left">newline</td><td class="left"><code>C-q C-j</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Highlighting search hits:
+</p>
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">emacs variables</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+
+
+
+
+<pre class="example">(setq search-highlight           t) ; Highlight search object
+(setq query-replace-highlight    t) ; Highlight query object
+(setq mouse-sel-retain-highlight t) ; Keep mouse highlighting
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">hi-lock-mode</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+
+<p>
+Invoke with <code>M-x hi-lock-mode</code>. <code>hi-lock-mode</code> is an extension of <code>font-lock-mode</code>
+and can be used to highlight certain patterns (or lines containing
+those patterns) in the buffer:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x w h /REGEXP/ &lt;RET&gt; /FACE/ &lt;RET&gt;</code></td><td class="left"><code>highlight-regexp</code></td><td class="left">highlight text matching <i>REGEXP</i> using <i>FACE</i> color (default is provided)</td></tr>
+<tr><td class="left"><code>C-x w r /REGEXP/ &lt;RET&gt;</code></td><td class="left"><code>unhighlight-regexp</code></td><td class="left">Unhighlight <i>REGEXP</i></td></tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">grep, egrep, and grep-find</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+Access these functions with the <code>M-x</code> prefix. The advantage of
+<code>grep-find</code> in particular, over the <code>find -exec grep</code> called through
+the terminal, is the value-added proposition of syntax highlighting
+and interaction (click on the entry to go to that location in the
+file, which is opened in a buffer) offered by Emacs.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Processing text in a region</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">pass region to python script</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+Use interactive <code>shell-command-on-region</code> (<code>M-|</code>) with universal
+prefix (<code>C-u</code>) argument (<code>C-u M-|</code>). Without the prefix, <code>C-u</code>,
+<code>shell-command-on-region</code> will print output to minibuffer.
+</p>
+<p>
+I create a file called <code>processtext.py</code> as an example:
+</p>
+
+
+<pre class="src src-python"><span style="font-weight: bold;">import</span> sys
+
+<span style="font-weight: bold; font-style: italic;">txt</span> = sys.stdin.read()
+sys.stdout.write(txt.replace(<span style="font-style: italic;">'\n'</span>,<span style="font-style: italic;">'\\\\\n'</span>))
+</pre>
+
+
+<p>
+Then I highlight a region of text in my emacs buffer and type <code>C-u M-|</code>; in the minibuffer I provide the shell command
+</p>
+
+
+<pre class="src src-sh">Shell command on region: python processtext.py
+</pre>
+
+
+<p>
+And the output replaces the text in the region in the current buffer.
+</p>
+<p>
+More regularly used scripts <a href="http://xahlee.org/emacs/elisp_perl_wrapper.html">can be wrapped in an emacs lisp function</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">text processing using emacs lisp</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+<p>
+The major advantages for using emacs lisp rather than <code>shell-command-on-region</code> above would be
+</p><ul>
+<li>no need to commit to a script file on the hard disk (somehow seems
+  to pose a disproportionately significant deterrent, if only mentally
+  for on-the-fly tasks)
+</li>
+<li>process text between point and mark rather than by line-by-line (or on full buffer, possibly after <code>narrow-to-region</code>)
+</li>
+<li>transform text 'under cursor' or by word, line, or sentence in
+  addition to operating on marked regions
+</li>
+</ul>
+
+
+<p>
+One disadvantage may be that some buffer-management (especially
+creation, moving, and destruction of temporary ones) may be required.
+</p>
+<p>
+Some helpful tutorials on text-processing with emacs lisp:
+</p><ul>
+<li><a href="http://xahlee.org/emacs/elisp.html">http://xahlee.org/emacs/elisp.html</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">More interactive functions</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+Most of the functionality described below are included with Emacs (except <code>hippie-expand</code>).
+</p>
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">keyboard macros</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x (</code></td><td class="left">begin</td></tr>
+<tr><td class="left"><code>C-x )</code></td><td class="left">end</td></tr>
+<tr><td class="left"><code>C-u</code> <i>NUM</i> <code>C-x e</code></td><td class="left">apply macro</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<i>NUM</i> is number of times to be repeated.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">ediff</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+<p>
+Compare two or more files: <code>M-x ediff</code>, and enter the names of files.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3">rectangle commands</h3>
+<div class="outline-text-3" id="text-4-3">
+
+
+<p>
+Delete/add "columns"/character strings in text.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x r o</code></td><td class="left"><code>open-rectangle</code></td></tr>
+<tr><td class="left"><code>C-x r d</code></td><td class="left"><code>delete-rectangle</code></td></tr>
+<tr><td class="left"><code>C-x r k</code></td><td class="left"><code>kill-rectangle</code></td></tr>
+<tr><td class="left"><code>C-x r y</code></td><td class="left"><code>yank-rectangle</code></td></tr>
+<tr><td class="left"><code>C-x r t</code></td><td class="left"><code>string-rectangle</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+CUA-mode has a more advanced version of this - especially in visual representation of the selected rectangle area, but I only enable it to enumerate columns because it hijacks my keybindings.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4">align</h3>
+<div class="outline-text-3" id="text-4-4">
+
+
+<p>
+Align text around some symbol. <code>align-regexp</code> is generally more
+flexible. Can use <code>align</code> with customized <code>align-rules-list</code> <a href="http://www.emacswiki.org/emacs/AlignCommands">for different minor-modes</a> but requires more investment up-front.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5">registers</h3>
+<div class="outline-text-3" id="text-4-5">
+
+
+<p>
+Registers can be used to store
+</p><ul>
+<li>specific points in the buffer,
+</li>
+<li>a block of text (for repeated insert), and
+</li>
+<li>window/frame configuration (see also winner-mode and elscreen)
+</li>
+</ul>
+
+
+<p>
+I use the first two functions seldom to frequently, depending on my application.
+</p>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-registers">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x r SPC</code> <i>r</i></td><td class="left"><code>point-to-register</code></td></tr>
+<tr><td class="left"><code>C-x r j</code> <i>r</i></td><td class="left"><code>jump-to-register</code></td></tr>
+<tr><td class="left"><code>C-x r s</code> <i>r</i></td><td class="left"><code>copy-to-registr</code></td></tr>
+<tr><td class="left"><code>C-x r i</code> <i>r</i></td><td class="left"><code>insert-register</code></td></tr>
+<tr><td class="left"><code>C-x r w</code> <i>r</i></td><td class="left"><code>window-configuration-to-register</code></td></tr>
+<tr><td class="left"><code>C-x r f</code> <i>r</i></td><td class="left"><code>frame-configuration-to-register</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+(Also use <code>C-x r j</code> <i>r</i> to restore window or frame
+configuration). 
+</p>
+<p>
+Registers can also be used to save rectangles and file names.
+</p>
+<p>
+Note that the <code>C-x r</code> prefix is also used for the rectangle commands.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6">expansions</h3>
+<div class="outline-text-3" id="text-4-6">
+
+
+
+</div>
+
+<div id="outline-container-4-6-1" class="outline-4">
+<h4 id="sec-4-6-1">Word expansions</h4>
+<div class="outline-text-4" id="text-4-6-1">
+
+
+<p>
+<code>dabbrev</code>, <code>autocomplete</code>, <code>hippie-expand</code>
+</p>
+<p>
+Type <code>M-/</code> to let emacs autocomplete word based on other words
+present in open buffers.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-6-2" class="outline-4">
+<h4 id="sec-4-6-2">Templates</h4>
+<div class="outline-text-4" id="text-4-6-2">
+
+
+<p>
+<a href="http://xahlee.org/emacs/emacs_templates.html">YASnippet</a> can be used to create and insert templates for a block of text (code) you often use.
+</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>
