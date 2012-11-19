@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Project organization and structure</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Project organization and structure"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-19T01:11+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Project organization and structure</h1>
+
+<p>This page describes how I manage my files and directories for each project.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Directory structure</a></li>
+<li><a href="#sec-2">Using relative paths</a></li>
+<li><a href="#sec-3">Archival</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Directory structure</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+In my <code>~/Documents/</code> folder, I have professional and personal documents groups under subdirectories <code>Work/</code> and <code>Personal/</code>, respectively. Within <code>Work/</code>, I have the work grouped by institution (<code>CMU/</code>, <code>UCSD/</code>, <code>EPFL/</code>). Taking <code>UCSD/</code> as an example, I have a subdirectory <code>projects/</code>, in which I maintain separate subdirectories for projects in progress (e.g., <code>CalMex/</code>, <code>SmogChamber/</code>, <code>Whistler/</code>). Within each project directory (which I will denote as "<code>./</code>"), I have a set of subdirectories that serve specific purposes:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Directory</th><th scope="col" class="left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>./correspondence/</code></td><td class="left">notable correspondence from/with collaborators</td></tr>
+<tr><td class="left"><code>./data/</code></td><td class="left">data accessible for programs and reports</td></tr>
+<tr><td class="left"><code>./lib/</code></td><td class="left">initially empty; snapshot of the global library will be placed here upon archival</td></tr>
+<tr><td class="left"><code>./paper/</code></td><td class="left">can optionally be plural if multiple publications are to be expected from the project</td></tr>
+<tr><td class="left"><code>./presentations/</code></td><td class="left">repository for presentations</td></tr>
+<tr><td class="left"><code>./programs/</code></td><td class="left">programs typically downloaded from elguapo svn (e.g., ftir, stxm, pscf, pmf_nt)</td></tr>
+<tr><td class="left"><code>./reports/</code></td><td class="left">"reports" summary documents, and one-off calculations</td></tr>
+</tbody>
+</table>
+
+
+<p>
+An example of sub-hierarchies within each subdirectory (defined relative to <code>./</code>, the top-level project directory) is illustrated below:
+</p><ul>
+<li><code>./correspondence/</code>
+<ul>
+<li><code>Person1/</code>
+</li>
+<li><code>Person2/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+<li><code>./data/</code>
+<ul>
+<li><code>lognotes/</code>
+</li>
+<li><code>ftir/</code>
+</li>
+<li><code>stxm/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+<li><code>./paper/</code>
+<ul>
+<li><code>version1/</code>
+</li>
+<li><code>version2/</code>
+</li>
+<li><code>submitted/</code>
+</li>
+<li><code>revised/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+<li><code>./presentations/</code>
+<ul>
+<li><code>YYYY_AAAR/</code>
+</li>
+<li><code>YYYY_AGU/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+<li><code>./programs/</code>
+<ul>
+<li><code>lib/</code>
+</li>
+<li><code>ftir/</code>
+</li>
+<li><code>stxm/</code>
+</li>
+<li><code>pscf/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+<li><code>./reports/</code>
+<ul>
+<li><code>01topic/</code>
+</li>
+<li><code>02topic/</code>
+</li>
+<li><code>...</code>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>
+In addition to the subdirectories listed above, I have a set of user-defined libraries common to all projects in my <code>$HOME</code> directory, denoted as <code>~/lib/</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Using relative paths</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+With the exception of <code>~/lib/</code>, I use relative paths to access data from programs (i.e., the working directory for each interpreter &ndash; R, Python, Matlab, etc. is the directory in which the script is located). For example, the location of the <code>.DPT</code> files (contained in <code>./data/ftir/</code>) relative to the <code>./programs/ftir/</code> directory is <code>../../data/ftir/</code>; the location of the <code>.xim</code> files (contained in <code>./data/stxm/</code>) relative to the <code>./programs/stxm/</code> directory is <code>../../data/stxm/</code>; libraries specific to this project can be loaded from <code>../lib/</code> (not to be confused with <code>~/lib/</code>). 
+</p>
+<p>
+Some prefer to maintain a single workspace from which all project files are accessed (not all at once) &mdash; e.g., by setting <code>default-ess-directory</code> in Emacs to <code>~/Documents/MyRwork</code>. If this is done, all paths in scripts are defined relative to this default directory (or at this point might consider absolute paths, which would be difficult to edit later).
+</p>
+<p>
+So using local working directories (instead of the single workspace) can produce project folders containing a series of (mostly) self-contained scripts. For instance, scripts in a <code>./reports/</code> subdirectory, e.g. <code>./reports/01first-ftir-analysis/script.r</code> (I begin the name of each subdirectory of <code>./reports/</code> with two integers to establish the chronology of work &mdash; and sorted alpha-numerically in this way &mdash; permitting same or similar <i>topic</i> labels during different phases of the projects), can access the same <code>.DPT</code> files as aforementioned programs with the relative path designation of <code>../../data/ftir/</code>, or an output of the ftir program with the relative path designation of <code>../../programs/ftir/outputs/</code>; libraries shared by this project can be loaded from <code>../../programs/lib/</code>. The only set of scripts not contained in this project folder are those located in the <code>~/lib/</code> directory.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Archival</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+After completing the project, I will move the project directory to a separate directory called <code>~/Documents/Archive/YYYY_{projectname}</code> (partly so that the project can be stored in a self-contained directory on a separate hard-drive). Using relative paths in scripts and programs (as described above) makes the transition simple. At the time of project archival, I will also copy a snapshot of the global <code>~/lib/</code> library into the archived project directory. This library can be loaded by setting <code>$HOME</code> to project directory (which will now contain the original library, <code>~/lib/</code>, as an immediate subdirectory, <code>./lib/</code>). For instance, if the library is archived together with the rest of the project as <code>~/Documents/Archive/{projectname}/lib/</code>, then <code>export HOME=Archive/projectname</code> in a bash shell should be sufficient, and the contents of the library can accessed with <code>~/lib/</code> in R and Matlab, or <code>os.path.join(os.environ['HOME'],'lib')</code> [and, alternatively, =os.path.expanduser('~/lib')=] in Python.
+</p></div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>
