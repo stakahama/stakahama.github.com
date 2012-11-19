@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Project organization and structure"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-19T01:52+0100"/>
+<meta name="generated" content="2012-11-19T01:59+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -103,7 +103,7 @@
 <li><a href="#sec-1">Directory structure</a></li>
 <li><a href="#sec-2">Using relative paths</a></li>
 <li><a href="#sec-3">Archival</a></li>
-<li><a href="#sec-4">Larger files maintained in a separate repository</a></li>
+<li><a href="#sec-4">When larger data files are maintained in a separate repository</a></li>
 </ul>
 </div>
 </div>
@@ -248,19 +248,29 @@ So using local working directories (instead of the single workspace) can produce
 
 
 <p>
-After completing the project, I will move the project directory to a separate directory called <code>~/Documents/Archive/YYYY_{projectname}</code> (partly so that the project can be stored in a self-contained directory on a separate hard-drive). Using relative paths in scripts and programs (as described above) makes the transition simple. At the time of project archival, I will also copy a snapshot of the global <code>~/lib/</code> library into the archived project directory. This library can be loaded by setting <code>$HOME</code> to project directory (which will now contain the original library, <code>~/lib/</code>, as an immediate subdirectory, <code>./lib/</code>). For instance, if the library is archived together with the rest of the project as <code>~/Documents/Archive/{projectname}/lib/</code>, then <code>export HOME=Archive/projectname</code> in a bash shell should be sufficient, and the contents of the library can accessed with <code>~/lib/</code> in R and Matlab, or <code>os.path.join(os.environ['HOME'],'lib')</code> [and, alternatively, =os.path.expanduser('~/lib')=] in Python.
+After completing the project, I will move the project directory to a separate directory called <code>~/Documents/Archive/YYYY_{projectname}</code> (partly so that the project can be stored in a self-contained directory on a separate hard-drive). Using relative paths in scripts and programs (as described above) makes the transition simple. At the time of project archival, I will also copy a snapshot of the global <code>~/lib/</code> library into the archived project directory. This library can be loaded by setting <code>$HOME</code> to project directory (which will now contain the original library, <code>~/lib/</code>, as an immediate subdirectory, <code>./lib/</code>). For instance, if the library is archived together with the rest of the project as <code>~/Documents/Archive/{YYYY_projectname}/lib/</code>, then executing the command,
+</p>
+
+
+<pre class="src src-sh">$ export <span style="font-weight: bold; font-style: italic;">HOME</span>=~/Documents/Archive/{YYYY_projectname}
+</pre>
+
+<p>
+in a bash shell should be sufficient, and the contents of the library can accessed with <code>~/lib/</code> in R and Matlab, or <code>os.path.join(os.environ['HOME'],'lib')</code> [alternatively,  
+<code>os.path.expanduser('~/lib')</code>
+] in Python.
 </p>
 </div>
 
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Larger files maintained in a separate repository</h2>
+<h2 id="sec-4">When larger data files are maintained in a separate repository</h2>
 <div class="outline-text-2" id="text-4">
 
 
 <p>
-With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but for me it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ~/tmp/md/runs/ ./runs</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
+With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but sometimes it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ~/tmp/md/runs/ ./runs</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
 </p>
 </div>
 </div>
