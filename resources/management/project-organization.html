@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Project organization and structure"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-19T01:11+0100"/>
+<meta name="generated" content="2012-11-19T01:51+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -93,7 +93,7 @@
 <div id="content">
 <h1 class="title">Project organization and structure</h1>
 
-<p>This page describes how I manage my files and directories for each project.
+<p>This page describes how I manage my files and directories for each project. The notation "<code>~/</code>" indicates the user's home directory, and "<code>./</code>" indicates a project directory.
 </p>
 
 <div id="table-of-contents">
@@ -103,6 +103,7 @@
 <li><a href="#sec-1">Directory structure</a></li>
 <li><a href="#sec-2">Using relative paths</a></li>
 <li><a href="#sec-3">Archival</a></li>
+<li><a href="#sec-4">Larger files maintained in a separate repository</a></li>
 </ul>
 </div>
 </div>
@@ -113,7 +114,7 @@
 
 
 <p>
-In my <code>~/Documents/</code> folder, I have professional and personal documents groups under subdirectories <code>Work/</code> and <code>Personal/</code>, respectively. Within <code>Work/</code>, I have the work grouped by institution (<code>CMU/</code>, <code>UCSD/</code>, <code>EPFL/</code>). Taking <code>UCSD/</code> as an example, I have a subdirectory <code>projects/</code>, in which I maintain separate subdirectories for projects in progress (e.g., <code>CalMex/</code>, <code>SmogChamber/</code>, <code>Whistler/</code>). Within each project directory (which I will denote as "<code>./</code>"), I have a set of subdirectories that serve specific purposes:
+In my <code>~/Documents/</code> folder, I have professional and personal documents groups under subdirectories <code>Work/</code> and <code>Personal/</code>, respectively. Within <code>Work/</code>, I have the work grouped by institution (<code>CMU/</code>, <code>UCSD/</code>, <code>EPFL/</code>). Taking <code>UCSD/</code> as an example, I have a subdirectory <code>projects/</code>, in which I maintain separate subdirectories for projects in progress (e.g., <code>CalMex/</code>, <code>SmogChamber/</code>, <code>Whistler/</code>). Within each project directory ("<code>./</code>"), I have a set of subdirectories that serve specific purposes:
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
@@ -248,7 +249,20 @@ So using local working directories (instead of the single workspace) can produce
 
 <p>
 After completing the project, I will move the project directory to a separate directory called <code>~/Documents/Archive/YYYY_{projectname}</code> (partly so that the project can be stored in a self-contained directory on a separate hard-drive). Using relative paths in scripts and programs (as described above) makes the transition simple. At the time of project archival, I will also copy a snapshot of the global <code>~/lib/</code> library into the archived project directory. This library can be loaded by setting <code>$HOME</code> to project directory (which will now contain the original library, <code>~/lib/</code>, as an immediate subdirectory, <code>./lib/</code>). For instance, if the library is archived together with the rest of the project as <code>~/Documents/Archive/{projectname}/lib/</code>, then <code>export HOME=Archive/projectname</code> in a bash shell should be sufficient, and the contents of the library can accessed with <code>~/lib/</code> in R and Matlab, or <code>os.path.join(os.environ['HOME'],'lib')</code> [and, alternatively, =os.path.expanduser('~/lib')=] in Python.
-</p></div>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Larger files maintained in a separate repository</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but for me it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ./runs ~/tmp/md/runs/</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
+</p>
+</div>
 </div>
 </div>
 
