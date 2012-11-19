@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Project organization and structure"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-19T01:51+0100"/>
+<meta name="generated" content="2012-11-19T01:52+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -260,7 +260,7 @@ After completing the project, I will move the project directory to a separate di
 
 
 <p>
-With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but for me it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ./runs ~/tmp/md/runs/</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
+With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but for me it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ~/tmp/md/runs/ ./runs</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
 </p>
 </div>
 </div>
