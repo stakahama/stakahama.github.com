@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Editing text"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-17T20:03+0100"/>
+<meta name="generated" content="2013-01-08T13:57+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -637,8 +637,22 @@ Delete/add "columns"/character strings in text.
 
 
 <p>
-CUA-mode has a more advanced version of this - especially in visual representation of the selected rectangle area, but I only enable it to enumerate columns because it hijacks my keybindings.
+CUA-mode has a more advanced version of this&ndash;especially in visual representation of the selected rectangle area, but I only enable it to enumerate columns because it otherwise hijacks my keybindings.
 </p>
+<ol>
+<li>Enable CUA mode (<code>M-x cua-mode</code>)
+</li>
+<li>highlight a single(?) column. 
+</li>
+<li><code>C-&lt;return&gt;</code>
+</li>
+<li><code>M-n</code> (for seq, not <code>M-i</code> for incr); enter arguments/parameters
+</li>
+<li>Disable CUA mode (<code>M-x cua-mode</code>)
+</li>
+</ol>
+
+
 </div>
 
 </div>

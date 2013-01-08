@@ -1,0 +1,19 @@
+#+TITLE: Preparing slides
+
+Each lecture will be prepared as
+
+CourseName/
+- preamble.tex
+- figures/
+  + figure1.png
+  + figure2.png
+  + sources.org
+- lecture01.tex
+- lecture01_includefile.tex
+- lecture02.tex
+- lecture02_includefile.tex
+
+Additional tools:
+- ImageMagick to convert figures to png
+- Adobe Illustrator to annotate
+
