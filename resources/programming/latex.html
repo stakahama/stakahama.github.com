@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>LaTeX</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="LaTeX"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-01-26T13:00+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">LaTeX</h1>
+
+<p>Need to add references to original sources.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">General</a></li>
+<li><a href="#sec-2">Beamer</a></li>
+<li><a href="#sec-3">Biblatex</a></li>
+<li><a href="#sec-4">Natbib and bibtex</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">General</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+Use
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">subdepth</span>}
+</pre>
+
+<p>
+for consistent subscript size.
+</p>
+<p>
+Colors
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[usenames]{<span style="font-weight: bold;">color</span>}
+<span style="font-weight: bold;">\xdefinecolor</span>{darkred}{rgb}{0.545,0,0}
+<span style="font-weight: bold;">\xdefinecolor</span>{midnightblue}{rgb}{0.098,0.098,0.439}
+<span style="font-weight: bold;">\xdefinecolor</span>{steelblue}{rgb}{0.275,0.510,0.706}
+<span style="font-weight: bold;">\xdefinecolor</span>{blendedblue}{rgb}{0.2,0.2,0.7}
+</pre>
+
+
+<p>
+Wrapped columns in tables; left-justified <code>P{}</code> and centered <code>C{}</code>. Otherwise like <code>p{}</code> and <code>c{}</code>.
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">array</span>}
+<span style="font-weight: bold;">\newcolumntype</span>{P}[1]{&gt;{<span style="font-weight: bold;">\raggedright\arraybackslash</span>}p{#1}}
+<span style="font-weight: bold;">\newcolumntype</span>{C}[1]{&gt;{<span style="font-weight: bold;">\centering\arraybackslash</span>}p{#1}}
+</pre>
+
+
+<p>
+Spacing: horizontal space <code>1em</code>, vertical space <code>1ex</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Beamer</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+Add section title in footers <a href="http://www.latex-community.org/forum/viewtopic.php?f=5&amp;t=10735">ref</a>.
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usetheme</span>{Boadilla}
+<span style="font-weight: bold;">\usecolortheme</span>{whale}
+<span style="font-weight: bold;">\defbeamertemplate*</span>{footline}{my infolines theme} 
+{
+  <span style="font-weight: bold;">\leavevmode</span><span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\hbox</span>{<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,center]{author in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\usebeamerfont</span>{author in head/foot}<span style="font-weight: bold;">\insertshortauthor</span>~~(<span style="font-weight: bold;">\insertshortinstitute</span>)
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,center]{title in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\usebeamerfont</span>{title in head/foot}<span style="font-weight: bold;">\insertsectionhead</span>
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,right]{date in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\usebeamerfont</span>{date in head/foot}<span style="font-weight: bold;">\insertshortdate</span>{}<span style="font-weight: bold;">\hspace*</span>{2em}
+    <span style="font-weight: bold;">\insertframenumber</span>{} / <span style="font-weight: bold;">\inserttotalframenumber\hspace*</span>{2ex}
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}}<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\vskip</span>0pt<span style="font-weight: bold; font-style: italic;">%</span>
+}
+<span style="font-weight: bold;">\setbeamertemplate</span>{blocks}[default]
+</pre>
+
+
+<p>
+<i>Spacing</i>. <code>\hspace</code> and <code>\vspace</code> only modify positions of objects contained in boxes (e.g., <code>minipage</code> environment)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Biblatex</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Call
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[sorting=nyt, 
+    citestyle=authoryear, 
+    bibstyle=ieee, 
+    maxcitenames=2, 
+    maxbibnames=99, 
+    backend=biber, 
+    block=none, 
+    natbib
+]{<span style="font-weight: bold;">biblatex</span>}
+</pre>
+
+
+<p>
+Alphabetical reference list; no numbering
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\defbibenvironment</span>{bibliography}
+{<span style="font-weight: bold;">\list</span>
+  {}
+  {<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\leftmargin</span>}{<span style="font-weight: bold;">\bibhang</span>+1em}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemindent</span>}{-<span style="font-weight: bold;">\leftmargin</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemsep</span>}{<span style="font-weight: bold;">\bibitemsep</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\parsep</span>}{<span style="font-weight: bold;">\bibparsep</span>}}}
+{<span style="font-weight: bold;">\endlist</span>}
+{<span style="font-weight: bold;">\item</span>}
+</pre>
+
+
+<p>
+Create doi links in bibliography.
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">\string~/git/projects/bibfile/references</span>}
+<span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{url=false,eprint=false}
+<span style="font-weight: bold;">\newbibmacro</span>{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\iffieldundef</span>{doi}{#1}{<span style="font-weight: bold;">\href</span>{http://dx.doi.org/<span style="font-weight: bold;">\thefield</span>{doi}}{#1}}}
+<span style="font-weight: bold;">\DeclareFieldFormat</span>{doi}{<span style="font-weight: bold;">\usebibmacro</span>{string+doi}{doi:#1}}
+</pre>
+
+
+<p>
+Change bibliography title
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\printbibliography</span>[title=Bibliography]
+</pre>
+
+
+<p>
+No bibliography title
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{}
+<span style="font-weight: bold;">\vspace</span>{-5ex}
+<span style="font-weight: bold;">\printbibliography</span>
+</pre>
+
+
+<p>
+Multiple bibliographies
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">Section 1</span>}
+<span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">refsection</span>}
+<span style="font-weight: bold;">\nocite</span>{<span style="font-weight: bold; text-decoration: underline;">*</span>}
+<span style="font-weight: bold;">\vspace</span>{-5ex}
+<span style="font-weight: bold;">\printbibliography</span>[title=<span style="font-weight: bold;">\sectiontitle</span>]
+<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">refsection</span>}
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Natbib and bibtex</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Don't print reference title
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{<span style="font-weight: bold;">\subsubsection*</span>{<span style="font-weight: bold;">\bibname </span>}}
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>
