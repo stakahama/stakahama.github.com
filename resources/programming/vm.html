@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>vm</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="vm"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-02-28 11:42:01 CET"/>
+<meta name="generated" content="2013-02-28T11:47+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -59,7 +59,7 @@
   .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
                                  font-weight:bold; }
   /*]]>*/-->
-</style>
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
@@ -98,13 +98,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Install Ubuntu Linux as guest</a></li>
+<li><a href="#sec-1">Install Ubuntu Linux as guest</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Install Ubuntu Linux as guest</h2>
+<h2 id="sec-1">Install Ubuntu Linux as guest</h2>
 <div class="outline-text-2" id="text-1">
 
 
@@ -112,16 +112,25 @@
 Taken from reference <a href="http://askubuntu.com/questions/45594/where-is-virtualbox-shared-folders-mounted-in-a-virtual-guest">this forum</a>:
 </p>
 <p>
-Run <code>/media/VBOXADDITIONS_*/VBoxLinuxAdditions.run</code> to install (if you update packages, you may have to rerun it).
+Run 
 </p>
 
 
 
-<pre class="src src-sh"><span style="color: #ff6347;">sharename</span>=VirtualBoxDocuments <span style="color: #ad7fa8; font-style: italic;">\</span>
-<span style="color: #ff6347;">mountpoint</span>=~/$<span style="color: #ff6347;">sharename</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
-sudo mkdir $<span style="color: #ff6347;">mountpoint</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
-sudo chmod 777 $<span style="color: #ff6347;">mountpoint</span> <span style="color: #ad7fa8; font-style: italic;">\ </span><span style="color: #888a85;">##</span><span style="color: #888a85;">important, otherwise error: "not a block device"</span>
-sudo mount -t vboxsf -o <span style="color: #ff6347;">uid</span>=1000,<span style="color: #ff6347;">gid</span>=1000 $<span style="color: #ff6347;">sharename</span> $<span style="color: #ff6347;">mountpoint</span>
+<pre class="src src-sh">sudo /media/VBOXADDITIONS_*/VBoxLinuxAdditions.run
+</pre>
+
+<p>
+(replace * with actual identifier) to install. If you update packages, you may have to rerun it.
+</p>
+
+
+
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">sharename</span>=VirtualBoxDocuments &amp;&amp; <span style="font-style: italic;">\</span>
+<span style="font-weight: bold; font-style: italic;">mountpoint</span>=~/$<span style="font-weight: bold; font-style: italic;">sharename</span> &amp;&amp; <span style="font-style: italic;">\</span>
+sudo mkdir $<span style="font-weight: bold; font-style: italic;">mountpoint</span> &amp;&amp; <span style="font-style: italic;">\</span>
+sudo chmod 777 $<span style="font-weight: bold; font-style: italic;">mountpoint</span> &amp;&amp; <span style="font-style: italic;">\ </span><span style="font-weight: bold; font-style: italic;">##</span><span style="font-weight: bold; font-style: italic;">important, otherwise error: "not a block device"</span>
+sudo mount -t vboxsf -o <span style="font-weight: bold; font-style: italic;">uid</span>=1000,<span style="font-weight: bold; font-style: italic;">gid</span>=1000 $<span style="font-weight: bold; font-style: italic;">sharename</span> $<span style="font-weight: bold; font-style: italic;">mountpoint</span>
 </pre>
 
 
@@ -131,7 +140,7 @@ For the above command if you get error as
 
 
 
-<pre class="src src-sh">mount: unknown filesystem type <span style="color: #ad7fa8; font-style: italic;">'vboxsf'</span>
+<pre class="src src-sh">mount: unknown filesystem type <span style="font-style: italic;">'vboxsf'</span>
 </pre>
 
 
@@ -144,7 +153,7 @@ If you want to have it mount automatically upon each boot, put the mount command
 
 
 
-<pre class="src src-sh">sudo mount -t vboxsf -o <span style="color: #ff6347;">uid</span>=1000,<span style="color: #ff6347;">gid</span>=1000 $<span style="color: #ff6347;">sharename</span> $<span style="color: #ff6347;">mountpoint</span>
+<pre class="src src-sh">sudo mount -t vboxsf -o <span style="font-weight: bold; font-style: italic;">uid</span>=1000,<span style="font-weight: bold; font-style: italic;">gid</span>=1000 $<span style="font-weight: bold; font-style: italic;">sharename</span> $<span style="font-weight: bold; font-style: italic;">mountpoint</span>
 </pre>
 
 </div>
@@ -152,11 +161,8 @@ If you want to have it mount automatically upon each boot, put the mount command
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-02-28 11:42:01 CET</p>
-<p class="author">Author: Satoshi Takahama</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
 </div>
 </body>
 </html>
