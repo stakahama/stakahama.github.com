@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Software"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-02T13:34+0100"/>
+<meta name="generated" content="2013-11-05T23:49+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -99,6 +99,7 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">Package managers on Mac</a></li>
+<li><a href="#sec-2">Fortran on Mac</a></li>
 </ul>
 </div>
 </div>
@@ -114,20 +115,36 @@ Three main package managers for third-party software for Mac are Homebrew, Macpo
 <p>
 Homebrew apparently uses modern tools which make <a href="https://news.ycombinator.com/item?id=4765813">writing package installers</a> (using Ruby) more easy than Macports&ndash;but for a person heavy on the user end, Macports is more than sufficient. Though it's not ideal that Macports installs duplicate libraries which come with OS X, hard disk space is (relatively) cheap and the number of packages offered by Macports makes it a practical choice. Here are some things I install with Macports:
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Fortran on Mac</h2>
+<div class="outline-text-2" id="text-2">
 
 
 <p>
-Fortran on Mac
+Install fortran-only gcc from this site:
+<a href="http://hpc.sourceforge.net/">http://hpc.sourceforge.net/</a>
 </p>
 <p>
-Install gcc from this site:
-<a href="http://hpc.sourceforge.net/">http://hpc.sourceforge.net/</a>
+To install in <code>/usr/local</code> directories,
+</p>
+
+
+
+<pre class="src src-sh">sudo tar xvfz [tar-file] -C /
+</pre>
+
+
+<p>
+More <a href="http://web.mit.edu/mfloyd/www/computing/mac/gfortran/">here</a>.
 </p>
 <p>
 There will likely be two other gcc's (one from Apple and the other from Macports). Additional information:
 <a href="http://scicomp.stackexchange.com/questions/2469/how-should-i-install-a-fortran-compiler-on-a-mac-os-x-10-x-x-4">http://scicomp.stackexchange.com/questions/2469/how-should-i-install-a-fortran-compiler-on-a-mac-os-x-10-x-x-4</a>
 </p>
-
 </div>
 </div>
 </div>

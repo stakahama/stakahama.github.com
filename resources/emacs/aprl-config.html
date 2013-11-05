@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Frequently-used keybindings in aprl-emacs configuration</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Frequently-used keybindings in aprl-emacs configuration"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-11-05T23:53+0100"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="css/worg-zenburn_modified.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Frequently-used keybindings in aprl-emacs configuration</h1>
+
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">all (or most) modes</a></li>
+<li><a href="#sec-2">ido-mode</a></li>
+<li><a href="#sec-3">python-mode</a></li>
+<li><a href="#sec-4">ess-mode</a></li>
+<li><a href="#sec-5">elscreen</a></li>
+<li><a href="#sec-6">outline-minor-mode</a></li>
+<li><a href="#sec-7">folding-mode</a></li>
+<li><a href="#sec-8">unix tools from the minibuffer</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">all (or most) modes</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">C-c ;</td><td class="left">(comment-region)</td></tr>
+<tr><td class="left">C-u C-c ;</td><td class="left">(uncomment-region)</td></tr>
+<tr><td class="left">C-M-\</td><td class="left">(indent-region)</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>C-c ;</code> toggles comments in auctex.
+</li>
+<li><code>(indent-region)</code> invokes "smart indent" in most modes.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">ido-mode</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+The minibuffer seems busy at first, but will soon make sense. Flex
+matching is enabled <code>(setq ido-enable-flex-matching t)</code> for more
+powerful matching (e.g., "reppdf" will match "report.pdf").
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">ido elisp function</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">TAB</td><td class="left">(ido-complete)</td><td class="left">completion</td></tr>
+<tr><td class="left">RET</td><td class="left"></td><td class="left">select</td></tr>
+<tr><td class="left">C-f</td><td class="left">(ido-fallback-command)</td><td class="left">exit ido-mode</td></tr>
+<tr><td class="left">C-b</td><td class="left">(ido-enter-buffer)</td><td class="left">search for buffers</td></tr>
+<tr><td class="left">C-d</td><td class="left">(ido-enter-dired)</td><td class="left">enter dired query</td></tr>
+<tr><td class="left">C-e</td><td class="left">(ido-edit-input)</td><td class="left">edit matched text</td></tr>
+<tr><td class="left">C-j</td><td class="left">(ido-select-text)</td><td class="left">commit to non-matching entry</td></tr>
+<tr><td class="left">C-s</td><td class="left">(ido-next-match)</td><td class="left">cycle forward</td></tr>
+<tr><td class="left">C-r</td><td class="left">(ido-prev-match)</td><td class="left">cycle backward</td></tr>
+<tr><td class="left">C-k</td><td class="left"></td><td class="left">kill file or buffer at head</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">python-mode</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">C-c !</td><td class="left">(py-shell)</td></tr>
+<tr><td class="left">C-c C-l</td><td class="left">(py-shift-region-left)</td></tr>
+<tr><td class="left">C-c C-r</td><td class="left">(py-shift-region-right)</td></tr>
+<tr><td class="left">C-c C-p</td><td class="left">(py-execute-paragraph)</td></tr>
+<tr><td class="left">C-c</td><td class="left">(py-execute-region)</td></tr>
+<tr><td class="left">C-&lt;return&gt;</td><td class="left">(py-execute-region)</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">ess-mode</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+Can also invoke on a buffer with <code>M-x r-mode</code>.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">C-c R</td><td class="left">(ess-start-R)</td></tr>
+<tr><td class="left">C-u C-c R</td><td class="left">(ess-start-R 'arg)</td></tr>
+<tr><td class="left">C-c C-j</td><td class="left">(ess-eval-line)</td></tr>
+<tr><td class="left">C-c C-n</td><td class="left">(ess-eval-line-and-step)</td></tr>
+<tr><td class="left">C-c C-r</td><td class="left">(ess-eval-region)</td></tr>
+<tr><td class="left">C-&lt;enter&gt;</td><td class="left">(ess-eval-region)</td></tr>
+<tr><td class="left">C-c C-p</td><td class="left">(ess-eval-paragraph-and-step)</td></tr>
+<tr><td class="left">C-c C-b</td><td class="left">(ess-eval-buffer)</td></tr>
+<tr><td class="left">C-c p</td><td class="left">(ess-op-fig)</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">elscreen</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<p>
+Sometimes when you resize the buffer with multiple screens, the buffer will flicker with certain keystrokes. Reset with <code>C-z r</code>.
+</p>
+<p>
+If you want to manage many layouts through frames rather than screens, you can use the default frame keybindings, or cycle through them with <code>C-c o</code> (on a Mac, Command-` also works).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">outline-minor-mode</h2>
+<div class="outline-text-2" id="text-6">
+
+
+<p>
+Enabled for most major modes that we use.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">M-[ a</td><td class="left">(show-all)</td></tr>
+<tr><td class="left">M-[ t</td><td class="left">(hide-body)</td></tr>
+<tr><td class="left">M-[ e</td><td class="left">(show-entry)</td></tr>
+<tr><td class="left">M-[ c</td><td class="left">(hide-entry)</td></tr>
+<tr><td class="left">M-[ s</td><td class="left">(show-subtree)</td></tr>
+<tr><td class="left">M-[ d</td><td class="left">(hide-subtree)</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">folding-mode</h2>
+<div class="outline-text-2" id="text-7">
+
+
+<p>
+Enabled for most major modes that we use. In contrast to outline mode, I use this to hide "scratch" code I no longer need but don't want to delete or move to a separate scratch file.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">M-] s</td><td class="left">(folding-show-current-entry)</td></tr>
+<tr><td class="left">M-] x</td><td class="left">(folding-hide-current-entry)</td></tr>
+<tr><td class="left">M-] t</td><td class="left">(folding-show-all)</td></tr>
+<tr><td class="left">M-] &gt;</td><td class="left">(folding-shift-in)</td></tr>
+<tr><td class="left">M-] &lt;</td><td class="left">(folding-shift-out)</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>(folding-shift-in)</code> only shows only folded region, and <code>(folding-shift-out)</code> escapes back to view of main buffer.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8">unix tools from the minibuffer</h2>
+<div class="outline-text-2" id="text-8">
+
+
+<ul>
+<li><code>M-x rgrep</code>
+</li>
+<li><code>M-x find-lisp</code> [=(require 'find-lisp)= is found in <code>aprl-misc-settings.el</code> file]
+</li>
+<li><code>M-x shell-command</code> (also <code>M-!</code>)
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

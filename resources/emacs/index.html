@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Emacs"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-02T13:37+0100"/>
+<meta name="generated" content="2013-11-05T23:53+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -93,6 +93,18 @@
 <div id="content">
 <h1 class="title">Emacs</h1>
 
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+
 
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
@@ -112,8 +124,7 @@
 
 <p>
 <code>C</code> here denotes the <code>&lt;control&gt;</code> key, and <code>M</code> denotes the meta key (either <code>&lt;alt&gt;</code> or <code>&lt;escape&gt;</code>).
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
@@ -123,19 +134,61 @@
 <tbody>
 <tr><td class="left">open/create file</td><td class="left">C-x C-f</td><td class="left">(find-file)</td></tr>
 <tr><td class="left">save</td><td class="left">C-x C-s</td><td class="left">(save-buffer)</td></tr>
+<tr><td class="left">save as</td><td class="left">C-x C-w</td><td class="left">(write-file)</td></tr>
+<tr><td class="left">escape/stop</td><td class="left">C-g</td><td class="left">(keyboard-quit)</td></tr>
+<tr><td class="left">undo</td><td class="left">C-x u</td><td class="left">(undo)</td></tr>
 <tr><td class="left">copy</td><td class="left">M-w</td><td class="left">(kill-ring-save)</td></tr>
 <tr><td class="left">paste</td><td class="left">C-y</td><td class="left">(yank)</td></tr>
-<tr><td class="left">undo</td><td class="left">C-x u</td><td class="left">(undo)</td></tr>
+<tr><td class="left">read-only (toggle)</td><td class="left">C-x C-q</td><td class="left">(toggle-read-only)</td></tr>
 <tr><td class="left">exit</td><td class="left">C-x C-c</td><td class="left">(save-buffers-kill-terminal)</td></tr>
 </tbody>
 </table>
-
 
 
 <ul>
 <li>Arrow keys also often work for navigation.
 </li>
 <li><code>&lt;shift&gt;</code> + arrow keys also work for highlighting, but you can also highlight regions by pressing <code>C-&lt;space&gt;</code> before and after cursor movement.
+</li>
+</ul>
+
+
+<p>
+Help:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">describe function</td><td class="left">C-h f</td><td class="left">(describe-function)</td></tr>
+<tr><td class="left">describe variable</td><td class="left">C-h v</td><td class="left">(describe-function)</td></tr>
+<tr><td class="left">display documentation of the function invoked by keystrokes</td><td class="left">C-h k</td><td class="left">(describe-key)</td></tr>
+<tr><td class="left">show a list of all defined keys, and their definitions</td><td class="left">C-h b</td><td class="left">(describe-bindings)</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Lists
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">list buffers</td><td class="left">C-x b</td><td class="left">(list-buffers)</td></tr>
+<tr><td class="left">list files in directory</td><td class="left">C-x d</td><td class="left">(dired)</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>(ibuffers)</code> is more powerful than <code>(list-buffers)</code> so I have this rebound.
 </li>
 </ul>
 
@@ -272,8 +325,17 @@ Management
 <tr><td class="left">delete</td><td class="left"></td><td class="left">C-x 5 0</td><td class="left">C-z k</td></tr>
 <tr><td class="left">kill-buffer <i>and</i> delete window/screen</td><td class="left">C-x 4 0</td><td class="left"></td><td class="left">C-z M-k</td></tr>
 <tr><td class="left">delete others</td><td class="left">C-x 4 1</td><td class="left">C-x 5 1</td><td class="left">C-z K</td></tr>
+<tr><td class="left">other</td><td class="left">C-x o</td><td class="left">C-x 5 o</td><td class="left">C-z p, C-z n</td></tr>
 </tbody>
 </table>
+
+
+<ul>
+<li><code>C-x o</code> takes a prefix argument of <i>COUNT</i>, which is the number of windows to move forward/backward (<i>-n</i> to <i>n</i>).
+</li>
+<li>I have mapped <code>C-c o</code> for switching among frames; <code>C-u C-c o</code> will move through frames in the opposite direction (akin to Command-` and Shift-Command-` or Alt-` and Shift-Alt-` allowed by the OS).
+</li>
+</ul>
 
 
 <p>
@@ -283,10 +345,10 @@ Common tasks
 <colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">function</th><th scope="col" class="left"></th><th scope="col" class="left">-other-window</th><th scope="col" class="left">-other-frame</th><th scope="col" class="left">elscreen-</th></tr>
+<tr><th scope="col" class="left">function</th><th scope="col" class="left">current window</th><th scope="col" class="left">-other-window</th><th scope="col" class="left">-other-frame</th><th scope="col" class="left">elscreen-</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">find-file</td><td class="left">C-x C-f</td><td class="left">C-x 4 C-f, C-x 4 f</td><td class="left">C-x 5 C-f, C-x 5 f</td><td class="left">C-z C-f, C-z f</td></tr>
+<tr><td class="left">find-file</td><td class="left">C-x C-f</td><td class="left">C-x 4 C-f or C-x 4 f</td><td class="left">C-x 5 C-f or C-x 5 f</td><td class="left">C-z C-f or C-z f</td></tr>
 <tr><td class="left">find-file-read-only</td><td class="left">C-x C-r</td><td class="left">C-x 4 r</td><td class="left">C-x 5 r</td><td class="left">C-z C-r</td></tr>
 <tr><td class="left">dired</td><td class="left">C-x d</td><td class="left">C-x 4 d</td><td class="left">C-x 5 d</td><td class="left">C-z d</td></tr>
 <tr><td class="left">switch-to-buffer</td><td class="left">C-x b</td><td class="left">C-x 4 b</td><td class="left">C-x 5 b</td><td class="left">C-z b</td></tr>
