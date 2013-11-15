@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Frequently-used keybindings in aprl-emacs configuration"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-15 01:47:42 CET"/>
+<meta name="generated" content="2013-11-15T01:53+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -59,7 +59,7 @@
   .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
                                  font-weight:bold; }
   /*]]>*/-->
-</style>
+</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
@@ -106,27 +106,26 @@
 
 
 
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 all (or most) modes</a></li>
-<li><a href="#sec-2">2 ido-mode</a></li>
-<li><a href="#sec-3">3 python-mode</a></li>
-<li><a href="#sec-4">4 ess-mode</a></li>
-<li><a href="#sec-5">5 tex-mode</a></li>
-<li><a href="#sec-6">6 shell-mode</a></li>
-<li><a href="#sec-7">7 elscreen</a></li>
-<li><a href="#sec-8">8 outline-minor-mode</a></li>
-<li><a href="#sec-9">9 folding-mode</a></li>
-<li><a href="#sec-10">10 unix tools from the minibuffer</a></li>
+<li><a href="#sec-1">all (or most) modes</a></li>
+<li><a href="#sec-2">ido-mode</a></li>
+<li><a href="#sec-3">python-mode</a></li>
+<li><a href="#sec-4">ess-mode</a></li>
+<li><a href="#sec-5">tex-mode</a></li>
+<li><a href="#sec-6">shell-mode</a></li>
+<li><a href="#sec-7">elscreen</a></li>
+<li><a href="#sec-8">outline-minor-mode</a></li>
+<li><a href="#sec-9">folding-mode</a></li>
+<li><a href="#sec-10">unix tools from the minibuffer</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> all (or most) modes</h2>
+<h2 id="sec-1">all (or most) modes</h2>
 <div class="outline-text-2" id="text-1">
 
 
@@ -158,7 +157,7 @@
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> ido-mode</h2>
+<h2 id="sec-2">ido-mode</h2>
 <div class="outline-text-2" id="text-2">
 
 
@@ -194,7 +193,7 @@ powerful matching (e.g., "reppdf" will match "report.pdf").
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> python-mode</h2>
+<h2 id="sec-3">python-mode</h2>
 <div class="outline-text-2" id="text-3">
 
 
@@ -221,7 +220,7 @@ powerful matching (e.g., "reppdf" will match "report.pdf").
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> ess-mode</h2>
+<h2 id="sec-4">ess-mode</h2>
 <div class="outline-text-2" id="text-4">
 
 
@@ -254,7 +253,7 @@ Can also invoke on a buffer with <code>M-x r-mode</code>.
 </div>
 
 <div id="outline-container-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> tex-mode</h2>
+<h2 id="sec-5">tex-mode</h2>
 <div class="outline-text-2" id="text-5">
 
 
@@ -294,7 +293,7 @@ It is often convenient to work alongside an emacs <code>*shell*</code> or <code>
 </div>
 
 <div id="outline-container-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> shell-mode</h2>
+<h2 id="sec-6">shell-mode</h2>
 <div class="outline-text-2" id="text-6">
 
 
@@ -318,7 +317,7 @@ It is often convenient to work alongside an emacs <code>*shell*</code> or <code>
 In both <code>*shell*</code> (<code>M-x shell</code> and <code>C-u M-x shell</code> to create more instances) or <code>*eshell*</code> (similarly, <code>M-x eshell</code> and <code>C-u M-x eshell</code> to create more instances), it is useful to be operating in the same directory as your script. 
 </p>
 <ul>
-<li>Split windows with <code>C-x 2</code> (horizontal split) and <code>C-x 3</code> (vertical split) and copy the paths of the shell or script with <code>M-x copy-pwd</code> (bound to <code>C-c p</code>; present working directory) and <code>C-u M-x copy-pwd</code> (<code>C-u C-c p</code>; present working directory of the other window). 
+<li>Split windows with <code>C-x 2</code> (horizontal split) and <code>C-x 3</code> (vertical split) and copy the paths of the shell or script with <code>M-x copy-pwd</code> (bound to <code>C-c p</code>; present working directory) and <code>C-u M-x copy-pwd</code> (<code>C-u C-c p</code>; present working directory of the other window) when necessary. 
 </li>
 <li>More useful: use <code>C-c c</code> to change the shell <code>pwd</code> to directory of other window (which is often the directory in which the script or tex file resides).
 </li>
@@ -332,7 +331,7 @@ In both <code>*shell*</code> (<code>M-x shell</code> and <code>C-u M-x shell</co
 </div>
 
 <div id="outline-container-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> elscreen</h2>
+<h2 id="sec-7">elscreen</h2>
 <div class="outline-text-2" id="text-7">
 
 
@@ -347,7 +346,7 @@ If you want to manage many layouts through frames rather than screens, you can u
 </div>
 
 <div id="outline-container-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> outline-minor-mode</h2>
+<h2 id="sec-8">outline-minor-mode</h2>
 <div class="outline-text-2" id="text-8">
 
 
@@ -377,7 +376,7 @@ Enabled for most major modes that we use.
 </div>
 
 <div id="outline-container-9" class="outline-2">
-<h2 id="sec-9"><span class="section-number-2">9</span> folding-mode</h2>
+<h2 id="sec-9">folding-mode</h2>
 <div class="outline-text-2" id="text-9">
 
 
@@ -412,7 +411,7 @@ Enabled for most major modes that we use. In contrast to outline mode, I use thi
 </div>
 
 <div id="outline-container-10" class="outline-2">
-<h2 id="sec-10"><span class="section-number-2">10</span> unix tools from the minibuffer</h2>
+<h2 id="sec-10">unix tools from the minibuffer</h2>
 <div class="outline-text-2" id="text-10">
 
 
@@ -430,11 +429,8 @@ Enabled for most major modes that we use. In contrast to outline mode, I use thi
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-11-15 01:47:42 CET</p>
-<p class="author">Author: Satoshi Takahama</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
 </div>
 </body>
 </html>
