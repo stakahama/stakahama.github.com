@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Emacs"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-13T13:32+0100"/>
+<meta name="generated" content="2013-11-15T12:56+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -95,10 +95,10 @@
 
 <table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
 <caption></caption>
-<colgroup><col class="left" /><col class="left" />
+<colgroup><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
 </tbody>
 </table>
 
@@ -172,7 +172,7 @@ Help:
 
 
 <p>
-Lists
+Lists in buffer:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" />
@@ -203,7 +203,7 @@ Lists
 
 
 <p>
-Basic cursor movement
+Basic cursor movement:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" />
@@ -235,7 +235,7 @@ Basic cursor movement
 
 
 <p>
-Goto functions
+Goto functions:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
@@ -251,7 +251,7 @@ Goto functions
 
 
 <p>
-Move to functions
+Move to functions:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
@@ -266,7 +266,7 @@ Move to functions
 
 
 <p>
-Another way to move around the buffer is through incremental searching.
+Another way to move around the buffer is through incremental searching:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
@@ -298,6 +298,25 @@ Reposition window relative to cursor:
 </tbody>
 </table>
 
+
+<p>
+Killing:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">character</td><td class="left">DEL (delete-backward-char)</td><td class="left">C-d (delete-char)</td></tr>
+<tr><td class="left">word</td><td class="left">M-DEL (backward-kill-word)</td><td class="left">M-d (kill-word)</td></tr>
+<tr><td class="left">line</td><td class="left"></td><td class="left">C-k (kill-line)</td></tr>
+<tr><td class="left">sentence</td><td class="left">C-x DEL (backward-kill-sentence)</td><td class="left">M-k (kill-sentence)</td></tr>
+</tbody>
+</table>
+
+There are additional functions, <code>(backward-kill-paragraph)</code> and <code>(kill-paragraph)</code>, which can be accessed interactively, but are not bound to keybindings by default. See also rectangle functions for killing and yanking.
 
 </div>
 
