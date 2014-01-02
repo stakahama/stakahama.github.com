@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="LaTeX"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-13T13:32+0100"/>
+<meta name="generated" content="2013-12-31T05:12+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -93,17 +93,34 @@
 <div id="content">
 <h1 class="title">LaTeX</h1>
 
-<p>Need to add references to original sources.
+<p>(Need to add references to original sources.)
 </p>
 
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">General</a></li>
-<li><a href="#sec-2">Beamer</a></li>
-<li><a href="#sec-3">Biblatex</a></li>
-<li><a href="#sec-4">Natbib and bibtex</a></li>
+<li><a href="#sec-1">General</a>
+<ul>
+<li><a href="#sec-1-1">Subscript size</a></li>
+<li><a href="#sec-1-2">Colors</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Compilation</a></li>
+<li><a href="#sec-3">Bibliographies</a>
+<ul>
+<li><a href="#sec-3-1">Biblatex</a></li>
+<li><a href="#sec-3-2">Natbib and bibtex</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Local environments</a></li>
+<li><a href="#sec-5">Beamer</a></li>
+<li><a href="#sec-6">Emacs integration</a>
+<ul>
+<li><a href="#sec-6-1">Keybindings</a></li>
+<li><a href="#sec-6-2">Spell check</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -113,9 +130,14 @@
 <div class="outline-text-2" id="text-1">
 
 
-<p>
-Use
-</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Subscript size</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
 
 
 <pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">subdepth</span>}
@@ -124,9 +146,15 @@ Use
 <p>
 for consistent subscript size.
 </p>
-<p>
-Colors
-</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Colors</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
 
 
 <pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[usenames]{<span style="font-weight: bold;">color</span>}
@@ -138,8 +166,15 @@ Colors
 
 
 <p>
-Wrapped columns in tables; left-justified <code>P{}</code> and centered <code>C{}</code>. Otherwise like <code>p{}</code> and <code>c{}</code>.
-</p>
+Wrapped columns in tables; 
+</p><ul>
+<li>unwrapped: Otherwise like <code>p{}</code> and <code>c{}</code>.
+</li>
+<li>wrapped: left-justified <code>P{}</code> and centered <code>C{}</code>. 
+</li>
+</ul>
+
+
 
 
 <pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">array</span>}
@@ -152,16 +187,222 @@ Wrapped columns in tables; left-justified <code>P{}</code> and centered <code>C{
 Spacing: horizontal space <code>1em</code>, vertical space <code>1ex</code>.
 </p>
 </div>
+</div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Beamer</h2>
+<h2 id="sec-2">Compilation</h2>
 <div class="outline-text-2" id="text-2">
 
 
 <p>
-Add section title in footers <a href="http://www.latex-community.org/forum/viewtopic.php?f=5&amp;t=10735">ref</a>.
+Use <code>latexmk</code>.
+</p>
+<p>
+On Max OS X, <code>latexmk</code> is installed with =texlive=(?).
+</p>
+<p>
+Following some suggestions <a href="http://jon.smajda.com/2008/03/08/latexmk/">elsewhere</a>, for compiling pdf files and I created a file <code>~/bin/latexmk_pdf</code> which contains the following:
+</p>
+
+
+
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
+latexmk -pdf -pvc $<span style="font-weight: bold; font-style: italic;">1</span>
+</pre>
+
+
+<p>
+and for viewing preferences, <code>~/.latexmkrc</code>:
+</p>
+
+
+
+<pre class="src src-sh">$<span style="font-weight: bold; font-style: italic;">pdf_previewer</span> = <span style="font-style: italic;">"open -a /Applications/Skim.app"</span>; $<span style="font-weight: bold; font-style: italic;">clean_ext</span> = <span style="font-style: italic;">"paux lox pdfsync out"</span>;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Bibliographies</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Biblatex</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+Loading the package:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[
+    sorting=nyt, 
+    citestyle=authoryear, 
+    bibstyle=ieee, 
+    maxcitenames=2, 
+    maxbibnames=99, 
+    backend=biber, 
+    block=none, 
+    natbib
+]{<span style="font-weight: bold;">biblatex</span>}
+</pre>
+
+
+<p>
+Use alphabetical reference list; no numbering:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\defbibenvironment</span>{bibliography}
+{<span style="font-weight: bold;">\list</span>
+  {}
+  {<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\leftmargin</span>}{<span style="font-weight: bold;">\bibhang</span>+1em}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemindent</span>}{-<span style="font-weight: bold;">\leftmargin</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemsep</span>}{<span style="font-weight: bold;">\bibitemsep</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\parsep</span>}{<span style="font-weight: bold;">\bibparsep</span>}}}
+{<span style="font-weight: bold;">\endlist</span>}
+{<span style="font-weight: bold;">\item</span>}
+</pre>
+
+
+<p>
+Create doi links in bibliography:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">\string~/git/projects/bibfile/references</span>}
+<span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{url=false,eprint=false}
+<span style="font-weight: bold;">\newbibmacro</span>{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\iffieldundef</span>{doi}{#1}{<span style="font-weight: bold;">\href</span>{http://dx.doi.org/<span style="font-weight: bold;">\thefield</span>{doi}}{#1}}}
+<span style="font-weight: bold;">\DeclareFieldFormat</span>{doi}{<span style="font-weight: bold;">\usebibmacro</span>{string+doi}{doi:#1}}
+</pre>
+
+
+<p>
+Change bibliography title:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\printbibliography</span>[title=Bibliography]
+</pre>
+
+
+<p>
+No bibliography title:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{}
+<span style="font-weight: bold;">\vspace</span>{-5ex}
+<span style="font-weight: bold;">\printbibliography</span>
+</pre>
+
+
+<p>
+Multiple bibliographies:
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">Section 1</span>}
+<span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">refsection</span>}
+<span style="font-weight: bold;">\nocite</span>{<span style="font-weight: bold; text-decoration: underline;">*</span>}
+<span style="font-weight: bold;">\vspace</span>{-5ex}
+<span style="font-weight: bold;">\printbibliography</span>[title=<span style="font-weight: bold;">\sectiontitle</span>]
+<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">refsection</span>}
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Natbib and bibtex</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+<p>
+<code>natbib=+=bibtex</code> (instaed of <code>biblatex</code>) still required for journal submissions.
+</p>
+<p>
+Don't print reference title
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibname</span>}{}
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\refname</span>}{}
+</pre>
+
+
+<p>
+Don't print reference title at all (with natbib)
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{}
+</pre>
+
+
+<p>
+Don't show reference title on TOC
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{<span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">\bibname</span>}}
+</pre>
+
+
+<p>
+Reference title as section head
+</p>
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{<span style="font-weight: bold;">\vspace</span>{-5ex}}
+<span style="font-weight: bold;">\section</span>{<span style="font-weight: bold;">References</span>}
+<span style="font-weight: bold;">\bibliographystyle</span>{...}
+<span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">...</span>}
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Local environments</h2>
+<div class="outline-text-2" id="text-4">
+
+
+
+
+
+<pre class="src src-latex"><span style="font-weight: bold;">\begingroup</span>
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">...</span>}
+<span style="font-weight: bold;">\endgroup</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Beamer</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<p>
+Add section title in footers (<a href="http://www.latex-community.org/forum/viewtopic.php?f=5&amp;t=10735">reference</a>):
 </p>
 
 
@@ -194,112 +435,37 @@ Add section title in footers <a href="http://www.latex-community.org/forum/viewt
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Biblatex</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Emacs integration</h2>
+<div class="outline-text-2" id="text-6">
 
 
-<p>
-Call
-</p>
 
+</div>
 
-<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[sorting=nyt, 
-    citestyle=authoryear, 
-    bibstyle=ieee, 
-    maxcitenames=2, 
-    maxbibnames=99, 
-    backend=biber, 
-    block=none, 
-    natbib
-]{<span style="font-weight: bold;">biblatex</span>}
-</pre>
-
-
-<p>
-Alphabetical reference list; no numbering
-</p>
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\defbibenvironment</span>{bibliography}
-{<span style="font-weight: bold;">\list</span>
-  {}
-  {<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\leftmargin</span>}{<span style="font-weight: bold;">\bibhang</span>+1em}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemindent</span>}{-<span style="font-weight: bold;">\leftmargin</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemsep</span>}{<span style="font-weight: bold;">\bibitemsep</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\parsep</span>}{<span style="font-weight: bold;">\bibparsep</span>}}}
-{<span style="font-weight: bold;">\endlist</span>}
-{<span style="font-weight: bold;">\item</span>}
-</pre>
-
-
-<p>
-Create doi links in bibliography.
-</p>
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">\string~/git/projects/bibfile/references</span>}
-<span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{url=false,eprint=false}
-<span style="font-weight: bold;">\newbibmacro</span>{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\iffieldundef</span>{doi}{#1}{<span style="font-weight: bold;">\href</span>{http://dx.doi.org/<span style="font-weight: bold;">\thefield</span>{doi}}{#1}}}
-<span style="font-weight: bold;">\DeclareFieldFormat</span>{doi}{<span style="font-weight: bold;">\usebibmacro</span>{string+doi}{doi:#1}}
-</pre>
-
-
-<p>
-Change bibliography title
-</p>
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\printbibliography</span>[title=Bibliography]
-</pre>
-
-
-<p>
-No bibliography title
-</p>
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{}
-<span style="font-weight: bold;">\vspace</span>{-5ex}
-<span style="font-weight: bold;">\printbibliography</span>
-</pre>
-
-
-<p>
-Multiple bibliographies
-</p>
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">Section 1</span>}
-<span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">refsection</span>}
-<span style="font-weight: bold;">\nocite</span>{<span style="font-weight: bold; text-decoration: underline;">*</span>}
-<span style="font-weight: bold;">\vspace</span>{-5ex}
-<span style="font-weight: bold;">\printbibliography</span>[title=<span style="font-weight: bold;">\sectiontitle</span>]
-<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">refsection</span>}
-</pre>
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1">Keybindings</h3>
+<div class="outline-text-3" id="text-6-1">
 
 
 </div>
 
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Natbib and bibtex</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2">Spell check</h3>
+<div class="outline-text-3" id="text-6-2">
 
 
 <p>
-<code>natbib=+=bibtex</code> (instaed of <code>biblatex</code>) still required for journal submissions.
-</p>
-<p>
-Don't print reference title
+<code>flyspell-buffer</code>
+<code>langtool-check-buffer</code>
 </p>
 
 
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{<span style="font-weight: bold;">\subsubsection*</span>{<span style="font-weight: bold;">\bibname </span>}}
-</pre>
 
+
+</div>
 </div>
 </div>
 </div>

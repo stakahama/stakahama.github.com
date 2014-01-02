@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Programming for scientific applications"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-13T13:32+0100"/>
+<meta name="generated" content="2014-01-02T06:57+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -101,7 +101,13 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">Applications</a></li>
-<li><a href="#sec-2">Categorization of languages</a></li>
+<li><a href="#sec-2">Categorization of languages</a>
+<ul>
+<li><a href="#sec-2-1">Programming paradigms</a></li>
+<li><a href="#sec-2-2">Other categorizations</a></li>
+<li><a href="#sec-2-3">Other aspects of languages</a></li>
+</ul>
+</li>
 <li><a href="#sec-3">Graphics</a></li>
 <li><a href="#sec-4">Languages</a></li>
 </ul>
@@ -113,11 +119,6 @@
 <div class="outline-text-2" id="text-1">
 
 
-<p>
-<p align="center">
-<img src="./figures/venn_diagram.png" text-align="center" alt="./figures/venn_diagram.png" />
-</p>
-</p>
 <p>
 Non-exhaustive list of common tasks in science and engineering:
 </p><ul>
@@ -133,19 +134,26 @@ Non-exhaustive list of common tasks in science and engineering:
 
 
 <p>
-Peripheral tasks:
+<p align="center">
+<img src="./figures/venn_diagram.png" text-align="center" height="360" alt="./figures/venn_diagram.png" />
+</p>
+</p>
+<p>
+Peripheral tasks related to access, distribution, and user interaction:
 </p><ul>
 <li>web programming
 </li>
+<li>UI (user-interface) development (possibly through web platform)
+</li>
 <li>networking
 </li>
-<li>UI (user-interface) development (web platform)
+<li>creation of executable file
 </li>
 </ul>
 
 
 <p>
-To paraphrase/summarize the works of <a href="http://paulgraham.com/articles.html">Paul Graham</a>, not all languages are the same. Otherwise, we would program everything in assembly language and programming languages would not have proliferated as it has. There is no single language which is the best at everything. Simulation requires a low-level language; a data analysis language requires high-level language with graphing and statistical analysis capabilities. 
+To paraphrase/summarize the works of <a href="http://paulgraham.com/articles.html">Paul Graham</a>, not all languages are the same. Otherwise, we would program everything in assembly language and programming languages would not have proliferated as they have. There is no single language which is the best at everything. Simulation requires a low-level language; a data analysis language requires high-level language with graphing and statistical analysis capabilities. 
 </p>
 <p>
 Tradeoffs:
@@ -189,9 +197,15 @@ The following section lists a few categorizations which may determine how you st
 <i>I will try to add examples in the future.</i>
 </p>
 
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Programming paradigms</h3>
+<div class="outline-text-3" id="text-2-1">
+
 
 <p>
-Paradigms:
+List of common paradigms:
 </p><ul>
 <li>procedural
 </li>
@@ -208,8 +222,27 @@ Paradigms:
 <p>
 Functional programming in Python <a href="http://www.ibm.com/developerworks/linux/library/l-prog/index.html">1</a>, <a href="http://www.ibm.com/developerworks/linux/library/l-prog2/index.html">2</a>, <a href="http://www.ibm.com/developerworks/linux/library/l-prog3/index.html">3</a>. Also, <a href="http://www.ibm.com/developerworks/library/l-pycon/index.html">4</a>. These are old but provide a very great introduction to the field.
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Other categorizations</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
 <p>
-Imperative vs declarative
+High-level (closer to human) vs. low-level (closer to machine)
+</p><ul>
+<li>high-level: quicker to code
+</li>
+<li>low-level: more control
+</li>
+</ul>
+
+
+<p>
+Imperative vs. declarative
 </p><ul>
 <li>how to compute vs. what to compute
 </li>
@@ -217,7 +250,7 @@ Imperative vs declarative
 
 
 <p>
-Static vs dynamic
+Static vs. dynamic
 </p><ul>
 <li>variable types are declared and remain invariant
 </li>
@@ -225,7 +258,7 @@ Static vs dynamic
 
 
 <p>
-Strongly vs weakly typed
+Strongly vs. weakly typed
 </p><ul>
 <li>strict adherence to defined data type (requirement of explicit conversion among types)
 </li>
@@ -233,7 +266,7 @@ Strongly vs weakly typed
 
 
 <p>
-General purpose languages vs domain-specific languages (DSLs)
+General purpose languages vs. domain-specific languages (DSLs)
 </p><ul>
 <li>DSLs are often shorter because programs are constructed within the context of a particular application domain (e.g., namespaces are often implicit in DSLs). Also, DSLs often use the idiom of the domain (indexing, lexicon), making it easier to translate algorithms into code. However, optimal application of DSLs are mostly specific to their domain, as implied by the name.
 </li>
@@ -241,16 +274,45 @@ General purpose languages vs domain-specific languages (DSLs)
 
 
 <p>
-Zero-indexing vs one-indexing
+Zero-indexed vs. one-indexed
 </p><ul>
-<li>depending on the domain of mathematics you are trying to translate into code, one convention may be more straightforward than the other
+<li>depending on the domain of mathematics you are trying to translate into code, one convention may be more straightforward than the other (e.g., one-indexing for linear algebra; zero-indexing for signal processing)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Other aspects of languages</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+<p>
+Use case: prototyping vs. production
+</p>
+<p>
+Expressiveness vs. richness of libraries
+</p><ul>
+<li>expressiveness encompasses many aspects of the language: inherent structures or tools upon which to build structures, and the functions available to operate on them
+</li>
+<li>richness of libraries in a specific domain of application may be a consideration when selecting a langauge for a project/task (use available, or build your own&ndash;if language is expressive enough to permit rapid development)
 </li>
 </ul>
 
 
 <p>
-Prototyping vs production 
-</p>
+Lanuage vs. ecosystem
+</p><ul>
+<li>beyond the language itself, you may also consider the ecosystem surrounding the language&ndash;modern tools (e.g., refactoring and code templates), etc.
+</li>
+</ul>
+
+
+
+</div>
 </div>
 
 </div>
@@ -283,16 +345,18 @@ The same tool may not be the most convenient for both tasks.
 
 
 <p>
-There are of course many other acceptable languages, but some that I can recommend for tasks based on personal experience include the following:
+There are of course many other acceptable languages, but some that I can recommend for tasks based on personal experience include the following.
 </p>
 <p>
 Scripting and/or data analysis:
 </p><ul>
-<li>Python with NumPy, SciPy, Matplotlib, and Pandas
-</li>
 <li>R
 </li>
+<li>Python with NumPy, SciPy, Matplotlib, and Pandas
+</li>
 <li>Matlab
+</li>
+<li>Octave
 </li>
 <li>IDL
 </li>
@@ -316,8 +380,14 @@ Hardware integration:
 </p><ul>
 <li>Labview
 </li>
+<li>Python
+</li>
 </ul>
 
+
+<p>
+Some languages are aesthetically pleasing or immediately predictable ("principle of least surprise"), and there is value to making note when they are encountered. This alignment may have to do with innate user preference, but also previous experience, or influence of the UI. Some languages are difficult to understand at first, but its power and utility is revealed with further training. For instance, many programmers find languages which emphasize procedural programming to be most comprehensible at first, but later appreciate the power offered through higher concepts (such as functional programming). 
+</p>
 </div>
 </div>
 </div>

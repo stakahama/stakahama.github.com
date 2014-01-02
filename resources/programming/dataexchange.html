@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Data Exchange"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-13T13:32+0100"/>
+<meta name="generated" content="2013-11-17T23:04+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -98,15 +98,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Data models: categories</a></li>
+<li><a href="#sec-1">Data models</a></li>
 <li><a href="#sec-2">Purposes</a></li>
-<li><a href="#sec-3">Alternatives</a></li>
+<li><a href="#sec-3">Standards</a></li>
+<li><a href="#sec-4">Implementations in "databases"</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Data models: categories</h2>
+<h2 id="sec-1">Data models</h2>
 <div class="outline-text-2" id="text-1">
 
 
@@ -130,13 +131,23 @@
 
 
 <ul>
-<li>Sharing (concurrent access?)
+<li>Sharing
+<ul>
+<li>among users (criteria: common definition, possibly concurrent access&ndash;e.g., SQL)
+</li>
+<li>among software (criteria: common definition)
+</li>
+</ul>
+
 </li>
 <li>Archival (criteria: common definition, longevity, size)
 </li>
-<li>Exchange among programs (criteria: common definition)
-</li>
 <li>Manage memory during a process or task (criteria: quick access)
+<ul>
+<li>e.g., .rda, .npy, .mat
+</li>
+</ul>
+
 </li>
 </ul>
 
@@ -146,20 +157,49 @@
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Alternatives</h2>
+<h2 id="sec-3">Standards</h2>
 <div class="outline-text-2" id="text-3">
 
 
 <ul>
+<li>ASCII or Unicode (text)
+<ul>
+<li>flat text
+</li>
+<li>JSON
+</li>
+<li>XML (not so popular in most scientific communities)
+</li>
+</ul>
+
+</li>
+<li>SQL
+</li>
 <li>NetCDF
 </li>
 <li>HDF5
 </li>
-<li>XML (not so popular in most scientific communities)
+</ul>
+
+
+<p>
+Note: don't parse XML with regular expressions.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Implementations in "databases"</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<ul>
+<li>text: CSV, tab-delmited, or other flat text (one entry per line)
 </li>
-<li>SQL (SQLite, MySQL, PostgresSQL, Oracle, Microsoft)
+<li>SQL: SQLite, MySQL, PostgresSQL, Oracle, Microsoft
 </li>
-<li>CSV or other flat text (one entry per line)
+<li>MongoDB: popular no-SQL database
 </li>
 </ul>
 
