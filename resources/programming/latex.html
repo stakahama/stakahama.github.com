@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="LaTeX"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-12-31T05:12+0100"/>
+<meta name="generated" content="2014-02-05T00:47+0100"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -94,6 +94,9 @@
 <h1 class="title">LaTeX</h1>
 
 <p>(Need to add references to original sources.)
+</p>
+<p>
+I included LaTeX under the programming category because while it is often used as a markup langauge, it is also a programming language.
 </p>
 
 <div id="table-of-contents">
@@ -197,30 +200,21 @@ Spacing: horizontal space <code>1em</code>, vertical space <code>1ex</code>.
 
 
 <p>
-Use <code>latexmk</code>.
+Put <code>\batchmode</code> at the top of your <code>.tex</code> file (or <code>\nonstopmode</code> for more verbose output).
 </p>
+<p>
+Use <code>latexmk</code>: 
+</p>
+
+
+
+<pre class="src src-sh">latexmk -pdf texfile
+</pre>
+
+
 <p>
 On Max OS X, <code>latexmk</code> is installed with =texlive=(?).
 </p>
-<p>
-Following some suggestions <a href="http://jon.smajda.com/2008/03/08/latexmk/">elsewhere</a>, for compiling pdf files and I created a file <code>~/bin/latexmk_pdf</code> which contains the following:
-</p>
-
-
-
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
-latexmk -pdf -pvc $<span style="font-weight: bold; font-style: italic;">1</span>
-</pre>
-
-
-<p>
-and for viewing preferences, <code>~/.latexmkrc</code>:
-</p>
-
-
-
-<pre class="src src-sh">$<span style="font-weight: bold; font-style: italic;">pdf_previewer</span> = <span style="font-style: italic;">"open -a /Applications/Skim.app"</span>; $<span style="font-weight: bold; font-style: italic;">clean_ext</span> = <span style="font-style: italic;">"paux lox pdfsync out"</span>;
-</pre>
 
 
 </div>
