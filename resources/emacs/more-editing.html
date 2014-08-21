@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>More ways to edit text</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="More ways to edit text"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-08-21T23:57+0200"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">More ways to edit text</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Search and replace</a>
+<ul>
+<li><a href="#sec-1-1">search</a></li>
+<li><a href="#sec-1-2">replace</a></li>
+<li><a href="#sec-1-3">hi-lock-mode</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">More interactive functions</a>
+<ul>
+<li><a href="#sec-2-1">keyboard macros</a></li>
+<li><a href="#sec-2-2">rectangle commands</a></li>
+<li><a href="#sec-2-3">align</a></li>
+<li><a href="#sec-2-4">registers</a></li>
+<li><a href="#sec-2-5">Word expansions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Search and replace</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+The following settings are useful (alread implemented in <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/849f332f1dcd45f5ee411162a6946cf84ee41f3a/lisp/aprl-misc-settings.el">aprl-config</a>).
+</p>
+
+
+<pre class="example">(setq search-highlight t)               ;; Highlight search object
+(setq query-replace-highlight t)        ;; Highlight query object
+(setq mouse-sel-retain-highlight t)     ;; Keep mouse highlighting
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">search</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Another way to move around the buffer is through incremental searching (Yegge effective Emacs).
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">type</th><th scope="col" class="left">pattern</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">incremental</td><td class="left">string</td><td class="left"><code>C-r</code> <code>(isearch-backward)</code></td><td class="left"><code>C-s</code> <code>(isearch-forward)</code></td></tr>
+<tr><td class="left">incremental</td><td class="left">regex</td><td class="left"><code>C-M-r</code> <code>(isearch-backward-regexp)</code></td><td class="left"><code>C-M-s</code> <code>(isearch-forward-regexp)</code></td></tr>
+<tr><td class="left">by region or buffer</td><td class="left">string</td><td class="left"><code>(search-backward)</code></td><td class="left"><code>(search-forward)</code></td></tr>
+<tr><td class="left">by region or buffer</td><td class="left">regex</td><td class="left"><code>(search-backward-regexp)</code></td><td class="left"><code>(search-forward-regexp)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Selected options (see <code>C-h f isearch-forward</code> for more):
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">task</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>DEL</code></td><td class="left">cancel last input item from end of search string</td></tr>
+<tr><td class="left"><code>RET</code></td><td class="left">exit; leave point at location found</td></tr>
+<tr><td class="left"><code>M-c</code></td><td class="left">toggle search case-sensitivity</td></tr>
+<tr><td class="left"><code>M-r</code></td><td class="left">toggle regular-expression mode</td></tr>
+<tr><td class="left"><code>C-s</code></td><td class="left">search again forward</td></tr>
+<tr><td class="left"><code>C-r</code></td><td class="left">search again backward</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Non-incremental search options are seldom used, but <a href="#sec-hilockmode">see hi-lock-mode</a> for highlighting all regex matches in text.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">replace</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+See help for respective functions for more information.
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">type</th><th scope="col" class="left">string</th><th scope="col" class="left">regex</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">incremental</td><td class="left"><code>M-%</code> <code>(query-replace)</code></td><td class="left"><code>C-M-%</code> <code>(query-replace-regex)</code></td></tr>
+<tr><td class="left">by region or buffer</td><td class="left"><code>(replace-string)</code></td><td class="left"><code>(replace-regex)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Special characters:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">character</th><th scope="col" class="left">key strokes</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">tab</td><td class="left"><code>C-q &lt;tab&gt;</code></td></tr>
+<tr><td class="left">newline</td><td class="left"><code>C-q C-j</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">hi-lock-mode</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>
+Invoke with <code>M-x hi-lock-mode</code>. <code>hi-lock-mode</code> is an extension of <code>font-lock-mode</code>
+and can be used to highlight certain patterns (or lines containing
+those patterns) in the buffer:
+</p><table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-hilockmode">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x w h</code> <i>REGEXP</i> <code>&lt;RET&gt;</code> <i>FACE</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(highlight-regexp)</code></td><td class="left">highlight text matching <i>REGEXP</i> using <i>FACE</i> color (default is provided)</td></tr>
+<tr><td class="left"><code>C-x w r</code> <i>REGEXP</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(unhighlight-regexp)</code></td><td class="left">Unhighlight <i>REGEXP</i></td></tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">More interactive functions</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">keyboard macros</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x (</code></td><td class="left">begin</td></tr>
+<tr><td class="left"><code>C-x )</code></td><td class="left">end</td></tr>
+<tr><td class="left"><code>C-u</code> <i>NUM</i> <code>C-x e</code></td><td class="left">apply macro <i>NUM</i> times</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">rectangle commands</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+Delete/add "columns"/character strings in text.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x r o</code></td><td class="left"><code>(open-rectangle)</code></td></tr>
+<tr><td class="left"><code>C-x r d</code></td><td class="left"><code>(delete-rectangle)</code></td></tr>
+<tr><td class="left"><code>C-x r k</code></td><td class="left"><code>(kill-rectangle)</code></td></tr>
+<tr><td class="left"><code>C-x r y</code></td><td class="left"><code>(yank-rectangle)</code></td></tr>
+<tr><td class="left"><code>C-x r t</code></td><td class="left"><code>(string-rectangle)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+CUA-mode has a more advanced version of this&ndash;especially in visual representation of the selected rectangle area, but I only enable it to enumerate columns because it otherwise hijacks my keybindings.
+</p>
+<ol>
+<li>Enable CUA mode (<code>M-x cua-mode</code>)
+</li>
+<li>highlight a single(?) column. 
+</li>
+<li><code>C-&lt;return&gt;</code>
+</li>
+<li><code>M-n</code> (for seq, <i>not</i> <code>M-i</code> for incr); enter arguments/parameters
+</li>
+<li>Disable CUA mode (<code>M-x cua-mode</code>)
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">align</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+<p>
+Align text around some symbol. <code>align-regexp</code> is generally more
+flexible. Can use <code>align</code> with customized <code>align-rules-list</code> <a href="http://www.emacswiki.org/emacs/AlignCommands">for different minor-modes</a> but requires more investment up-front.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">registers</h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+<p>
+Registers can be used to store
+</p><ul>
+<li>specific points in the buffer,
+</li>
+<li>a block of text (for repeated insert), and
+</li>
+<li>window/frame configuration (see also winner-mode and elscreen)
+</li>
+</ul>
+
+
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-registers">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x r SPC</code> <i>r</i></td><td class="left"><code>(point-to-register)</code></td></tr>
+<tr><td class="left"><code>C-x r j</code> <i>r</i></td><td class="left"><code>(jump-to-register)</code></td></tr>
+<tr><td class="left"><code>C-x r s</code> <i>r</i></td><td class="left"><code>(copy-to-registr)</code></td></tr>
+<tr><td class="left"><code>C-x r i</code> <i>r</i></td><td class="left"><code>(insert-register)</code></td></tr>
+<tr><td class="left"><code>C-x r w</code> <i>r</i></td><td class="left"><code>(window-configuration-to-register)</code></td></tr>
+<tr><td class="left"><code>C-x r f</code> <i>r</i></td><td class="left"><code>(frame-configuration-to-register)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+(Also use <code>C-x r j</code> <i>r</i> to restore window or frame
+configuration). 
+</p>
+<p>
+Registers can also be used to save rectangles and file names.
+</p>
+<p>
+Note that the <code>C-x r</code> prefix is also used for the rectangle commands.
+</p>
+<p>
+Sometimes when using beamer, I will load the following text into the first 5 registers:
+</p>
+
+
+<pre class="src src-emacs-lisp">(mapc 'eval
+      (list
+       (set-register 49 <span style="font-style: italic;">"\\begin{frame}\n  \\frametitle{}"</span>)                     <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">register 1</span>
+       (set-register 50 <span style="font-style: italic;">"\\begin{columns}[t]\n\\column{.5\\textwidth}"</span>)         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">register 2</span>
+       (set-register 51 <span style="font-style: italic;">"\\column{.5\\textwidth}"</span>)                              <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">register 3</span>
+       (set-register 52 <span style="font-style: italic;">"\\centerline{\\includegraphics[width=\\textwidth]{}}"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">register 4</span>
+       (set-register 53 <span style="font-style: italic;">"\\flushright\n\\vspace{-5ex}\n{\\footnotesize{}}"</span>)))   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">register 5</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5">Word expansions</h3>
+<div class="outline-text-3" id="text-2-5">
+
+
+<p>
+See dabbrev, autocomplete, hippie-expand.
+</p>
+<p>
+Type <code>M-/</code> to let emacs autocomplete word based on other words
+present in open buffers.
+</p>
+
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+
+
+
+<br>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

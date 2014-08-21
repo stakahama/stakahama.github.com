@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Emacs"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-01-02T06:56+0100"/>
+<meta name="generated" content="2014-08-21T23:48+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -102,7 +102,7 @@
 <ul>
 <li><a href="#sec-1">Basic commands</a></li>
 <li><a href="#sec-2">Navigation</a></li>
-<li><a href="#sec-3">Windows, frames, screens</a></li>
+<li><a href="#sec-3">Managing windows, frames, screens</a></li>
 </ul>
 </div>
 </div>
@@ -122,15 +122,16 @@
 <tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">open/create file</td><td class="left">C-x C-f</td><td class="left">(find-file)</td></tr>
-<tr><td class="left">save</td><td class="left">C-x C-s</td><td class="left">(save-buffer)</td></tr>
-<tr><td class="left">save as</td><td class="left">C-x C-w</td><td class="left">(write-file)</td></tr>
-<tr><td class="left">escape/stop</td><td class="left">C-g</td><td class="left">(keyboard-quit)</td></tr>
-<tr><td class="left">undo</td><td class="left">C-x u</td><td class="left">(undo)</td></tr>
-<tr><td class="left">copy</td><td class="left">M-w</td><td class="left">(kill-ring-save)</td></tr>
-<tr><td class="left">paste</td><td class="left">C-y</td><td class="left">(yank)</td></tr>
-<tr><td class="left">read-only (toggle)</td><td class="left">C-x C-q</td><td class="left">(toggle-read-only)</td></tr>
-<tr><td class="left">exit</td><td class="left">C-x C-c</td><td class="left">(save-buffers-kill-terminal)</td></tr>
+<tr><td class="left">open/create file</td><td class="left"><code>C-x C-f</code></td><td class="left"><code>(find-file)</code></td></tr>
+<tr><td class="left">save</td><td class="left"><code>C-x C-s</code></td><td class="left"><code>(save-buffer)</code></td></tr>
+<tr><td class="left">save as</td><td class="left"><code>C-x C-w</code></td><td class="left"><code>(write-file)</code></td></tr>
+<tr><td class="left">escape/stop</td><td class="left"><code>C-g</code></td><td class="left"><code>(keyboard-quit)</code></td></tr>
+<tr><td class="left">undo</td><td class="left"><code>C-x u</code></td><td class="left"><code>(undo)</code></td></tr>
+<tr><td class="left">cut</td><td class="left"><code>C-w</code></td><td class="left"><code>(kill-region)</code></td></tr>
+<tr><td class="left">copy</td><td class="left"><code>M-w</code></td><td class="left"><code>(kill-ring-save)</code></td></tr>
+<tr><td class="left">paste</td><td class="left"><code>C-y</code></td><td class="left"><code>(yank)</code></td></tr>
+<tr><td class="left">read-only (toggle)</td><td class="left"><code>C-x C-q</code></td><td class="left"><code>(toggle-read-only)</code></td></tr>
+<tr><td class="left">exit</td><td class="left"><code>C-x C-c</code></td><td class="left"><code>(save-buffers-kill-terminal)</code></td></tr>
 </tbody>
 </table>
 
@@ -153,14 +154,17 @@ Help:
 <tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">describe function</td><td class="left">C-h f</td><td class="left">(describe-function)</td></tr>
-<tr><td class="left">describe variable</td><td class="left">C-h v</td><td class="left">(describe-function)</td></tr>
-<tr><td class="left">display documentation of the function invoked by keystrokes</td><td class="left">C-h k</td><td class="left">(describe-key)</td></tr>
-<tr><td class="left">show a list of all defined keys, and their definitions</td><td class="left">C-h b</td><td class="left">(describe-bindings)</td></tr>
+<tr><td class="left">describe function</td><td class="left"><code>C-h f</code></td><td class="left"><code>(describe-function)</code></td></tr>
+<tr><td class="left">describe variable</td><td class="left"><code>C-h v</code></td><td class="left"><code>(describe-function)</code></td></tr>
+<tr><td class="left">display documentation of the function invoked by keystrokes</td><td class="left"><code>C-h k</code></td><td class="left"><code>(describe-key)</code></td></tr>
+<tr><td class="left">show a list of all defined keys, and their definitions</td><td class="left"><code>C-h b</code></td><td class="left"><code>(describe-bindings)</code></td></tr>
 </tbody>
 </table>
 
 
+<p>
+More on <a href="./getting-help.html">help</a>.
+</p>
 <p>
 Lists in buffer:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -171,8 +175,8 @@ Lists in buffer:
 <tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">list buffers</td><td class="left">C-x b</td><td class="left">(list-buffers)</td></tr>
-<tr><td class="left">list files in directory</td><td class="left">C-x d</td><td class="left">(dired)</td></tr>
+<tr><td class="left">list buffers</td><td class="left"><code>C-x b</code></td><td class="left"><code>(list-buffers)</code></td></tr>
+<tr><td class="left">list files in directory</td><td class="left"><code>C-x d</code></td><td class="left"><code>(dired)</code></td></tr>
 </tbody>
 </table>
 
@@ -202,26 +206,48 @@ Basic cursor movement:
 <tr><th scope="col" class="left">unit of increment</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">character</td><td class="left">C-b (backward-char)</td><td class="left">C-f (forward-char)</td></tr>
-<tr><td class="left">word</td><td class="left">M-b (backward-word)</td><td class="left">M-f (forward-word)</td></tr>
-<tr><td class="left">sentence</td><td class="left">M-a (backward-sentence)</td><td class="left">M-e (forward-sentence)</td></tr>
-<tr><td class="left">line</td><td class="left">C-a (beginning-of-line)</td><td class="left">C-e (end-of-line)</td></tr>
-<tr><td class="left">line</td><td class="left">C-p (previous-line)</td><td class="left">C-n (next-line)</td></tr>
-<tr><td class="left">paragraph</td><td class="left">M-{ (backward-paragraph)</td><td class="left">M-} (next-paragraph)</td></tr>
-<tr><td class="left">page</td><td class="left">M-v (scroll-up)</td><td class="left">C-v (scroll-down)</td></tr>
-<tr><td class="left">buffer</td><td class="left">M-&lt; (beginning-of-buffer)</td><td class="left">M-&gt; (end-of-buffer)</td></tr>
+<tr><td class="left">character</td><td class="left"><code>C-b</code> <code>(backward-char)</code></td><td class="left"><code>C-f</code> <code>(forward-char)</code></td></tr>
+<tr><td class="left">word</td><td class="left"><code>M-b</code> <code>(backward-word)</code></td><td class="left"><code>M-f</code> <code>(forward-word)</code></td></tr>
+<tr><td class="left">sentence</td><td class="left"><code>M-a</code> <code>(backward-sentence)</code></td><td class="left"><code>M-e</code> <code>(forward-sentence)</code></td></tr>
+<tr><td class="left">line</td><td class="left"><code>C-a</code> <code>(beginning-of-line)</code></td><td class="left"><code>C-e</code> <code>(end-of-line)</code></td></tr>
+<tr><td class="left">line</td><td class="left"><code>C-p</code> <code>(previous-line)</code></td><td class="left"><code>C-n</code> <code>(next-line)</code></td></tr>
+<tr><td class="left">paragraph</td><td class="left"><code>M-{</code> <code>(backward-paragraph)</code></td><td class="left"><code>M-}</code> <code>(next-paragraph)</code></td></tr>
+<tr><td class="left">page</td><td class="left"><code>M-v</code> <code>(scroll-up)</code></td><td class="left"><code>C-v</code> <code>(scroll-down)</code></td></tr>
+<tr><td class="left">buffer</td><td class="left"><code>M-&lt;</code> <code>(beginning-of-buffer)</code></td><td class="left"><code>M-&gt;</code> <code>(end-of-buffer)</code></td></tr>
 </tbody>
 </table>
 
 
+<p>
+Note that <code>M-a</code> and <code>M-e</code> in shell mode and minibuffer take you to the point after the shell prompt rather than the line.
+</p>
 <ul>
-<li>Prefix keystrokes with <code>C-u</code> <i>n</i> where <i>n</i> = number of times to repeat. For instance, to go up 10 lines rather than one: <code>C-u 10 C-p</code>.
+<li>Very powerful: to return to last point after navigation move, use <code>C-x C-SPC</code> to return to previous cursor position <code>(pop-global-mark)</code>.
 </li>
-<li><code>M-a</code> and <code>M-e</code> in shell mode and minibuffer take you to the point after the shell prompt rather than the line.
+<li>Prefix keystrokes with <code>C-u</code> <i>n</i> where <i>n</i> = number of times to repeat. For instance, to go up 10 lines rather than one: <code>C-u 10 C-p</code>.
 </li>
 <li><code>M-r</code> moves cursor to left margin on center line of page <code>(move-to-window-line)</code>; useful after scrolling (<code>M-v</code> or <code>C-v</code>).
 </li>
 </ul>
+
+
+<p>
+Mark:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">unit</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">word</td><td class="left"><code>M-@</code></td><td class="left"><code>(mark-word)</code></td></tr>
+<tr><td class="left">sentence</td><td class="left"><code>[]</code></td><td class="left"><code>(mark-end-of-sentence)</code></td></tr>
+<tr><td class="left">paragraph</td><td class="left"><code>M-h</code></td><td class="left"><code>(mark-paragraph)</code></td></tr>
+<tr><td class="left">page</td><td class="left"><code>C-x C-p</code></td><td class="left"><code>(mark-page)</code></td></tr>
+<tr><td class="left">buffer</td><td class="left"><code>C-x h</code></td><td class="left"><code>(mark-whole-buffer)</code></td></tr>
+</tbody>
+</table>
 
 
 <p>
@@ -234,14 +260,14 @@ Goto functions:
 <tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">M-x goto-char</td><td class="left">(goto-char)</td></tr>
-<tr><td class="left">M-g g</td><td class="left">(goto-line)</td></tr>
+<tr><td class="left"><code>M-g c</code></td><td class="left"><code>(goto-char)</code></td></tr>
+<tr><td class="left"><code>M-g g</code></td><td class="left"><code>(goto-line)</code></td></tr>
 </tbody>
 </table>
 
 
 <p>
-Move to functions:
+"Move to" functions:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
@@ -250,29 +276,14 @@ Move to functions:
 <tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">M-r</td><td class="left">(move-to-window-line)</td></tr>
+<tr><td class="left"><code>M-r</code></td><td class="left"><code>(move-to-window-line)</code></td></tr>
 </tbody>
 </table>
 
 
 <p>
-Another way to move around the buffer is through incremental searching:
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">C-s</td><td class="left">(isearch-forward)</td></tr>
-<tr><td class="left">C-r</td><td class="left">(isearch-backward)</td></tr>
-<tr><td class="left">C-u C-s</td><td class="left">(isearch-regexp-forward)</td></tr>
-<tr><td class="left">C-u C-r</td><td class="left">(isearch-regexp-backward)</td></tr>
-</tbody>
-</table>
-
-
+Another way to move around the buffer is through <a href="./more-editing.html">incremental searching</a>.
+</p>
 <p>
 Reposition window relative to cursor:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -283,8 +294,8 @@ Reposition window relative to cursor:
 <tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">C-l</td><td class="left">(recenter-top-bottom)</td></tr>
-<tr><td class="left">C-M-l</td><td class="left">(command-reposition-window)</td></tr>
+<tr><td class="left"><code>C-l</code></td><td class="left"><code>(recenter-top-bottom)</code></td></tr>
+<tr><td class="left"><code>C-M-l</code></td><td class="left"><code>(command-reposition-window)</code></td></tr>
 </tbody>
 </table>
 
@@ -299,21 +310,24 @@ Killing:
 <tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">backward</th><th scope="col" class="left">forward</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">character</td><td class="left">DEL (delete-backward-char)</td><td class="left">C-d (delete-char)</td></tr>
-<tr><td class="left">word</td><td class="left">M-DEL (backward-kill-word)</td><td class="left">M-d (kill-word)</td></tr>
-<tr><td class="left">line</td><td class="left"></td><td class="left">C-k (kill-line)</td></tr>
-<tr><td class="left">sentence</td><td class="left">C-x DEL (backward-kill-sentence)</td><td class="left">M-k (kill-sentence)</td></tr>
+<tr><td class="left">character</td><td class="left"><code>DEL</code> <code>(delete-backward-char)</code></td><td class="left"><code>C-d</code> <code>(delete-char)</code></td></tr>
+<tr><td class="left">word</td><td class="left"><code>M-DEL</code> <code>(backward-kill-word)</code></td><td class="left"><code>M-d</code> <code>(kill-word)</code></td></tr>
+<tr><td class="left">line</td><td class="left"></td><td class="left"><code>C-k</code> <code>(kill-line)</code></td></tr>
+<tr><td class="left">sentence</td><td class="left"><code>C-x DEL</code> <code>(backward-kill-sentence)</code></td><td class="left"><code>M-k</code> <code>(kill-sentence)</code></td></tr>
 </tbody>
 </table>
 
-There are additional functions, <code>(backward-kill-paragraph)</code> and <code>(kill-paragraph)</code>, which can be accessed interactively, but are not bound to keybindings by default. See also rectangle functions for killing and yanking.
+There are additional functions, <code>(backward-kill-paragraph)</code> and <code>(kill-paragraph)</code>, which can be accessed interactively, but are not bound to keybindings by default. As mentioned above, for <code>C-u</code> can be used in conjunction with many of these functions. E.g., to kill 5 lines, <code>C-u 5 C-k</code>. See also rectangle functions for killing and yanking (CUA-mode is good for this also).
 
+<p>
+Learn <a href="./more-editing.html">more ways to edit text</a>.
+</p>
 </div>
 
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Windows, frames, screens</h2>
+<h2 id="sec-3">Managing windows, frames, screens</h2>
 <div class="outline-text-2" id="text-3">
 
 
@@ -330,11 +344,11 @@ Management
 <tr><th scope="col" class="left">function</th><th scope="col" class="left">window</th><th scope="col" class="left">frame</th><th scope="col" class="left">elscreen</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">make/create</td><td class="left">C-x 2, C-x 3</td><td class="left">C-x 5 2</td><td class="left">C-z c</td></tr>
-<tr><td class="left">delete</td><td class="left"></td><td class="left">C-x 5 0</td><td class="left">C-z k</td></tr>
-<tr><td class="left">kill-buffer <i>and</i> delete window/screen</td><td class="left">C-x 4 0</td><td class="left"></td><td class="left">C-z M-k</td></tr>
-<tr><td class="left">delete others</td><td class="left">C-x 4 1</td><td class="left">C-x 5 1</td><td class="left">C-z K</td></tr>
-<tr><td class="left">other</td><td class="left">C-x o</td><td class="left">C-x 5 o</td><td class="left">C-z p, C-z n</td></tr>
+<tr><td class="left">make/create</td><td class="left"><code>C-x 2</code>, <code>C-x 3</code></td><td class="left"><code>C-x 5 2</code></td><td class="left"><code>C-z c</code></td></tr>
+<tr><td class="left">delete</td><td class="left"></td><td class="left"><code>C-x 5 0</code></td><td class="left"><code>C-z k</code></td></tr>
+<tr><td class="left">kill-buffer <i>and</i> delete window/screen</td><td class="left"><code>C-x 4 0</code></td><td class="left"></td><td class="left"><code>C-z M-k</code></td></tr>
+<tr><td class="left">delete others</td><td class="left"><code>C-x 4 1</code></td><td class="left"><code>C-x 5 1</code></td><td class="left"><code>C-z K</code></td></tr>
+<tr><td class="left">other</td><td class="left"><code>C-x o</code></td><td class="left"><code>C-x 5 o</code></td><td class="left"><code>C-z p, C-z n</code></td></tr>
 </tbody>
 </table>
 
@@ -342,7 +356,7 @@ Management
 <ul>
 <li><code>C-x o</code> takes a prefix argument of <i>COUNT</i>, which is the number of windows to move forward/backward (<i>-n</i> to <i>n</i>).
 </li>
-<li>I have mapped <code>C-c o</code> for switching among frames; <code>C-u C-c o</code> will move through frames in the opposite direction (akin to Command-` and Shift-Command-` or Alt-` and Shift-Alt-` allowed by the OS).
+<li>I have mapped <code>C-c o</code> for switching among frames; <code>C-u C-c o</code> will move through frames in the opposite direction (akin to <code>Command-`</code> and <code>Shift-Command-`</code> or <code>Alt-`</code> and <code>Shift-Alt-`</code> allowed by the OS).
 </li>
 </ul>
 
@@ -357,14 +371,13 @@ Common tasks
 <tr><th scope="col" class="left">function</th><th scope="col" class="left">current window</th><th scope="col" class="left">-other-window</th><th scope="col" class="left">-other-frame</th><th scope="col" class="left">elscreen-</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">find-file</td><td class="left">C-x C-f</td><td class="left">C-x 4 C-f or C-x 4 f</td><td class="left">C-x 5 C-f or C-x 5 f</td><td class="left">C-z C-f or C-z f</td></tr>
-<tr><td class="left">find-file-read-only</td><td class="left">C-x C-r</td><td class="left">C-x 4 r</td><td class="left">C-x 5 r</td><td class="left">C-z C-r</td></tr>
-<tr><td class="left">dired</td><td class="left">C-x d</td><td class="left">C-x 4 d</td><td class="left">C-x 5 d</td><td class="left">C-z d</td></tr>
-<tr><td class="left">switch-to-buffer</td><td class="left">C-x b</td><td class="left">C-x 4 b</td><td class="left">C-x 5 b</td><td class="left">C-z b</td></tr>
-<tr><td class="left">clone</td><td class="left"></td><td class="left">C-x 4 c</td><td class="left">C-x 5 c</td><td class="left">C-z C</td></tr>
+<tr><td class="left">find-file</td><td class="left"><code>C-x C-f</code></td><td class="left"><code>C-x 4 C-f</code> or <code>C-x 4 f</code></td><td class="left"><code>C-x 5 C-f</code> or <code>C-x 5 f</code></td><td class="left"><code>C-z C-f</code> or <code>C-z f</code></td></tr>
+<tr><td class="left">find-file-read-only</td><td class="left"><code>C-x C-r</code></td><td class="left"><code>C-x 4 r</code></td><td class="left"><code>C-x 5 r</code></td><td class="left"><code>C-z C-r</code></td></tr>
+<tr><td class="left">dired</td><td class="left"><code>C-x d</code></td><td class="left"><code>C-x 4 d</code></td><td class="left"><code>C-x 5 d</code></td><td class="left"><code>C-z d</code></td></tr>
+<tr><td class="left">switch-to-buffer</td><td class="left"><code>C-x b</code></td><td class="left"><code>C-x 4 b</code></td><td class="left"><code>C-x 5 b</code></td><td class="left"><code>C-z b</code></td></tr>
+<tr><td class="left">clone</td><td class="left"></td><td class="left"><code>C-x 4 c</code></td><td class="left"><code>C-x 5 c</code></td><td class="left"><code>C-z C</code></td></tr>
 </tbody>
 </table>
-
 
 
 
