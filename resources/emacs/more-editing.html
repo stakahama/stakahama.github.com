@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="More ways to edit text"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-21T23:57+0200"/>
+<meta name="generated" content="2014-08-22T15:53+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -162,20 +162,21 @@ Another way to move around the buffer is through incremental searching (Yegge ef
 
 <p>
 Selected options (see <code>C-h f isearch-forward</code> for more):
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">task</th></tr>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th></tr>
 </thead>
 <tbody>
-<tr><td class="left"><code>DEL</code></td><td class="left">cancel last input item from end of search string</td></tr>
-<tr><td class="left"><code>RET</code></td><td class="left">exit; leave point at location found</td></tr>
-<tr><td class="left"><code>M-c</code></td><td class="left">toggle search case-sensitivity</td></tr>
-<tr><td class="left"><code>M-r</code></td><td class="left">toggle regular-expression mode</td></tr>
-<tr><td class="left"><code>C-s</code></td><td class="left">search again forward</td></tr>
-<tr><td class="left"><code>C-r</code></td><td class="left">search again backward</td></tr>
+<tr><td class="left">cancel last input item from end of search string</td><td class="left"><code>DEL</code></td></tr>
+<tr><td class="left">exit; leave point at location found</td><td class="left"><code>RET</code></td></tr>
+<tr><td class="left">toggle search case-sensitivity</td><td class="left"><code>M-c</code></td></tr>
+<tr><td class="left">toggle regular-expression mode</td><td class="left"><code>M-r</code></td></tr>
+<tr><td class="left">search again forward</td><td class="left"><code>C-s</code></td></tr>
+<tr><td class="left">search again backward</td><td class="left"><code>C-r</code></td></tr>
 </tbody>
 </table>
 
@@ -237,16 +238,17 @@ Special characters:
 Invoke with <code>M-x hi-lock-mode</code>. <code>hi-lock-mode</code> is an extension of <code>font-lock-mode</code>
 and can be used to highlight certain patterns (or lines containing
 those patterns) in the buffer:
-</p><table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-hilockmode">
+</p>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-hilockmode">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th><th scope="col" class="left">description</th></tr>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
 </thead>
 <tbody>
-<tr><td class="left"><code>C-x w h</code> <i>REGEXP</i> <code>&lt;RET&gt;</code> <i>FACE</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(highlight-regexp)</code></td><td class="left">highlight text matching <i>REGEXP</i> using <i>FACE</i> color (default is provided)</td></tr>
-<tr><td class="left"><code>C-x w r</code> <i>REGEXP</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(unhighlight-regexp)</code></td><td class="left">Unhighlight <i>REGEXP</i></td></tr>
+<tr><td class="left">highlight text matching <i>REGEXP</i> using <i>FACE</i> color (default is provided)</td><td class="left"><code>M-s h r</code> <i>REGEXP</i> <code>&lt;RET&gt;</code> <i>FACE</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(highlight-regexp)</code></td></tr>
+<tr><td class="left">Unhighlight <i>REGEXP</i></td><td class="left"><code>M-s h u</code> <i>REGEXP</i> <code>&lt;RET&gt;</code></td><td class="left"><code>(unhighlight-regexp)</code></td></tr>
 </tbody>
 </table>
 
@@ -274,12 +276,12 @@ those patterns) in the buffer:
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">description</th></tr>
+<tr><th scope="col" class="left">description</th><th scope="col" class="left">keybinding</th></tr>
 </thead>
 <tbody>
-<tr><td class="left"><code>C-x (</code></td><td class="left">begin</td></tr>
-<tr><td class="left"><code>C-x )</code></td><td class="left">end</td></tr>
-<tr><td class="left"><code>C-u</code> <i>NUM</i> <code>C-x e</code></td><td class="left">apply macro <i>NUM</i> times</td></tr>
+<tr><td class="left">start</td><td class="left"><code>C-x (</code></td></tr>
+<tr><td class="left">end</td><td class="left"><code>C-x )</code></td></tr>
+<tr><td class="left">apply macro <i>NUM</i> times</td><td class="left"><code>C-u</code> <i>NUM</i> <code>C-x e</code></td></tr>
 </tbody>
 </table>
 
