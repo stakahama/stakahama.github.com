@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Managing windows and frames"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
+<meta name="generated" content="2014-08-23T15:54+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -106,7 +106,7 @@
 <li><a href="#sec-1-4">Switching among windows/frames</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Packages to manage layouts</a>
+<li><a href="#sec-2">Packages to manage window layouts</a>
 <ul>
 <li><a href="#sec-2-1">elscreen</a></li>
 <li><a href="#sec-2-2">winner-mode</a></li>
@@ -242,7 +242,7 @@ Details on window functions:
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Packages to manage layouts</h2>
+<h2 id="sec-2">Packages to manage window layouts</h2>
 <div class="outline-text-2" id="text-2">
 
 
@@ -264,10 +264,10 @@ simultaneous window configurations in a single (optionally tabbed)
 frame.  <a href="elscreen-keys.html">Keybindings</a>
 </p>
 <p>
-APEL and elscreen should be installed.
+APEL and elscreen should be installed. Setup <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/03035b4d43e366b3f7cc0db9c12b3ca698c35452/lisp/aprl-elscreen.el">here</a>.
 </p>
 <p>
-I think there is a comparison of windows configurations between the return value of  <code>(elscreen-get-window-configuration)</code> and the prior value saved from <code>(elscreen-set-window-configuration)</code>. The latter function is not called when the screen is resized, so elscreen tries to redraw the frame <code>(redraw-frame)</code> with every keystroke.
+The following is just FYI as it is already implemented in the aprl-emacs confuration. I think there is a comparison of windows configurations between the return value of  <code>(elscreen-get-window-configuration)</code> and the prior value saved from <code>(elscreen-set-window-configuration)</code>. The latter function is not called when the screen is resized, so elscreen tries to redraw the frame <code>(redraw-frame)</code> with every keystroke.
 </p>
 <p>
 There is probably a more elegant fix, but this just cycles through all the elscreen tabs so that the window-configuration is synced with the present frame and window geometries.
@@ -301,16 +301,11 @@ There is probably a more elegant fix, but this just cycles through all the elscr
 
 
 <p>
-Winner-mode recalls (one of past 60) frames in current context. Very useful.
+Setup <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/03035b4d43e366b3f7cc0db9c12b3ca698c35452/lisp/aprl-misc-settings.el">here</a>.
 </p>
-
-
-<pre class="src src-elisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">winner</span>)
-(winner-mode t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">turn on the global minor mode</span>
-(setq winner-dont-bind-my-keys t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">default bindings conflict with org-mode</span>
-                                  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">according to emacs-fu</span>
-</pre>
-
+<p>
+Winner-mode recalls (one of past 60) frames in current context.
+</p>
 <p>
 The relevant keybindings are:
 </p>
@@ -355,7 +350,7 @@ The relevant keybindings are:
 To recall one of these configuration, use <code>jump-to-register</code> (<code>C-x r j</code> <i>r</i>).
 </p>
 <p>
-See section on <a href="../editing-text.html">registers</a> for more information
+See section on <a href="./more-editing.html#sec-registers">registers</a> for more information.
 </p>
 
 
