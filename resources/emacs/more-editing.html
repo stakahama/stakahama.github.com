@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="More ways to edit text"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-22T15:53+0200"/>
+<meta name="generated" content="2014-08-23T02:05+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -111,7 +111,13 @@
 <li><a href="#sec-2-2">rectangle commands</a></li>
 <li><a href="#sec-2-3">align</a></li>
 <li><a href="#sec-2-4">registers</a></li>
-<li><a href="#sec-2-5">Word expansions</a></li>
+<li><a href="#sec-2-5">word expansions</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Editing with an external script</a>
+<ul>
+<li><a href="#sec-3-1">pass region to external script</a></li>
+<li><a href="#sec-3-2">text processing using emacs lisp</a></li>
 </ul>
 </li>
 </ul>
@@ -121,6 +127,7 @@
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Search and replace</h2>
 <div class="outline-text-2" id="text-1">
+
 
 
 <p>
@@ -144,7 +151,7 @@ The following settings are useful (alread implemented in <a href="https://bitbuc
 
 <p>
 Another way to move around the buffer is through incremental searching (Yegge effective Emacs).
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</p><table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="sec-search">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
@@ -414,7 +421,7 @@ Sometimes when using beamer, I will load the following text into the first 5 reg
 </div>
 
 <div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5">Word expansions</h3>
+<h3 id="sec-2-5">word expansions</h3>
 <div class="outline-text-3" id="text-2-5">
 
 
@@ -425,6 +432,111 @@ See dabbrev, autocomplete, hippie-expand.
 Type <code>M-/</code> to let emacs autocomplete word based on other words
 present in open buffers.
 </p>
+
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+
+
+
+<br>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Editing with an external script</h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">pass region to external script</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+Use <code>(shell-command-on-region)</code> interactively (<code>M-|</code>) with universal
+prefix (<code>C-u</code>) argument (<code>C-u M-|</code>). Without the prefix
+<code>(shell-command-on-region)</code> will print output to minibuffer.
+</p>
+<p>
+I create a file called <code>processtext.py</code> as an example:
+</p>
+
+
+<pre class="src src-python"><span style="font-weight: bold;">import</span> sys
+
+<span style="font-weight: bold; font-style: italic;">txt</span> = sys.stdin.read()
+sys.stdout.write(txt.replace(<span style="font-style: italic;">'\n'</span>,<span style="font-style: italic;">'\\\\\n'</span>))
+</pre>
+
+
+<p>
+Then I highlight a region of text in my emacs buffer and type <code>C-u M-|</code>; in the minibuffer I provide the shell command
+</p>
+
+
+<pre class="src src-sh">Shell command on region: python processtext.py
+</pre>
+
+
+<p>
+And the output replaces the text in the region in the current buffer.
+</p>
+<p>
+More regularly used scripts <a href="http://xahlee.org/emacs/elisp_perl_wrapper.html">can be wrapped in an emacs lisp function</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">text processing using emacs lisp</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+<p>
+The major advantages for using emacs lisp (e.g., by writing a function in the <code>*scratch*</code> buffer) rather than applying <code>(shell-command-on-region)</code> as above would be
+</p><ul>
+<li>no need to commit to a script file on the hard disk (somehow seems
+  to pose a disproportionately significant deterrent, if only mentally
+  for on-the-fly tasks)
+</li>
+<li>process text between point and mark rather than by line-by-line (or
+  on full buffer, possibly after <code>(narrow-to-region)</code>)
+</li>
+<li>transform text 'under cursor' or by word, line, or sentence in
+  addition to operating on marked regions
+</li>
+</ul>
+
+
+<p>
+One disadvantage may be that some buffer-management (especially
+creation, moving, and destruction of temporary ones) may be required.
+</p>
+<p>
+Some helpful tutorials on text-processing with emacs lisp:
+</p><ul>
+<li><a href="http://xahlee.org/emacs/elisp.html">http://xahlee.org/emacs/elisp.html</a>
+</li>
+</ul>
+
+
 
 
 <br>

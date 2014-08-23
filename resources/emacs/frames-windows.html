@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Managing windows and frames</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Managing windows and frames"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-08-23T02:05+0200"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Managing windows and frames</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Window/frame commands</a>
+<ul>
+<li><a href="#sec-1-1">Basic</a></li>
+<li><a href="#sec-1-2">Other window/frame commands</a></li>
+<li><a href="#sec-1-3">Listing windows/frames</a></li>
+<li><a href="#sec-1-4">Switching among windows/frames</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Packages to manage layouts</a>
+<ul>
+<li><a href="#sec-2-1">elscreen</a></li>
+<li><a href="#sec-2-2">winner-mode</a></li>
+<li><a href="#sec-2-3">registers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Window/frame commands</h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Basic</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">window</th><th scope="col" class="left">frame</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">make/create</td><td class="left"><code>C-x 2</code>, <code>C-x 3</code></td><td class="left"><code>C-x 5 2</code></td></tr>
+<tr><td class="left">delete</td><td class="left"><code>C-x 0</code>, <code>C-x 4 0</code></td><td class="left"><code>C-x 5 0</code></td></tr>
+<tr><td class="left">delete others</td><td class="left"><code>C-x 1</code></td><td class="left"><code>C-x 5 1</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Details on window functions:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x 0</code></td><td class="left"><code>(delete-window)</code></td></tr>
+<tr><td class="left"><code>C-x 4 0</code></td><td class="left"><code>(kill-buffer-and-window)</code></td></tr>
+<tr><td class="left"><code>C-x 2</code></td><td class="left"><code>(split-vertically)</code></td></tr>
+<tr><td class="left"><code>C-x 3</code></td><td class="left"><code>(split-horizonally)</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Other window/frame commands</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">function</th><th scope="col" class="left"><code>-other-window)</code></th><th scope="col" class="left"><code>-other-frame)</code></th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>(find-file</code>&hellip;</td><td class="left"><code>C-x 4 C-f</code></td><td class="left"><code>C-x 5 C-f</code></td></tr>
+<tr><td class="left"><code>(find-file-read-only</code>&hellip;</td><td class="left"><code>C-x 4 r</code></td><td class="left"><code>C-x 5 r</code></td></tr>
+<tr><td class="left"><code>(dired</code>&hellip;</td><td class="left"><code>C-x 4 d</code></td><td class="left"><code>C-x 5 d</code></td></tr>
+<tr><td class="left"><code>(switch-to-buffer</code>&hellip;</td><td class="left"><code>C-x 4 b</code></td><td class="left"><code>C-x 5 b</code></td></tr>
+<tr><td class="left"><code>(display-buffer</code>&hellip;</td><td class="left"><code>C-x 4 C-o</code></td><td class="left"><code>C-x 5 C-o</code></td></tr>
+<tr><td class="left"><code>(clone-indirect-buffer</code>&hellip;</td><td class="left"><code>C-x 4 c</code></td><td class="left"><code>C-x 5 c</code></td></tr>
+<tr><td class="left"><code>(find-tag</code>&hellip;</td><td class="left"><code>C-x 4 .</code></td><td class="left"><code>C-x 5 .</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Listing windows/frames</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">object</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">window</td><td class="left"><code>(window-list)</code></td></tr>
+<tr><td class="left">frame</td><td class="left"><code>(frame-list)</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">Switching among windows/frames</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x o</code></td><td class="left"><code>(other-window)</code></td></tr>
+<tr><td class="left"><code>C-x 5 o</code></td><td class="left"><code>(other-frame)</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Packages to manage layouts</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+The following libraries are useful for preserving window layout within
+frames (but not the buffers within windows). Note: if the frame is
+deleted, configurations recorded by winner-mode and elscreen are lost.
+</p>
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">elscreen</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<p>
+Rather than using multiple frames, Elscreen can be used to manage
+simultaneous window configurations in a single (optionally tabbed)
+frame.  <a href="elscreen-keys.html">Keybindings</a>
+</p>
+<p>
+APEL and elscreen should be installed.
+</p>
+<p>
+I think there is a comparison of windows configurations between the return value of  <code>(elscreen-get-window-configuration)</code> and the prior value saved from <code>(elscreen-set-window-configuration)</code>. The latter function is not called when the screen is resized, so elscreen tries to redraw the frame <code>(redraw-frame)</code> with every keystroke.
+</p>
+<p>
+There is probably a more elegant fix, but this just cycles through all the elscreen tabs so that the window-configuration is synced with the present frame and window geometries.
+</p>
+
+
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">elscreen-reset</span> ()
+  <span style="font-style: italic;">"Cycles through screens so that window configurations are reset </span>
+<span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">prevents flashing from redraw-frame[?] after each keystroke)"</span>
+  (interactive)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">only happens when number of screens &gt; 1</span>
+  (<span style="font-weight: bold;">when</span> (&gt; (elscreen-get-number-of-screens) 1)
+    (<span style="font-weight: bold;">let*</span> ((screen-list (elscreen-get-screen-list))
+           (current-screen (elscreen-get-current-screen))
+           (screen-seq (append (delq current-screen screen-list)
+                               (list current-screen))))
+      (mapc 'elscreen-goto screen-seq))))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">define keybinding</span>
+(define-key elscreen-map <span style="font-style: italic;">"r"</span> 'elscreen-reset)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">winner-mode</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+Winner-mode recalls (one of past 60) frames in current context. Very useful.
+</p>
+
+
+<pre class="src src-elisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">winner</span>)
+(winner-mode t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">turn on the global minor mode</span>
+(setq winner-dont-bind-my-keys t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">default bindings conflict with org-mode</span>
+                                  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">according to emacs-fu</span>
+</pre>
+
+<p>
+The relevant keybindings are:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-c &lt;left&gt;</code></td><td class="left"><code>(winner-redo)</code></td></tr>
+<tr><td class="left"><code>C-c &lt;right&gt;</code></td><td class="left"><code>(winner-undo)</code></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">registers</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">keybinding</th><th scope="col" class="left">elisp function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><code>C-x r w</code> <i>r</i></td><td class="left"><code>(window-configuration-to-register)</code></td></tr>
+<tr><td class="left"><code>C-x r f</code> <i>r</i></td><td class="left"><code>(frame-configuration-to-register)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+To recall one of these configuration, use <code>jump-to-register</code> (<code>C-x r j</code> <i>r</i>).
+</p>
+<p>
+See section on <a href="../editing-text.html">registers</a> for more information
+</p>
+
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+
+
+
+<br>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

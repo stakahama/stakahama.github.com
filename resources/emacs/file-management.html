@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>File management</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="File management"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-08-23T02:05+0200"/>
+<meta name="author" content="Satoshi Takahama"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">File management</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">dired</a></li>
+<li><a href="#sec-2">find</a></li>
+<li><a href="#sec-3">recursive grep</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">dired</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<ul>
+<li>Browsing through a long list of files in the
+  directory (not too different from <code>ls -lah</code>).
+</li>
+<li>For directories that contain many files (<i>n</i> &gt; ??), ido-mode will not
+  function. 
+</li>
+<li><code>dired-mode</code> useful for deleteing/renaming files and applying
+  shell-commands to them (e.g., <code>open</code> or <code>gnome-open</code>, <code>wc -l</code>).
+</li>
+<li>Dired mode functions also useful for writing Emacs Lisp shell scripts.
+</li>
+</ul>
+
+
+<p>
+Keybindings:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th><th scope="col" class="left">function</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">update dir listing</td><td class="left"><code>g</code></td><td class="left"><code>(revert-buffer)</code></td></tr>
+<tr><td class="left">toggle sorting by date</td><td class="left"><code>s</code></td><td class="left"><code>(dired-sort-toggle-or-edit)</code></td></tr>
+<tr><td class="left">mark a file</td><td class="left"><code>m</code></td><td class="left"><code>(dired-mark)</code></td></tr>
+<tr><td class="left">unmark file</td><td class="left"><code>u</code></td><td class="left"><code>(dired-unmark)</code></td></tr>
+<tr><td class="left">unmark all</td><td class="left"><code>U</code></td><td class="left"><code>(dired-unmark-all-marks)</code></td></tr>
+<tr><td class="left">mark by regex</td><td class="left"><code>%m</code></td><td class="left"><code>(dired-mark)</code></td></tr>
+<tr><td class="left">create dir</td><td class="left"><code>+</code></td><td class="left"><code>(dired-create-directory)</code></td></tr>
+<tr><td class="left">rename file</td><td class="left"><code>R</code></td><td class="left"><code>(dired-do-rename)</code></td></tr>
+<tr><td class="left">copy file</td><td class="left"><code>C</code></td><td class="left"><code>(dired-copy-file)</code></td></tr>
+<tr><td class="left">delete file</td><td class="left"><code>D</code></td><td class="left"><code>(dired-do-delete)</code></td></tr>
+<tr><td class="left">compress/decompress file</td><td class="left"><code>Z</code></td><td class="left"><code>(dired-do-compress)</code></td></tr>
+<tr><td class="left">shell-command (e.g., open)</td><td class="left"><code>!</code></td><td class="left"><code>(dired-do-shell-command)</code></td></tr>
+<tr><td class="left">shell-command asynchronous</td><td class="left"><code>&amp;</code></td><td class="left"><code>(dired-do-async-shell-command)</code></td></tr>
+<tr><td class="left">chmod</td><td class="left"><code>M</code></td><td class="left"><code>(dired-do-chmod)</code></td></tr>
+<tr><td class="left">chown</td><td class="left"><code>O</code></td><td class="left"><code>(dired-do-chown)</code></td></tr>
+<tr><td class="left">view file or directory</td><td class="left"><code>a</code></td><td class="left"><code>(dired-find-alternate-file)</code></td></tr>
+<tr><td class="left">view enclosing directory</td><td class="left"><code>^</code></td><td class="left"><code>(diredp-up-directory)</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Can use <code>m</code> to mark file(s), then apply <code>R</code>, <code>C</code>, <code>D</code>, etc.
+</p>
+<p>
+Already enabeld in aprl-config.
+</p>
+
+
+<pre class="src src-emacs-lisp">(put 'dired-find-alternate-file 'disabled nil)
+</pre>
+
+
+<p>
+See also <a href="http://xahlee.org/emacs/file_management.html">http://xahlee.org/emacs/file_management.html</a>
+</p>
+<p>
+For colored formatting used <code>dired+</code>.
+</p>
+
+
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">dired+</span>)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">find</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+The <code>find-lisp</code> library contains a few OS-agnostic 'nix-like <code>find</code> operations. The most useful interactive function is <code>M-x find-lisp-find-dired</code>, which accepts arguemnts of <code>DIR</code> and <code>REGEXP</code>.
+</p>
+<p>
+Two additional interactive functions from this library are
+<code>find-lisp-find-dired-subdirectories</code> (list all subdirectories of
+argument <code>DIR</code>) and <code>find-lisp-find-dired-filters</code> (set default
+<code>REGEXP</code> to be used by <code>find-lisp-find-dired-internal</code>, which is not
+interactive). I have never used the latter function.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">recursive grep</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Use <code>M-x rgrep</code> for most tasks.
+</p>
+<p>
+For finer control, access grep, egrep, and grep-find functions with
+the <code>M-x</code> prefix. The advantage of <code>grep-find</code> in particular, over the
+<code>find -exec grep</code> called through the terminal, is the value-added
+proposition of syntax highlighting and interaction (click on the entry
+to go to that location in the file, which is opened in a buffer)
+offered by Emacs.
+</p>
+   
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+
+
+
+<br>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<hr>
+Generated by Org-mode 7.8.11 with Emacs 24
+</div>
+</body>
+</html>

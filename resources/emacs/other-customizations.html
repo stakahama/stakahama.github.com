@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="other-customizations"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-21T22:53+0200"/>
+<meta name="generated" content="2014-08-23T02:05+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -141,7 +141,13 @@
 
 
 <p>
-run with <code>M-x flyspell-buffer</code> and  <code>M-x langtool-check-buffer</code>
+run with <code>M-x flyspell-buffer</code> and  <code>M-x langtool-check-buffer</code>.
+</p>
+<p>
+Apparently, <a href="http://www.networkworld.com/community/node/25360">RMS mentioned</a> wanting to see more word-processing features in Emacs, saying that "I would like to see it extended to operate as a word processor, editing formatted text" upon relinquishing his role as maintaner of this project.
+</p>
+<p>
+If writing in LaTeX, sometimes I export the .tex file to .rtf using <code>latex2rtf</code> or <code>$ detex filename.tex &gt; filename.txt</code> and open in MS Word for visual spell/grammar check.
 </p>
 </div>
 
@@ -181,7 +187,7 @@ To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> 
                   (<span style="font-weight: bold;">let</span> ((view-command '(<span style="font-style: italic;">"View"</span> 
                                         <span style="font-style: italic;">"open -a Preview.app %s.pdf"</span> 
                                         TeX-run-discard-or-function t t 
-                                        <span style="font-weight: bold;">:help</span> <span style="font-style: italic;">"Run Viewer"</span>)))
+                                        <span style="font-weight: bold;">:help</span> <span style="font-style: italic;">"Run Viewer"</span>))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">edit this list as necessary</span>
                     (mapcar (<span style="font-weight: bold;">lambda</span> (x) 
                               (<span style="font-weight: bold;">if</span> (equal (car x) <span style="font-style: italic;">"View"</span>) view-command x))
                             TeX-command-list)))))
@@ -201,12 +207,29 @@ To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> 
 
 
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">iterm-here</span> ()
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">http://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/</span>
+  <span style="font-style: italic;">"from http://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/"</span>
   (interactive)
   (dired-smart-shell-command (format <span style="font-style: italic;">"open -a iTerm \"%s\""</span> default-directory) nil nil))
 </pre>
 
 
+
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+</tbody>
+</table>
+
+
+
+
+<br>
 </div>
 </div>
 </div>

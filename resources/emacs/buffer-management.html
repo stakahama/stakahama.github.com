@@ -3,11 +3,11 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>primary functions:</title>
+<title>Buffer management</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="primary functions:"/>
+<meta name="title" content="Buffer management"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-11-13T13:32+0100"/>
+<meta name="generated" content="2014-08-23T02:05+0200"/>
 <meta name="author" content="Satoshi Takahama"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -91,81 +91,76 @@
 </div>
 
 <div id="content">
-<h1 class="title">primary functions:</h1>
+<h1 class="title">Buffer management</h1>
 
-<ul>
-<li><code>w3m</code>
-</li>
-<li><code>w3m-browse-url</code>
-</li>
-<li><code>w3m-find-file</code>
-</li>
-</ul>
-
-
-<p>
-keybindings in <code>w3m-mode</code>:
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<p>Though I usually use <code>ido-mode</code> to cycle through buffers, I occasionally
+use <code>ibuffer</code> to see what buffers I have open, and close ones I am no
+longer using.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">key</th><th scope="col" class="left">description</th></tr>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th></tr>
 </thead>
 <tbody>
-<tr><td class="left"><code>B</code></td><td class="left">previous page</td></tr>
-<tr><td class="left"><code>N</code></td><td class="left">next page</td></tr>
-<tr><td class="left"><code>H</code></td><td class="left">home</td></tr>
-<tr><td class="left"><code>SPC</code></td><td class="left">next url</td></tr>
-<tr><td class="left"><code>DEL</code></td><td class="left">previous url</td></tr>
-<tr><td class="left"><code>RET</code></td><td class="left">go to url, edit form item under point, etc.</td></tr>
-<tr><td class="left"><code>d</code></td><td class="left">download document at link under point</td></tr>
+<tr><td class="left">mark buffer</td><td class="left"><code>m</code></td></tr>
+<tr><td class="left">unmark buffer</td><td class="left"><code>u</code></td></tr>
+<tr><td class="left">mark unsaved buffers</td><td class="left"><code>*u</code></td></tr>
+<tr><td class="left">save marked buffer</td><td class="left"><code>S</code></td></tr>
+<tr><td class="left">close marked buffers</td><td class="left"><code>D</code></td></tr>
+<tr><td class="left">unmark all</td><td class="left"><code>**</code></td></tr>
+<tr><td class="left">mark by mode name</td><td class="left"><code>%m</code></td></tr>
+<tr><td class="left">mark by file path</td><td class="left"><code>%f</code></td></tr>
 </tbody>
 </table>
 
 
 <p>
-keybindings for filling  out forms:
+<a href="http://xahlee.org/emacs/effective_emacs.html">http://xahlee.org/emacs/effective_emacs.html</a>
+</p>
+<p>
+sorting:
 </p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">key(s)</th><th scope="col" class="left">description</th></tr>
+<tr><th scope="col" class="left">task</th><th scope="col" class="left">keys</th></tr>
 </thead>
 <tbody>
-<tr><td class="left"><code>]</code></td><td class="left">jump to next form</td></tr>
-<tr><td class="left"><code>[</code></td><td class="left">jump to previous form</td></tr>
-<tr><td class="left"><code>C-c C-c</code></td><td class="left">submit form at point</td></tr>
-<tr><td class="left"><code>C-c C-q</code></td><td class="left">quit editing the form item</td></tr>
+<tr><td class="left">Rotate between the various sorting modes.</td><td class="left">&lt;code&gt;,&lt;/code&gt;</td></tr>
+<tr><td class="left">Reverse the current sorting order.</td><td class="left"><code>s i</code></td></tr>
+<tr><td class="left">Sort the buffers lexicographically.</td><td class="left"><code>s a</code></td></tr>
+<tr><td class="left">Sort the buffers by the file name.</td><td class="left"><code>s f</code></td></tr>
+<tr><td class="left">Sort the buffers by last viewing time.</td><td class="left"><code>s v</code></td></tr>
+<tr><td class="left">Sort the buffers by size.</td><td class="left"><code>s s</code></td></tr>
+<tr><td class="left">Sort the buffers by major mode.</td><td class="left"><code>s m</code></td></tr>
+</tbody>
+</table>
+
+
+<p>
+(electric-buffer-list is also electrifying)
+</p>
+
+
+<br>
+<hr>
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
 </tbody>
 </table>
 
 
 
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">invocation</a></li>
-</ul>
-</div>
-</div>
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">invocation</h2>
-<div class="outline-text-2" id="text-1">
-
-
-
-
-
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">w3m</span>)
-(setenv <span style="font-style: italic;">"HTTP_PROXY"</span> <span style="font-style: italic;">"http://webproxy.ucsd.edu:3128"</span>)
-</pre>
-
-</div>
-</div>
+<br>
 </div>
 
 <div id="postamble">
