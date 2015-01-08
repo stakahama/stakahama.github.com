@@ -1,66 +1,118 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>LaTeX</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="LaTeX"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2014-11-05 Wed 00:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,163 +134,615 @@
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">LaTeX</h1>
-
-<p>(Need to add references to original sources.)
-</p>
-<p>
-I included LaTeX under the programming category because while it is often used as a markup langauge, it is also a programming language.
-</p>
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">General</a>
+<li><a href="#sec-1">1. Editors</a>
 <ul>
-<li><a href="#sec-1-1">Subscript size</a></li>
-<li><a href="#sec-1-2">Colors</a></li>
+<li><a href="#sec-1-1">1.1. options</a></li>
+<li><a href="#sec-1-2">1.2. spelling and grammar check</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Compilation</a></li>
-<li><a href="#sec-3">Bibliographies</a>
+<li><a href="#sec-2">2. Colors</a></li>
+<li><a href="#sec-3">3. Tables</a></li>
+<li><a href="#sec-4">4. Spacing</a>
 <ul>
-<li><a href="#sec-3-1">Biblatex</a></li>
-<li><a href="#sec-3-2">Natbib and bibtex</a></li>
+<li><a href="#sec-4-1">4.1. ad hoc</a></li>
+<li><a href="#sec-4-2">4.2. indentation</a></li>
+<li><a href="#sec-4-3">4.3. line spacing</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">Local environments</a></li>
-<li><a href="#sec-5">Beamer</a></li>
-<li><a href="#sec-6">Emacs integration</a>
+<li><a href="#sec-5">5. Header/footer</a></li>
+<li><a href="#sec-6">6. Caption</a></li>
+<li><a href="#sec-7">7. Number in variable/macro names</a></li>
+<li><a href="#sec-8">8. Lists</a></li>
+<li><a href="#sec-9">9. Chemistry</a></li>
+<li><a href="#sec-10">10. Line numbers</a></li>
+<li><a href="#sec-11">11. Figures</a></li>
+<li><a href="#sec-12">12. Math</a>
 <ul>
-<li><a href="#sec-6-1">Keybindings</a></li>
-<li><a href="#sec-6-2">Spell check</a></li>
+<li><a href="#sec-12-1">12.1. array vs. aligned</a></li>
+<li><a href="#sec-12-2">12.2. formatting optimization problems</a></li>
 </ul>
 </li>
+<li><a href="#sec-13">13. Fonts</a></li>
+<li><a href="#sec-14">14. Title spacing</a></li>
+<li><a href="#sec-15">15. Compilation</a>
+<ul>
+<li><a href="#sec-15-1">15.1. latexmk (needs editing)</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16. Bibliographies</a>
+<ul>
+<li><a href="#sec-16-1">16.1. Biblatex</a></li>
+<li><a href="#sec-16-2">16.2. Natbib and bibtex</a></li>
+<li><a href="#sec-16-3">16.3. Extracting subset of bibliographies</a></li>
+</ul>
+</li>
+<li><a href="#sec-17">17. Local environments</a></li>
+<li><a href="#sec-18">18. Beamer</a></li>
+<li><a href="#sec-19">19. Placing custom .sty files</a></li>
+<li><a href="#sec-20">20. Templates</a></li>
+<li><a href="#sec-21">21. Handling file names</a></li>
 </ul>
 </div>
 </div>
+<p>
+(Need to add references to original sources.)
+</p>
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">General</h2>
+<p>
+This is an excellent reference:
+</p>
+
+<p>
+<a href="http://en.wikibooks.org/wiki/LaTeX">http://en.wikibooks.org/wiki/LaTeX</a>
+</p>
+
+<p>
+This page is meant to highlight a few features which I come across often
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Editors</h2>
 <div class="outline-text-2" id="text-1">
-
-
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Subscript size</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> options</h3>
 <div class="outline-text-3" id="text-1-1">
-
-
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">subdepth</span>}
-</pre>
+<p>
+I use Emacs with AucTeX.
+</p>
 
 <p>
-for consistent subscript size.
+TexStudio seems to be nice as it integrates with Language Tool, a spell-checker, and text analysis (e.g., word count).
+</p>
+
+<p>
+I know colleagues have previously been pleased with WinEdt (Windows) and TeXShop (Mac).
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Colors</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> spelling and grammar check</h3>
 <div class="outline-text-3" id="text-1-2">
-
-
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[usenames]{<span style="font-weight: bold;">color</span>}
-<span style="font-weight: bold;">\xdefinecolor</span>{darkred}{rgb}{0.545,0,0}
-<span style="font-weight: bold;">\xdefinecolor</span>{midnightblue}{rgb}{0.098,0.098,0.439}
-<span style="font-weight: bold;">\xdefinecolor</span>{steelblue}{rgb}{0.275,0.510,0.706}
-<span style="font-weight: bold;">\xdefinecolor</span>{blendedblue}{rgb}{0.2,0.2,0.7}
-</pre>
-
+<p>
+In emacs, I use <code>M-x flyspell-buffer</code> and <code>M-x langtool-check-buffer</code>.
+</p>
 
 <p>
-Wrapped columns in tables; 
-</p><ul>
-<li>unwrapped: Otherwise like <code>p{}</code> and <code>c{}</code>.
+Other options:
+</p>
+
+<p>
+<a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool">http://wiki.languagetool.org/checking-la-tex-with-languagetool</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Colors</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Good document <a href="http://en.wikibooks.org/wiki/LaTeX/Colors">here</a>.
+</p>
+
+<p>
+Full invocation
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage[usenames,dvipsnames,svgnames,x11names,table]{xcolor}
+</pre>
+</div>
+<p>
+but more commonly just with <code>[usenames]</code> option.
+</p>
+
+<p>
+Apply with <code>\textcolor{declared-color}{text}</code> or <code>{\color{declared-color} text}</code>.
+</p>
+
+<p>
+Define colors:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\definecolor{darkred}{rgb}{0.545,0,0}
+\definecolor{midnightblue}{rgb}{0.098,0.098,0.439}
+\definecolor{steelblue}{rgb}{0.275,0.510,0.706}
+\definecolor{blendedblue}{rgb}{0.2,0.2,0.7}
+\definecolor{purple}{rgb}{0.714,0.204,0.733}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Tables</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Text in tables; 
+</p>
+<ul class="org-ul">
+<li>unwrapped columns: use <code>p{}</code>, <code>c{}</code>, <code>r</code>
 </li>
-<li>wrapped: left-justified <code>P{}</code> and centered <code>C{}</code>. 
+<li>wrapped columns: use <code>P{}</code>, <code>C{}</code>, and <code>R{}</code> as defined <a href="http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef">below</a>
 </li>
 </ul>
 
+<div class="org-src-container">
 
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">array</span>}
-<span style="font-weight: bold;">\newcolumntype</span>{P}[1]{&gt;{<span style="font-weight: bold;">\raggedright\arraybackslash</span>}p{#1}}
-<span style="font-weight: bold;">\newcolumntype</span>{C}[1]{&gt;{<span style="font-weight: bold;">\centering\arraybackslash</span>}p{#1}}
+<pre class="src src-latex">\usepackage{array}
+\newcolumntype{L}[1]{&gt;{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{&gt;{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{&gt;{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 </pre>
-
+</div>
 
 <p>
-Spacing: horizontal space <code>1em</code>, vertical space <code>1ex</code>.
+Use tabularx to specify width and allow cell stretching.
+<a href="http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabularx_package">http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabularx_package</a>
+</p>
+
+<p>
+Multi-page tables
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{longtable}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Spacing</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> ad hoc</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>horizontal spacing: <code>\hspace</code>, <code>\hspace*</code>
+</li>
+<li>vertical spacing: <code>\vspace</code>
+</li>
+</ul>
+
+<p>
+Note that <code>\hspace</code> and <code>\vspace</code> only modify positions of objects contained in boxes (e.g., <code>minipage</code> environment).
+</p>
+
+<p>
+Character size units: horizontal space <code>1em</code>, vertical space <code>1ex</code>.
 </p>
 </div>
 </div>
 
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> indentation</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Remove paragraph indentation with <code>\usepackage{parskip}</code>.
+</li>
+<li>Indent first paragraph with <code>\usepackage{indentfirst}</code>.
+</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Compilation</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> line spacing</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+<a href="http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Line_spacing">http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Line_spacing</a>
+</p>
 
+<p>
+<code>\usepackage{setspace}</code> package provides these commands: <code>\singlespacing</code>, <code>\onehalfspacing</code>, <code>\doublespacing</code>
+</p>
 
+<p>
+Additionally provides <code>spacing</code> environment which can be used within <code>tabular</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Header/footer</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Use <a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Customizing_with_fancyhdr">fancyhdr</a>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-latex">%% set geometry
+\documentclass[a4paper]{article}
+\usepackage[hmargin=25mm,vmargin=25mm]{geometry}
+\topmargin -25pt
+\headsep 15pt
+%%
+\usepackage{fancyhdr}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhf{} % clear previous customization
+\fancyhead[L]{Text}
+\fancyhead[R]{\emph{More text}}
+\fancyfoot[C]{\thepage}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Caption</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage[small]{caption}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Number in variable/macro names</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<a href="http://tex.stackexchange.com/a/9719/3602">http://tex.stackexchange.com/a/9719/3602</a>
+</p>
+
+<p>
+Rather than <code>\newcommand{\x1}{variable1}</code>, use <code>\newcommand{\x}[1]{variable#1}</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Lists</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Set spacing between items:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\begin{itemize}
+\itemsep -1ex
+\item ...
+\end{itemize}
+</pre>
+</div>
+
+<p>
+Or set globally with <code>enumitem</code>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{enumitem}
+\setitemize{itemsep=-1ex}
+\setenumerate{itemsep=-1ex}
+</pre>
+</div>
+
+<p>
+Defining custom lists based on <code>list</code> environment:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\newenvironment{publist}
+{\begin{list}{}{\itemsep=0pt \leftmargin=\indentation \parsep=0pt \labelsep=0pt \partopsep=0pt}\item[]}
+  {\end{list}}
+</pre>
+</div>
+
+<p>
+With calculations
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{calc}
+\newlength{\margineone}
+\setlength{\marginone}{.03\textwidth}
+\newlength{\margintwo}
+\setlength{\margintwo}{.08\textwidth}
+
+\newenvironment{mylist}
+{\begin{list}{}{\itemsep=0pt \leftmargin=\margintwo \parsep=0pt \labelsep=0pt \partopsep=0pt \itemindent=\dimexpr\marginone-\margintwo\relax}}
+  {\end{list}}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Chemistry</h2>
+<div class="outline-text-2" id="text-9">
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage[version=3]{mhchem}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Line numbers</h2>
+<div class="outline-text-2" id="text-10">
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage[displaymath,mathlines]{lineno}
+</pre>
+</div>
+
+<p>
+AMS math environments conflict with line numbers
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">%% http://phaseportrait.blogspot.ch/2007/08/lineno-and-amsmath-compatibility.html
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}%
+  {\linenomath\csname old#1\endcsname}%
+  {\csname oldend#1\endcsname\endlinenomath}}% 
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+  \patchAmsMathEnvironmentForLineno{#1}%
+  \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+  \patchBothAmsMathEnvironmentsForLineno{equation}%
+  \patchBothAmsMathEnvironmentsForLineno{align}%
+  \patchBothAmsMathEnvironmentsForLineno{flalign}%
+  \patchBothAmsMathEnvironmentsForLineno{alignat}%
+  \patchBothAmsMathEnvironmentsForLineno{gather}%
+  \patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Figures</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+<code>\usepackage{graphicx}</code>
+<code>\usepackage{float}</code>
+</p>
+
+<p>
+<code>\usepackage{wrapfig}</code> also works with tables.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Math</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> array vs. aligned</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+<a href="http://tex.stackexchange.com/a/111898/3602">http://tex.stackexchange.com/a/111898/3602</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> formatting optimization problems</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+<a href="http://tex.stackexchange.com/questions/5223/command-for-argmin-or-argmax">Define argmin and argmax in preamble</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+</pre>
+</div>
+
+<p>
+<a href="http://www.orcomplete.com/computer/sertalpbilal/latex-templates-for-optimization-models">Structure the text using array environment</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\[
+\begin{array}{rrclcl}
+\displaystyle \min_{x} &amp; \multicolumn{3}{l}{c^T x} \\
+\textrm{s.t.} &amp; A x &amp; \leq &amp; b \\
+&amp;\displaystyle \sum_{i=0}^{n} x_i &amp; = &amp; 1 \\
+&amp; x_j &amp; \geq &amp; 0 &amp; &amp; \forall j \in N \\
+\end{array}
+\]
+</pre>
+</div>
+
+<p>
+Another <a href="http://jcnts.wordpress.com/2009/11/11/formatting-optimization-problems-with-latex/">option</a> is given using aligned.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+</pre>
+</div>
+
+<p>
+<code>\displaystyle</code>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Fonts</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Sans-serif text and math:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-latex">\renewcommand\familydefault{\sfdefault} 
+\usepackage[cm]{sfmath}
+</pre>
+</div>
+
+<p>
+Other options for sans serif math fonts:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{cmbright}
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+\DeclareTextFontCommand{\emph}{\itshape}
+</pre>
+</div>
+
+<p>
+Bold italic sans serif (my solution):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage[OMLmathsfit]{ISOmath}
+\usepackage{cmbright}
+\usepackage{bm}
+\renewcommand{\vectorsym}{\bm}
+\renewcommand{\matrixsym}{\vectorsym}
+</pre>
+</div>
+
+<p>
+Bold Greek letters: <code>\bm{\beta}</code>. The <code>bm</code> packages uses <code>\boldmath</code> or <code>\boldsymbol</code> as necessary.
+</p>
+
+<p>
+Many equations engineering use multi-character variable names. E.g., instead of <code>x</code>, <code>y</code>, etc., people might name their variables to reflect the physical phenomenon being modeled. E.g., <code>RH</code> (relative humidity), <code>MW</code> (molecular weight), <code>OA</code> (organic aerosol). In this case, use <code>$\mathit{RH}$</code> instead of just <code>$RH$</code>.
+</p>
+
+<p>
+For consistent subscript size:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{subdepth}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Title spacing</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Remove whitespace after title (and before date) 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-latex">\title{Title \vspace{-5ex}}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Compilation</h2>
+<div class="outline-text-2" id="text-15">
 <p>
 Put <code>\batchmode</code> at the top of your <code>.tex</code> file (or <code>\nonstopmode</code> for more verbose output).
 </p>
+</div>
+
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> latexmk (needs editing)</h3>
+<div class="outline-text-3" id="text-15-1">
 <p>
 Use <code>latexmk</code>: 
 </p>
 
-
+<div class="org-src-container">
 
 <pre class="src src-sh">latexmk -pdf texfile
 </pre>
-
+</div>
 
 <p>
 On Max OS X, <code>latexmk</code> is installed with =texlive=(?).
 </p>
 
+<p>
+Following some suggestions <a href="http://jon.smajda.com/2008/03/08/latexmk/">elsewhere</a>, for compiling pdf files and I created a file <code>~/bin/latexmk_pdf</code> which contains the following:
+</p>
 
+<div class="org-src-container">
+
+<pre class="src src-sh">#!/bin/sh
+latexmk -pdf -pvc $1
+</pre>
 </div>
 
+<p>
+and for viewing preferences, <code>~/.latexmkrc</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">$pdf_previewer = "open -a /Applications/Skim.app"; $clean_ext = "paux lox pdfsync out";
+</pre>
+</div>
+</div>
+</div>
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Bibliographies</h2>
-<div class="outline-text-2" id="text-3">
-
-
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Bibliographies</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+For journal articles, use bibtex template provided by publisher (not biblatex).
+</p>
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">Biblatex</h3>
-<div class="outline-text-3" id="text-3-1">
-
-
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Biblatex</h3>
+<div class="outline-text-3" id="text-16-1">
 <p>
 Loading the package:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[
+<pre class="src src-latex">\usepackage[
     sorting=nyt, 
     citestyle=authoryear, 
     bibstyle=ieee, 
@@ -247,226 +751,311 @@ Loading the package:
     backend=biber, 
     block=none, 
     natbib
-]{<span style="font-weight: bold;">biblatex</span>}
+]{biblatex}
 </pre>
-
+</div>
 
 <p>
 Use alphabetical reference list; no numbering:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\defbibenvironment</span>{bibliography}
-{<span style="font-weight: bold;">\list</span>
+<pre class="src src-latex">\defbibenvironment{bibliography}
+{\list
   {}
-  {<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\leftmargin</span>}{<span style="font-weight: bold;">\bibhang</span>+1em}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemindent</span>}{-<span style="font-weight: bold;">\leftmargin</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\itemsep</span>}{<span style="font-weight: bold;">\bibitemsep</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\parsep</span>}{<span style="font-weight: bold;">\bibparsep</span>}}}
-{<span style="font-weight: bold;">\endlist</span>}
-{<span style="font-weight: bold;">\item</span>}
+  {\setlength{\leftmargin}{\bibhang+1em}%
+    \setlength{\itemindent}{-\leftmargin}%
+    \setlength{\itemsep}{\bibitemsep}%
+    \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
 </pre>
-
+</div>
 
 <p>
 Create doi links in bibliography:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">\string~/git/projects/bibfile/references</span>}
-<span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{url=false,eprint=false}
-<span style="font-weight: bold;">\newbibmacro</span>{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\iffieldundef</span>{doi}{#1}{<span style="font-weight: bold;">\href</span>{http://dx.doi.org/<span style="font-weight: bold;">\thefield</span>{doi}}{#1}}}
-<span style="font-weight: bold;">\DeclareFieldFormat</span>{doi}{<span style="font-weight: bold;">\usebibmacro</span>{string+doi}{doi:#1}}
+<pre class="src src-latex">\bibliography{\string~/git/projects/bibfile/references}
+\ExecuteBibliographyOptions{url=false,eprint=false}
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
 </pre>
-
+</div>
 
 <p>
 Change bibliography title:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\printbibliography</span>[title=Bibliography]
+<pre class="src src-latex">\printbibliography[title=Bibliography]
 </pre>
-
+</div>
 
 <p>
 No bibliography title:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{}
-<span style="font-weight: bold;">\vspace</span>{-5ex}
-<span style="font-weight: bold;">\printbibliography</span>
+<pre class="src src-latex">\renewcommand\refname{}
+\vspace{-5ex}
+\printbibliography
 </pre>
-
+</div>
 
 <p>
 Multiple bibliographies:
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">Section 1</span>}
-<span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">refsection</span>}
-<span style="font-weight: bold;">\nocite</span>{<span style="font-weight: bold; text-decoration: underline;">*</span>}
-<span style="font-weight: bold;">\vspace</span>{-5ex}
-<span style="font-weight: bold;">\printbibliography</span>[title=<span style="font-weight: bold;">\sectiontitle</span>]
-<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">refsection</span>}
+<pre class="src src-latex">\section*{Section 1}
+\begin{refsection}
+\nocite{*}
+\vspace{-5ex}
+\printbibliography[title=\sectiontitle]
+\end{refsection}
 </pre>
-
-
+</div>
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2">Natbib and bibtex</h3>
-<div class="outline-text-3" id="text-3-2">
-
-
+<div id="outline-container-sec-16-2" class="outline-3">
+<h3 id="sec-16-2"><span class="section-number-3">16.2</span> Natbib and bibtex</h3>
+<div class="outline-text-3" id="text-16-2">
 <p>
 <code>natbib=+=bibtex</code> (instaed of <code>biblatex</code>) still required for journal submissions.
 </p>
+
 <p>
 Don't print reference title
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibname</span>}{}
-<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\refname</span>}{}
+<pre class="src src-latex">\renewcommand{\bibname}{}
+\renewcommand{\refname}{}
 </pre>
-
+</div>
 
 <p>
 Don't print reference title at all (with natbib)
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{}
+<pre class="src src-latex">\renewcommand{\bibsection}{}
 </pre>
-
+</div>
 
 <p>
 Don't show reference title on TOC
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{<span style="font-weight: bold;">\section*</span>{<span style="font-weight: bold;">\bibname</span>}}
+<pre class="src src-latex">\renewcommand{\bibsection}{\section*{\bibname}}
 </pre>
-
+</div>
 
 <p>
 Reference title as section head
 </p>
+<div class="org-src-container">
 
-
-<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{<span style="font-weight: bold;">\vspace</span>{-5ex}}
-<span style="font-weight: bold;">\section</span>{<span style="font-weight: bold;">References</span>}
-<span style="font-weight: bold;">\bibliographystyle</span>{...}
-<span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold;">...</span>}
+<pre class="src src-latex">\renewcommand\refname{\vspace{-5ex}}
+\section{References}
+\bibliographystyle{...}
+\bibliography{...}
 </pre>
-
-
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Local environments</h2>
-<div class="outline-text-2" id="text-4">
-
-
-
-
-
-<pre class="src src-latex"><span style="font-weight: bold;">\begingroup</span>
-<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">...</span>}
-<span style="font-weight: bold;">\endgroup</span>
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">Beamer</h2>
-<div class="outline-text-2" id="text-5">
-
-
+<div id="outline-container-sec-16-3" class="outline-3">
+<h3 id="sec-16-3"><span class="section-number-3">16.3</span> Extracting subset of bibliographies</h3>
+<div class="outline-text-3" id="text-16-3">
 <p>
-Add section title in footers (<a href="http://www.latex-community.org/forum/viewtopic.php?f=5&amp;t=10735">reference</a>):
+E.g., <a href="http://tex.stackexchange.com/questions/417/how-to-split-all-bibtex-referenced-entries-from-a-big-bibtex-database-to-a-copy">for distribution with tex file</a>. Use <a href="http://www.ctan.org/tex-archive/biblio/bibtex/utils/bibtool/">bibtool</a>.
 </p>
 
+<p>
+To build, download and unpack bibtool.zip:
+</p>
+<div class="org-src-container">
 
-<pre class="src src-latex"><span style="font-weight: bold;">\usetheme</span>{Boadilla}
-<span style="font-weight: bold;">\usecolortheme</span>{whale}
-<span style="font-weight: bold;">\defbeamertemplate*</span>{footline}{my infolines theme} 
+<pre class="src src-sh">./configure
+make --file=makefile.unx
+sudo make --file=makefile.unx
+sudo make --file=makefile.unx install.man
+make --file=makefile.unx clean
+</pre>
+</div>
+
+<p>
+To build docs:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">cd doc
+make
+</pre>
+</div>
+
+<p>
+To use:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">bibtool -x file.aux -o refs.bib
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Local environments</h2>
+<div class="outline-text-2" id="text-17">
+<div class="org-src-container">
+
+<pre class="src src-latex">\begingroup
+\renewcommand{...}
+\endgroup
+</pre>
+</div>
+<p>
+or can use \{\}.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Beamer</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Add section title in footers (<a href="http://www.latex-community.org/forum/viewtopic.php?f=5&t=10735">reference</a>):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usetheme{Boadilla}
+\usecolortheme{whale}
+\defbeamertemplate*{footline}{my infolines theme} 
 {
-  <span style="font-weight: bold;">\leavevmode</span><span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\hbox</span>{<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,center]{author in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\usebeamerfont</span>{author in head/foot}<span style="font-weight: bold;">\insertshortauthor</span>~~(<span style="font-weight: bold;">\insertshortinstitute</span>)
-  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,center]{title in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\usebeamerfont</span>{title in head/foot}<span style="font-weight: bold;">\insertsectionhead</span>
-  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333<span style="font-weight: bold;">\paperwidth</span>,ht=2.25ex,dp=1ex,right]{date in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
-    <span style="font-weight: bold;">\usebeamerfont</span>{date in head/foot}<span style="font-weight: bold;">\insertshortdate</span>{}<span style="font-weight: bold;">\hspace*</span>{2em}
-    <span style="font-weight: bold;">\insertframenumber</span>{} / <span style="font-weight: bold;">\inserttotalframenumber\hspace*</span>{2ex}
-  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}}<span style="font-weight: bold; font-style: italic;">%</span>
-  <span style="font-weight: bold;">\vskip</span>0pt<span style="font-weight: bold; font-style: italic;">%</span>
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertsectionhead
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
 }
-<span style="font-weight: bold;">\setbeamertemplate</span>{blocks}[default]
+\setbeamertemplate{blocks}[default]
 </pre>
+</div>
+</div>
+</div>
 
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Placing custom .sty files</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+Check where TEXMFHOME is
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">kpsewhich -var-value=TEXMFHOME
+</pre>
+</div>
 
 <p>
-<i>Spacing</i>. <code>\hspace</code> and <code>\vspace</code> only modify positions of objects contained in boxes (e.g., <code>minipage</code> environment)
+Then check out this table to place the file in the appropriate location:
+<a href="http://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package">http://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package</a>
 </p>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Emacs integration</h2>
-<div class="outline-text-2" id="text-6">
-
-
-
-</div>
-
-<div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1">Keybindings</h3>
-<div class="outline-text-3" id="text-6-1">
-
-
-</div>
-
-</div>
-
-<div id="outline-container-6-2" class="outline-3">
-<h3 id="sec-6-2">Spell check</h3>
-<div class="outline-text-3" id="text-6-2">
-
 
 <p>
-<code>flyspell-buffer</code>
-<code>langtool-check-buffer</code>
+See also <a href="http://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-files-to-make-them-available-to-all-my-tex-files">here</a>.
 </p>
 
+<p>
+In mine I have
+</p>
+<div class="org-src-container">
 
+<pre class="src src-sh">~/Library/texmf/bibtex/bst/copernicus.bst
+~/Library/texmf/bibtex/bst/elsarticle-harv.bst
+~/Library/texmf/tex/latex/base/copernicus.cls
+~/Library/texmf/tex/latex/base/copernicus2.cls
+~/Library/texmf/tex/latex/local/natbibspacing.sty
+~/Library/texmf/tex/latex/local/undertilde.sty
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Templates</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+<a href="https://github.com/bamos/latex-templates">https://github.com/bamos/latex-templates</a>
+</p>
+</div>
+</div>
 
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Handling file names</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+Using the tilde:
+</p>
+<div class="org-src-container">
 
+<pre class="src src-latex">\bibliographystyle{copernicus}
+\bibliography{\string~/git/projects/bibfile/references}
+</pre>
+</div>
+
+<p>
+<a href="http://tex.stackexchange.com/questions/8422/how-to-include-graphics-with-spaces-in-their-path">Spaces in graphics file name</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\usepackage{graphicx}
+\usepackage[space]{grffile}
+[ ... ]
+\includegraphics{A file with spaces}
+</pre>
+</div>
+
+<p>
+<a href="http://tex.stackexchange.com/questions/10574/includegraphics-dots-in-filename">Period/dot in graphics file name</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\includegraphics{{A.file.with.periods}.pdf}
+\includegraphics{{{A.file.with.periods}}}
+</pre>
+</div>
+
+<p>
+<a href="http://stackoverflow.com/questions/2444385/include-a-tex-file-with-spaces-in-the-filename">Spaces in input file name</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\include{"File\space Of\space Mine"}
+</pre>
 </div>
 </div>
 </div>
 </div>
-
-<div id="postamble">
-<hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+<div id="postamble" class="status">
+<p class="author">Author: Satoshi Takahama</p>
+<p class="date">Created: 2014-11-05 Wed 00:49</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
