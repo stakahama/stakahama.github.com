@@ -1,66 +1,118 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Shell operations</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="Shell operations"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T15:57+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,33 +134,10 @@
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Shell operations</h1>
-
-<p>For most heavy terminal work, I use the OS's terminal (particularly
-for establishing ssh and running emacs on the remote machine through
-the terminal). Here's a few features I find lacking in each of the options:
-</p><ul>
-<li>Shell: can't ssh
-</li>
-<li>Eshell: can't ssh, no input redirection (but has many powerful features which integrates it with Emacs)
-</li>
-<li>Term, ansi-term, multi-term: Invoking emacs on remote computer; some conflicts with usual key commands
-</li>
-<li>Tramp-mode: can be slow.
-</li>
-</ul>
-
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -120,110 +149,140 @@ the terminal). Here's a few features I find lacking in each of the options:
 </ul>
 </div>
 </div>
+<p>
+For most heavy terminal work, I use the OS's terminal (particularly
+for establishing ssh and running emacs on the remote machine through
+the terminal). Here's a few features I find lacking in each of the options:
+</p>
+<ul class="org-ul">
+<li>Shell: can't ssh
+</li>
+<li>Eshell: can't ssh, no input redirection (but has many powerful features which integrates it with Emacs)
+</li>
+<li>Term, ansi-term, multi-term: Invoking emacs on remote computer; some conflicts with usual key commands
+</li>
+<li>Tramp-mode: can be slow.
+</li>
+</ul>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Shell</h2>
 <div class="outline-text-2" id="text-1">
-
-<p>I primarily use <code>shell</code> for moving/copying/transfering files and
+<p>
+I primarily use <code>shell</code> for moving/copying/transfering files and
 running executables.
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>Environment variables and aliases from my
-  <code>.bash_profile</code> are mirrored in <code>.emacs.d/init_bash.sh</code>.
+<code>.bash_profile</code> are mirrored in <code>.emacs.d/init_bash.sh</code>.
 </li>
 <li>To start multiple shells: <code>C-u M-x shell</code>.
 </li>
 <li>To use <code>TAB</code> for smart auto-completion, add <code>(require 'shell)</code>.
 </li>
 <li>If you hop directories using aliases, the shell will sometimes not
-  catch up. Use <code>(dirs)</code> - I have this mapped to <code>C-c d</code> in
-  shell-mode. Can use more aggressive tracking.
+catch up. Use <code>(dirs)</code> - I have this mapped to <code>C-c d</code> in
+shell-mode. Can use more aggressive tracking.
 </li>
 </ul>
-
 
 <p>
 My shell configurations are <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/03035b4d43e366b3f7cc0db9c12b3ca698c35452/lisp/aprl-shell.el">here</a>.
 </p>
+
 <p>
 Some key bindings I use frequently:
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">task</th><th scope="col" class="left">keybinding</th></tr>
+<tr>
+<th scope="col" class="left">task</th>
+<th scope="col" class="left">keybinding</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">invoke dirs</td><td class="left"><code>C-c d</code></td></tr>
-<tr><td class="left">change directory to other window's directory</td><td class="left"><code>C-u C-c c</code></td></tr>
-<tr><td class="left">clear shell</td><td class="left"><code>C-c l</code></td></tr>
+<tr>
+<td class="left">invoke dirs</td>
+<td class="left"><code>C-c d</code></td>
+</tr>
+
+<tr>
+<td class="left">change directory to other window's directory</td>
+<td class="left"><code>C-u C-c c</code></td>
+</tr>
+
+<tr>
+<td class="left">clear shell</td>
+<td class="left"><code>C-c l</code></td>
+</tr>
 </tbody>
 </table>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Eshell</h2>
 <div class="outline-text-2" id="text-2">
-
-
 <p>
 I understand <code>eshell</code> is also powerful and traversing through remote
 directories is easy as <code>$ cd /ssh:user@host:dirname/</code>. Also supports evaluation of emacs lisp expressions. However, eshell does not support input redirection.
 </p>
+
 <p>
 In <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/03035b4d43e366b3f7cc0db9c12b3ca698c35452/lisp/aprl-shell.el">aprl-config</a>, <code>C-u C-c c</code> is bound to change pwd to other window's directory, as above (in shell-mode).
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Term-family</h2>
 <div class="outline-text-2" id="text-3">
-
-<p><code>term</code>, <code>ansi-term</code>, and <code>multi-term</code> are also supposed to be
+<p>
+<code>term</code>, <code>ansi-term</code>, and <code>multi-term</code> are also supposed to be
 powerful, even spawning emacs within emacs, but may require setting
 the environment variable (<code>TERM</code>) on the remote machine.
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>Default <code>TERM</code> is <code>xterm-color</code> in both OS X and Ubuntu; emacs works
-  in term-mode works on my OS X (local machine) without setting <code>TERM</code>
-  variable but not on my Ubuntu Linux (remote machine).
+in term-mode works on my OS X (local machine) without setting <code>TERM</code>
+variable but not on my Ubuntu Linux (remote machine).
 </li>
-<li>When logging onto my Ubuntu Linux from OS X, I can set <code>export   TERM=vt100 &amp;&amp; emacs</code> and this will enable me to run emacs within a
-  term shell. However, this is not the prettiest option.
+<li>When logging onto my Ubuntu Linux from OS X, I can set <code>export
+  TERM=vt100 &amp;&amp; emacs</code> and this will enable me to run emacs within a
+term shell. However, this is not the prettiest option.
 </li>
 <li>Term-mode has <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Term-Mode.html">modes</a> in the way that vi has modes: line-mode and
-  char-mode. "In char mode, each character is sent directly to the
-  inferior subshell, except for the Term escape character, normally
-  <code>C-c</code>."
+char-mode. "In char mode, each character is sent directly to the
+inferior subshell, except for the Term escape character, normally
+<code>C-c</code>."
 </li>
 <li>In char mode, <code>C-x C-k</code> kills emacs buffer running in term; in line
-  mode <code>C-x C-k</code> offers to kill the super-emacs process running
-  term-mode. To exit emacs running in term, <code>M-x   save-buffers-kill-emacs</code> from char mode.
+mode <code>C-x C-k</code> offers to kill the super-emacs process running
+term-mode. To exit emacs running in term, <code>M-x
+  save-buffers-kill-emacs</code> from char mode.
 </li>
 </ul>
-
 
 <p>
 <code>term</code> and <code>ansi-term</code> are <a href="https://lists.gnu.org/archive/html/help-gnu-emacs/2007-12/msg00199.html">now similar</a>, apparently. More info <a href="http://www.masteringemacs.org/articles/2010/11/01/running-shells-in-emacs-overview/">here</a>.
 </p>
+
 <p>
 My multi-term configuration is <a href="https://bitbucket.org/stakahama/aprl-emacs/raw/03035b4d43e366b3f7cc0db9c12b3ca698c35452/lisp/aprl-multi-term.el">here</a>.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Tramp</h2>
 <div class="outline-text-2" id="text-4">
-
-
 <p>
 <code>Tramp-mode</code> can also be used to edit files located on a remote
 machine: open file with <code>/scp:username@host#port:/</code> (#port is
@@ -234,29 +293,33 @@ since file retrieval takes a little time not ideal for quick edits
 </p>
 
 
-
 <br>
 <hr>
-<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Emacs pages:</td><td class="left"><a href="./index.html" frame="void">main</a></td><td class="left"><a href="./aprl-config.html" frame="void">aprl-config</a></td></tr>
+<tr>
+<td class="left">Emacs pages:</td>
+<td class="left"><a href="./index.html">main</a></td>
+<td class="left"><a href="./aprl-config.html">aprl-config</a></td>
+</tr>
 </tbody>
 </table>
-
-
-
-
 <br>
 </div>
 </div>
 </div>
-
-<div id="postamble">
+<div id="postamble" class="status">
 <hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+Generated by Org-mode 8.2.10 with Emacs 24
 </div>
 </body>
 </html>

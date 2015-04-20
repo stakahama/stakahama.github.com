@@ -1,66 +1,118 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Publications</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="Publications"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,18 +134,10 @@
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Publications</h1>
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -104,520 +148,631 @@
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Peer-reviewed publications</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+&lt;table&gt;
+</p>
 
-
-<table>
-
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Shakya2013">1</a>]
-</td>
-<td class="bibtexitem">
-K.&nbsp;M. Shakya, S.&nbsp;Liu, S.&nbsp;Takahama, L.&nbsp;M. Russell, F.&nbsp;N. Keutsch, M.&nbsp;M.
-  Galloway, J.&nbsp;E. Shilling, N.&nbsp;Hiranuma, C.&nbsp;Song, H.&nbsp;Kim, S.&nbsp;E. Paulson,
-  L.&nbsp;Pfaffenberger, P.&nbsp;Barmet, J.&nbsp;Slowik, A.&nbsp;S.&nbsp;H. Pr&eacute;v&ocirc;t, J.&nbsp;Dommen,
-  and U.&nbsp;Baltensperger.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Shakya2013"&gt;1&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+K.&amp;nbsp;M. Shakya, S.&amp;nbsp;Liu, S.&amp;nbsp;Takahama, L.&amp;nbsp;M. Russell, F.&amp;nbsp;N. Keutsch, M.&amp;nbsp;M.
+  Galloway, J.&amp;nbsp;E. Shilling, N.&amp;nbsp;Hiranuma, C.&amp;nbsp;Song, H.&amp;nbsp;Kim, S.&amp;nbsp;E. Paulson,
+  L.&amp;nbsp;Pfaffenberger, P.&amp;nbsp;Barmet, J.&amp;nbsp;Slowik, A.&amp;nbsp;S.&amp;nbsp;H. Pr&amp;eacute;v&amp;ocirc;t, J.&amp;nbsp;Dommen,
+  and U.&amp;nbsp;Baltensperger.
  Similarities in STXM-NEXAFS Spectra of Atmospheric Particles and
-  Secondary Organic Aerosol Generated from Glyoxal, &alpha;-Pinene, Isoprene,
+  Secondary Organic Aerosol Generated from Glyoxal, &amp;alpha;-Pinene, Isoprene,
   1,2,4-Trimethylbenzene, and d-Limonene.
- <em>Aerosol Science &amp; Technology</em>, accepted, 2013.
-[&nbsp;<a href="peer-reviewed_bib.html#Shakya2013">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1080/02786826.2013.772950">DOI</a>&nbsp;|
-<a href="files/Shakya2013.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Aerosol Science &amp;amp; Technology&lt;/em&gt;, accepted, 2013.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Shakya2013"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1080/02786826.2013.772950">http://dx.doi.org/10.1080/02786826.2013.772950</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Shakya2013.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Zheng2012">2</a>]
-</td>
-<td class="bibtexitem">
-J.&nbsp;Zheng, R.&nbsp;Zhang, J.&nbsp;P. Garz&oacute;n, M.&nbsp;E. Huertas, M.&nbsp;Levy,
-  R.&nbsp;Torres-Jard&oacute;n Y.&nbsp;Ma, L.&nbsp;G. Ruiz-Su&aacute;rez, L.&nbsp;M. Russell,
-  S.&nbsp;Takahama, H.&nbsp;Tan, G.&nbsp;Li, and L.&nbsp;T. Molina.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Zheng2012"&gt;2&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+J.&amp;nbsp;Zheng, R.&amp;nbsp;Zhang, J.&amp;nbsp;P. Garz&amp;oacute;n, M.&amp;nbsp;E. Huertas, M.&amp;nbsp;Levy,
+  R.&amp;nbsp;Torres-Jard&amp;oacute;n Y.&amp;nbsp;Ma, L.&amp;nbsp;G. Ruiz-Su&amp;aacute;rez, L.&amp;nbsp;M. Russell,
+  S.&amp;nbsp;Takahama, H.&amp;nbsp;Tan, G.&amp;nbsp;Li, and L.&amp;nbsp;T. Molina.
  Measurements of formaldehyde at the U.S.-Mexico border during the
   Cal-Mex 2010 Air Quality Study.
- <em>Atmospheric Environment</em>, in press, 2012.
-[&nbsp;<a href="peer-reviewed_bib.html#Zheng2012">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2012.09.041">DOI</a>&nbsp;|
-<a href="files/Zheng2012.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, in press, 2012.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Zheng2012"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2012.09.041">http://dx.doi.org/10.1016/j.atmosenv.2012.09.041</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Zheng2012.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2013">3</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, A.&nbsp;Johnson, and L.&nbsp;M. Russell.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2013"&gt;3&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, A.&amp;nbsp;Johnson, and L.&amp;nbsp;M. Russell.
  Quantification of carboxylic and carbonyl functional groups in
   organic aerosol infrared absorbance spectra.
- <em>Aerosol Science and Technology</em>, 47:3, 2013.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2013">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1080/02786826.2012.752065">DOI</a>&nbsp;|
-<a href="files/Takahama2013.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Aerosol Science and Technology&lt;/em&gt;, 47:3, 2013.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2013"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1080/02786826.2012.752065">http://dx.doi.org/10.1080/02786826.2012.752065</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2013.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2012">4</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, A.&nbsp;Johnson, J.&nbsp;Guzman Morales, L.M. Russell, R.&nbsp;Duran,
-  G.&nbsp;Rodriguez, J.&nbsp;Zheng, R.&nbsp;Zhang, D.&nbsp;Toom-Sauntry, and W.R. Leaitch.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2012"&gt;4&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, A.&amp;nbsp;Johnson, J.&amp;nbsp;Guzman Morales, L.M. Russell, R.&amp;nbsp;Duran,
+  G.&amp;nbsp;Rodriguez, J.&amp;nbsp;Zheng, R.&amp;nbsp;Zhang, D.&amp;nbsp;Toom-Sauntry, and W.R. Leaitch.
  Submicron organic aerosol in Tijuana, Mexico, from local and
   Southern California sources during the CalMex campaign.
- <em>Atmospheric Environment</em>, in press, 2012.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2012">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2012.07.057">DOI</a>&nbsp;|
-<a href="files/Takahama2012.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, in press, 2012.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2012"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2012.07.057">http://dx.doi.org/10.1016/j.atmosenv.2012.07.057</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2012.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2011a">5</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, R.&nbsp;E. Schwartz, L.&nbsp;M. Russell, A.&nbsp;M. Macdonald, S.&nbsp;Sharma, and
-  W.&nbsp;R. Leaitch.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2011a"&gt;5&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, R.&amp;nbsp;E. Schwartz, L.&amp;nbsp;M. Russell, A.&amp;nbsp;M. Macdonald, S.&amp;nbsp;Sharma, and
+  W.&amp;nbsp;R. Leaitch.
  Organic functional groups in aerosol particles from burning and
   non-burning forest emissions at a high-elevation mountain site.
- <em>Atmospheric Chemistry and Physics</em>, 11(13):6367-6386, 2011.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2011a">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.5194/acp-11-6367-2011">DOI</a>&nbsp;|
-<a href="files/Takahama2011a.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Chemistry and Physics&lt;/em&gt;, 11(13):6367-6386, 2011.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2011a"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.5194/acp-11-6367-2011">http://dx.doi.org/10.5194/acp-11-6367-2011</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2011a.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2011">6</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama and L.&nbsp;M. Russell.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2011"&gt;6&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama and L.&amp;nbsp;M. Russell.
  A molecular dynamics study of water mass accommodation on condensed
   phase water coated by fatty acid monolayers.
- <em>Journal of Geophysical Research-Atmospheres</em>, 116:D02203,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 116:D02203,
   January 2011.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2011">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2010JD014842">DOI</a>&nbsp;|
-<a href="files/Takahama2011.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2011"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2010JD014842">http://dx.doi.org/10.1029/2010JD014842</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2011.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Leaitch2011">7</a>]
-</td>
-<td class="bibtexitem">
-W.&nbsp;Richard Leaitch, Anne&nbsp;Marie Macdonald, Peter&nbsp;C. Brickell, John Liggio,
-  Steve&nbsp;J. Sjostedt, Alexander Vlasenko, Jan&nbsp;W. Bottenheim, Lin Huang,
-  Shao-Meng Li, Peter&nbsp;S.K. Liu, Desiree Toom-Sauntry, Katherine&nbsp;A. Hayden,
-  Sangeeta Sharma, Nicole&nbsp;C. Shantz, H.&nbsp;Allan Wiebe, Wendy Zhang, Jonathan&nbsp;P.D.
-  Abbatt, Jay&nbsp;G. Slowik, Rachel Y.-W. Chang, Lynn&nbsp;M. Russell, Rachel&nbsp;E.
-  Schwartz, Satoshi Takahama, John&nbsp;T. Jayne, and Nga&nbsp;Lee Ng.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Leaitch2011"&gt;7&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+W.&amp;nbsp;Richard Leaitch, Anne&amp;nbsp;Marie Macdonald, Peter&amp;nbsp;C. Brickell, John Liggio,
+  Steve&amp;nbsp;J. Sjostedt, Alexander Vlasenko, Jan&amp;nbsp;W. Bottenheim, Lin Huang,
+  Shao-Meng Li, Peter&amp;nbsp;S.K. Liu, Desiree Toom-Sauntry, Katherine&amp;nbsp;A. Hayden,
+  Sangeeta Sharma, Nicole&amp;nbsp;C. Shantz, H.&amp;nbsp;Allan Wiebe, Wendy Zhang, Jonathan&amp;nbsp;P.D.
+  Abbatt, Jay&amp;nbsp;G. Slowik, Rachel Y.-W. Chang, Lynn&amp;nbsp;M. Russell, Rachel&amp;nbsp;E.
+  Schwartz, Satoshi Takahama, John&amp;nbsp;T. Jayne, and Nga&amp;nbsp;Lee Ng.
  Temperature response of the submicron organic aerosol from temperate
   forests.
- <em>Atmospheric Environment</em>, 45(37):6696 - 6704, 2011.
-[&nbsp;<a href="peer-reviewed_bib.html#Leaitch2011">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2011.08.047">DOI</a>&nbsp;|
-<a href="files/Leaitch2011.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 45(37):6696 - 6704, 2011.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Leaitch2011"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2011.08.047">http://dx.doi.org/10.1016/j.atmosenv.2011.08.047</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Leaitch2011.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2010">8</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, S.&nbsp;Liu, and L.&nbsp;M. Russell.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2010"&gt;8&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, S.&amp;nbsp;Liu, and L.&amp;nbsp;M. Russell.
  Coatings and clusters of carboxylic acids in carbon-containing
   atmospheric particles from spectromicroscopy and their implications for
   cloud-nucleating and optical properties.
- <em>Journal of Geophysical Research-Atmospheres</em>, 115:D01202,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 115:D01202,
   January 2010.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2010">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2009JD012622">DOI</a>&nbsp;|
-<a href="files/Takahama2010.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2010"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2009JD012622">http://dx.doi.org/10.1029/2009JD012622</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2010.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Leaitch2009">9</a>]
-</td>
-<td class="bibtexitem">
-W.&nbsp;R. Leaitch, A.&nbsp;M. Macdonald, K.&nbsp;G. Anlauf, P.&nbsp;S.&nbsp;K. Liu, D.&nbsp;Toom-Sauntry,
-  S.-M. Li, J.&nbsp;Liggio, K.&nbsp;Hayden, M.&nbsp;A. Wasey, L.&nbsp;M. Russell, S.&nbsp;Takahama,
-  S.&nbsp;Liu, A.&nbsp;van Donkelaar, T.&nbsp;Duck, R.&nbsp;V. Martin, Q.&nbsp;Zhang, Y.&nbsp;Sun,
-  I.&nbsp;McKendry, N.&nbsp;C. Shantz, and M.&nbsp;Cubison.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Leaitch2009"&gt;9&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+W.&amp;nbsp;R. Leaitch, A.&amp;nbsp;M. Macdonald, K.&amp;nbsp;G. Anlauf, P.&amp;nbsp;S.&amp;nbsp;K. Liu, D.&amp;nbsp;Toom-Sauntry,
+  S.-M. Li, J.&amp;nbsp;Liggio, K.&amp;nbsp;Hayden, M.&amp;nbsp;A. Wasey, L.&amp;nbsp;M. Russell, S.&amp;nbsp;Takahama,
+  S.&amp;nbsp;Liu, A.&amp;nbsp;van Donkelaar, T.&amp;nbsp;Duck, R.&amp;nbsp;V. Martin, Q.&amp;nbsp;Zhang, Y.&amp;nbsp;Sun,
+  I.&amp;nbsp;McKendry, N.&amp;nbsp;C. Shantz, and M.&amp;nbsp;Cubison.
  Evidence for Asian dust effects from aerosol plume measurements
   during INTEX-B 2006 near Whistler, BC.
- <em>Atmospheric Chemistry and Physics</em>, 9(11):3523-3546, 2009.
-[&nbsp;<a href="peer-reviewed_bib.html#Leaitch2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.5194/acp-9-3523-2009">DOI</a>&nbsp;|
-<a href="files/Leaitch2009.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Chemistry and Physics&lt;/em&gt;, 9(11):3523-3546, 2009.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Leaitch2009"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.5194/acp-9-3523-2009">http://dx.doi.org/10.5194/acp-9-3523-2009</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Leaitch2009.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Russell2009">10</a>]
-</td>
-<td class="bibtexitem">
-L.&nbsp;M. Russell, S.&nbsp;Takahama, S.&nbsp;Liu, L.&nbsp;N. Hawkins, D.&nbsp;S. Covert, P.&nbsp;K. Quinn,
-  and T.&nbsp;S. Bates.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Russell2009"&gt;10&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+L.&amp;nbsp;M. Russell, S.&amp;nbsp;Takahama, S.&amp;nbsp;Liu, L.&amp;nbsp;N. Hawkins, D.&amp;nbsp;S. Covert, P.&amp;nbsp;K. Quinn,
+  and T.&amp;nbsp;S. Bates.
  Oxygenated fraction and mass of organic aerosol from direct emission
   and atmospheric processing measured on the R/V Ronald Brown during
   TEXAQS/GoMACCS 2006.
- <em>Journal of Geophysical Research-Atmospheres</em>, 114:D00F05,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 114:D00F05,
   April 2009.
-[&nbsp;<a href="peer-reviewed_bib.html#Russell2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2008JD011275">DOI</a>&nbsp;|
-<a href="files/Russell2009.pdf">pdf</a>&nbsp;|
-<a href="files/Russell2009">supplemental</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Russell2009"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2008JD011275">http://dx.doi.org/10.1029/2008JD011275</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Russell2009.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Russell2009"&gt;supplemental&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Liu2009">11</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Liu, S.&nbsp;Takahama, L.&nbsp;M. Russell, S.&nbsp;Gilardoni, and D.&nbsp;Baumgardner.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Liu2009"&gt;11&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Liu, S.&amp;nbsp;Takahama, L.&amp;nbsp;M. Russell, S.&amp;nbsp;Gilardoni, and D.&amp;nbsp;Baumgardner.
  Oxygenated organic functional groups and their sources in single and
   submicron organic particles in MILAGRO 2006 campaign.
- <em>Atmospheric Chemistry and Physics</em>, 9(18):6849-6863, 2009.
-[&nbsp;<a href="peer-reviewed_bib.html#Liu2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.5194/acp-9-6849-2009">DOI</a>&nbsp;|
-<a href="files/Liu2009.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Chemistry and Physics&lt;/em&gt;, 9(18):6849-6863, 2009.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Liu2009"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.5194/acp-9-6849-2009">http://dx.doi.org/10.5194/acp-9-6849-2009</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Liu2009.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Gilardoni2009">12</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Gilardoni, S.&nbsp;Liu, S.&nbsp;Takahama, L.&nbsp;M. Russell, J.&nbsp;D. Allan, R.&nbsp;Steinbrecher,
-  J.&nbsp;L. Jimenez, P.&nbsp;F. De&nbsp;Carlo, E.&nbsp;J. Dunlea, and D.&nbsp;Baumgardner.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Gilardoni2009"&gt;12&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Gilardoni, S.&amp;nbsp;Liu, S.&amp;nbsp;Takahama, L.&amp;nbsp;M. Russell, J.&amp;nbsp;D. Allan, R.&amp;nbsp;Steinbrecher,
+  J.&amp;nbsp;L. Jimenez, P.&amp;nbsp;F. De&amp;nbsp;Carlo, E.&amp;nbsp;J. Dunlea, and D.&amp;nbsp;Baumgardner.
  Characterization of organic ambient aerosol during MIRAGE 2006 on
   three platforms.
- <em>Atmospheric Chemistry and Physics</em>, 9(15):5417-5432, 2009.
-[&nbsp;<a href="peer-reviewed_bib.html#Gilardoni2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.5194/acp-9-5417-2009">DOI</a>&nbsp;|
-<a href="files/Gilardoni2009.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Chemistry and Physics&lt;/em&gt;, 9(15):5417-5432, 2009.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Gilardoni2009"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.5194/acp-9-5417-2009">http://dx.doi.org/10.5194/acp-9-5417-2009</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Gilardoni2009.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Day2009">13</a>]
-</td>
-<td class="bibtexitem">
-D.&nbsp;A. Day, S.&nbsp;Takahama, S.&nbsp;Gilardoni, and L.&nbsp;M. Russell.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Day2009"&gt;13&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+D.&amp;nbsp;A. Day, S.&amp;nbsp;Takahama, S.&amp;nbsp;Gilardoni, and L.&amp;nbsp;M. Russell.
  Organic composition of single and submicron particles in different
   regions of western North America and the eastern Pacific during INTEX-B
-  2006.
- <em>Atmospheric Chemistry and Physics</em>, 9(15):5433-5446, 2009.
-[&nbsp;<a href="peer-reviewed_bib.html#Day2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.5194/acp-9-5433-2009">DOI</a>&nbsp;|
-<a href="files/Day2009.pdf">pdf</a>&nbsp;]
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+<p>
+ &lt;em&gt;Atmospheric Chemistry and Physics&lt;/em&gt;, 9(15):5433-5446, 2009.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Day2009"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.5194/acp-9-5433-2009">http://dx.doi.org/10.5194/acp-9-5433-2009</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Day2009.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2008">14</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, S.&nbsp;Gilardoni, and L.&nbsp;M. Russell.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2008"&gt;14&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, S.&amp;nbsp;Gilardoni, and L.&amp;nbsp;M. Russell.
  Single-particle oxidation state and morphology of atmospheric iron
   aerosols.
- <em>Journal of Geophysical Research-Atmospheres</em>, 113:D22202,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 113:D22202,
   November 2008.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2008">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2008JD009810">DOI</a>&nbsp;|
-<a href="files/Takahama2008.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2008"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2008JD009810">http://dx.doi.org/10.1029/2008JD009810</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2008.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2007a">15</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, S.&nbsp;Gilardoni, L.&nbsp;M. Russell, and A.&nbsp;L.&nbsp;D. Kilcoyne.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2007a"&gt;15&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, S.&amp;nbsp;Gilardoni, L.&amp;nbsp;M. Russell, and A.&amp;nbsp;L.&amp;nbsp;D. Kilcoyne.
  Classification of multiple types of organic carbon composition in
   atmospheric particles by scanning transmission X-ray microscopy analysis.
- <em>Atmospheric Environment</em>, 41(40):9435-9451, December 2007.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2007a">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2007.08.051">DOI</a>&nbsp;|
-<a href="files/Takahama2007a.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 41(40):9435-9451, December 2007.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2007a"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2007.08.051">http://dx.doi.org/10.1016/j.atmosenv.2007.08.051</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2007a.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2007">16</a>]
-</td>
-<td class="bibtexitem">
-Satoshi Takahama, Ravi&nbsp;K. Pathak, and Spyros&nbsp;N. Pandis.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2007"&gt;16&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+Satoshi Takahama, Ravi&amp;nbsp;K. Pathak, and Spyros&amp;nbsp;N. Pandis.
  Efflorescence transitions of ammonium sulfate particles coated with
   secondary organic aerosol.
- <em>Environmental Science &amp; Technology</em>, 41(7):2289-2295, April
-  2007.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2007">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1021/es0619915">DOI</a>&nbsp;|
-<a href="files/Takahama2007.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Environmental Science &amp;amp; Technology&lt;/em&gt;, 41(7):2289-2295, April
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+<p>
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2007"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1021/es0619915">http://dx.doi.org/10.1021/es0619915</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2007.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2006">17</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, C.&nbsp;I. Davidson, and S.&nbsp;N. Pandis.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2006"&gt;17&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, C.&amp;nbsp;I. Davidson, and S.&amp;nbsp;N. Pandis.
  Semicontinuous measurements of organic carbon and acidity during the
   Pittsburgh air quality study: Implications for acid-catalyzed organic aerosol
   formation.
- <em>Environmental Science &amp; Technology</em>, 40(7):2191-2199, April
-  2006.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2006">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1021/es050856+">DOI</a>&nbsp;|
-<a href="files/Takahama2006.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Environmental Science &amp;amp; Technology&lt;/em&gt;, 40(7):2191-2199, April
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+<p>
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2006"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1021/es050856">http://dx.doi.org/10.1021/es050856</a>+"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2006.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Grieshop2006">18</a>]
-</td>
-<td class="bibtexitem">
-Andrew&nbsp;P. Grieshop, Eric&nbsp;M. Lipsky, Natalie&nbsp;J. Pekney, Satoshi Takahama, and
-  Allen&nbsp;L. Robinson.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Grieshop2006"&gt;18&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+Andrew&amp;nbsp;P. Grieshop, Eric&amp;nbsp;M. Lipsky, Natalie&amp;nbsp;J. Pekney, Satoshi Takahama, and
+  Allen&amp;nbsp;L. Robinson.
  Fine particle emission factors from vehicles in a highway tunnel:
   Effects of fleet composition and season.
- <em>Atmospheric Environment</em>, 40:Amer Assoc Aerosol Res; US EPA,
-  2006.
-[&nbsp;<a href="peer-reviewed_bib.html#Grieshop2006">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2006.03.064">DOI</a>&nbsp;|
-<a href="files/Grieshop2006.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 40:Amer Assoc Aerosol Res; US EPA,
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+<p>
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Grieshop2006"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2006.03.064">http://dx.doi.org/10.1016/j.atmosenv.2006.03.064</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Grieshop2006.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Vayenas2005">19</a>]
-</td>
-<td class="bibtexitem">
-D.&nbsp;V. Vayenas, S.&nbsp;Takahama, C.&nbsp;I. Davidson, and S.&nbsp;N. Pandis.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Vayenas2005"&gt;19&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+D.&amp;nbsp;V. Vayenas, S.&amp;nbsp;Takahama, C.&amp;nbsp;I. Davidson, and S.&amp;nbsp;N. Pandis.
  Simulation of the thermodynamics and removal processes in the
   sulfate-ammonia-nitric acid system during winter: Implications for PM2.5
   control strategies.
- <em>Journal of Geophysical Research-Atmospheres</em>, 110(D7):D07S14,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 110(D7):D07S14,
   March 2005.
-[&nbsp;<a href="peer-reviewed_bib.html#Vayenas2005">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2004JD005038">DOI</a>&nbsp;|
-<a href="files/Vayenas2005.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Vayenas2005"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2004JD005038">http://dx.doi.org/10.1029/2004JD005038</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Vayenas2005.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Khlystov2005">20</a>]
-</td>
-<td class="bibtexitem">
-A.&nbsp;Khlystov, C.&nbsp;O. Stanier, S.&nbsp;Takahama, and S.&nbsp;N. Pandis.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Khlystov2005"&gt;20&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+A.&amp;nbsp;Khlystov, C.&amp;nbsp;O. Stanier, S.&amp;nbsp;Takahama, and S.&amp;nbsp;N. Pandis.
  Water content of ambient aerosol during the Pittsburgh air quality
   study.
- <em>Journal of Geophysical Research-Atmospheres</em>, 110(D7):D07S10,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 110(D7):D07S10,
   March 2005.
-[&nbsp;<a href="peer-reviewed_bib.html#Khlystov2005">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2004JD004651">DOI</a>&nbsp;|
-<a href="files/Khlystov2005.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Khlystov2005"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2004JD004651">http://dx.doi.org/10.1029/2004JD004651</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Khlystov2005.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Wittig2004">21</a>]
-</td>
-<td class="bibtexitem">
-A.&nbsp;E. Wittig, S.&nbsp;Takahama, A.&nbsp;Y. Khlystov, S.&nbsp;N. Pandis, S.&nbsp;Hering, B.&nbsp;Kirby,
-  and C.&nbsp;Davidson.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Wittig2004"&gt;21&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+A.&amp;nbsp;E. Wittig, S.&amp;nbsp;Takahama, A.&amp;nbsp;Y. Khlystov, S.&amp;nbsp;N. Pandis, S.&amp;nbsp;Hering, B.&amp;nbsp;Kirby,
+  and C.&amp;nbsp;Davidson.
  Semi-continuous PM2.5 inorganic composition measurements during the
   Pittsburgh air quality study.
- <em>Atmospheric Environment</em>, 38(20):3201-3213, June 2004.
-[&nbsp;<a href="peer-reviewed_bib.html#Wittig2004">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/S1352-2310(04)00190-6">DOI</a>&nbsp;|
-<a href="files/Wittig2004.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 38(20):3201-3213, June 2004.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Wittig2004"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/S1352-2310(04)">http://dx.doi.org/10.1016/S1352-2310(04)</a>00190-6"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Wittig2004.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Takahama2004">22</a>]
-</td>
-<td class="bibtexitem">
-S.&nbsp;Takahama, A.&nbsp;E. Wittig, D.&nbsp;V. Vayenas, C.&nbsp;I. Davidson, and S.&nbsp;N. Pandis.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Takahama2004"&gt;22&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+S.&amp;nbsp;Takahama, A.&amp;nbsp;E. Wittig, D.&amp;nbsp;V. Vayenas, C.&amp;nbsp;I. Davidson, and S.&amp;nbsp;N. Pandis.
  Modeling the diurnal variation of nitrate during the Pittsburgh Air
   Quality Study.
- <em>Journal of Geophysical Research-Atmospheres</em>, 109(D16):D16S06,
+ &lt;em&gt;Journal of Geophysical Research-Atmospheres&lt;/em&gt;, 109(D16):D16S06,
   July 2004.
-[&nbsp;<a href="peer-reviewed_bib.html#Takahama2004">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1029/2003JD004149">DOI</a>&nbsp;|
-<a href="files/Takahama2004.pdf">pdf</a>&nbsp;]
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Takahama2004"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1029/2003JD004149">http://dx.doi.org/10.1029/2003JD004149</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Takahama2004.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Modey2004">23</a>]
-</td>
-<td class="bibtexitem">
-W.&nbsp;K. Modey, D.&nbsp;J. Eatough, R.&nbsp;R. Anderson, D.&nbsp;V. Martello, S.&nbsp;Takahama, L.&nbsp;J.
-  Lucas, and C.&nbsp;I. Davidson.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Modey2004"&gt;23&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+W.&amp;nbsp;K. Modey, D.&amp;nbsp;J. Eatough, R.&amp;nbsp;R. Anderson, D.&amp;nbsp;V. Martello, S.&amp;nbsp;Takahama, L.&amp;nbsp;J.
+  Lucas, and C.&amp;nbsp;I. Davidson.
  Ambient fine particulate concentrations and chemical composition at
   two sampling sites in metropolitan Pittsburgh: a 2001 intensive summer
   study.
- <em>Atmospheric Environment</em>, 38(20):3165-3178, June 2004.
-[&nbsp;<a href="peer-reviewed_bib.html#Modey2004">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/S1352-2310(04)00193-1">DOI</a>&nbsp;|
-<a href="files/Modey2004.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 38(20):3165-3178, June 2004.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Modey2004"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/S1352-2310(04)">http://dx.doi.org/10.1016/S1352-2310(04)</a>00193-1"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Modey2004.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+</p>
 
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Cabada2004">24</a>]
-</td>
-<td class="bibtexitem">
-J.&nbsp;C. Cabada, S.&nbsp;Rees, S.&nbsp;Takahama, A.&nbsp;Khlystov, S.&nbsp;N. Pandis, C.&nbsp;I. Davidson,
-  and A.&nbsp;L. Robinson.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Cabada2004"&gt;24&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+J.&amp;nbsp;C. Cabada, S.&amp;nbsp;Rees, S.&amp;nbsp;Takahama, A.&amp;nbsp;Khlystov, S.&amp;nbsp;N. Pandis, C.&amp;nbsp;I. Davidson,
+  and A.&amp;nbsp;L. Robinson.
  Mass size distributions and size resolved chemical composition of
   fine particulate matter at the Pittsburgh supersite.
- <em>Atmospheric Environment</em>, 38(20):3127-3141, June 2004.
-[&nbsp;<a href="peer-reviewed_bib.html#Cabada2004">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1016/j.atmosenv.2004.03.004">DOI</a>&nbsp;|
-<a href="files/Cabada2004.pdf">pdf</a>&nbsp;]
+ &lt;em&gt;Atmospheric Environment&lt;/em&gt;, 38(20):3127-3141, June 2004.
+[&amp;nbsp;&lt;a href="peer-reviewed<sub>bib</sub>.html#Cabada2004"&gt;bib&lt;/a&gt;&amp;nbsp;| 
+&lt;a href="<a href="http://dx.doi.org/10.1016/j.atmosenv.2004.03.004">http://dx.doi.org/10.1016/j.atmosenv.2004.03.004</a>"&gt;DOI&lt;/a&gt;&amp;nbsp;|
+&lt;a href="files/Cabada2004.pdf"&gt;pdf&lt;/a&gt;&amp;nbsp;]
+</p>
 
 
-</td>
-</tr>
-</table>
-
-
-
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</p>
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Other publications</h2>
 <div class="outline-text-2" id="text-2">
+<p>
+&lt;table&gt;
+</p>
 
-
-<table>
-
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Corsi2000">1</a>]
-</td>
-<td class="bibtexitem">
-R.&nbsp;L. Corsi, V.&nbsp;M. Torres, G.&nbsp;Carter, K.&nbsp;Dombrowski, S.&nbsp;Dondelle,
-  M.&nbsp;Fredenberg, S.&nbsp;Takahama, and T.&nbsp;Taylor.
+<p>
+&lt;tr valign="top"&gt;
+&lt;td align="right" class="bibtexnumber"&gt;
+[&lt;a name="Corsi2000"&gt;1&lt;/a&gt;]
+&lt;/td&gt;
+&lt;td class="bibtexitem"&gt;
+R.&amp;nbsp;L. Corsi, V.&amp;nbsp;M. Torres, G.&amp;nbsp;Carter, K.&amp;nbsp;Dombrowski, S.&amp;nbsp;Dondelle,
+  M.&amp;nbsp;Fredenberg, S.&amp;nbsp;Takahama, and T.&amp;nbsp;Taylor.
  Non-Point Source Ammonia Emissions In Texas: A First Estimate.
  Technical report, Prepared for Texas Natural Resource Conservation
   Commission, Austin, TX, Work Order No. 9880077600-04, 2000.
  August.
-[&nbsp;<a href="otherpubs_bib.html#Corsi2000">bib</a>&nbsp;]
+[&amp;nbsp;&lt;a href="otherpubs<sub>bib</sub>.html#Corsi2000"&gt;bib&lt;/a&gt;&amp;nbsp;]
+</p>
 
-</td>
-</tr>
-</table>
+<p>
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</p>
 </div>
 </div>
 </div>
-
-<div id="postamble">
+<div id="postamble" class="status">
 <hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+Generated by Org-mode 8.2.10 with Emacs 24
 </div>
 </body>
 </html>

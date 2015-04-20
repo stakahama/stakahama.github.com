@@ -1,66 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Maintaining an electronic notebook</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Maintaining an electronic notebook"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,29 +134,52 @@
  }
 /*]]>*///-->
 </script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
 
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Maintaining an electronic notebook</h1>
-
-
-<p>
-Laboratory notebooks were conceived when experiments could be
-described, recorded, and analyzed in a notebook entry. The sheer
-amount of data and complexity of analysis algorithms used nowadays
-makes it difficult to adapt the physical notebook to record the
-activities of modern science. I've looked into several electronic
-notebook alternatives, many of which specialize in chemical
-applications, but currently settled on a general-purpose note-taking
-tool &ndash; Emacs org-mode.
-</p>
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -116,7 +191,7 @@ tool &ndash; Emacs org-mode.
 <li><a href="#sec-3-1">Decision</a>
 <ul>
 <li><a href="#sec-3-1-1">org-mode vs. pure LaTeX</a></li>
-<li><a href="#sec-3-1-2">LaTeX vs. HTML vs. &hellip;</a></li>
+<li><a href="#sec-3-1-2">LaTeX vs. HTML vs. &#x2026;</a></li>
 </ul>
 </li>
 <li><a href="#sec-3-2">Implementation</a>
@@ -143,15 +218,24 @@ tool &ndash; Emacs org-mode.
 </ul>
 </div>
 </div>
+<p>
+Laboratory notebooks were conceived when experiments could be
+described, recorded, and analyzed in a notebook entry. The sheer
+amount of data and complexity of analysis algorithms used nowadays
+makes it difficult to adapt the physical notebook to record the
+activities of modern science. I've looked into several electronic
+notebook alternatives, many of which specialize in chemical
+applications, but currently settled on a general-purpose note-taking
+tool &#x2013; Emacs org-mode.
+</p>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Desiderata</h2>
 <div class="outline-text-2" id="text-1">
-
-
 <p>
 Required elements:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>headings/subheadings
 </li>
 <li>text
@@ -170,10 +254,10 @@ Required elements:
 </li>
 </ul>
 
-
 <p>
 Usage:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>scalable
 </li>
 <li>searchable (org files are text files)
@@ -182,61 +266,50 @@ Usage:
 </li>
 <li>viewable (outline mode)
 </li>
-<li>archivable (org files are text files, export as latex, html, or docbook, or &hellip;)
+<li>archivable (org files are text files, export as latex, html, or docbook, or &#x2026;)
 </li>
 </ul>
-
 
 <p>
 Personal preference:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>can edit in emacs
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Alternatives considered</h2>
 <div class="outline-text-2" id="text-2">
-
-
 <p>
 Alternatives considered:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>ORNL electronic notebook project: 
-<ul>
+<ul class="org-ul">
 <li><a href="http://www.csm.ornl.gov/~geist/java/applets/enote/">http://www.csm.ornl.gov/~geist/java/applets/enote/</a>
 </li>
 <li>web interface
 </li>
 </ul>
-
 </li>
 <li>Cambridgesoft E-notebook: 
-<ul>
+<ul class="org-ul">
 <li><a href="http://www.cambridgesoft.com/software/details/?ds=9">http://www.cambridgesoft.com/software/details/?ds=9</a>
 </li>
 <li>collection of proprietary tools
 </li>
 </ul>
-
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Emacs org-mode as logbook</h2>
 <div class="outline-text-2" id="text-3">
-
-
 <p>
 Org-mode can more generally be used as an GTD tool, but simply for
 "logging" my activities the interactive features (<code>TODO</code> lists) are
@@ -249,31 +322,25 @@ LaTeX for generating equations. LaTeX equation syntax is preferable to
 GUIs for selecting symbols, and MathML is difficult to code in
 directly (and not meant to be).
 </p>
+
 <p>
 As a scientist, I want to leverage my existing proficiency in document
 preparation - e.g., \latex. I also prefer its (\latex) equation syntax
 to GUIs for selecting symbols, and MathML is not something you would
 code in directly.
 </p>
-
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
+<div id="outline-container-sec-3-1" class="outline-3">
 <h3 id="sec-3-1">Decision</h3>
 <div class="outline-text-3" id="text-3-1">
-
-
-
-</div>
-
-<div id="outline-container-3-1-1" class="outline-4">
+</div><div id="outline-container-sec-3-1-1" class="outline-4">
 <h4 id="sec-3-1-1">org-mode vs. pure LaTeX</h4>
 <div class="outline-text-4" id="text-3-1-1">
-
-
 <p>
 Why orgmode over pure latex
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>light on syntax
 </li>
 <li>outline view (don't have to scroll through previous entries)
@@ -292,85 +359,75 @@ Why orgmode over pure latex
 </li>
 </ul>
 
-
 <p>
 <a href="http://emacs-fu.blogspot.com/2009/05/writing-and-blogging-with-org-mode.html">Org-mode greatness</a>
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2">LaTeX vs. HTML vs. &hellip;</h4>
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">LaTeX vs. HTML vs. &#x2026;</h4>
 <div class="outline-text-4" id="text-3-1-2">
-
-
 <p>
 LaTeX or HTML:
 </p>
-<ul>
+
+<ul class="org-ul">
 <li>HTML - good for viewing/navigating on/over computer(s)
 </li>
 <li>LaTeX documents are in printer-friendly format (desirable for generating hard-copies to be archived as "logbooks")
 </li>
 </ul>
 
-
 <p>
 Org-mode implementations of LaTeX or HTML exporting functionality:
 </p>
-<ul>
+
+<ul class="org-ul">
 <li>HTML
-<ul>
+<ul class="org-ul">
 <li>Equations are exported as images. Integration of MathML into
-    org-mode export is uncertain. Edit: apparently <a href="http://orgmode.org/manual/Math-formatting-in-HTML-export.html#Math-formatting-in-HTML-export">not anymore</a>.
+org-mode export is uncertain. Edit: apparently <a href="http://orgmode.org/manual/Math-formatting-in-HTML-export.html#Math-formatting-in-HTML-export">not anymore</a>.
 </li>
 <li>Ignores double backslashes.
 </li>
 </ul>
-
 </li>
 <li>LaTeX
-<ul>
-<li>Formatting issues: need many newlines &ndash; setting parindent to 0 is
-    one solution. In addition, some Emacs customizations are shown
-    below.
+<ul class="org-ul">
+<li>Formatting issues: need many newlines &#x2013; setting parindent to 0 is
+one solution. In addition, some Emacs customizations are shown
+below.
 </li>
 </ul>
-
 </li>
 </ul>
-
 
 <p>
 Can also export to Emacs diary (which can be exported to iCal, GoogleCalendar…). 
 </p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3-2" class="outline-3">
+<div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2">Implementation</h3>
 <div class="outline-text-3" id="text-3-2">
-
-
-<ul>
+<ul class="org-ul">
 <li>Each calendar week corresponds to a separate file, named by the
-  first day of the week (<code>YYYY-MM-DD.org</code>), and &ndash; if required --
-  auxiliary materials (e.g., figures, calculations) are placed in a
-  folder using the same naming convention (<code>YYYY-MM-DD/</code> for the first
-  day of the week).
+first day of the week (<code>YYYY-MM-DD.org</code>), and &#x2013; if required &#x2013;
+auxiliary materials (e.g., figures, calculations) are placed in a
+folder using the same naming convention (<code>YYYY-MM-DD/</code> for the first
+day of the week).
 </li>
 <li>Each heading is the (active) date generated by <code>C-c .</code>.
 </li>
 <li>Each subheading is often the topic or project I am writing about
-  (e.g., STXM, MD), and can also be tagged as such.
+(e.g., STXM, MD), and can also be tagged as such.
 </li>
 <li>These files are organized into directories by year.
 </li>
 </ul>
-
 
 <p>
 There are many ways to organize entries in a logbook or scientific
@@ -389,77 +446,69 @@ searched by these tags (e.g., STXM, MD) if/when desired (with agenda
 view: add to list with <code>C-c [</code>, invoke agenda view with <code>C-c a m</code>, and
 further manipulate with <a href="http://orgmode.org/manual/Agenda-commands.html">key commands</a>).
 </p>
-
 </div>
 
-<div id="outline-container-3-2-1" class="outline-4">
+<div id="outline-container-sec-3-2-1" class="outline-4">
 <h4 id="sec-3-2-1">Dates</h4>
 <div class="outline-text-4" id="text-3-2-1">
-
-
 <p>
 <code>C-c .</code> to pull up calendar and insert date (default is current
 date). <code>C-c !</code> to insert date and time. <code>C-u C-c .</code> and <code>C-u C-c !</code> to
 insert inactive versions of the dates.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-2-2" class="outline-4">
+<div id="outline-container-sec-3-2-2" class="outline-4">
 <h4 id="sec-3-2-2">Links</h4>
 <div class="outline-text-4" id="text-3-2-2">
-
-
 <p>
 Can link to files, page sections, URLs.
 </p>
+
 <p>
 Link to figures (and files in general):
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-emacs-lisp">file:2009-09-06/NSTbilayer.png
 </pre>
-
+</div>
 <p>
 or
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-elisp">[[file:2009-09-06/NSTbilayer.png][NSTbilayer]]
 </pre>
-
+</div>
 
 <p>
 Link to URLs (same as files):
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-emacs-lisp">http://www.google.com
 </pre>
-
+</div>
 <p>
 or
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-elisp">[[http://www.google.com][Google]]
 </pre>
-
-
+</div>
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3-2-3" class="outline-4">
+<div id="outline-container-sec-3-2-3" class="outline-4">
 <h4 id="sec-3-2-3">Figures</h4>
 <div class="outline-text-4" id="text-3-2-3">
-
-
 <p>
-See previous section on <a href="#sec-links">linking files</a>.
+See previous section on <i>linking files</i>.
 </p>
+
 <p>
 Often I will create tables of figures. Inserting <code>file:</code> commands into
 org-tables appears to come out nicely in exported HTML documents, but
@@ -468,69 +517,56 @@ is still lacking in org-export-as-latex (which uses
 environment with <code>raisebox</code> and <code>minipage</code> environemnts.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-2-4" class="outline-4">
+<div id="outline-container-sec-3-2-4" class="outline-4">
 <h4 id="sec-3-2-4">Tables</h4>
 <div class="outline-text-4" id="text-3-2-4">
-
-
 <p>
 Draw in new columns with <code>|</code>; add horizontal lines with <code>|- &lt;tab&gt;</code>.
 </p>
 
-
-
-<pre class="example">| column1 | column2 |
+<pre class="example">
+| column1 | column2 |
 |---------+---------|
 | row1    | row1    |
 </pre>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3-2-5" class="outline-4">
+<div id="outline-container-sec-3-2-5" class="outline-4">
 <h4 id="sec-3-2-5">Mathematical equations</h4>
 <div class="outline-text-4" id="text-3-2-5">
-
-
 <p>
 I've disabled the use of <code>$</code> delimiters and instead use <code>\(</code>  <code>\)</code> exclusively.
 </p>
 
-
-
-<pre class="example">\(\sum_i x + y\)
+<pre class="example">
+\(\sum_i x + y\)
 </pre>
-
 
 <p>
 or insert latex environment (equation, align, aligned)
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-2-6" class="outline-4">
+<div id="outline-container-sec-3-2-6" class="outline-4">
 <h4 id="sec-3-2-6">Quotes and code</h4>
 <div class="outline-text-4" id="text-3-2-6">
-
-
 <p>
 See external page on <a href="http://orgmode.org/manual/Literal-examples.html">literals</a>.
 </p>
+
 <p>
-For including sections of correspondence &ndash; enclose in <code>#+BEGIN_EXAMPLE</code> and <code>#+END_EXAMPLE</code> (each tag gets own line).
+For including sections of correspondence &#x2013; enclose in <code>#+BEGIN_EXAMPLE</code> and <code>#+END_EXAMPLE</code> (each tag gets own line).
 </p>
+
 <p>
 Examples on entering code: 
 </p>
-
-
-<pre class="example">#+BEGIN_SRC python
+<pre class="example">
+#+BEGIN_SRC python
   for i in range(2):
       print 'hello, world!'
 #+END_SRC
@@ -542,20 +578,16 @@ Examples on entering code:
 #+END_SRC
 </pre>
 
-
 <p>
-Code can be in any language by emacs (mode exists) &ndash; emacs-lisp, python, r, matlab, etc. &ndash; if major-mode does not exist, will use generic code tags.
+Code can be in any language by emacs (mode exists) &#x2013; emacs-lisp, python, r, matlab, etc. &#x2013; if major-mode does not exist, will use generic code tags.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-2-7" class="outline-4">
+<div id="outline-container-sec-3-2-7" class="outline-4">
 <h4 id="sec-3-2-7">Additional references</h4>
 <div class="outline-text-4" id="text-3-2-7">
-
-
-<ul>
+<ul class="org-ul">
 <li><a href="http://www.gnu.org/software/emacs/manual/html_node/org/LaTeX-fragments.html">LaTeX</a>
 </li>
 <li><a href="http://orgmode.org/manual/Emphasis-and-monospace.html">Markups (bold, italic, underlined, code, verbatim)</a>
@@ -563,166 +595,173 @@ Code can be in any language by emacs (mode exists) &ndash; emacs-lisp, python, r
 <li>I only found this a posteriori but appears helpful: <a href="http://home.fnal.gov/~neilsen/notebook/emacs.html">Emacs for note-taking</a>
 </li>
 </ul>
-
-
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3-3" class="outline-3">
+<div id="outline-container-sec-3-3" class="outline-3">
 <h3 id="sec-3-3">Exporting to LaTeX for archiving and printing</h3>
 <div class="outline-text-3" id="text-3-3">
-
-
 <p>
 Batch processing script:
 </p>
+
 <p>
 [insert script here]
 </p>
+
 <p>
 org-export-as-latex issues:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>correctly escapes special characters in hyperlinks but org-export-as-latex-batch does not.
 </li>
 <li>handles underscores better?… not sure
 </li>
 </ul>
 
-
 <p>
 Primary target is LaTeX, but keep in mind that HTML will not recognize LaTeX environments that are inserted directly.
 </p>
+
 <p>
 Most common problems when converting from org to LaTeX:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>math symbols
 </li>
 <li>hrefs
 </li>
 </ul>
-
-
-
 </div>
 
-<div id="outline-container-3-3-1" class="outline-4">
+<div id="outline-container-sec-3-3-1" class="outline-4">
 <h4 id="sec-3-3-1">Emacs Lisp customizations</h4>
 <div class="outline-text-4" id="text-3-3-1">
+<div class="org-src-container">
 
+<pre class="src src-elisp">(add-to-list 'load-path "~/elisp/org-mode/lisp")
+(require 'org-install)
+(require 'org-latex)
+;; The following lines are always needed.  Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 
-
-
-
-<pre class="src src-elisp">(add-to-list 'load-path <span style="font-style: italic;">"~/elisp/org-mode/lisp"</span>)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-install</span>)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-latex</span>)
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">The following lines are always needed.  Choose your own keys.</span>
-(add-to-list 'auto-mode-alist '(<span style="font-style: italic;">"\\.org\\'"</span> . org-mode))
-(global-set-key <span style="font-style: italic;">"\C-cl"</span> 'org-store-link)
-(global-set-key <span style="font-style: italic;">"\C-ca"</span> 'org-agenda)
-(global-set-key <span style="font-style: italic;">"\C-cb"</span> 'org-iswitchb)
-
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">mode-hook</span>
+;; mode-hook
 (add-hook 'org-mode-hook
-          '(<span style="font-weight: bold;">lambda</span>()
-             (local-set-key [(shift f5)] 'org-export-as-latex)
-             (custom-set-variables
-              '(org-export-latex-date-format <span style="font-style: italic;">""</span>)
-              '(org-export-latex-image-default-option <span style="font-style: italic;">"width=20em"</span>)
-              ))
+	  '(lambda()
+	     (local-set-key [(shift f5)] 'org-export-as-latex)
+	     (custom-set-variables
+	      '(org-export-latex-date-format "")
+	      '(org-export-latex-image-default-option "width=20em")
+	      ))
 )
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">redefine preamble for 'article' class</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">why use push: http://blog.plover.com/prog/elisp.html</span>
-(push '(<span style="font-style: italic;">"article"</span>
-        <span style="font-style: italic;">"\\documentclass{article}</span>
-<span style="font-style: italic;">\\usepackage[utf8]{inputenc}</span>
-<span style="font-style: italic;">\\usepackage[T1]{fontenc}</span>
-<span style="font-style: italic;">\\usepackage{graphicx}</span>
-<span style="font-style: italic;">\\usepackage{hyperref}</span>
-<span style="font-style: italic;">\\usepackage{fullpage}</span>
-<span style="font-style: italic;">\\parindent 0pt"</span>
-        (<span style="font-style: italic;">"\\section{%s}"</span> . <span style="font-style: italic;">"\\section*{%s}"</span>)
-        (<span style="font-style: italic;">"\\subsection{%s}"</span> . <span style="font-style: italic;">"\\subsection*{%s}"</span>)
-        (<span style="font-style: italic;">"\\subsubsection{%s}"</span> . <span style="font-style: italic;">"\\subsubsection*{%s}"</span>)
-        (<span style="font-style: italic;">"\\paragraph{%s}"</span> . <span style="font-style: italic;">"\\paragraph*{%s}"</span>)
-        (<span style="font-style: italic;">"\\subparagraph{%s}"</span> . <span style="font-style: italic;">"\\subparagraph*{%s}"</span>))
+;; redefine preamble for 'article' class
+;; why use push: http://blog.plover.com/prog/elisp.html
+(push '("article"
+	"\\documentclass{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage{fullpage}
+\\parindent 0pt"
+	("\\section{%s}" . "\\section*{%s}")
+	("\\subsection{%s}" . "\\subsection*{%s}")
+	("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+	("\\paragraph{%s}" . "\\paragraph*{%s}")
+	("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
       org-export-latex-classes)
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">modify the header to say "Week of ..."  </span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">turned on by default; can be unactivated for other documents</span>
-(<span style="font-weight: bold;">defadvice</span> <span style="font-weight: bold;">org-export-latex-make-header</span> 
+;; modify the header to say "Week of ..."  
+;; turned on by default; can be unactivated for other documents
+(defadvice org-export-latex-make-header 
   (before org-export-latex-make-header-format-title activate)
-  <span style="font-style: italic;">"This advice function formats the title of the exported org</span>
-<span style="font-style: italic;">document to be read, \"Week of %s\" before it is</span>
-<span style="font-style: italic;">processed/formatted by org-export-latex-make-header. Disable with</span>
-<span style="font-style: italic;">the following lines:</span>
-<span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">ad-disable-advice 'org-export-latex-make-header 'before</span>
-<span style="font-style: italic;">                   'org-export-latex-make-header-format-title)</span>
-<span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">ad-activate 'org-export-latex-make-header)"</span>
-  (ad-set-arg 0 (format <span style="font-style: italic;">"Week of %s"</span> (ad-get-arg 0))))
+  "This advice function formats the title of the exported org
+document to be read, \"Week of %s\" before it is
+processed/formatted by org-export-latex-make-header. Disable with
+the following lines:
+(ad-disable-advice 'org-export-latex-make-header 'before
+		   'org-export-latex-make-header-format-title)
+(ad-activate 'org-export-latex-make-header)"
+  (ad-set-arg 0 (format "Week of %s" (ad-get-arg 0))))
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">function to disable header modification</span>
-(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">disable--org-export-latex-make-header-format-title</span> ()
+;; function to disable header modification
+(defun disable--org-export-latex-make-header-format-title ()
   (interactive)
   (ad-disable-advice 'org-export-latex-make-header 'before
-                     'org-export-latex-make-header-format-title)
+		     'org-export-latex-make-header-format-title)
   (ad-activate 'org-export-latex-make-header))
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">formatting options, primarily to remove "$" as math expression</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">'matcher'.</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">from http://home.fnal.gov/~neilsen/notebook/emacs.html</span>
+;; formatting options, primarily to remove "$" as math expression
+;; 'matcher'.
+;; from http://home.fnal.gov/~neilsen/notebook/emacs.html
 (setq org-format-latex-options 
-      '(<span style="font-weight: bold;">:foreground</span> default 
-                    <span style="font-weight: bold;">:background</span> default 
-                    <span style="font-weight: bold;">:scale</span> 1.0
-                    <span style="font-weight: bold;">:html-foreground</span> <span style="font-style: italic;">"Black"</span> 
-                    <span style="font-weight: bold;">:html-background</span> <span style="font-style: italic;">"Transparent"</span> 
-                    <span style="font-weight: bold;">:html-scale</span> 1.0
-                    <span style="font-weight: bold;">:matchers</span> (<span style="font-style: italic;">"begin"</span> <span style="font-style: italic;">"$$"</span> <span style="font-style: italic;">"</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">"</span> <span style="font-style: italic;">"\\["</span>)))
+      '(:foreground default 
+		    :background default 
+		    :scale 1.0
+		    :html-foreground "Black" 
+		    :html-background "Transparent" 
+		    :html-scale 1.0
+		    :matchers ("begin" "$$" "\\(" "\\[")))
 </pre>
-
-
+</div>
+</div>
 </div>
 </div>
 
-</div>
-
-<div id="outline-container-3-4" class="outline-3">
+<div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4">Customizations</h3>
 <div class="outline-text-3" id="text-3-4">
-
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">Description</th><th scope="col" class="left">Solution</th></tr>
+<tr>
+<th scope="col" class="left">Description</th>
+<th scope="col" class="left">Solution</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">Preamble</td><td class="left">customize variable <code>org-export-latex-classes</code> using <code>push</code></td></tr>
-<tr><td class="left">Title</td><td class="left">advise <code>org-export-latex-make-header</code></td></tr>
-<tr><td class="left">Section headings</td><td class="left">advise <code>org-export-as-latex</code></td></tr>
-<tr><td class="left">Figure name escaped underscore</td><td class="left">advise <code>org-export-as-latex</code></td></tr>
+<tr>
+<td class="left">Preamble</td>
+<td class="left">customize variable <code>org-export-latex-classes</code> using <code>push</code></td>
+</tr>
+
+<tr>
+<td class="left">Title</td>
+<td class="left">advise <code>org-export-latex-make-header</code></td>
+</tr>
+
+<tr>
+<td class="left">Section headings</td>
+<td class="left">advise <code>org-export-as-latex</code></td>
+</tr>
+
+<tr>
+<td class="left">Figure name escaped underscore</td>
+<td class="left">advise <code>org-export-as-latex</code></td>
+</tr>
 </tbody>
 </table>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3-5" class="outline-3">
+<div id="outline-container-sec-3-5" class="outline-3">
 <h3 id="sec-3-5">Searching</h3>
 <div class="outline-text-3" id="text-3-5">
-
-
 <p>
 Can apply <code>grep</code>, <code>rgrep</code>.
 </p>
+
 <p>
 Allows tagging by topic and entries can be later searched by these
 tags (e.g., STXM, MD) if/when desired (with agenda view: add org
@@ -730,36 +769,30 @@ document to list with <code>C-c [</code> (or generate with emacs lisp); invoke a
 with <code>C-c a m</code>, and further manipulate with key commands
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-6" class="outline-3">
+<div id="outline-container-sec-3-6" class="outline-3">
 <h3 id="sec-3-6">A few cons</h3>
 <div class="outline-text-3" id="text-3-6">
-
-
-<ul>
+<ul class="org-ul">
 <li>File management (naming, dating) is user responsibility (though not
-  entirely unlike physical log notebooks). Other "diary" software I've
-  seen will often store entries in a single file. At some point this
-  file will have to be separated chronologically; this method (using
-  org-mode) will require that the separation be done front.
+entirely unlike physical log notebooks). Other "diary" software I've
+seen will often store entries in a single file. At some point this
+file will have to be separated chronologically; this method (using
+org-mode) will require that the separation be done front.
 </li>
 <li>Static archiving not enforced.
 </li>
 <li>Not notarized (unless <code>cron</code> set up to sync to a remote server daily?).
 </li>
 </ul>
-
-
 </div>
 </div>
 </div>
 </div>
-
-<div id="postamble">
+<div id="postamble" class="status">
 <hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+Generated by Org-mode 8.2.10 with Emacs 24
 </div>
 </body>
 </html>

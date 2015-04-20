@@ -1,66 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Research Areas</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Research Areas"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,34 +134,10 @@
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Research Areas</h1>
-
-<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="void">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<tbody>
-<tr><td class="left"><a href="./index.html" frame="void">Main</a></td><td class="left"><a href="./current-projects.html" frame="void">Current projects</a></td><td class="left"><a href="./research-areas.html" frame="void">Past projects</a></td><td class="left"><a href="./publications.html" frame="void">Publications</a></td><td class="left"><a href="./personnel.html" frame="void">Personnel</a></td><td class="left"><a href="./resources.html" frame="void">Resources</a></td></tr>
-</tbody>
-</table>
-
-<hr>
-
-
-
-<p>
-Click images for  full-sized figure. Table of contents can be accessed from right corner of page. 
-</p>
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -153,25 +181,50 @@ Click images for  full-sized figure. Table of contents can be accessed from righ
 </ul>
 </div>
 </div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<div id="outline-container-1" class="outline-2">
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./index.html">Main</a></td>
+<td class="left"><a href="./current-projects.html">Current projects</a></td>
+<td class="left"><a href="./research-areas.html">Past projects</a></td>
+<td class="left"><a href="./publications.html">Publications</a></td>
+<td class="left"><a href="./personnel.html">Personnel</a></td>
+<td class="left"><a href="./resources.html">Resources</a></td>
+</tr>
+</tbody>
+</table>
+<p>
+@&lt;hr&gt;
+</p>
+
+<p>
+Click images for  full-sized figure. Table of contents can be accessed from right corner of page. 
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Characterization of ambient and laboratory-generated, atmospherically relevant aerosol morphology and chemical composition</h2>
 <div class="outline-text-2" id="text-1">
-
-
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
+</div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1">Spectromicroscopy of individual particles</h3>
 <div class="outline-text-3" id="text-1-1">
-
-
-
-
-<a href="./figures/Takahama2010/2009jd012622-op01.jpg"><img src="./figures/Takahama2010/2009jd012622-op01.jpg" height="200" style="display:inline;float:right;margin:2px 2px 2px 8px;"/></a> 
+<a href="./figures/Takahama2010/2009jd012622-op01.jpg"><img src="./figures/Takahama2010/2009jd012622-op01.jpg" {{{FIGSIZER}}} {{{FIGINLINE(right,2px,8px)}}}/></a>
 <p>
-<div style="text-align:justify;">
+@&lt;div style="text-align:justify;"&gt;
 Scanning Transmission X-Ray Microscopy with Near Edge X-Ray Absorption
 Fine Structure Spectroscopy (STXM-NEXAFS) enables spatially-resolved
 determination of molecular within the scale of an individual aerosol
@@ -181,22 +234,17 @@ and physical structure over these particles. Procedures implemented
 for image interpretation include segmentation, despeck-
 ling/denoising, image registration/alignment, and connected-
 components labeling, and spectral band-fitting. Algorithms used for multivariate analysis include regression, cluster, classification, and factor analysis, which are combined to explore the high dimensionality of the data and provide robust conclusions regarding particle morphology and chemical heterogeneities. <a href="./research-tools.html">Software</a>
-</div>
-<br style="clear:both;"/>
+@&lt;/div&gt;
+@&lt;br style="clear:both;"/&gt;
 </p>
-
 </div>
 
-<div id="outline-container-1-1-1" class="outline-4">
+<div id="outline-container-sec-1-1-1" class="outline-4">
 <h4 id="sec-1-1-1">Carbon K-edge STXM-NEXAFS</h4>
 <div class="outline-text-4" id="text-1-1-1">
-
-
-
-
-<a href="./figures/Takahama2010/2009jd012622-op05.jpg"><img src="./figures/Takahama2010/2009jd012622-op05.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2010/2009jd012622-op06.jpg"><img src="./figures/Takahama2010/2009jd012622-op06.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2010/2009jd012622-op09.jpg"><img src="./figures/Takahama2010/2009jd012622-op09.jpg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2010/2009jd012622-op05.jpg"><img src="./figures/Takahama2010/2009jd012622-op05.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2010/2009jd012622-op06.jpg"><img src="./figures/Takahama2010/2009jd012622-op06.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2010/2009jd012622-op09.jpg"><img src="./figures/Takahama2010/2009jd012622-op09.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Morphologies and chemical heterogeneities present in organic aerosols
 will affect their optical properties, volatility, and water uptake in
@@ -210,21 +258,16 @@ heterogeneity was confined to a single geographical location or field
 campaign. Such an observation underscores the similarities in source
 characteristics or atmospheric processing mechanisms leading to the
 observed variations in our particles. (<a href="./publications.html">Takahama et al., 2010</a>)
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-1-1-2" class="outline-4">
+<div id="outline-container-sec-1-1-2" class="outline-4">
 <h4 id="sec-1-1-2">Iron L-edge STXM-NEXAFS</h4>
 <div class="outline-text-4" id="text-1-1-2">
-
-
-
-
-<a href="./figures/Takahama2008/2008jd009810-op04.jpg"><img src="./figures/Takahama2008/2008jd009810-op04.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2008/2008jd009810-o08.gif"><img src="./figures/Takahama2008/2008jd009810-o08.gif" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2008/2008jd009810-op04.jpg"><img src="./figures/Takahama2008/2008jd009810-op04.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2008/2008jd009810-o08.gif"><img src="./figures/Takahama2008/2008jd009810-o08.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Understanding the morphology and redox state of atmospheric iron
 particles is important in achieving insight into the processes by
@@ -238,21 +281,16 @@ sufficient in explaining our observations of reduced states of iron,
 suggesting that both factors are important and necessary to consider
 for modeling and predicting oxidation states of iron particles in the
 atmosphere. (<a href="./publications.html">Takahama et al., 2008</a>)
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
+<div id="outline-container-sec-1-2" class="outline-3">
 <h3 id="sec-1-2">Spectroscopy of particle ensembles</h3>
 <div class="outline-text-3" id="text-1-2">
-
-
-
-
-<a href="./figures/misc/TJ062fits.svg"><img src="./figures/misc/TJ062fits.svg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/misc/TJ062fits.svg"><img src="./figures/misc/TJ062fits.svg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Functional group analysis by FTIR provides several useful
 characterizations for organic aerosol measurements. By using the full
@@ -268,217 +306,156 @@ thermodynamic framework (i.e., activity coefficients), from which
 hygroscopic properties and volatilities can be estimated. <a href="./research-tools.html">Software</a>
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
+<div id="outline-container-sec-1-3" class="outline-3">
 <h3 id="sec-1-3">Aerosol Mass Spectrometry</h3>
 <div class="outline-text-3" id="text-1-3">
-
-
-
-
-<a href="./figures/misc/ACSM.jpg"><img src="./figures/misc/ACSM.jpg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/misc/ACSM.jpg"><img src="./figures/misc/ACSM.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 
 <p>
 An Aerosol Chemical Speciation Monitor (ACSM; Aerodyne Research, Inc.) was deployed during the CalMex campaign (<i>manuscript under review</i>). The ACSM measures molecular mass fragments by aerosol vaporization followed by laser-induced ionization, similar to the AMS but with unit mass resolution and lower sensitivity (and providing only bulk PM<sub>1</sub> composition rather than chemically-resolved size distributions). Image from <a href="http://aerodyne.com/">http://aerodyne.com/</a>.
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
+<div id="outline-container-sec-1-4" class="outline-3">
 <h3 id="sec-1-4">Laser-induced incandescence for quantification of black carbon particle mass and number size distributions</h3>
 <div class="outline-text-3" id="text-1-4">
-
-
-
-
-<a href="./figures/misc/SP2.jpg"><img src="./figures/misc/SP2.jpg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/misc/SP2.jpg"><img src="./figures/misc/SP2.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 
 <p>
 A Single Particle Soot Photometer (SP2; Droplet Measurement Technologies, Inc.) was deployed during the CalMex Campaign (<i>manuscript in preparation</i>). The SP2 measures the black carbon content of individual light-absorbing particles through heating and measurement of incandescence, to which calibrations are applied and harvested to provide traditional particle ensemble statistics (size distribution, number, and mass). Image from <a href="http://www.dropletmeasurement.com/">http://www.dropletmeasurement.com/</a>.
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Source apportionment of atmospheric aerosols</h2>
 <div class="outline-text-2" id="text-2">
-
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-3">
+</div><div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1">Apportionment of OM mass to different source classes and regions</h3>
 <div class="outline-text-3" id="text-2-1">
-
-
-<a href="./figures/Takahama2011a/f09-edited.svg"><img src="./figures/Takahama2011a/f09-edited.svg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2011a/f08-edited.png"><img src="./figures/Takahama2011a/f08-edited.png" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2011a/f09-edited.svg"><img src="./figures/Takahama2011a/f09-edited.svg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2011a/f08-edited.png"><img src="./figures/Takahama2011a/f08-edited.png" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Measurements at a high-elevation site in Whistler, Canada, were used to characterize organic aerosol composition subject to various influences below and above the boundary layer. Multi-seasonal measurements at the site permitted chemical differentiation in the aerosol generated from burning and non-burning forest emissions, which are particularly important contributors to primary and secondary organic mass (OM). A combination of regression, cluster, and factor analysis on organic aerosol IR spectra were combined with additional measurements of molecular mass fragments and black carbon, and ionic composition to classify the campaign periods into several composition domains. The variations among chemical domains are attributed to dominant source categories influencing the measurements at the site during the corresponding periods. The suggested source types associated with different periods are supported by Potential Source Contribution Function (PSCF) analysis, which discretizes meteorological backtrajectories and associates airmass origins to the gridded geographical domains. In addition, OM/OC and O/C ratios derived from the spectroscopic analysis indicated that the organic aerosol reaching this high-elevation site was highly oxygenated; possibly formed through secondary formation processes (<a href="./publications.html">Takahama et al., 2011b</a>). <a href="./research-tools.html">Software</a>
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
+<div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2">Assessing magnitude of acid "catalysis" mechanism on SOA formation for Western Pennsylvania</h3>
 <div class="outline-text-3" id="text-2-2">
-
-
-<a href="./figures/Takahama2006/es0508561f00002_whitebg.gif"><img src="./figures/Takahama2006/es0508561f00002_whitebg.gif" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2006/es0508561f00006_whitebg.gif"><img src="./figures/Takahama2006/es0508561f00006_whitebg.gif" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2006/es0508561f00002_whitebg.gif"><img src="./figures/Takahama2006/es0508561f00002_whitebg.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2006/es0508561f00006_whitebg.gif"><img src="./figures/Takahama2006/es0508561f00006_whitebg.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Contradictory evidence by researchers pose the question of whether reductions in inorganic acidity (in the form of SO<sub>2</sub> or NO<sub>x</sub> reductions) might provide effective controls on PM<sub>2.5</sub> mass concentrations, as secondary organic aerosol (SOA) has been shown in the laboratory to form more readily on acidic seed particles typically generated from the oxidation of these inorganic precursor gases. Understanding whether this acid-enhancement mechanism on SOA formation is important in the atmosphere is a relevant question for evaluating emission controls to meet PM2.5 regulations. We examined the semi-continuous measurements of organic carbon (OC), elemental carbon (EC), and inorganic species observed during the Pittsburgh Air Quality Study to detect coupling in the variations of inorganic acidity and OC. From our measurements, we were not able to detect significant enhancements of SOA production during periods of high inorganic acidity in Western Pennsylvania most of the time. Assuming a causal relationship between inorganic acidity and OC, we estimate reductions in OC for Western Pennsylvania that might result from reductions in inorganic acidity as 2±4% by a regression technique, and an upper bound for this geographic area was estimated to be 5±7% based on reported values from laboratory measurements. This work suggested that expected reductions in SOA mass as a result of SO<sub>2</sub> or NO<sub>x</sub> in the Western Pennsylvania region would be small (&lt;10%). (<a href="./publications.html">Takahama et al., 2006</a>)
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Measurement and modeling of aerosol properties</h2>
 <div class="outline-text-2" id="text-3">
-
-
-
-</div>
-
-<div id="outline-container-3-1" class="outline-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
 <h3 id="sec-3-1">Hygroscopicity</h3>
 <div class="outline-text-3" id="text-3-1">
-
-
-
-
-<a href="./figures/misc/wexler-pandis_hygrocurve_1995.svg"><img src="./figures/misc/wexler-pandis_hygrocurve_1995.svg" height="200" style="display:inline;float:right;margin:2px 2px 2px 8px;"/></a>
+<a href="./figures/misc/wexler-pandis_hygrocurve_1995.svg"><img src="./figures/misc/wexler-pandis_hygrocurve_1995.svg" {{{FIGSIZER}}} {{{FIGINLINE(right,2px,8px)}}}/></a>
 <p>
-<div style="text-align:justify;">
+@&lt;div style="text-align:justify;"&gt;
 The uptake and loss of water by atmospheric aerosols in the sub- and supersaturated regime (with respect to liquid water) play a large role in determining health and climate impacts of airborne particles. Water affects the condensed-phase interactions and volatility of multicomponent mixtures, particle-phase reaction pathways and rates, and interactions with solar radiation which affect the planetary energy balance. The phase-state of aerosols affect interpretation of measurements, gas-particle partitioning, and propensity of particles to serve as warm and ice-cloud nuclei. Determining the physical and chemical dependence of equilibrium and dynamic transformations of water among solid, liquid, and vapor phases remains a challenge for the scientific community.
-</div>
-<br style="clear:both;"/>
+@&lt;/div&gt;
+@&lt;br style="clear:both;"/&gt;
 </p>
-
 </div>
 
-<div id="outline-container-3-1-1" class="outline-4">
+<div id="outline-container-sec-3-1-1" class="outline-4">
 <h4 id="sec-3-1-1">Measurement of complex aerosol phase-state upon drying</h4>
 <div class="outline-text-4" id="text-3-1-1">
-
-
-
-
-<a href="./figures/Takahama2007/es0619915f00001.jpeg"><img src="./figures/Takahama2007/es0619915f00001.jpeg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2007/es0619915f00003.jpeg"><img src="./figures/Takahama2007/es0619915f00003.jpeg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2007/es0619915f00001.jpeg"><img src="./figures/Takahama2007/es0619915f00001.jpeg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2007/es0619915f00003.jpeg"><img src="./figures/Takahama2007/es0619915f00003.jpeg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 The conditions under which loss of water (efflorescence) in atmospheric aerosols occur are not well known, though this phase transition can affect the partitioning and lifetime of semi-volatile species and impact the  propensity for aerosols to become warm or ice cloud nuclei. Mixtures of inorganic salts and secondary organic aerosol (SOA) are ubiquitous in the urban airshed; ammonium sulfate + SOA mixtures were generated in the Carnegie Mellon Smog Chamber to studying this property in  atmospherically-relevant aerosols. These particles were humidified, dried, and sampled with a humidified tandem differential mobility analyzer (HTDMA) to determine the efflorescence relative humidity for these complex particles. The results of this experiment suggest that our current knowledge of efflorescence in inorganic particles may provides a strong basis for predicting the phase state of mixed particles in the atmosphere. (<a href="./publications.html">Takahama et al. 2007</a>)
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-1-2" class="outline-4">
+<div id="outline-container-sec-3-1-2" class="outline-4">
 <h4 id="sec-3-1-2">Estimation of organic aerosol on CCN activity of dust and black carbon particles</h4>
 <div class="outline-text-4" id="text-3-1-2">
-
-
-
-
-<a href="./figures/Takahama2010/2009jd012622-op08.jpg"><img src="./figures/Takahama2010/2009jd012622-op08.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
+<a href="./figures/Takahama2010/2009jd012622-op08.jpg"><img src="./figures/Takahama2010/2009jd012622-op08.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
 <p>
 Organic aerosols can alter the supersaturation required to activate particles into cloud droplets through modification of particle volume, surface tension, or solubility. Using Kohler theory, the impact of organic aerosol on CCN activation was calculated for soluble (glutaric) and insoluble (stearic acid) organic compounds coating or clumped onto insoluble black carbon or dust particles. The domain of atmospherically-relevant coating thicknesses and mass fraction of the organic component is estimated from STXM-NEXAFS analysis for individual particles, and regimes where chemistry and size are critical for determining CCN activation were delineated over this domain. (<a href="./publications.html">Takahama et al., 2010</a>). 
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-1-3" class="outline-4">
+<div id="outline-container-sec-3-1-3" class="outline-4">
 <h4 id="sec-3-1-3">Estimation of mass accommodation coefficients by molecular dynamics simulation</h4>
 <div class="outline-text-4" id="text-3-1-3">
-
-
-
-
-<a href="./figures/Takahama2011/2010jd014842-op04.jpg"><img src="./figures/Takahama2011/2010jd014842-op04.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2011/2010jd014842-op05.jpg"><img src="./figures/Takahama2011/2010jd014842-op05.jpg" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2011/2010jd014842-o06.gif"><img src="./figures/Takahama2011/2010jd014842-o06.gif" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2011/2010jd014842-op04.jpg"><img src="./figures/Takahama2011/2010jd014842-op04.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2011/2010jd014842-op05.jpg"><img src="./figures/Takahama2011/2010jd014842-op05.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2011/2010jd014842-o06.gif"><img src="./figures/Takahama2011/2010jd014842-o06.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Molecular dynamics simulation was used to determine the impacts of organic coatings as reported by X-ray spectromicroscopy and TOF-SIMS measurements on dynamic properties of water uptake; specifically, the influence of organic films on water mass accommodation coefficients. Water molecules were impinged in silico (virtually) upon aqueous surfaces coated by two types of organic molecules with varying surface coverage. Scattering of water molecules by hydrophobic tails of the tested fatty acids were found to be the primary mechanism for reducing water mass accommodation coefficients in our study, and this reduction occurred at modest mass fractions of the organic component. A special case of entrainment of water vapor molecules at the film-water interface was also observed for the over-compressed surface examined in this work. (<a href="./publications.html">Takahama et al., 2011</a>).
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3-2" class="outline-3">
+<div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2">Volatility</h3>
 <div class="outline-text-3" id="text-3-2">
-
-
-
-
-<a href="./figures/misc/deposition.svg"><img src="./figures/misc/deposition.svg" height="200" style="display:inline;float:right;margin:2px 2px 2px 8px;"/></a> 
+<a href="./figures/misc/deposition.svg"><img src="./figures/misc/deposition.svg" {{{FIGSIZER}}} {{{FIGINLINE(right,2px,8px)}}}/></a>
 <p>
-<div style="text-align:justify;">
+@&lt;div style="text-align:justify;"&gt;
 The rates of deposition and (photo-)chemical reaction vary widely betwee gas and aerosol phases. Therefore, understanding the gas-particle partitioning behavior of
 semi-volatile species affects predictions of total species lifetime
 and mass burden of aerosols. Previous work in this area focused on measurement and modeling of multi-component phase-equilibria for the inorganic PM fraction - specifically, the partitioning of nitric acid and ammonium - but this approach is also applicable for interpreting the influence of organic aerosol partitioning, given that we are able to reduce the high dimensionality of the organic aerosol mixture problem for interpretion and modeling.
-</div>
-<br style="clear:both;"/>
+@&lt;/div&gt;
+@&lt;br style="clear:both;"/&gt;
 </p>
-
 </div>
 
-<div id="outline-container-3-2-1" class="outline-4">
+<div id="outline-container-sec-3-2-1" class="outline-4">
 <h4 id="sec-3-2-1">Measurement and modeling of nitric acid partitioning in Pittsburgh, PA, during PAQS</h4>
 <div class="outline-text-4" id="text-3-2-1">
-
-
-
-
-<a href="./figures/Takahama2004/2003jd004149-o01.gif"><img src="./figures/Takahama2004/2003jd004149-o01.gif" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Takahama2004/2003jd004149-o03.jpg"><img src="./figures/Takahama2004/2003jd004149-o03.jpg" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Takahama2004/2003jd004149-o01.gif"><img src="./figures/Takahama2004/2003jd004149-o01.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Takahama2004/2003jd004149-o03.jpg"><img src="./figures/Takahama2004/2003jd004149-o03.jpg" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 Following a thorough evaluation and calibration of high time resolution measurements of inorganic compounds measured by ion chromatography and flash volatilization during the Pittsburgh Air Quality Study (<a href="./publications.html">Wittig et al., 2004</a>), a thermodynamic model, GFEMN, was used to simulate the partitioning of PM<sub>2.5</sub> nitrate aerosol and nitric acid. Model predictions were evaluated against independent measurements also made during the study. This work reported that chemical equilibrium predictions of aerosol nitrate were often within measurement uncertainties, and that this model was senstive enough to detect and simulate nitric acid partitioning among externally-mixed particles, under the correct assumptions. (<a href="./publications.html">Takahama et al., 2004</a>)
-<br style="clear:both;"/>
+@&lt;br style="clear:both;"/&gt;
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3-2-2" class="outline-4">
+<div id="outline-container-sec-3-2-2" class="outline-4">
 <h4 id="sec-3-2-2">Assessing impact of gas-particle partitioning on emission control strategies for Western Pennsylvania</h4>
 <div class="outline-text-4" id="text-3-2-2">
-
-
-
-
-<a href="./figures/Vayenas2005/2004jd005038-o05.gif"><img src="./figures/Vayenas2005/2004jd005038-o05.gif" height="120" style="display:inline;float:left;margin:2px 2px 2px 2px;"/></a>
-<a href="./figures/Vayenas2005/2004jd005038-o07.gif"><img src="./figures/Vayenas2005/2004jd005038-o07.gif" height="120" style="display:inline;float:left;margin:2px 8px 2px 2px;"/></a>
+<a href="./figures/Vayenas2005/2004jd005038-o05.gif"><img src="./figures/Vayenas2005/2004jd005038-o05.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,2px,2px)}}}/></a>
+<a href="./figures/Vayenas2005/2004jd005038-o07.gif"><img src="./figures/Vayenas2005/2004jd005038-o07.gif" {{{FIGSIZE}}} {{{FIGINLINE(left,8px,2px)}}}/></a>
 <p>
 To examine how the inorganic PM2.5 concentration responds to changes in emissions, we introduce an observation-based box model, Thermodynamic Model with Removal (TMR), to estimate responses of inorganic PM<sub>2.5</sub> mass to precursor concentrations. TMR introduced production and deposition terms into the atmospheric mass balance, while GFEMN - which was evaluated favorably in the aforementioned study in simulating phase partitioning - to solve the condensation-evaporation problem within an operator-splitting scheme. TMR was used to investigate sulfate, total ammonia, and total nitric acid control strategies for Western Pennsylvania during the winter using measurements collected during the Pittsburgh Air Quality Study. (<a href="./publications.html">Vayenas et al., 2005</a>)
-<br style="clear:both;"/>
-</p></div>
+@&lt;br style="clear:both;"/&gt;
+</p>
 </div>
 </div>
 </div>
 </div>
-
-<div id="postamble">
+</div>
+<div id="postamble" class="status">
 <hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+Generated by Org-mode 8.2.10 with Emacs 24
 </div>
 </body>
 </html>

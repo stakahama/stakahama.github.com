@@ -1,66 +1,118 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Programming for scientific applications</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="Programming for scientific applications"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-08-23T02:05+0200"/>
-<meta name="author" content="Satoshi Takahama"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" type="text/css"/>
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -82,20 +134,10 @@
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Programming for scientific applications</h1>
-
-<p>MS Excel, LibreOffice Calc, and similar spreadsheet software are extremely useful for a wide range of tasks. However, as the required analysis becomes increasingly complex, there are several benefits to doing things programmatically. These advantages include scalability and reproducibility (though these advantages are not guaranteed). Your decisions are recorded your program (often lost in copy-paste processes used in spreadsheets), and provenance is maintained between original data set and results. And as programs are often simply text files, they are more amenable to archivable (along with the original data set) than computations saved in a spreadsheet. 
-</p>
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -113,15 +155,17 @@
 </ul>
 </div>
 </div>
+<p>
+MS Excel, LibreOffice Calc, and similar spreadsheet software are extremely useful for a wide range of tasks. However, as the required analysis becomes increasingly complex, there are several benefits to doing things programmatically. These advantages include scalability and reproducibility (though these advantages are not guaranteed). Your decisions are recorded your program (often lost in copy-paste processes used in spreadsheets), and provenance is maintained between original data set and results. And as programs are often simply text files, they are more amenable to archivable (along with the original data set) than computations saved in a spreadsheet. 
+</p>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Applications</h2>
 <div class="outline-text-2" id="text-1">
-
-
 <p>
 Non-exhaustive list of common tasks in science and engineering:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>shell scripting/text processing
 </li>
 <li>numerical simulation: solving diff eqs, optimization, random sampling
@@ -132,15 +176,18 @@ Non-exhaustive list of common tasks in science and engineering:
 </li>
 </ul>
 
+<p>
+@&lt;p align="center"&gt;
+</p>
+<p>
+<img src="./figures/venn_diagram.png" alt="venn_diagram.png" />
+@&lt;/p&gt;
+</p>
 
 <p>
-<p align="center">
-<img src="./figures/venn_diagram.png" text-align="center" height="360" alt="./figures/venn_diagram.png" />
-</p>
-</p>
-<p>
 Peripheral tasks related to access, distribution, and user interaction:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>web programming
 </li>
 <li>UI (user-interface) development (possibly through web platform)
@@ -151,62 +198,59 @@ Peripheral tasks related to access, distribution, and user interaction:
 </li>
 </ul>
 
-
 <p>
 To paraphrase/summarize the works of <a href="http://paulgraham.com/articles.html">Paul Graham</a>, not all languages are the same. Otherwise, we would program everything in assembly language and programming languages would not have proliferated as they have. There is no single language which is the best at everything. Simulation requires a low-level language; a data analysis language requires high-level language with graphing and statistical analysis capabilities. 
 </p>
+
 <p>
 Tradeoffs:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>high-level: save user time. choose based on
-<ul>
+<ul class="org-ul">
 <li>language expressiveness (natural data models)
 </li>
 <li>existing libraries
 </li>
 </ul>
-
 </li>
 <li>low-level: save computational time
 </li>
 </ul>
 
-
 <p>
 The scripting/data analysis options are more numerous than for simulation (where Fortran or C are the most common choices); my recommended strategy is to learn one go-to language; learn bits of other languages as necessary (to use their toolboxes or modify written by others in the community). Interop modules or common exchange formats can be used to pass data/functions back and forth between languages and software programs as necessary.
 </p>
+
 <p>
 There is often a tradeoff between succinctness/conciseness vs readability. Conciseness: quicker to write + less places for bugs, possibly easier to see overall structure of the code in a glance; readability: easier to maintain. This are some metrics for conciseness on the <a href="http://blog.wolfram.com/2012/11/14/code-length-measured-in-14-languages/">Wolfram Alpha Blog</a> (which touts the merits of Mathematica).
 </p>
+
 <p>
 To some extent, you will be most productive in the language you already know. However, while you can do a lot of things in every language, it may become prohibitively difficult to do more complicated tasks in particular languages not suited for the task.
 </p>
+
 <p>
 The following section lists a few categorizations which may determine how you structure your programs, or indicate the tradeoffs among convenience, robustness, and scalability.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Categorization of languages</h2>
 <div class="outline-text-2" id="text-2">
-
-
 <p>
 <i>I will try to add examples in the future.</i>
 </p>
-
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
+<div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1">Programming paradigms</h3>
 <div class="outline-text-3" id="text-2-1">
-
-
 <p>
 List of common paradigms:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>procedural
 </li>
 <li>object-oriented
@@ -216,143 +260,136 @@ List of common paradigms:
 <li>logic
 </li>
 </ul>
-
-<p>Multi-paradigm languages are useful in that scientific applications require many tasks for which different paradigms are better suited (e.g., procedural for I/O, functional for computation, and object-oriented for UI or hardware integration).
+<p>
+Multi-paradigm languages are useful in that scientific applications require many tasks for which different paradigms are better suited (e.g., procedural for I/O, functional for computation, and object-oriented for UI or hardware integration).
 </p>
+
 <p>
 Functional programming in Python <a href="http://www.ibm.com/developerworks/linux/library/l-prog/index.html">1</a>, <a href="http://www.ibm.com/developerworks/linux/library/l-prog2/index.html">2</a>, <a href="http://www.ibm.com/developerworks/linux/library/l-prog3/index.html">3</a>. Also, <a href="http://www.ibm.com/developerworks/library/l-pycon/index.html">4</a>. These are old but provide a very great introduction to the field.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
+<div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2">Other categorizations</h3>
 <div class="outline-text-3" id="text-2-2">
-
-
 <p>
 High-level (closer to human) vs. low-level (closer to machine)
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>high-level: quicker to code
 </li>
 <li>low-level: more control
 </li>
 </ul>
 
-
 <p>
 Imperative vs. declarative
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>how to compute vs. what to compute
 </li>
 </ul>
 
-
 <p>
 Static vs. dynamic
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>variable types are declared and remain invariant
 </li>
 </ul>
 
-
 <p>
 Strongly vs. weakly typed
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>strict adherence to defined data type (requirement of explicit conversion among types)
 </li>
 </ul>
 
-
 <p>
 General purpose languages vs. domain-specific languages (DSLs)
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>DSLs are often shorter because programs are constructed within the context of a particular application domain (e.g., namespaces are often implicit in DSLs). Also, DSLs often use the idiom of the domain (indexing, lexicon), making it easier to translate algorithms into code. However, optimal application of DSLs are mostly specific to their domain, as implied by the name.
 </li>
 </ul>
-
-
 <p>
 Zero-indexed vs. one-indexed
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>depending on the domain of mathematics you are trying to translate into code, one convention may be more straightforward than the other (e.g., one-indexing for linear algebra; zero-indexing for signal processing)
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2-3" class="outline-3">
+<div id="outline-container-sec-2-3" class="outline-3">
 <h3 id="sec-2-3">Other aspects of languages</h3>
 <div class="outline-text-3" id="text-2-3">
-
-
 <p>
 Use case: prototyping vs. production
 </p>
+
 <p>
 Expressiveness vs. richness of libraries
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>expressiveness encompasses many aspects of the language: inherent structures or tools upon which to build structures, and the functions available to operate on them
 </li>
-<li>richness of libraries in a specific domain of application may be a consideration when selecting a langauge for a project/task (use available, or build your own&ndash;if language is expressive enough to permit rapid development)
+<li>richness of libraries in a specific domain of application may be a consideration when selecting a langauge for a project/task (use available, or build your own&#x2013;if language is expressive enough to permit rapid development)
 </li>
 </ul>
-
 
 <p>
 Language vs. ecosystem
-</p><ul>
-<li>beyond the raw language itself, you may also consider the ecosystem surrounding the language&ndash;modern tools (e.g., refactoring and code templates), etc.
+</p>
+<ul class="org-ul">
+<li>beyond the raw language itself, you may also consider the ecosystem surrounding the language&#x2013;modern tools (e.g., refactoring and code templates), etc.
 </li>
 </ul>
 
-
-
+<p>
+#Capital investment vs. operational cost (i.e., learning curve)
+</p>
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Graphics</h2>
 <div class="outline-text-2" id="text-3">
-
-
 <p>
 Purposes:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>exploratory/diagnostic. requirements: rapid, programmatic, high-level
 </li>
 <li>publication: fine control
 </li>
 </ul>
 
-
 <p>
 The same tool may not be the most convenient for both tasks.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Languages</h2>
 <div class="outline-text-2" id="text-4">
-
-
 <p>
 Some languages are aesthetically pleasing or immediately predictable ("principle of least surprise"), and there is value to making note when they are encountered. This alignment may have to do with innate user preference, but also previous experience, or influence of the UI. Some languages are difficult to understand at first, but its power and utility is revealed with further training. For instance, many programmers find languages which emphasize procedural programming to be most comprehensible at first, but later appreciate the power offered through higher concepts like functional programming. 
 </p>
+
 <p>
 There are of course many other acceptable languages, but some that I can recommend for tasks based on personal experience include the following.
 </p>
+
 <p>
 Scripting and/or data analysis:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>R
 </li>
 <li>Python with NumPy, SciPy, Matplotlib, and Pandas
@@ -367,35 +404,31 @@ Scripting and/or data analysis:
 </li>
 </ul>
 
-
 <p>
 Simulation:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>Fortran
 </li>
 <li>C/C++
 </li>
 </ul>
 
-
 <p>
 Hardware integration:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>Labview
 </li>
 <li>Python
 </li>
 </ul>
-
-
-
 </div>
 </div>
 </div>
-
-<div id="postamble">
+<div id="postamble" class="status">
 <hr>
-Generated by Org-mode 7.8.11 with Emacs 24
+Generated by Org-mode 8.2.10 with Emacs 24
 </div>
 </body>
 </html>
