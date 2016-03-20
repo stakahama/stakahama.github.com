@@ -1,0 +1,42 @@
+% include in preamble using \input{preamble_biblatex}
+
+%% Encodings
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%% Options
+\usepackage[
+        natbib,
+        citestyle=authoryear, 
+        maxcitenames=2, 
+        uniquelist=false, 
+        uniquename=false, 
+        sorting=nyt,
+        date=year, 
+        maxbibnames=99, 
+        backend=biber
+        ]{biblatex}
+%% Format bibliography
+\DeclareNameAlias{sortname}{last-first}
+\DeclareNameAlias{default}{last-first}
+\defbibenvironment{bibliography}
+{\list
+  {}
+  {\setlength{\leftmargin}{\bibhang+1em}%
+    \setlength{\itemindent}{-\leftmargin}%
+    \setlength{\itemsep}{\bibitemsep}%
+    \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+\ExecuteBibliographyOptions{
+        %isbn=false,
+        url=false,
+        eprint=false
+        }
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
+\AtEveryBibitem{% Clean up the bibtex rather than editing it
+ \clearlist{language}
+}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title></title>
+<title>r</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
@@ -137,21 +137,44 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title"></h1>
+<h1 class="title">r</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Data exchange formats</a></li>
+</ul>
+</div>
+</div>
 <p>
-<a href="http://aprl.epfl.ch">Research and teaching (lab webpage)</a><br  />
-Reference pages: <a href="./resources/emacs/">Emacs</a>, <a href="./resources/programming/latex.html">LaTeX</a><br  />
-Repositories: <a href="https://github.com/stakahama">GitHub</a>, <a href="http://bitbucket.org/stakahama">Bitbucket</a><br  />
+#+TITLE Programming with R
 </p>
 
-<table>
-<tr>
-<td> I can be reached at </td>
-<td>
-<img src="./aprl/figures/personnel/Email_st.png" height="20" style="display:inline;float:$1;margin:0px 0px 0px 5px;"/>
-</td>
-</tr>
-</table>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Data exchange formats</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>csv, txt: most widely accepted by experimentalists
+</li>
+<li>RDA, RDS: not universal but easiest. good for development stage or intermediate files; separate getter/export functions/scripts. 
+</li>
+<li>databases (structured, potentially concurrent access). good for incremental save (e.g., in loop). safer since the data saved will have to have a certain format, but requires a lot of setting up + boilerplate to input/retrieve data.
+</li>
+<li>netcdf4, hdf5: efficient, common in atmospheric science
+</li>
+<li>dput, dget: human readable; good for development stage.
+</li>
+</ul>
+
+<p>
+Some descriptions:
+</p>
+
+<p>
+<a href="https://www.getdatajoy.com">https://www.getdatajoy.com</a>
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <hr>

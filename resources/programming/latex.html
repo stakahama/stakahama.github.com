@@ -179,7 +179,12 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#sec-16">Bibliographies</a>
 <ul>
-<li><a href="#sec-16-1">Biblatex</a></li>
+<li><a href="#sec-16-1">Biblatex</a>
+<ul>
+<li><a href="#sec-16-1-1">Preamble</a></li>
+<li><a href="#sec-16-1-2">Main document</a></li>
+</ul>
+</li>
 <li><a href="#sec-16-2">Natbib and bibtex</a></li>
 <li><a href="#sec-16-3">Extracting subset of bibliographies</a></li>
 <li><a href="#sec-16-4">Unicode characters in .bib file</a></li>
@@ -192,6 +197,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-21">Handling file names</a></li>
 <li><a href="#sec-22">Cross referencing with xr</a></li>
 <li><a href="#sec-23">Cleaning</a></li>
+<li><a href="#sec-24">Section levels</a></li>
 </ul>
 </div>
 </div>
@@ -512,10 +518,10 @@ Use <a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Customizing_with_fan
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
-\fancyhf{}                      % clear previous customization
-\fancyhead[L]{Text}             % left
-\fancyhead[R]{\emph{More text}} % right
-\fancyfoot[C]{\thepage}         % center
+\fancyhf{}                        % clear previous customization
+\fancyhead[L]{Short title}        % left
+\fancyhead[R]{\emph{Author list}} % right
+\fancyfoot[C]{\thepage}           % center
 </pre>
 </div>
 </div>
@@ -524,6 +530,10 @@ Use <a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Customizing_with_fan
 <div id="outline-container-sec-8" class="outline-2">
 <h2 id="sec-8">Caption</h2>
 <div class="outline-text-2" id="text-8">
+<p>
+Use caption package for custom control.
+</p>
+
 <div class="org-src-container">
 
 <pre class="src src-latex">\usepackage[small]{caption}
@@ -606,9 +616,23 @@ With calculations
 <div id="outline-container-sec-11" class="outline-2">
 <h2 id="sec-11">Chemistry</h2>
 <div class="outline-text-2" id="text-11">
+<p>
+Use the mhchem package.
+</p>
+
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[version=3]{mhchem}
+<pre class="src src-latex">\usepackage{mhchem}
+</pre>
+</div>
+
+<p>
+Copernicus has a <code>\chem{}</code> macro but does not seem to subscript numbers so I often substitute <code>\ce{}</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-tex">\renewcommand{\chem}{\ce}
 </pre>
 </div>
 </div>
@@ -637,7 +661,7 @@ With calculations
 \newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
   \patchAmsMathEnvironmentForLineno{#1}%
   \patchAmsMathEnvironmentForLineno{#1*}}%
-\AtBeginDocument{%
+\BeginDocument{%
   \patchBothAmsMathEnvironmentsForLineno{equation}%
   \patchBothAmsMathEnvironmentsForLineno{align}%
   \patchBothAmsMathEnvironmentsForLineno{flalign}%
@@ -647,6 +671,9 @@ With calculations
 }
 </pre>
 </div>
+<p>
+Download preamble file <a href="./files/preamble_mathlineno.tex">here</a>.
+</p>
 </div>
 </div>
 
@@ -701,7 +728,7 @@ Use <code>latexmk</code>:
 </div>
 
 <p>
-On Max OS X, <code>latexmk</code> is installed with =texlive=(?).
+On Max OS X, <code>latexmk</code> is installed with <code>texlive</code> (?).
 </p>
 
 <p>
@@ -739,6 +766,13 @@ For journal articles, use bibtex template provided by publisher (not biblatex). 
 <div id="outline-container-sec-16-1" class="outline-3">
 <h3 id="sec-16-1">Biblatex</h3>
 <div class="outline-text-3" id="text-16-1">
+</div><div id="outline-container-sec-16-1-1" class="outline-4">
+<h4 id="sec-16-1-1">Preamble</h4>
+<div class="outline-text-4" id="text-16-1-1">
+<p>
+Download my preamble <a href="./files/preamble_biblatex.tex">here</a>.
+</p>
+
 <p>
 Loading the package:
 </p>
@@ -782,14 +816,27 @@ Create doi links in bibliography:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\bibliography{\string~/git/projects/bibfile/references}
-\ExecuteBibliographyOptions{url=false,eprint=false}
+<pre class="src src-latex">\ExecuteBibliographyOptions{url=false,eprint=false}
 \newbibmacro{string+doi}[1]{%
   \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
 </pre>
 </div>
 
+<p>
+In the preamble, also specify location of .bib file:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-latex">\bibliography{\string~/git/projects/bibfile/references}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-16-1-2" class="outline-4">
+<h4 id="sec-16-1-2">Main document</h4>
+<div class="outline-text-4" id="text-16-1-2">
 <p>
 Change bibliography title:
 </p>
@@ -822,6 +869,7 @@ Multiple bibliographies:
 \printbibliography[title=\sectiontitle]
 \end{refsection}
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -971,6 +1019,9 @@ To find which specific characters are causing problems, a great macro that can b
 \makeatother
 </pre>
 </div>
+<p>
+Download this preamble file <a href="./files/preamble_utf8macro.tex">here</a>.
+</p>
 </div>
 </div>
 </div>
@@ -1141,7 +1192,7 @@ supportinginfo.tex
 </div>
 
 <p>
-I usually delete .aux and extra files for both .tex files prior to compiling.
+I usually delete .aux and extra files (for both .tex files) prior to compiling.
 </p>
 </div>
 </div>
@@ -1157,7 +1208,7 @@ Sometimes files get corrupted and errors arise after seemingly small changes. I 
 <pre class="src src-sh">#!/bin/sh
 
 name=${1-master}
-types=( ".aux" ".bbl" ".blg" ".fls" ".log" ".fdb_latexmk" )
+types=( ".aux" ".toc" ".out" ".log" ".bbl" ".blg" ".fls" ".fdb_latexmk" )
 
 for ext in ${types[@]}
 do
@@ -1168,6 +1219,67 @@ do
 done
 </pre>
 </div>
+<p>
+Download .sh file <a href="./files/clean.sh">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24">Section levels</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+When you have multiple files included in a master file by the <code>\input{}</code> command, you can let <code>\section{}</code> commands in each file be demoted to <code>\subsection{}</code> and so on. This procedure is described <a href="http://tex.stackexchange.com/questions/98413/renaming-section-levels/98419#98419">here</a>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-tex">\let\oldinput\input
+\newcommand{\savesections}{%
+  \let\oldsection\section% Store \section
+  \let\oldsubsection\subsection% Store \subsection
+  \let\oldsubsubsection\subsubsection% Store \subsubsection
+  \let\oldparagraph\paragraph% Store \paragraph
+  \let\oldsubparagraph\subparagraph% Store \subparagraph
+}\AtBeginDocument{\savesections}
+\newcommand{\restoresections}{%
+  \let\section\oldsection% Restore \section
+  \let\subsection\oldsubsection% Restore \subsection
+  \let\subsubsection\oldsubsubsection% Restore \subsubsection
+  \let\paragraph\oldparagraph% Restore \paragraph
+  \let\subparagraph\oldsubparagraph% Restore \subparagraph
+}
+\newcommand{\demotesections}{%
+  \let\section\subsection% Modify \section to be \subsection
+  \let\subsection\subsubsection% Modify \subsection to be \subsubsection
+  \let\subsubsection\paragraph% Modify \subsubsection to be \paragraph
+  \let\paragraph\subparagraph% Modify \paragraph to be \subparagraph
+  %\let\subparagraph\relax% Make \subparagraph a no-op
+}
+\renewcommand{\input}[1]{%
+  \demotesections% Demote sections
+  \oldinput{#1}% Input file
+  \restoresections}% Restore sections
+
+% from http://tex.stackexchange.com/questions/61766/demoting-promoting-sections-chapters-etc
+\newenvironment{leveldown}% Demote sectional commands
+  {\let\section\subsection%
+   \let\subsection\subsubsection%
+   \let\subsubsection\paragraph%
+   \let\paragraph\subparagraph%
+   %\let\subparagraph\relax%
+  }{}
+\newenvironment{levelup}% Promote sectional commands
+  {\let\subparagraph\paragraph%
+   \let\paragraph\subsubsection%
+   \let\subsubsection\subsection%
+   \let\subsection\section%
+   %\let\section\relax%
+  }{}
+</pre>
+</div>
+<p>
+Download preamble document <a href="./files/preamble_sectionlevels.tex">here</a>.
+</p>
 </div>
 </div>
 </div>

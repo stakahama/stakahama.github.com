@@ -1,0 +1,45 @@
+% include in preamble using \input{preamble_sectionlevels}
+
+% from http://tex.stackexchange.com/questions/98413/renaming-section-levels/98419#98419
+\let\oldinput\input
+\newcommand{\savesections}{%
+  \let\oldsection\section% Store \section
+  \let\oldsubsection\subsection% Store \subsection
+  \let\oldsubsubsection\subsubsection% Store \subsubsection
+  \let\oldparagraph\paragraph% Store \paragraph
+  \let\oldsubparagraph\subparagraph% Store \subparagraph
+}\AtBeginDocument{\savesections}
+\newcommand{\restoresections}{%
+  \let\section\oldsection% Restore \section
+  \let\subsection\oldsubsection% Restore \subsection
+  \let\subsubsection\oldsubsubsection% Restore \subsubsection
+  \let\paragraph\oldparagraph% Restore \paragraph
+  \let\subparagraph\oldsubparagraph% Restore \subparagraph
+}
+\newcommand{\demotesections}{%
+  \let\section\subsection% Modify \section to be \subsection
+  \let\subsection\subsubsection% Modify \subsection to be \subsubsection
+  \let\subsubsection\paragraph% Modify \subsubsection to be \paragraph
+  \let\paragraph\subparagraph% Modify \paragraph to be \subparagraph
+  %\let\subparagraph\relax% Make \subparagraph a no-op
+}
+\renewcommand{\input}[1]{%
+  \demotesections% Demote sections
+  \oldinput{#1}% Input file
+  \restoresections}% Restore sections
+
+% from http://tex.stackexchange.com/questions/61766/demoting-promoting-sections-chapters-etc
+\newenvironment{leveldown}% Demote sectional commands
+  {\let\section\subsection%
+   \let\subsection\subsubsection%
+   \let\subsubsection\paragraph%
+   \let\paragraph\subparagraph%
+   %\let\subparagraph\relax%
+  }{}
+\newenvironment{levelup}% Promote sectional commands
+  {\let\subparagraph\paragraph%
+   \let\paragraph\subsubsection%
+   \let\subsubsection\subsection%
+   \let\subsection\section%
+   %\let\section\relax%
+  }{}
