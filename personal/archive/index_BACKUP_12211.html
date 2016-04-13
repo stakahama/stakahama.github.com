@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>other-customizations</title>
+<title>index_BACKUP_12211</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
@@ -137,140 +137,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">other-customizations</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Editing paths</a></li>
-<li><a href="#sec-2">Spell/language check</a></li>
-<li><a href="#sec-3">Use dired+</a></li>
-<li><a href="#sec-4">AUCTeX</a></li>
-<li><a href="#sec-5">open iTerm</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Editing paths</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(setenv "PATH" (concat "/anaconda/bin:/opt/local/bin:" (getenv "PATH") ))
-(setq exec-path (append '("/anaconda/bin") exec-path))
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Spell/language check</h2>
-<div class="outline-text-2" id="text-2">
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">;; Ispell/Aspell (OS X)
-(setq ispell-program-name "/opt/local/bin/ispell")
-;; LanguageTool
-;; https://joelkuiper.eu/spellcheck_emacs
-(setenv "JAVA_HOME"
-	(let ((version "1.8"))
-	  (replace-regexp-in-string "\r?\n\\'" ""
-				    (shell-command-to-string
-				     (format "/usr/libexec/java_home -v %s" version)))))
-(require 'langtool)
-(setq langtool-language-tool-jar "~/programs/LanguageTool/languagetool-commandline.jar"
-      langtool-mother-tongue "en"
-      langtool-disabled-rules '("WHITESPACE_RULE"
-				"EN_UNPAIRED_BRACKETS"
-				"COMMA_PARENTHESIS_WHITESPACE"
-				"EN_QUOTES"))
-</pre>
-</div>
-
+<h1 class="title">index_BACKUP_12211</h1>
 <p>
-run with <code>M-x flyspell-buffer</code> and  <code>M-x langtool-check-buffer</code>.
+<a href="http://prairiehome.publicradio.org/programs/2009/10/10/scripts/bass.shtml">Bass script, <b><b>A Prairie Home Companion</b></b>, Oct 2009</a>
 </p>
-
-<p>
-Apparently, <a href="http://www.networkworld.com/community/node/25360">RMS mentioned</a> wanting to see more word-processing features in Emacs, saying that "I would like to see it extended to operate as a word processor, editing formatted text" upon relinquishing his role as maintaner of this project.
-</p>
-
-<p>
-If writing in LaTeX, sometimes I export the .tex file to .rtf using <code>latex2rtf</code> or <code>$ detex filename.tex &gt; filename.txt</code> and open in MS Word for visual spell/grammar check.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Use dired+</h2>
-<div class="outline-text-2" id="text-3">
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(require 'dired+)
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">AUCTeX</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> to run PDFLaTeX; <code>C-c C-c View</code> or <code>C-c C-v</code> to open pdf with Preview.
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(add-hook 'LaTeX-mode-hook 
-	  (lambda () 
-	    (setq TeX-PDF-mode t)
-	    (setq TeX-command-list 
-		  (let ((view-command '("View" 
-					"open -a Preview.app %s.pdf" 
-					TeX-run-discard-or-function t t 
-					:help "Run Viewer"))) ;; edit this list as necessary
-		    (mapcar (lambda (x) 
-			      (if (equal (car x) "View") view-command x))
-			    TeX-command-list)))))
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">open iTerm</h2>
-<div class="outline-text-2" id="text-5">
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(defun iterm-here ()
-  "from http://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/"
-  (interactive)
-  (dired-smart-shell-command (format "open -a iTerm \"%s\"" default-directory) nil nil))
-</pre>
-</div>
-
-<br>
-<hr>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left">Emacs pages:</td>
-<td class="left"><a href="./index.html">main</a></td>
-<td class="left"><a href="./aprl-config.html">aprl-config</a></td>
-</tr>
-</tbody>
-</table>
-<br>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
 <hr>
