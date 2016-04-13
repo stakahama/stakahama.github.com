@@ -174,8 +174,16 @@ running executables.
 </p>
 <ul class="org-ul">
 <li>Environment variables and aliases from my
-<code>.bash_profile</code> are mirrored in <code>.emacs.d/init_bash.sh</code>.
+<code>.bash_profile</code> are imported in <code>.emacs.d/init_bash.sh</code>.
 </li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh"># export PS1='\h:\w$ '
+source ~/.bash_profile
+</pre>
+</div>
+<ul class="org-ul">
 <li>To start multiple shells: <code>C-u M-x shell</code>.
 </li>
 <li>To use <code>TAB</code> for smart auto-completion, add <code>(require 'shell)</code>.

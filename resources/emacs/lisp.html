@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Programming in Emacs Lisp</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Satoshi Takahama" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="http://stakahama.github.io/resources/css/solarized-light.min.css" type="text/css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Programming in Emacs Lisp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Lisp-1</a></li>
+<li><a href="#sec-2">Dynamic scoping</a></li>
+<li><a href="#sec-3">t vs. nil</a></li>
+<li><a href="#sec-4">Creating sequences by quote vs. list</a></li>
+</ul>
+</div>
+</div>
+<p>
+There are several aspects of emacs lisp that are peculiar when compared to many other modern languages.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Lisp-1</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The same symbol can be used for a function and a variable simultaneously. (<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Function-Cells.html">ref</a>)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(defun foo () 1)        ;; function
+
+(setq foo 2)            ;; variable
+
+(foo)                   ;; =&gt; 1
+
+foo                     ;; =&gt; 2
+</pre>
+</div>
+
+<p>
+The reason why two definitions can exist simultaneously for a single symbol (in a single namespace) is that each symbol can be conceptualized as having a "function cell" and a "value cell". In the example below, we show how two separate functions can be contained within the same function. Note that when a function is assigned to the value cell, it must be invoked using different syntax.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(defun bar () 1)                ;; assign to function cell
+
+(setq bar (lambda () 2))        ;; assign to value cell
+
+(bar)                           ;; =&gt; 1
+
+bar                             ;; =&gt; (lambda nil 2)
+
+(funcall bar)                   ;; =&gt; 2
+</pre>
+</div>
+
+<p>
+Deleting a variable and checking the existence of a variable requires that the function and value cells of the symbol are addressed separately.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(fmakunbound 'bar)              ;; =&gt; bar
+
+(fboundp 'bar)                  ;; =&gt; nil
+
+(bar)                           ;; =&gt; Symbol's function definition is void: bar
+
+(makunbound 'bar)               ;; =&gt; bar
+
+(boundp 'bar)                   ;; =&gt; nil
+
+bar                             ;; =&gt; Symbol's value as variable is void: bar
+</pre>
+</div>
+
+<p>
+There is an alternate (and perhaps unconventional) way to define and call functions that mirror the way we handle values.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(fset 'bar (lambda () 1))       ;; =&gt; (lambda nil 1)
+
+(set 'bar (lambda () 2))        ;; =&gt; (lambda nil 2)
+
+(funcall 'bar)                  ;; =&gt; 1
+
+(funcall bar)                   ;; =&gt; 2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Dynamic scoping</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+An important thing to note is the dynamic scoping rules of traditional emacs lisp. Lexical scoping is permitted in some instances:
+</p>
+
+<ul class="org-ul">
+<li>using <code>lexical-let</code>
+</li>
+<li>set buffer-local variable <code>lexical-binding</code> to non-nil.
+</li>
+</ul>
+
+<p>
+An example contrasting dynamic and lexical scoping is taken from the <a href="https://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding">EmacsWiki</a>. The example is modified to use <code>cl-flet</code> and store the function definition in the symbol <code>f</code>'s function cell, rather its value cell. Note that the value of a free symbol in dynamic scoping is defined by the environment in which the function is invoked, and not in that which it is defined.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(require 'cl)
+
+;; dynamic scoping
+(let ((a 1))                    ; binding (1)
+  (cl-flet ((f () a))
+    (let ((a 2))                ; binding (2)
+      (f))))
+;; =&gt; 2
+
+;; lexical scoping
+(lexical-let ((a 1))            ; binding (1)
+  (cl-flet ((f () a))
+    (lexical-let ((a 2))        ; binding (2)
+      (f))))
+;; =&gt; 1
+
+;; alternatively,
+(setq lexical-binding t)        ; set for entire buffer
+(let ((a 1))                    ; binding (1)
+  (cl-flet ((f () a))
+    (let ((a 2))                ; binding (2)
+      (f))))
+;; =&gt; 1
+(setq lexical-binding nil)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">t vs. nil</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Boolean values are <code>t</code> and <code>nil</code>. <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/nil-and-t.html">(ref</a>)
+</p>
+
+<p>
+All of the following statements are true. Note that <code>0</code> and negative values are also true, in contrast with many other languages. 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let ((a t))
+  (if a "true" "false")) 
+;; =&gt; "true"
+
+(let ((a 0))
+  (if a "true" "false"))  
+;; =&gt; "true"
+
+(let ((a -1))
+  (if a "true" "false"))  
+;; =&gt; "true"
+</pre>
+</div>
+
+<p>
+<code>f</code> is not false &#x2013; there is no symbol named <code>f</code> defined in the language.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let ((a f))
+  (if a "true" "false"))  
+;; =&gt; Symbol's value as variable is void: f
+</pre>
+</div>
+
+
+<p>
+Both of the following statements are false. <code>nil</code> is equivalent to the empty list. 
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let ((a nil))
+  (if a "true" "false"))
+;; =&gt; "false"
+
+(let ((a ()))
+  (if a "true" "false"))
+;; =&gt; "false"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Creating sequences by quote vs. list</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<code>quote</code> (shorthand: ') accepts a single argument and returns the object (symbol or expression) unevaluated. <code>list</code> returns a sequence of evaluated objects. Quoted numbers evaluate to themselves so the following expressions are equivalent:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(mapcar '1+ (list 1 2)) ;; =&gt; (2 3)
+
+(mapcar '1+ '(1 2))     ;; =&gt; (2 3)
+</pre>
+</div>
+
+<p>
+However, for variables this is not the case.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let ((a 1))
+  (list a 2))
+;; =&gt; (1 2)
+
+(let ((a 1))
+  '(a 2))
+;; =&gt; (a 2)
+</pre>
+</div>
+
+<p>
+Therefore, the following two expressions produce different results.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let* ((a 1)
+       (pair (list a 2)))
+  (mapcar '1+ pair))
+;; =&gt; (2 3)
+
+(let* ((a 1)
+       (pair '(a 2)))
+  (mapcar '1+ pair))
+;; =&gt; Wrong type argument: number-or-marker-p, a
+</pre>
+</div>
+
+<p>
+Perhaps there is a better solution, but a call to <code>eval</code> should be necessary at some point for the latter example.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let* ((a 1)
+       (pair '(a 2)))
+  (mapcar '1+ (eval (cons 'list pair))))
+;; =&gt; (2 3)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr>
+Generated by Org-mode 8.2.10 with Emacs 24
+</div>
+</body>
+</html>
