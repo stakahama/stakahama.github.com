@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Editors and Integrated Development Environments (IDEs)</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Editors and Integrated Development Environments (IDEs)</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://stakahama.github.io/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/resources/css/solarized-dark.min.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -151,12 +157,9 @@ Language-agnostic editors/IDEs:
 </p>
 
 <ul class="org-ul">
-<li><a href="http://www.gnu.org/software/emacs/">Emacs</a> for everything. Editors provide part of the development environment are technically "integrated" with conventional unix tools like GNU make, the GNU debugger and the GNU compiler collection and other tools. Vim is also a popular editor; I personally use <a href="../emacs/index.html">GNU Emacs</a>.
-</li>
-<li>Eclipse with plugins (Photran, Pydev, StatET, CDT). <a href="http://inst.eecs.berkeley.edu/~cs188/fa06/eclipse.html">Some notes</a>. 
-</li>
-<li>Microsoft Visual Studio. I used to use this in graduate school for MS Visual C++ and Digital Visual Fortran and was quite pleased with its user-friendliness. I was recommended the Kate IDE as a MS Visual Studio alternative for Linux, but it does not seem to be an equivalent replacement.
-</li>
+<li><a href="http://www.gnu.org/software/emacs/">Emacs</a> for everything. Editors provide part of the development environment are technically "integrated" with conventional unix tools like GNU make, the GNU debugger and the GNU compiler collection and other tools. Vim is also a popular editor; I personally use <a href="../emacs/index.html">GNU Emacs</a>.</li>
+<li>Eclipse with plugins (Photran, Pydev, StatET, CDT). <a href="http://inst.eecs.berkeley.edu/~cs188/fa06/eclipse.html">Some notes</a>.</li>
+<li>Microsoft Visual Studio. I used to use this in graduate school for MS Visual C++ and Digital Visual Fortran and was quite pleased with its user-friendliness. I was recommended the Kate IDE as a MS Visual Studio alternative for Linux, but it does not seem to be an equivalent replacement.</li>
 </ul>
 
 <p>
@@ -164,8 +167,7 @@ Language-specific IDEs:
 </p>
 
 <ul class="org-ul">
-<li>RStudio for R
-</li>
+<li>RStudio for R</li>
 </ul>
 
 <p>
@@ -174,7 +176,7 @@ While knowing Emacs and Vim allow you to program in many languages very rapidly,
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>

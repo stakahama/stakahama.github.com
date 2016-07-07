@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>LaTeX</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>LaTeX</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://stakahama.github.io/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/resources/css/solarized-dark.min.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -142,62 +148,62 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Editors</a>
+<li><a href="#orgheadline3">Editors</a>
 <ul>
-<li><a href="#sec-1-1">options</a></li>
-<li><a href="#sec-1-2">spelling and grammar check</a></li>
+<li><a href="#orgheadline1">options</a></li>
+<li><a href="#orgheadline2">spelling and grammar check</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Fonts</a></li>
-<li><a href="#sec-3">Math</a>
+<li><a href="#orgheadline4">Fonts</a></li>
+<li><a href="#orgheadline7">Math</a>
 <ul>
-<li><a href="#sec-3-1">array vs. aligned</a></li>
-<li><a href="#sec-3-2">formatting optimization problems</a></li>
+<li><a href="#orgheadline5">array vs. aligned</a></li>
+<li><a href="#orgheadline6">formatting optimization problems</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">Colors</a></li>
-<li><a href="#sec-5">Tables</a></li>
-<li><a href="#sec-6">Spacing</a>
+<li><a href="#orgheadline8">Colors</a></li>
+<li><a href="#orgheadline9">Tables</a></li>
+<li><a href="#orgheadline13">Spacing</a>
 <ul>
-<li><a href="#sec-6-1">ad hoc</a></li>
-<li><a href="#sec-6-2">indentation</a></li>
-<li><a href="#sec-6-3">line spacing</a></li>
+<li><a href="#orgheadline10">ad hoc</a></li>
+<li><a href="#orgheadline11">indentation</a></li>
+<li><a href="#orgheadline12">line spacing</a></li>
 </ul>
 </li>
-<li><a href="#sec-7">Header/footer</a></li>
-<li><a href="#sec-8">Caption</a></li>
-<li><a href="#sec-9">Number in variable/macro names</a></li>
-<li><a href="#sec-10">Lists</a></li>
-<li><a href="#sec-11">Chemistry</a></li>
-<li><a href="#sec-12">Line numbers</a></li>
-<li><a href="#sec-13">Figures</a></li>
-<li><a href="#sec-14">Title spacing</a></li>
-<li><a href="#sec-15">Compilation</a>
+<li><a href="#orgheadline14">Header/footer</a></li>
+<li><a href="#orgheadline15">Caption</a></li>
+<li><a href="#orgheadline16">Number in variable/macro names</a></li>
+<li><a href="#orgheadline17">Lists</a></li>
+<li><a href="#orgheadline18">Chemistry</a></li>
+<li><a href="#orgheadline19">Line numbers</a></li>
+<li><a href="#orgheadline20">Figures</a></li>
+<li><a href="#orgheadline21">Title spacing</a></li>
+<li><a href="#orgheadline22">Compilation</a>
 <ul>
-<li><a href="#sec-15-1">latexmk (needs editing)</a></li>
+<li><a href="#orgheadline23">latexmk (needs editing)</a></li>
 </ul>
 </li>
-<li><a href="#sec-16">Bibliographies</a>
+<li><a href="#orgheadline24">Bibliographies</a>
 <ul>
-<li><a href="#sec-16-1">Biblatex</a>
+<li><a href="#orgheadline27">Biblatex</a>
 <ul>
-<li><a href="#sec-16-1-1">Preamble</a></li>
-<li><a href="#sec-16-1-2">Main document</a></li>
+<li><a href="#orgheadline25">Preamble</a></li>
+<li><a href="#orgheadline26">Main document</a></li>
 </ul>
 </li>
-<li><a href="#sec-16-2">Natbib and bibtex</a></li>
-<li><a href="#sec-16-3">Extracting subset of bibliographies</a></li>
-<li><a href="#sec-16-4">Unicode characters in .bib file</a></li>
+<li><a href="#orgheadline28">Natbib and bibtex</a></li>
+<li><a href="#orgheadline29">Extracting subset of bibliographies</a></li>
+<li><a href="#orgheadline30">Unicode characters in .bib file</a></li>
 </ul>
 </li>
-<li><a href="#sec-17">Local environments</a></li>
-<li><a href="#sec-18">Beamer</a></li>
-<li><a href="#sec-19">Placing custom .sty files</a></li>
-<li><a href="#sec-20">Templates</a></li>
-<li><a href="#sec-21">Handling file names</a></li>
-<li><a href="#sec-22">Cross referencing with xr</a></li>
-<li><a href="#sec-23">Cleaning</a></li>
-<li><a href="#sec-24">Section levels</a></li>
+<li><a href="#orgheadline31">Local environments</a></li>
+<li><a href="#orgheadline32">Beamer</a></li>
+<li><a href="#orgheadline33">Placing custom .sty files</a></li>
+<li><a href="#orgheadline34">Templates</a></li>
+<li><a href="#orgheadline35">Handling file names</a></li>
+<li><a href="#orgheadline36">Cross referencing with xr</a></li>
+<li><a href="#orgheadline37">Cleaning</a></li>
+<li><a href="#orgheadline38">Section levels</a></li>
 </ul>
 </div>
 </div>
@@ -217,12 +223,12 @@ This is an excellent reference:
 This page is meant to highlight a few features which I come across often.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Editors</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">options</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Editors</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">options</h3>
+<div class="outline-text-3" id="text-orgheadline1">
 <p>
 I use Emacs with AucTeX.
 </p>
@@ -237,9 +243,9 @@ I know colleagues have previously been pleased with WinEdt (Windows) and TeXShop
 </div>
 </div>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">spelling and grammar check</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">spelling and grammar check</h3>
+<div class="outline-text-3" id="text-orgheadline2">
 <p>
 In emacs, I use <code>M-x flyspell-buffer</code> and <code>M-x langtool-check-buffer</code>.
 </p>
@@ -255,17 +261,17 @@ Other options:
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Fonts</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Fonts</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 Sans-serif text and math:
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand\familydefault{\sfdefault} 
-\usepackage[cm]{sfmath}
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\familydefault</span>{<span style="font-weight: bold;">\sfdefault</span>}
+<span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">cm</span>]{<span style="font-weight: bold;">sfmath</span>}
 </pre>
 </div>
 
@@ -274,9 +280,9 @@ Other options for sans serif math fonts:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{cmbright}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">cmbright</span>}
 \DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
-\DeclareTextFontCommand{\emph}{\itshape}
+\DeclareTextFontCommand{<span style="font-weight: bold;">\</span><span style="font-weight: bold;">emph</span>}{<span style="font-weight: bold;">\itshape</span>}
 </pre>
 </div>
 
@@ -285,11 +291,11 @@ Bold italic sans serif (my solution):
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[OMLmathsfit]{ISOmath}
-\usepackage{cmbright}
-\usepackage{bm}
-\renewcommand{\vectorsym}{\bm}
-\renewcommand{\matrixsym}{\vectorsym}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">OMLmathsfit</span>]{<span style="font-weight: bold;">ISOmath</span>}
+<span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">cmbright</span>}
+<span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">bm</span>}
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\vectorsym</span>}{<span style="font-weight: bold;">\bm</span>}
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\matrixsym</span>}{<span style="font-weight: bold;">\vectorsym</span>}
 </pre>
 </div>
 
@@ -306,27 +312,27 @@ For consistent subscript size:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{subdepth}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">subdepth</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Math</h2>
-<div class="outline-text-2" id="text-3">
-</div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">array vs. aligned</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Math</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">array vs. aligned</h3>
+<div class="outline-text-3" id="text-orgheadline5">
 <p>
 <a href="http://tex.stackexchange.com/a/111898/3602">http://tex.stackexchange.com/a/111898/3602</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">formatting optimization problems</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">formatting optimization problems</h3>
+<div class="outline-text-3" id="text-orgheadline6">
 <p>
 <a href="http://tex.stackexchange.com/questions/5223/command-for-argmin-or-argmax">Define argmin and argmax in preamble</a>:
 </p>
@@ -342,14 +348,14 @@ For consistent subscript size:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\[
-\begin{array}{rrclcl}
-\displaystyle \min_{x} &amp; \multicolumn{3}{l}{c^T x} \\
-\textrm{s.t.} &amp; A x &amp; \leq &amp; b \\
-&amp;\displaystyle \sum_{i=0}^{n} x_i &amp; = &amp; 1 \\
-&amp; x_j &amp; \geq &amp; 0 &amp; &amp; \forall j \in N \\
-\end{array}
-\]
+<pre class="src src-latex"><span style="text-decoration: underline;">\[</span>
+<span style="font-weight: bold; text-decoration: underline;">\begin</span><span style="text-decoration: underline;">{</span><span style="font-weight: bold; text-decoration: underline;">array</span><span style="text-decoration: underline;">}{rrclcl}</span>
+<span style="text-decoration: underline;">\displaystyle</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\min</span><span style="text-decoration: underline;">_{x} </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\multicolumn</span><span style="text-decoration: underline;">{3}{l}{c^T x} </span><span style="font-weight: bold; text-decoration: underline;">\\</span>
+<span style="font-weight: bold; text-decoration: underline;">\textrm</span><span style="text-decoration: underline;">{</span><span style="font-weight: bold; text-decoration: underline;">s.t.</span><span style="text-decoration: underline;">} </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> A x </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\leq</span><span style="text-decoration: underline;"> </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> b </span><span style="font-weight: bold; text-decoration: underline;">\\</span>
+<span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;">\displaystyle</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\sum</span><span style="text-decoration: underline;">_{i=0}^{n} x_i </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> = </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> 1 </span><span style="font-weight: bold; text-decoration: underline;">\\</span>
+<span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> x_j </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\geq</span><span style="text-decoration: underline;"> </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> 0 </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> </span><span style="font-weight: bold; text-decoration: underline;">&amp;</span><span style="text-decoration: underline;"> </span><span style="text-decoration: underline;">\forall</span><span style="text-decoration: underline;"> j </span><span style="text-decoration: underline;">\in</span><span style="text-decoration: underline;"> N </span><span style="font-weight: bold; text-decoration: underline;">\\</span>
+<span style="font-weight: bold; text-decoration: underline;">\end</span><span style="text-decoration: underline;">{</span><span style="font-weight: bold; text-decoration: underline;">array</span><span style="text-decoration: underline;">}</span>
+<span style="text-decoration: underline;">\]</span>
 </pre>
 </div>
 
@@ -359,8 +365,8 @@ Another <a href="http://jcnts.wordpress.com/2009/11/11/formatting-optimization-p
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{amssymb,amsmath}
-\usepackage{mathtools}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">amssymb,amsmath</span>}
+<span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">mathtools</span>}
 </pre>
 </div>
 
@@ -371,9 +377,9 @@ Another <a href="http://jcnts.wordpress.com/2009/11/11/formatting-optimization-p
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Colors</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">Colors</h2>
+<div class="outline-text-2" id="text-orgheadline8">
 <p>
 Good document <a href="http://en.wikibooks.org/wiki/LaTeX/Colors">here</a>.
 </p>
@@ -383,7 +389,7 @@ Full invocation
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[usenames,dvipsnames,svgnames,x11names,table]{xcolor}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">usenames,dvipsnames,svgnames,x11names,table</span>]{<span style="font-weight: bold;">xcolor</span>}
 </pre>
 </div>
 <p>
@@ -409,25 +415,23 @@ Define colors:
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Tables</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Tables</h2>
+<div class="outline-text-2" id="text-orgheadline9">
 <p>
-Text in tables; 
+Text in tables;
 </p>
 <ul class="org-ul">
-<li>unwrapped columns: use <code>p{}</code>, <code>c{}</code>, <code>r</code>
-</li>
-<li>wrapped columns: use <code>P{}</code>, <code>C{}</code>, and <code>R{}</code> as defined <a href="http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef">below</a>
-</li>
+<li>unwrapped columns: use <code>p{}</code>, <code>c{}</code>, <code>r</code></li>
+<li>wrapped columns: use <code>P{}</code>, <code>C{}</code>, and <code>R{}</code> as defined <a href="http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef">below</a></li>
 </ul>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{array}
-\newcolumntype{L}[1]{&gt;{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{&gt;{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{&gt;{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">array</span>}
+\newcolumntype{L}[1]{&gt;{\raggedright\let<span style="font-weight: bold;">\newline</span><span style="font-weight: bold;">\\</span>\arraybackslash<span style="font-weight: bold;">\hspace</span>{<span style="font-weight: bold;">0pt</span>}}m{#1}}
+\newcolumntype{C}[1]{&gt;{<span style="font-weight: bold;">\centering</span>\let<span style="font-weight: bold;">\newline</span><span style="font-weight: bold;">\\</span>\arraybackslash<span style="font-weight: bold;">\hspace</span>{<span style="font-weight: bold;">0pt</span>}}m{#1}}
+\newcolumntype{R}[1]{&gt;{\raggedleft\let<span style="font-weight: bold;">\newline</span><span style="font-weight: bold;">\\</span>\arraybackslash<span style="font-weight: bold;">\hspace</span>{<span style="font-weight: bold;">0pt</span>}}m{#1}}
 </pre>
 </div>
 
@@ -441,23 +445,21 @@ Multi-page tables
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{longtable}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">longtable</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">Spacing</h2>
-<div class="outline-text-2" id="text-6">
-</div><div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1">ad hoc</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13">Spacing</h2>
+<div class="outline-text-2" id="text-orgheadline13">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">ad hoc</h3>
+<div class="outline-text-3" id="text-orgheadline10">
 <ul class="org-ul">
-<li>horizontal spacing: <code>\hspace</code>, <code>\hspace*</code>
-</li>
-<li>vertical spacing: <code>\vspace</code>
-</li>
+<li>horizontal spacing: <code>\hspace</code>, <code>\hspace*</code></li>
+<li>vertical spacing: <code>\vspace</code></li>
 </ul>
 
 <p>
@@ -470,21 +472,19 @@ Character size units: horizontal space <code>1em</code>, vertical space <code>1e
 </div>
 </div>
 
-<div id="outline-container-sec-6-2" class="outline-3">
-<h3 id="sec-6-2">indentation</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">indentation</h3>
+<div class="outline-text-3" id="text-orgheadline11">
 <ul class="org-ul">
-<li>Remove paragraph indentation with <code>\usepackage{parskip}</code>.
-</li>
-<li>Indent first paragraph with <code>\usepackage{indentfirst}</code>.
-</li>
+<li>Remove paragraph indentation with <code>\usepackage{parskip}</code>.</li>
+<li>Indent first paragraph with <code>\usepackage{indentfirst}</code>.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6-3" class="outline-3">
-<h3 id="sec-6-3">line spacing</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12">line spacing</h3>
+<div class="outline-text-3" id="text-orgheadline12">
 <p>
 <a href="http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Line_spacing">http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Line_spacing</a>
 </p>
@@ -500,53 +500,53 @@ Additionally provides <code>spacing</code> environment which can be used within 
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">Header/footer</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14">Header/footer</h2>
+<div class="outline-text-2" id="text-orgheadline14">
 <p>
 Use <a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Customizing_with_fancyhdr">fancyhdr</a>:
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">%% set geometry
-\documentclass[a4paper]{article}
-\usepackage[hmargin=25mm,vmargin=25mm]{geometry}
+<pre class="src src-latex"><span style="font-weight: bold; font-style: italic;">%% </span><span style="font-weight: bold; font-style: italic;">set geometry</span>
+<span style="font-weight: bold;">\documentclass</span>[<span style="font-weight: bold; font-style: italic;">a4paper</span>]{<span style="font-weight: bold;">article</span>}
+<span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">hmargin=25mm,vmargin=25mm</span>]{<span style="font-weight: bold;">geometry</span>}
 \topmargin -25pt
 \headsep 15pt
-%%
-\usepackage{fancyhdr}
-\setlength{\headheight}{15pt}
-\pagestyle{fancy}
-\fancyhf{}                        % clear previous customization
-\fancyhead[L]{Short title}        % left
-\fancyhead[R]{\emph{Author list}} % right
-\fancyfoot[C]{\thepage}           % center
+<span style="font-weight: bold; font-style: italic;">%%</span>
+<span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">fancyhdr</span>}
+<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\headheight</span>}{<span style="font-weight: bold; font-style: italic;">15pt</span>}
+<span style="font-weight: bold;">\pagestyle</span>{<span style="font-weight: bold;">fancy</span>}
+\fancyhf{}                        <span style="font-weight: bold; font-style: italic;">% clear previous customization</span>
+\fancyhead[L]{Short title}        <span style="font-weight: bold; font-style: italic;">% left</span>
+\fancyhead[R]{<span style="font-weight: bold;">\emph</span>{<span style="font-style: italic;">Author list</span>}} <span style="font-weight: bold; font-style: italic;">% right</span>
+\fancyfoot[C]{\thepage}           <span style="font-weight: bold; font-style: italic;">% center</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">Caption</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgheadline15" class="outline-2">
+<h2 id="orgheadline15">Caption</h2>
+<div class="outline-text-2" id="text-orgheadline15">
 <p>
 Use caption package for custom control.
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[small]{caption}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">small</span>]{<span style="font-weight: bold;">caption</span>}
+<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\abovecaptionskip</span>}{<span style="font-weight: bold; font-style: italic;">0pt</span>}
+<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\belowcaptionskip</span>}{<span style="font-weight: bold; font-style: italic;">0pt</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">Number in variable/macro names</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-orgheadline16" class="outline-2">
+<h2 id="orgheadline16">Number in variable/macro names</h2>
+<div class="outline-text-2" id="text-orgheadline16">
 <p>
 <a href="http://tex.stackexchange.com/a/9719/3602">http://tex.stackexchange.com/a/9719/3602</a>
 </p>
@@ -557,18 +557,18 @@ Rather than <code>\newcommand{\x1}{variable1}</code>, use <code>\newcommand{\x}[
 </div>
 </div>
 
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10">Lists</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17">Lists</h2>
+<div class="outline-text-2" id="text-orgheadline17">
 <p>
 Set spacing between items:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\begin{itemize}
+<pre class="src src-latex"><span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">itemize</span>}
 \itemsep -1ex
-\item ...
-\end{itemize}
+<span style="font-weight: bold;">\item</span> ...
+<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">itemize</span>}
 </pre>
 </div>
 
@@ -577,7 +577,7 @@ Or set globally with <code>enumitem</code>:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{enumitem}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">enumitem</span>}
 \setitemize{itemsep=-1ex}
 \setenumerate{itemsep=-1ex}
 </pre>
@@ -588,9 +588,9 @@ Defining custom lists based on <code>list</code> environment:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\newenvironment{publist}
-{\begin{list}{}{\itemsep=0pt \leftmargin=\indentation \parsep=0pt \labelsep=0pt \partopsep=0pt}\item[]}
-  {\end{list}}
+<pre class="src src-latex"><span style="font-weight: bold;">\newenvironment</span>{<span style="font-weight: bold;">publist</span>}
+{<span style="font-weight: bold;">\begin</span><span style="font-weight: bold;">{list}{}{</span><span style="font-weight: bold;">\itemsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\leftmargin=\indentation</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\parsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\labelsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\partopsep=0pt</span><span style="font-weight: bold;">}</span><span style="font-weight: bold;">\item</span><span style="font-weight: bold;">[]</span>}
+  {<span style="font-weight: bold;">\end</span><span style="font-weight: bold;">{list}</span>}
 </pre>
 </div>
 
@@ -599,30 +599,30 @@ With calculations
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{calc}
-\newlength{\margineone}
-\setlength{\marginone}{.03\textwidth}
-\newlength{\margintwo}
-\setlength{\margintwo}{.08\textwidth}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">calc</span>}
+<span style="font-weight: bold;">\newlength</span>{<span style="font-weight: bold;">\margineone</span>}
+<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\marginone</span>}{<span style="font-weight: bold; font-style: italic;">.03</span><span style="font-weight: bold; font-style: italic;">\textwidth</span>}
+<span style="font-weight: bold;">\newlength</span>{<span style="font-weight: bold;">\margintwo</span>}
+<span style="font-weight: bold;">\setlength</span>{<span style="font-weight: bold; font-style: italic;">\margintwo</span>}{<span style="font-weight: bold; font-style: italic;">.08</span><span style="font-weight: bold; font-style: italic;">\textwidth</span>}
 
-\newenvironment{mylist}
-{\begin{list}{}{\itemsep=0pt \leftmargin=\margintwo \parsep=0pt \labelsep=0pt \partopsep=0pt \itemindent=\dimexpr\marginone-\margintwo\relax}}
-  {\end{list}}
+<span style="font-weight: bold;">\newenvironment</span>{<span style="font-weight: bold;">mylist</span>}
+{<span style="font-weight: bold;">\begin</span><span style="font-weight: bold;">{list}{}{</span><span style="font-weight: bold;">\itemsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\leftmargin=\margintwo</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\parsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\labelsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\partopsep=0pt</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\itemindent=\dimexpr\marginone-\margintwo\relax</span><span style="font-weight: bold;">}</span>}
+  {<span style="font-weight: bold;">\end</span><span style="font-weight: bold;">{list}</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11">Chemistry</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-orgheadline18" class="outline-2">
+<h2 id="orgheadline18">Chemistry</h2>
+<div class="outline-text-2" id="text-orgheadline18">
 <p>
 Use the mhchem package.
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{mhchem}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">mhchem</span>}
 </pre>
 </div>
 
@@ -632,18 +632,18 @@ Copernicus has a <code>\chem{}</code> macro but does not seem to subscript numbe
 
 <div class="org-src-container">
 
-<pre class="src src-tex">\renewcommand{\chem}{\ce}
+<pre class="src src-tex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\chem</span>}{<span style="font-weight: bold;">\ce</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-12" class="outline-2">
-<h2 id="sec-12">Line numbers</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-orgheadline19" class="outline-2">
+<h2 id="orgheadline19">Line numbers</h2>
+<div class="outline-text-2" id="text-orgheadline19">
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[displaymath,mathlines]{lineno}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">displaymath,mathlines</span>]{<span style="font-weight: bold;">lineno</span>}
 </pre>
 </div>
 
@@ -652,22 +652,22 @@ Copernicus has a <code>\chem{}</code> macro but does not seem to subscript numbe
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
-  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
-  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
-  \renewenvironment{#1}%
-  {\linenomath\csname old#1\endcsname}%
-  {\csname oldend#1\endcsname\endlinenomath}}% 
-\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
-  \patchAmsMathEnvironmentForLineno{#1}%
-  \patchAmsMathEnvironmentForLineno{#1*}}%
-\BeginDocument{%
-  \patchBothAmsMathEnvironmentsForLineno{equation}%
-  \patchBothAmsMathEnvironmentsForLineno{align}%
-  \patchBothAmsMathEnvironmentsForLineno{flalign}%
-  \patchBothAmsMathEnvironmentsForLineno{alignat}%
-  \patchBothAmsMathEnvironmentsForLineno{gather}%
-  \patchBothAmsMathEnvironmentsForLineno{multline}%
+<pre class="src src-latex"><span style="font-weight: bold;">\newcommand*</span><span style="font-weight: bold;">\patchAmsMathEnvironmentForLineno</span>[<span style="font-weight: bold; font-style: italic;">1</span>]{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\expandafter\let\csname</span><span style="font-weight: bold;"> old#1</span><span style="font-weight: bold;">\expandafter\endcsname\csname</span><span style="font-weight: bold;"> #1</span><span style="font-weight: bold;">\endcsname</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\expandafter\let\csname</span><span style="font-weight: bold;"> oldend#1</span><span style="font-weight: bold;">\expandafter\endcsname\csname</span><span style="font-weight: bold;"> end#1</span><span style="font-weight: bold;">\endcsname</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\renewenvironment</span><span style="font-weight: bold;">{#1}</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  {</span><span style="font-weight: bold;">\linenomath\csname</span><span style="font-weight: bold;"> old#1</span><span style="font-weight: bold;">\endcsname</span><span style="font-weight: bold;">}</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  {</span><span style="font-weight: bold;">\csname</span><span style="font-weight: bold;"> oldend#1</span><span style="font-weight: bold;">\endcsname\endlinenomath</span><span style="font-weight: bold;">}</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">\newcommand*</span><span style="font-weight: bold;">\patchBothAmsMathEnvironmentsForLineno</span>[<span style="font-weight: bold; font-style: italic;">1</span>]{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\patchAmsMathEnvironmentForLineno</span><span style="font-weight: bold;">{#1}</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\patchAmsMathEnvironmentForLineno</span><span style="font-weight: bold;">{#1*}</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+\BeginDocument{<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{equation}<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{align}<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{flalign}<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{alignat}<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{gather}<span style="font-weight: bold; font-style: italic;">%</span>
+  \patchBothAmsMathEnvironmentsForLineno{multline}<span style="font-weight: bold; font-style: italic;">%</span>
 }
 </pre>
 </div>
@@ -677,9 +677,9 @@ Download preamble file <a href="./files/preamble_mathlineno.tex">here</a>.
 </div>
 </div>
 
-<div id="outline-container-sec-13" class="outline-2">
-<h2 id="sec-13">Figures</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-orgheadline20" class="outline-2">
+<h2 id="orgheadline20">Figures</h2>
+<div class="outline-text-2" id="text-orgheadline20">
 <p>
 <code>\usepackage{graphicx}</code>
 <code>\usepackage{float}</code>
@@ -691,34 +691,34 @@ Download preamble file <a href="./files/preamble_mathlineno.tex">here</a>.
 </div>
 </div>
 
-<div id="outline-container-sec-14" class="outline-2">
-<h2 id="sec-14">Title spacing</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21">Title spacing</h2>
+<div class="outline-text-2" id="text-orgheadline21">
 <p>
-Remove whitespace after title (and before date) 
+Remove whitespace after title (and before date)
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-latex">\title{Title \vspace{-5ex}}
+<pre class="src src-latex"><span style="font-weight: bold;">\title</span>{<span style="font-weight: bold; text-decoration: underline;">Title </span><span style="font-weight: bold; text-decoration: underline;">\vspace</span><span style="font-weight: bold; text-decoration: underline;">{</span><span style="font-weight: bold; text-decoration: underline;">-5ex</span><span style="font-weight: bold; text-decoration: underline;">}</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-15" class="outline-2">
-<h2 id="sec-15">Compilation</h2>
-<div class="outline-text-2" id="text-15">
+<div id="outline-container-orgheadline22" class="outline-2">
+<h2 id="orgheadline22">Compilation</h2>
+<div class="outline-text-2" id="text-orgheadline22">
 <p>
 Put <code>\batchmode</code> at the top of your .tex file (or <code>\nonstopmode</code> for more verbose output).
 </p>
 </div>
 
-<div id="outline-container-sec-15-1" class="outline-3">
-<h3 id="sec-15-1">latexmk (needs editing)</h3>
-<div class="outline-text-3" id="text-15-1">
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23">latexmk (needs editing)</h3>
+<div class="outline-text-3" id="text-orgheadline23">
 <p>
-Use <code>latexmk</code>: 
+Use <code>latexmk</code>:
 </p>
 
 <div class="org-src-container">
@@ -737,8 +737,8 @@ Following some suggestions <a href="http://jon.smajda.com/2008/03/08/latexmk/">e
 
 <div class="org-src-container">
 
-<pre class="src src-sh">#!/bin/sh
-latexmk -pdf -pvc $1
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
+latexmk -pdf -pvc $<span style="font-weight: bold; font-style: italic;">1</span>
 </pre>
 </div>
 
@@ -748,27 +748,27 @@ and for viewing preferences, <code>~/.latexmkrc</code>:
 
 <div class="org-src-container">
 
-<pre class="src src-sh">$pdf_previewer = "open -a /Applications/Skim.app"; $clean_ext = "paux lox pdfsync out";
+<pre class="src src-sh">$<span style="font-weight: bold; font-style: italic;">pdf_previewer</span> = <span style="font-style: italic;">"open -a /Applications/Skim.app"</span>; $<span style="font-weight: bold; font-style: italic;">clean_ext</span> = <span style="font-style: italic;">"paux lox pdfsync out"</span>;
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-16" class="outline-2">
-<h2 id="sec-16">Bibliographies</h2>
-<div class="outline-text-2" id="text-16">
+<div id="outline-container-orgheadline24" class="outline-2">
+<h2 id="orgheadline24">Bibliographies</h2>
+<div class="outline-text-2" id="text-orgheadline24">
 <p>
 For journal articles, use bibtex template provided by publisher (not biblatex). Biblatex is helpful in the draft stage, in that missing references are indicated by their .bib key rather than "??" in citations.
 </p>
 </div>
 
-<div id="outline-container-sec-16-1" class="outline-3">
-<h3 id="sec-16-1">Biblatex</h3>
-<div class="outline-text-3" id="text-16-1">
-</div><div id="outline-container-sec-16-1-1" class="outline-4">
-<h4 id="sec-16-1-1">Preamble</h4>
-<div class="outline-text-4" id="text-16-1-1">
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27">Biblatex</h3>
+<div class="outline-text-3" id="text-orgheadline27">
+</div><div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25">Preamble</h4>
+<div class="outline-text-4" id="text-orgheadline25">
 <p>
 Download my preamble <a href="./files/preamble_biblatex.tex">here</a>.
 </p>
@@ -778,19 +778,19 @@ Loading the package:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[
-    natbib                      % for citation
-    citestyle=authoryear,       % for citation
-    maxcitenames=2,             % for citation
-    uniquelist=false,           % for citation
-    uniquename=false,           % for citation
-    sorting=nyt,                % for bibliography
-    date=year,                  % for bibliography
-    bibstyle=ieee,              % for bibliography
-    maxbibnames=99,             % for bibliography
-    backend=biber, 
-    block=none
-    ]{biblatex}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[
+<span style="font-weight: bold; font-style: italic;">    natbib                      </span><span style="font-weight: bold; font-style: italic;">% for citation</span>
+<span style="font-weight: bold; font-style: italic;">    citestyle=authoryear,       </span><span style="font-weight: bold; font-style: italic;">% for citation</span>
+<span style="font-weight: bold; font-style: italic;">    maxcitenames=2,             </span><span style="font-weight: bold; font-style: italic;">% for citation</span>
+<span style="font-weight: bold; font-style: italic;">    uniquelist=false,           </span><span style="font-weight: bold; font-style: italic;">% for citation</span>
+<span style="font-weight: bold; font-style: italic;">    uniquename=false,           </span><span style="font-weight: bold; font-style: italic;">% for citation</span>
+<span style="font-weight: bold; font-style: italic;">    sorting=nyt,                </span><span style="font-weight: bold; font-style: italic;">% for bibliography</span>
+<span style="font-weight: bold; font-style: italic;">    date=year,                  </span><span style="font-weight: bold; font-style: italic;">% for bibliography</span>
+<span style="font-weight: bold; font-style: italic;">    bibstyle=ieee,              </span><span style="font-weight: bold; font-style: italic;">% for bibliography</span>
+<span style="font-weight: bold; font-style: italic;">    maxbibnames=99,             </span><span style="font-weight: bold; font-style: italic;">% for bibliography</span>
+<span style="font-weight: bold; font-style: italic;">    backend=biber,</span>
+<span style="font-weight: bold; font-style: italic;">    block=none</span>
+<span style="font-weight: bold; font-style: italic;">    </span>]{<span style="font-weight: bold;">biblatex</span>}
 </pre>
 </div>
 
@@ -799,15 +799,15 @@ Use alphabetical reference list; no numbering:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\defbibenvironment{bibliography}
-{\list
-  {}
-  {\setlength{\leftmargin}{\bibhang+1em}%
-    \setlength{\itemindent}{-\leftmargin}%
-    \setlength{\itemsep}{\bibitemsep}%
-    \setlength{\parsep}{\bibparsep}}}
-{\endlist}
-{\item}
+<pre class="src src-latex"><span style="font-weight: bold;">\defbibenvironment</span>{<span style="font-weight: bold; text-decoration: underline;">bibliography</span>}
+{<span style="font-weight: bold; text-decoration: underline;">\list</span>
+<span style="font-weight: bold; text-decoration: underline;">  {}</span>
+<span style="font-weight: bold; text-decoration: underline;">  {</span><span style="font-weight: bold; text-decoration: underline;">\setlength</span><span style="font-weight: bold; text-decoration: underline;">{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\leftmargin</span><span style="font-weight: bold; text-decoration: underline;">}{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\bibhang+1em</span><span style="font-weight: bold; text-decoration: underline;">}</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">%</span>
+<span style="font-weight: bold; text-decoration: underline;">    </span><span style="font-weight: bold; text-decoration: underline;">\setlength</span><span style="font-weight: bold; text-decoration: underline;">{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\itemindent</span><span style="font-weight: bold; text-decoration: underline;">}{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">-</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\leftmargin</span><span style="font-weight: bold; text-decoration: underline;">}</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">%</span>
+<span style="font-weight: bold; text-decoration: underline;">    </span><span style="font-weight: bold; text-decoration: underline;">\setlength</span><span style="font-weight: bold; text-decoration: underline;">{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\itemsep</span><span style="font-weight: bold; text-decoration: underline;">}{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\bibitemsep</span><span style="font-weight: bold; text-decoration: underline;">}</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">%</span>
+<span style="font-weight: bold; text-decoration: underline;">    </span><span style="font-weight: bold; text-decoration: underline;">\setlength</span><span style="font-weight: bold; text-decoration: underline;">{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\parsep</span><span style="font-weight: bold; text-decoration: underline;">}{</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">\bibparsep</span><span style="font-weight: bold; text-decoration: underline;">}}</span>}
+{<span style="font-weight: bold; text-decoration: underline;">\endlist</span>}
+{<span style="font-weight: bold; text-decoration: underline;">\item</span>}
 </pre>
 </div>
 
@@ -816,8 +816,8 @@ Create doi links in bibliography:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\ExecuteBibliographyOptions{url=false,eprint=false}
-\newbibmacro{string+doi}[1]{%
+<pre class="src src-latex"><span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{<span style="font-weight: bold; text-decoration: underline;">url=false,eprint=false</span>}
+\newbibmacro{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
   \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
 </pre>
@@ -828,21 +828,21 @@ In the preamble, also specify location of .bib file:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\bibliography{\string~/git/projects/bibfile/references}
+<pre class="src src-latex"><span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold; text-decoration: underline;">\string</span><span style="font-weight: bold; text-decoration: underline;">~/git/projects/bibfile/references</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-16-1-2" class="outline-4">
-<h4 id="sec-16-1-2">Main document</h4>
-<div class="outline-text-4" id="text-16-1-2">
+<div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26">Main document</h4>
+<div class="outline-text-4" id="text-orgheadline26">
 <p>
 Change bibliography title:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\printbibliography[title=Bibliography]
+<pre class="src src-latex"><span style="font-weight: bold;">\printbibliography</span>[<span style="font-weight: bold; font-style: italic;">title=Bibliography</span>]
 </pre>
 </div>
 
@@ -851,9 +851,9 @@ No bibliography title:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand\refname{}
-\vspace{-5ex}
-\printbibliography
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{}
+<span style="font-weight: bold;">\vspace</span>{<span style="font-weight: bold;">-5ex</span>}
+<span style="font-weight: bold;">\printbibliography</span>
 </pre>
 </div>
 
@@ -862,21 +862,21 @@ Multiple bibliographies:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\section*{Section 1}
-\begin{refsection}
-\nocite{*}
-\vspace{-5ex}
-\printbibliography[title=\sectiontitle]
-\end{refsection}
+<pre class="src src-latex"><span style="font-weight: bold;">\section*</span>{<span style="font-size: 133%; font-weight: bold;">Section 1</span>}
+<span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">refsection</span>}
+<span style="font-weight: bold;">\nocite</span>{<span style="font-weight: bold; text-decoration: underline;">*</span>}
+<span style="font-weight: bold;">\vspace</span>{<span style="font-weight: bold;">-5ex</span>}
+<span style="font-weight: bold;">\printbibliography</span>[<span style="font-weight: bold; font-style: italic;">title=</span><span style="font-weight: bold; font-style: italic;">\sectiontitle</span>]
+<span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">refsection</span>}
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-16-2" class="outline-3">
-<h3 id="sec-16-2">Natbib and bibtex</h3>
-<div class="outline-text-3" id="text-16-2">
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28">Natbib and bibtex</h3>
+<div class="outline-text-3" id="text-orgheadline28">
 <p>
 natbib+bibtex (instead of <code>biblatex</code>) still required for journal submissions.
 </p>
@@ -886,8 +886,8 @@ Don't print reference section title
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand{\bibname}{}
-\renewcommand{\refname}{}
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibname</span>}{}
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\refname</span>}{}
 </pre>
 </div>
 
@@ -896,7 +896,7 @@ Don't print reference section title at all (with natbib)
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand{\bibsection}{}
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{}
 </pre>
 </div>
 
@@ -905,7 +905,7 @@ Don't show reference section title on TOC
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand{\bibsection}{\section*{\bibname}}
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\bibsection</span>}{<span style="font-weight: bold;">\section*</span><span style="font-weight: bold;">{</span><span style="font-size: 133%; font-weight: bold;">\bibname</span><span style="font-weight: bold;">}</span>}
 </pre>
 </div>
 
@@ -914,18 +914,18 @@ Reference section title as section head
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\renewcommand\refname{\vspace{-5ex}}
-\section{References}
-\bibliographystyle{...}
-\bibliography{...}
+<pre class="src src-latex"><span style="font-weight: bold;">\renewcommand</span><span style="font-weight: bold;">\refname</span>{<span style="font-weight: bold;">\vspace</span><span style="font-weight: bold;">{-5ex}</span>}
+<span style="font-weight: bold;">\section</span>{<span style="font-size: 133%; font-weight: bold;">References</span>}
+<span style="font-weight: bold;">\bibliographystyle</span>{<span style="font-weight: bold;">...</span>}
+<span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold; text-decoration: underline;">...</span>}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-16-3" class="outline-3">
-<h3 id="sec-16-3">Extracting subset of bibliographies</h3>
-<div class="outline-text-3" id="text-16-3">
+<div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29">Extracting subset of bibliographies</h3>
+<div class="outline-text-3" id="text-orgheadline29">
 <p>
 E.g., <a href="http://tex.stackexchange.com/questions/417/how-to-split-all-bibtex-referenced-entries-from-a-big-bibtex-database-to-a-copy">for distribution with tex file</a>. Use <a href="http://www.ctan.org/tex-archive/biblio/bibtex/utils/bibtool/">bibtool</a>.
 </p>
@@ -948,7 +948,7 @@ To build docs:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">cd doc
+<pre class="src src-sh"><span style="font-weight: bold;">cd</span> doc
 make
 </pre>
 </div>
@@ -964,16 +964,16 @@ To use:
 </div>
 </div>
 
-<div id="outline-container-sec-16-4" class="outline-3">
-<h3 id="sec-16-4">Unicode characters in .bib file</h3>
-<div class="outline-text-3" id="text-16-4">
+<div id="outline-container-orgheadline30" class="outline-3">
+<h3 id="orgheadline30">Unicode characters in .bib file</h3>
+<div class="outline-text-3" id="text-orgheadline30">
 <p>
 First, try importing:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">T1</span>]{<span style="font-weight: bold;">fontenc</span>}
+<span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">utf8</span>]{<span style="font-weight: bold;">inputenc</span>}
 </pre>
 </div>
 
@@ -991,30 +991,30 @@ To find which specific characters are causing problems, a great macro that can b
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{stringenc}
-\usepackage{pdfescape}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">stringenc</span>}
+<span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">pdfescape</span>}
 
 \makeatletter
-\renewcommand*{\UTFviii@defined}[1]{%
-  \ifx#1\relax
-    \begingroup
-      % Remove prefix "\u8:"
-      \def\x##1:{}%
-      % Extract Unicode char from command name
-      % (utf8.def does not support surrogates)
-      \edef\x{\expandafter\x\string#1}%
-      \StringEncodingConvert\x\x{utf8}{utf16be}% convert to UTF-16BE
-      % Hexadecimal representation
-      \EdefEscapeHex\x\x
-      % Enhanced error message
-      \PackageError{inputenc}{Unicode\space char\space \string#1\space
-			      (U+\x)\MessageBreak
-			      not\space set\space up\space
-			      for\space use\space with\space LaTeX}\@eha
-    \endgroup
-  \else\expandafter
-    #1%
-  \fi
+<span style="font-weight: bold;">\renewcommand*</span>{<span style="font-weight: bold;">\UTFviii@defined</span>}[<span style="font-weight: bold; font-style: italic;">1</span>]{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\ifx</span><span style="font-weight: bold;">#1</span><span style="font-weight: bold;">\relax</span>
+<span style="font-weight: bold;">    </span><span style="font-weight: bold;">\begingroup</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold; font-style: italic;">% Remove prefix "</span><span style="font-weight: bold; font-style: italic;">\u8</span><span style="font-weight: bold; font-style: italic;">:"</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold;">\def\x</span><span style="font-weight: bold;">##1:{}</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold; font-style: italic;">% Extract Unicode char from command name</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold; font-style: italic;">% (utf8.def does not support surrogates)</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold;">\edef\x</span><span style="font-weight: bold;">{</span><span style="font-weight: bold;">\expandafter\x\string</span><span style="font-weight: bold;">#1}</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold;">\StringEncodingConvert\x\x</span><span style="font-weight: bold;">{utf8}{utf16be}</span><span style="font-weight: bold; font-style: italic;">% convert to UTF-16BE</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold; font-style: italic;">% Hexadecimal representation</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold;">\EdefEscapeHex\x\x</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold; font-style: italic;">% Enhanced error message</span>
+<span style="font-weight: bold;">      </span><span style="font-weight: bold;">\PackageError</span><span style="font-weight: bold;">{inputenc}{Unicode</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> char</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> </span><span style="font-weight: bold;">\string</span><span style="font-weight: bold;">#1</span><span style="font-weight: bold;">\space</span>
+<span style="font-weight: bold;">                              (U+</span><span style="font-weight: bold;">\x</span><span style="font-weight: bold;">)</span><span style="font-weight: bold;">\MessageBreak</span>
+<span style="font-weight: bold;">                              not</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> set</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> up</span><span style="font-weight: bold;">\space</span>
+<span style="font-weight: bold;">                              for</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> use</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> with</span><span style="font-weight: bold;">\space</span><span style="font-weight: bold;"> LaTeX}</span><span style="font-weight: bold;">\@eha</span>
+<span style="font-weight: bold;">    </span><span style="font-weight: bold;">\endgroup</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\else\expandafter</span>
+<span style="font-weight: bold;">    #1</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\fi</span>
 }
 \makeatother
 </pre>
@@ -1026,13 +1026,13 @@ Download this preamble file <a href="./files/preamble_utf8macro.tex">here</a>.
 </div>
 </div>
 
-<div id="outline-container-sec-17" class="outline-2">
-<h2 id="sec-17">Local environments</h2>
-<div class="outline-text-2" id="text-17">
+<div id="outline-container-orgheadline31" class="outline-2">
+<h2 id="orgheadline31">Local environments</h2>
+<div class="outline-text-2" id="text-orgheadline31">
 <div class="org-src-container">
 
 <pre class="src src-latex">\begingroup
-\renewcommand{...}
+<span style="font-weight: bold;">\</span><span style="font-weight: bold;">renewcommand</span>{<span style="font-weight: bold;">...</span>}
 \endgroup
 </pre>
 </div>
@@ -1042,31 +1042,31 @@ or can use \{\} (doesn't always work?)
 </div>
 </div>
 
-<div id="outline-container-sec-18" class="outline-2">
-<h2 id="sec-18">Beamer</h2>
-<div class="outline-text-2" id="text-18">
+<div id="outline-container-orgheadline32" class="outline-2">
+<h2 id="orgheadline32">Beamer</h2>
+<div class="outline-text-2" id="text-orgheadline32">
 <p>
-Add section title in footers (<a href="http://www.latex-community.org/forum/viewtopic.php?f=5&t=10735">reference</a>):
+Add section title in footers (<a href="http://www.latex-community.org/forum/viewtopic.php?f=5&amp;t=10735">reference</a>):
 </p>
 <div class="org-src-container">
 
 <pre class="src src-latex">\usetheme{Boadilla}
 \usecolortheme{whale}
-\defbeamertemplate*{footline}{my infolines theme} 
+\defbeamertemplate*{footline}{my infolines theme}
 {
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  \leavevmode<span style="font-weight: bold; font-style: italic;">%</span>
+  \hbox{<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
     \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
     \usebeamerfont{title in head/foot}\insertsectionhead
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-  \end{beamercolorbox}}%
-  \vskip0pt%
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}<span style="font-weight: bold; font-style: italic;">%</span>
+  <span style="font-weight: bold;">\begin</span>{<span style="font-weight: bold;">beamercolorbox</span>}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}<span style="font-weight: bold; font-style: italic;">%</span>
+    \usebeamerfont{date in head/foot}\insertshortdate{}<span style="font-weight: bold;">\hspace*</span>{<span style="font-weight: bold;">2em</span>}
+    \insertframenumber{} / \inserttotalframenumber<span style="font-weight: bold;">\hspace*</span>{<span style="font-weight: bold;">2ex</span>}
+  <span style="font-weight: bold;">\end</span>{<span style="font-weight: bold;">beamercolorbox</span>}}<span style="font-weight: bold; font-style: italic;">%</span>
+  \vskip0pt<span style="font-weight: bold; font-style: italic;">%</span>
 }
 \setbeamertemplate{blocks}[default]
 </pre>
@@ -1074,9 +1074,9 @@ Add section title in footers (<a href="http://www.latex-community.org/forum/view
 </div>
 </div>
 
-<div id="outline-container-sec-19" class="outline-2">
-<h2 id="sec-19">Placing custom .sty files</h2>
-<div class="outline-text-2" id="text-19">
+<div id="outline-container-orgheadline33" class="outline-2">
+<h2 id="orgheadline33">Placing custom .sty files</h2>
+<div class="outline-text-2" id="text-orgheadline33">
 <p>
 Check where TEXMFHOME is
 </p>
@@ -1110,25 +1110,25 @@ In mine I have
 </div>
 </div>
 </div>
-<div id="outline-container-sec-20" class="outline-2">
-<h2 id="sec-20">Templates</h2>
-<div class="outline-text-2" id="text-20">
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34">Templates</h2>
+<div class="outline-text-2" id="text-orgheadline34">
 <p>
 <a href="https://github.com/bamos/latex-templates">https://github.com/bamos/latex-templates</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-21" class="outline-2">
-<h2 id="sec-21">Handling file names</h2>
-<div class="outline-text-2" id="text-21">
+<div id="outline-container-orgheadline35" class="outline-2">
+<h2 id="orgheadline35">Handling file names</h2>
+<div class="outline-text-2" id="text-orgheadline35">
 <p>
 Using the tilde:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\bibliographystyle{copernicus}
-\bibliography{\string~/git/projects/bibfile/references}
+<pre class="src src-latex"><span style="font-weight: bold;">\bibliographystyle</span>{<span style="font-weight: bold;">copernicus</span>}
+<span style="font-weight: bold;">\bibliography</span>{<span style="font-weight: bold; text-decoration: underline;">\string</span><span style="font-weight: bold; text-decoration: underline;">~/git/projects/bibfile/references</span>}
 </pre>
 </div>
 
@@ -1137,9 +1137,9 @@ Using the tilde:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{graphicx}
-\usepackage[space]{grffile}
-[ ... ]
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">graphicx</span>}
+<span style="font-weight: bold;">\usepackage</span>[<span style="font-weight: bold; font-style: italic;">space</span>]{<span style="font-weight: bold;">grffile</span>}
+[<span style="font-weight: bold; font-style: italic;"> ... </span>]
 \includegraphics{A file with spaces}
 </pre>
 </div>
@@ -1159,14 +1159,14 @@ Using the tilde:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\include{"File\space Of\space Mine"}
+<pre class="src src-latex"><span style="font-weight: bold;">\include</span>{<span style="font-weight: bold; text-decoration: underline;">"File</span><span style="font-weight: bold; text-decoration: underline;">\space</span><span style="font-weight: bold; text-decoration: underline;"> Of</span><span style="font-weight: bold; text-decoration: underline;">\space</span><span style="font-weight: bold; text-decoration: underline;"> Mine"</span>}
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-22" class="outline-2">
-<h2 id="sec-22">Cross referencing with xr</h2>
-<div class="outline-text-2" id="text-22">
+<div id="outline-container-orgheadline36" class="outline-2">
+<h2 id="orgheadline36">Cross referencing with xr</h2>
+<div class="outline-text-2" id="text-orgheadline36">
 <p>
 If you have two files, master.tex and supportinginfo.tex, you would include these in your respective preambles:
 </p>
@@ -1176,7 +1176,7 @@ master.tex
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{xr}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">xr</span>}
 \externaldocument{supportinginfo}
 </pre>
 </div>
@@ -1186,7 +1186,7 @@ supportinginfo.tex
 </p>
 <div class="org-src-container">
 
-<pre class="src src-latex">\usepackage{xr}
+<pre class="src src-latex"><span style="font-weight: bold;">\usepackage</span>{<span style="font-weight: bold;">xr</span>}
 \externaldocument{master}
 </pre>
 </div>
@@ -1197,84 +1197,119 @@ I usually delete .aux and extra files (for both .tex files) prior to compiling.
 </div>
 </div>
 
-<div id="outline-container-sec-23" class="outline-2">
-<h2 id="sec-23">Cleaning</h2>
-<div class="outline-text-2" id="text-23">
+<div id="outline-container-orgheadline37" class="outline-2">
+<h2 id="orgheadline37">Cleaning</h2>
+<div class="outline-text-2" id="text-orgheadline37">
 <p>
-Sometimes files get corrupted and errors arise after seemingly small changes. I usually put a file called clean.sh (<code>chmod +x clean.sh</code>) in my directory wtih the following contents:
+Sometimes files get corrupted and errors arise after seemingly small changes. This can be remedied with
 </p>
+
 <div class="org-src-container">
 
-<pre class="src src-sh">#!/bin/sh
-
-name=${1-master}
-types=( ".aux" ".toc" ".out" ".log" ".bbl" ".blg" ".fls" ".fdb_latexmk" )
-
-for ext in ${types[@]}
-do
-    if [ -f ${name}${ext} ];
-    then
-	rm -fv ${name}${ext}
-    fi
-done
+<pre class="src src-sh">$ latexmk -C {master}.tex
 </pre>
 </div>
 <p>
-Download .sh file <a href="./files/clean.sh">here</a>.
+where <code>{master}.tex</code> is optional and, when specified, <code>{master}</code> is replaced by the main tex name.
 </p>
+
+<p>
+Alternatively, in emacs lisp:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">LaTeX-cleanmk</span> (<span style="font-weight: bold; text-decoration: underline;">&amp;optional</span> arg)
+  <span style="font-style: italic;">"Delete files generated by latexmk. Like 'latexmk -C \"{master}.tex\"' but also removes .bbl file (which can cause trouble when switching between bibtex and biblatex) and optionally removes biber cache when prefix argument is provided."</span>
+  (interactive <span style="font-style: italic;">"P"</span>)
+  (<span style="font-weight: bold;">let</span> ((types (list <span style="font-style: italic;">".aux"</span> <span style="font-style: italic;">".bbl"</span> <span style="font-style: italic;">".blg"</span> <span style="font-style: italic;">".bcf"</span> <span style="font-style: italic;">".run.xml"</span>
+                     <span style="font-style: italic;">".fls"</span> <span style="font-style: italic;">".log"</span> <span style="font-style: italic;">".fdb_latexmk"</span>
+                     <span style="font-style: italic;">".snm"</span> <span style="font-style: italic;">".nav"</span> <span style="font-style: italic;">".out"</span>))
+        (name TeX-master)
+        (ext nil)
+        (filelist nil)
+        (biber-buff <span style="font-style: italic;">"*rm-biber-cache*"</span>)
+        (biber-proc nil)
+        (outgoing <span style="font-style: italic;">""</span>))
+    (<span style="font-weight: bold;">when</span> (or (not name) (eq name t))
+      (setq name (file-name-base buffer-file-name)))
+    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">delete files</span>
+    (<span style="font-weight: bold;">if</span> name
+        (<span style="font-weight: bold;">progn</span>
+          (<span style="font-weight: bold;">dolist</span> (ext types filelist)
+            (<span style="font-weight: bold;">let</span> ((filename (concat name ext)))
+              (<span style="font-weight: bold;">when</span> (file-exists-p filename)
+                (add-to-list 'filelist filename t)
+                (delete-file filename))))
+          (princ (format <span style="font-style: italic;">"deleted: %s"</span> (<span style="font-weight: bold;">if</span> filelist (mapconcat 'identity filelist <span style="font-style: italic;">", "</span>)
+                                         <span style="font-style: italic;">"none"</span>)))
+          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">rm biber cache</span>
+          (<span style="font-weight: bold;">when</span> arg
+            (setq biber-proc (start-process <span style="font-style: italic;">"rm-biber-cache"</span> biber-buff
+                                            <span style="font-style: italic;">"rm"</span> <span style="font-style: italic;">"-rf"</span> <span style="font-style: italic;">"`biber --cache`"</span>))
+            (set-process-sentinel
+             biber-proc
+             '(<span style="font-weight: bold;">lambda</span> (p e)
+                (princ (format <span style="font-style: italic;">"; %s %s"</span> p (replace-regexp-in-string <span style="font-style: italic;">"\r?\n"</span> <span style="font-style: italic;">""</span> e)))))))
+      (princ <span style="font-style: italic;">"no TeX-master"</span>))))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">C-c d is too close to "C-c C-d" (TeX-save-document)</span>
+(add-hook 'LaTeX-mode-hook '(<span style="font-weight: bold;">lambda</span> ()
+                              (local-set-key (kbd <span style="font-style: italic;">"C-c D"</span>) 'LaTeX-cleanmk)))
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-sec-24" class="outline-2">
-<h2 id="sec-24">Section levels</h2>
-<div class="outline-text-2" id="text-24">
+<div id="outline-container-orgheadline38" class="outline-2">
+<h2 id="orgheadline38">Section levels</h2>
+<div class="outline-text-2" id="text-orgheadline38">
 <p>
 When you have multiple files included in a master file by the <code>\input{}</code> command, you can let <code>\section{}</code> commands in each file be demoted to <code>\subsection{}</code> and so on. This procedure is described <a href="http://tex.stackexchange.com/questions/98413/renaming-section-levels/98419#98419">here</a>:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-tex">\let\oldinput\input
-\newcommand{\savesections}{%
-  \let\oldsection\section% Store \section
-  \let\oldsubsection\subsection% Store \subsection
-  \let\oldsubsubsection\subsubsection% Store \subsubsection
-  \let\oldparagraph\paragraph% Store \paragraph
-  \let\oldsubparagraph\subparagraph% Store \subparagraph
+<pre class="src src-tex">\let\oldinput<span style="font-weight: bold;">\</span><span style="font-weight: bold;">input</span>
+<span style="font-weight: bold;">\newcommand</span>{<span style="font-weight: bold;">\savesections</span>}{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let\oldsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">section</span><span style="font-weight: bold; font-style: italic;">% Store </span><span style="font-weight: bold; font-style: italic;">\section</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let\oldsubsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold; font-style: italic;">% Store </span><span style="font-weight: bold; font-style: italic;">\subsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let\oldsubsubsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold; font-style: italic;">% Store </span><span style="font-weight: bold; font-style: italic;">\subsubsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let\oldparagraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold; font-style: italic;">% Store </span><span style="font-weight: bold; font-style: italic;">\paragraph</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let\oldsubparagraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subparagraph</span><span style="font-weight: bold; font-style: italic;">% Store </span><span style="font-weight: bold; font-style: italic;">\subparagraph</span>
 }\AtBeginDocument{\savesections}
-\newcommand{\restoresections}{%
-  \let\section\oldsection% Restore \section
-  \let\subsection\oldsubsection% Restore \subsection
-  \let\subsubsection\oldsubsubsection% Restore \subsubsection
-  \let\paragraph\oldparagraph% Restore \paragraph
-  \let\subparagraph\oldsubparagraph% Restore \subparagraph
+<span style="font-weight: bold;">\newcommand</span>{<span style="font-weight: bold;">\restoresections</span>}{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">section</span><span style="font-weight: bold;">\oldsection</span><span style="font-weight: bold; font-style: italic;">% Restore </span><span style="font-weight: bold; font-style: italic;">\section</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold;">\oldsubsection</span><span style="font-weight: bold; font-style: italic;">% Restore </span><span style="font-weight: bold; font-style: italic;">\subsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold;">\oldsubsubsection</span><span style="font-weight: bold; font-style: italic;">% Restore </span><span style="font-weight: bold; font-style: italic;">\subsubsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold;">\oldparagraph</span><span style="font-weight: bold; font-style: italic;">% Restore </span><span style="font-weight: bold; font-style: italic;">\paragraph</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subparagraph</span><span style="font-weight: bold;">\oldsubparagraph</span><span style="font-weight: bold; font-style: italic;">% Restore </span><span style="font-weight: bold; font-style: italic;">\subparagraph</span>
 }
-\newcommand{\demotesections}{%
-  \let\section\subsection% Modify \section to be \subsection
-  \let\subsection\subsubsection% Modify \subsection to be \subsubsection
-  \let\subsubsection\paragraph% Modify \subsubsection to be \paragraph
-  \let\paragraph\subparagraph% Modify \paragraph to be \subparagraph
-  %\let\subparagraph\relax% Make \subparagraph a no-op
+<span style="font-weight: bold;">\newcommand</span>{<span style="font-weight: bold;">\demotesections</span>}{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">section</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold; font-style: italic;">% Modify </span><span style="font-weight: bold; font-style: italic;">\section</span><span style="font-weight: bold; font-style: italic;"> to be </span><span style="font-weight: bold; font-style: italic;">\subsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold; font-style: italic;">% Modify </span><span style="font-weight: bold; font-style: italic;">\subsection</span><span style="font-weight: bold; font-style: italic;"> to be </span><span style="font-weight: bold; font-style: italic;">\subsubsection</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold; font-style: italic;">% Modify </span><span style="font-weight: bold; font-style: italic;">\subsubsection</span><span style="font-weight: bold; font-style: italic;"> to be </span><span style="font-weight: bold; font-style: italic;">\paragraph</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subparagraph</span><span style="font-weight: bold; font-style: italic;">% Modify </span><span style="font-weight: bold; font-style: italic;">\paragraph</span><span style="font-weight: bold; font-style: italic;"> to be </span><span style="font-weight: bold; font-style: italic;">\subparagraph</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold; font-style: italic;">%</span><span style="font-weight: bold; font-style: italic;">\let\subparagraph\relax</span><span style="font-weight: bold; font-style: italic;">% Make </span><span style="font-weight: bold; font-style: italic;">\subparagraph</span><span style="font-weight: bold; font-style: italic;"> a no-op</span>
 }
-\renewcommand{\input}[1]{%
-  \demotesections% Demote sections
-  \oldinput{#1}% Input file
-  \restoresections}% Restore sections
+<span style="font-weight: bold;">\renewcommand</span>{<span style="font-weight: bold;">\</span><span style="font-weight: bold;">input</span>}[<span style="font-weight: bold; font-style: italic;">1</span>]{<span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\demotesections</span><span style="font-weight: bold; font-style: italic;">% Demote sections</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\oldinput</span><span style="font-weight: bold;">{#1}</span><span style="font-weight: bold; font-style: italic;">% Input file</span>
+<span style="font-weight: bold;">  </span><span style="font-weight: bold;">\restoresections</span>}<span style="font-weight: bold; font-style: italic;">% Restore sections</span>
 
-% from http://tex.stackexchange.com/questions/61766/demoting-promoting-sections-chapters-etc
-\newenvironment{leveldown}% Demote sectional commands
-  {\let\section\subsection%
-   \let\subsection\subsubsection%
-   \let\subsubsection\paragraph%
-   \let\paragraph\subparagraph%
-   %\let\subparagraph\relax%
-  }{}
-\newenvironment{levelup}% Promote sectional commands
-  {\let\subparagraph\paragraph%
-   \let\paragraph\subsubsection%
-   \let\subsubsection\subsection%
-   \let\subsection\section%
-   %\let\section\relax%
-  }{}
+<span style="font-weight: bold; font-style: italic;">% </span><span style="font-weight: bold; font-style: italic;">from http://tex.stackexchange.com/questions/61766/demoting-promoting-sections-chapters-etc</span>
+<span style="font-weight: bold;">\newenvironment</span>{<span style="font-weight: bold;">leveldown</span>}<span style="font-weight: bold; font-style: italic;">% Demote sectional commands</span>
+  {<span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">section</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subparagraph</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold; font-style: italic;">%</span><span style="font-weight: bold; font-style: italic;">\let\subparagraph\relax</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span>}{}
+<span style="font-weight: bold;">\newenvironment</span>{<span style="font-weight: bold;">levelup</span>}<span style="font-weight: bold; font-style: italic;">% Promote sectional commands</span>
+  {<span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subparagraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">paragraph</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsubsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold;">\let</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">subsection</span><span style="font-weight: bold;">\</span><span style="font-weight: bold;">section</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">   </span><span style="font-weight: bold; font-style: italic;">%</span><span style="font-weight: bold; font-style: italic;">\let\section\relax</span><span style="font-weight: bold; font-style: italic;">%</span>
+<span style="font-weight: bold;">  </span>}{}
 </pre>
 </div>
 <p>
@@ -1285,7 +1320,7 @@ Download preamble document <a href="./files/preamble_sectionlevels.tex">here</a>
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>

@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Collection of code, software, and scripts</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Collection of code, software, and scripts</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://stakahama.github.io/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/resources/css/solarized-dark.min.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -142,40 +148,23 @@ for the JavaScript code in this tag.
 My repositories are on <a href="http://github.com/stakahama">GitHub</a> and <a href="http://bitbucket.org/stakahama">Bitbucket</a>.
 </p>
 <ul class="org-ul">
-<li><a href="http://github.com/stakahama/pmf"><b>pmf</b></a> (R, public, GitHub): A set of scripts for generating solutions using Penti Paatero's PMF2 executable. Has been used with FTIR, STXM, AMS, and ACSM data sets. Also includes scripts for pixel-level cluster analysis of STXM stacks.
-</li>
-<li><a href="http://github.com/stakahama/pscf"><b>pscf</b></a> (R, Python, and LaTeX; public, GitHub): My implementation of Positive Matrix Factorization (originally by Phil Hopke).
-</li>
-<li><a href="http://github.com/stakahama/semsdat2itx"><b>semsdat2itx</b></a> (Python, public, GitHub): A script to convert BMI SEMS <code>.dat</code> files to Igor Pro <code>.itx</code> files.
-</li>
-<li><a href="http://github.com/stakahama/dot-emacs"><b>dot-emacs</b></a> (Emacs-Lisp, public, GitHub): My emacs configuration files.
-</li>
-<li><a href="http://github.com/stakahama/bibfile"><b>bibfile</b></a> (LaTeX-bib, public, GitHub): My .bib file for LaTeX documents. Generated and managed through JabRef.
-</li>
-<li><a href="http://github.com/stakahama/rlib"><b>rlib</b></a> (R, public, GitHub): A set of R functions.
-</li>
-<li><a href="http://github.com/stakahama/mlib"><b>mlib</b></a> (MATLAB, public, GitHub): A set of MATLAB functions.
-</li>
-<li><a href="http://github.com/stakahama/pylib"><b>pylib</b></a> (Python, public, GitHub): A set of Python functions.
-</li>
-<li><a href="http://github.com/stakahama/igorlib"><b>igorlib</b></a> (Igor Pro, public, GitHub): Igor Pro functions and subroutines.
-</li>
-<li><a href="http://github.com/stakahama/r-tutorial"><b>r-tutorial</b></a> (LaTeX and R, public, GitHub): An R tutorial I wrote back in 2008.
-</li>
-<li><a href="http://github.com/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a> (LaTeX, public, GitHub): My compiled curriculum vitae in pdf. LaTeX source files are hosted in a private repository (<a href="http://bitbucket.org/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a>).
-</li>
-<li><a href="http://bitbucket.org/stakahama/ftir"><b>ftir</b></a> (R, private, Bitbucket): A set of scripts for analysis of infrared absorption spectrum of atmospheric particles collected on Teflon filters. <i>Team: aerosolftirusers</i>.
-</li>
-<li><a href="http://bitbucket.org/stakahama/stxm"><b>stxm</b></a> (MATLAB, private, Bitbucket): A set of scripts for image analysis and statistical learning for STXM-NEXAFS stacks. <i>Team: stxmusers</i>.
-</li>
-<li><a href="http://bitbucket.org/stakahama/stxmclass"><b>stxmclass</b></a> (R, private, Bitbucket): A set of scripts for classification of NEXAFS spectra and preparation of matrices for PMF analysis (<a href="http://github.com/stakahama/pmf"><b>pmf</b></a>).
-</li>
-<li><a href="http://bitbucket.org/stakahama/myshell"><b>myshell</b></a> (Bash and Python, private, Bitbucket): A set of scripts to generate my custom <code>.bashrc</code>, <code>.bash_aliases</code>, <code>.bash_profile</code> for each OS.
-</li>
-<li><a href="http://bitbucket.org/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a> (LaTeX, private, Bitbucket): My curriculum vitae in LaTeX. The compiled pdf is pushed to public GitHub repository of the same name, <a href="http://github.com/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a>.
-</li>
-<li><a href="http://bitbucket.org/stakahama/orgpages"><b>orgpages</b></a> (Emacs-Lisp, private, Bitbucket): My Emacs org-files used to generate these webpages (<a href="http://stakahama.github.com">http://stakahama.github.com</a>, <a href="http://github.com/stakahama/stakahama.github.com"><b>stakahama.github.com</b></a>).
-</li>
+<li><a href="http://github.com/stakahama/pmf"><b>pmf</b></a> (R, public, GitHub): A set of scripts for generating solutions using Penti Paatero's PMF2 executable. Has been used with FTIR, STXM, AMS, and ACSM data sets. Also includes scripts for pixel-level cluster analysis of STXM stacks.</li>
+<li><a href="http://github.com/stakahama/pscf"><b>pscf</b></a> (R, Python, and LaTeX; public, GitHub): My implementation of Positive Matrix Factorization (originally by Phil Hopke).</li>
+<li><a href="http://github.com/stakahama/semsdat2itx"><b>semsdat2itx</b></a> (Python, public, GitHub): A script to convert BMI SEMS <code>.dat</code> files to Igor Pro <code>.itx</code> files.</li>
+<li><a href="http://github.com/stakahama/dot-emacs"><b>dot-emacs</b></a> (Emacs-Lisp, public, GitHub): My emacs configuration files.</li>
+<li><a href="http://github.com/stakahama/bibfile"><b>bibfile</b></a> (LaTeX-bib, public, GitHub): My .bib file for LaTeX documents. Generated and managed through JabRef.</li>
+<li><a href="http://github.com/stakahama/rlib"><b>rlib</b></a> (R, public, GitHub): A set of R functions.</li>
+<li><a href="http://github.com/stakahama/mlib"><b>mlib</b></a> (MATLAB, public, GitHub): A set of MATLAB functions.</li>
+<li><a href="http://github.com/stakahama/pylib"><b>pylib</b></a> (Python, public, GitHub): A set of Python functions.</li>
+<li><a href="http://github.com/stakahama/igorlib"><b>igorlib</b></a> (Igor Pro, public, GitHub): Igor Pro functions and subroutines.</li>
+<li><a href="http://github.com/stakahama/r-tutorial"><b>r-tutorial</b></a> (LaTeX and R, public, GitHub): An R tutorial I wrote back in 2008.</li>
+<li><a href="http://github.com/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a> (LaTeX, public, GitHub): My compiled curriculum vitae in pdf. LaTeX source files are hosted in a private repository (<a href="http://bitbucket.org/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a>).</li>
+<li><a href="http://bitbucket.org/stakahama/ftir"><b>ftir</b></a> (R, private, Bitbucket): A set of scripts for analysis of infrared absorption spectrum of atmospheric particles collected on Teflon filters. <i>Team: aerosolftirusers</i>.</li>
+<li><a href="http://bitbucket.org/stakahama/stxm"><b>stxm</b></a> (MATLAB, private, Bitbucket): A set of scripts for image analysis and statistical learning for STXM-NEXAFS stacks. <i>Team: stxmusers</i>.</li>
+<li><a href="http://bitbucket.org/stakahama/stxmclass"><b>stxmclass</b></a> (R, private, Bitbucket): A set of scripts for classification of NEXAFS spectra and preparation of matrices for PMF analysis (<a href="http://github.com/stakahama/pmf"><b>pmf</b></a>).</li>
+<li><a href="http://bitbucket.org/stakahama/myshell"><b>myshell</b></a> (Bash and Python, private, Bitbucket): A set of scripts to generate my custom <code>.bashrc</code>, <code>.bash_aliases</code>, <code>.bash_profile</code> for each OS.</li>
+<li><a href="http://bitbucket.org/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a> (LaTeX, private, Bitbucket): My curriculum vitae in LaTeX. The compiled pdf is pushed to public GitHub repository of the same name, <a href="http://github.com/stakahama/curriculum-vitae"><b>curriculum-vitae</b></a>.</li>
+<li><a href="http://bitbucket.org/stakahama/orgpages"><b>orgpages</b></a> (Emacs-Lisp, private, Bitbucket): My Emacs org-files used to generate these webpages (<a href="http://stakahama.github.com/">http://stakahama.github.com/</a>, <a href="http://github.com/stakahama/stakahama.github.com"><b>stakahama.github.com</b></a>).</li>
 </ul>
 
 <p>
@@ -184,7 +173,7 @@ My repositories are on <a href="http://github.com/stakahama">GitHub</a> and <a h
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>

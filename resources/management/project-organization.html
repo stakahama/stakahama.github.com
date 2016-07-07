@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Project organization and structure</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Project organization and structure</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://stakahama.github.io/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/resources/css/solarized-dark.min.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -142,10 +148,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Directory structure</a></li>
-<li><a href="#sec-2">Using relative paths</a></li>
-<li><a href="#sec-3">Archival</a></li>
-<li><a href="#sec-4">When larger data files are maintained in a separate repository</a></li>
+<li><a href="#orgheadline1">Directory structure</a></li>
+<li><a href="#orgheadline2">Using relative paths</a></li>
+<li><a href="#orgheadline3">Archival</a></li>
+<li><a href="#orgheadline4">When larger data files are maintained in a separate repository</a></li>
 </ul>
 </div>
 </div>
@@ -153,9 +159,9 @@ for the JavaScript code in this tag.
 This page describes how I manage my files and directories for each project. The notation "<code>~/</code>" indicates the user's home directory, and "<code>./</code>" indicates a project directory.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Directory structure</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Directory structure</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 In my <code>~/Documents/</code> folder, I have professional and personal documents groups under subdirectories <code>Work/</code> and <code>Personal/</code>, respectively. Within <code>Work/</code>, I have the work grouped by institution (<code>CMU/</code>, <code>UCSD/</code>, <code>EPFL/</code>). Taking <code>UCSD/</code> as an example, I have a subdirectory <code>projects/</code>, in which I maintain separate subdirectories for projects in progress (e.g., <code>CalMex/</code>, <code>SmogChamber/</code>, <code>Whistler/</code>). Within each project directory ("<code>./</code>"), I have a set of subdirectories that serve specific purposes:
 </p>
@@ -164,50 +170,50 @@ In my <code>~/Documents/</code> folder, I have professional and personal documen
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">Directory</th>
-<th scope="col" class="left">Description</th>
+<th scope="col" class="org-left">Directory</th>
+<th scope="col" class="org-left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>./correspondence/</code></td>
-<td class="left">notable correspondence from/with collaborators</td>
+<td class="org-left"><code>./correspondence/</code></td>
+<td class="org-left">notable correspondence from/with collaborators</td>
 </tr>
 
 <tr>
-<td class="left"><code>./data/</code></td>
-<td class="left">data accessible for programs and reports</td>
+<td class="org-left"><code>./data/</code></td>
+<td class="org-left">data accessible for programs and reports</td>
 </tr>
 
 <tr>
-<td class="left"><code>./lib/</code></td>
-<td class="left">initially empty; snapshot of the global library will be placed here upon archival</td>
+<td class="org-left"><code>./lib/</code></td>
+<td class="org-left">initially empty; snapshot of the global library will be placed here upon archival</td>
 </tr>
 
 <tr>
-<td class="left"><code>./paper/</code></td>
-<td class="left">can optionally be plural if multiple publications are to be expected from the project</td>
+<td class="org-left"><code>./paper/</code></td>
+<td class="org-left">can optionally be plural if multiple publications are to be expected from the project</td>
 </tr>
 
 <tr>
-<td class="left"><code>./presentations/</code></td>
-<td class="left">repository for presentations</td>
+<td class="org-left"><code>./presentations/</code></td>
+<td class="org-left">repository for presentations</td>
 </tr>
 
 <tr>
-<td class="left"><code>./programs/</code></td>
-<td class="left">programs typically downloaded from revision control repository (e.g., ftir, stxm, pscf, pmf\<sub>nt</sub>)</td>
+<td class="org-left"><code>./programs/</code></td>
+<td class="org-left">programs typically downloaded from revision control repository (e.g., ftir, stxm, pscf, pmf\<sub>nt</sub>)</td>
 </tr>
 
 <tr>
-<td class="left"><code>./reports/</code></td>
-<td class="left">"reports" summary documents, and one-off calculations</td>
+<td class="org-left"><code>./reports/</code></td>
+<td class="org-left">"reports" summary documents, and one-off calculations</td>
 </tr>
 </tbody>
 </table>
@@ -218,74 +224,45 @@ An example of sub-hierarchies within each subdirectory (defined relative to <cod
 <ul class="org-ul">
 <li><code>./correspondence/</code>
 <ul class="org-ul">
-<li><code>Person1/</code>
-</li>
-<li><code>Person2/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>Person1/</code></li>
+<li><code>Person2/</code></li>
+<li><code>...</code></li>
+</ul></li>
 <li><code>./data/</code>
 <ul class="org-ul">
-<li><code>lognotes/</code>
-</li>
-<li><code>ftir/</code>
-</li>
-<li><code>stxm/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>lognotes/</code></li>
+<li><code>ftir/</code></li>
+<li><code>stxm/</code></li>
+<li><code>...</code></li>
+</ul></li>
 <li><code>./paper/</code>
 <ul class="org-ul">
-<li><code>version1/</code>
-</li>
-<li><code>version2/</code>
-</li>
-<li><code>submitted/</code>
-</li>
-<li><code>revised/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>version1/</code></li>
+<li><code>version2/</code></li>
+<li><code>submitted/</code></li>
+<li><code>revised/</code></li>
+<li><code>...</code></li>
+</ul></li>
 <li><code>./presentations/</code>
 <ul class="org-ul">
-<li><code>YYYY\_AAAR/</code>
-</li>
-<li><code>YYYY\_AGU/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>YYYY\_AAAR/</code></li>
+<li><code>YYYY\_AGU/</code></li>
+<li><code>...</code></li>
+</ul></li>
 <li><code>./programs/</code>
 <ul class="org-ul">
-<li><code>lib/</code>
-</li>
-<li><code>ftir/</code>
-</li>
-<li><code>stxm/</code>
-</li>
-<li><code>pscf/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>lib/</code></li>
+<li><code>ftir/</code></li>
+<li><code>stxm/</code></li>
+<li><code>pscf/</code></li>
+<li><code>...</code></li>
+</ul></li>
 <li><code>./reports/</code>
 <ul class="org-ul">
-<li><code>01topic/</code>
-</li>
-<li><code>02topic/</code>
-</li>
-<li><code>...</code>
-</li>
-</ul>
-</li>
+<li><code>01topic/</code></li>
+<li><code>02topic/</code></li>
+<li><code>...</code></li>
+</ul></li>
 </ul>
 
 <p>
@@ -294,9 +271,9 @@ In addition to the subdirectories listed above, I have a set of user-defined lib
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Using relative paths</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Using relative paths</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 With the exception of <code>~/lib/</code>, I use relative paths to access data from programs (i.e., the working directory for each interpreter &#x2013; R, Python, Matlab, etc. is the directory in which the script is located). For example, the location of the <code>.DPT</code> files (contained in <code>./data/ftir/</code>) relative to the <code>./programs/ftir/</code> directory is <code>../../data/ftir/</code>; the location of the <code>.xim</code> files (contained in <code>./data/stxm/</code>) relative to the <code>./programs/stxm/</code> directory is <code>../../data/stxm/</code>; libraries specific to this project can be loaded from <code>../lib/</code> (not to be confused with <code>~/lib/</code>). 
 </p>
@@ -312,15 +289,15 @@ So using local working directories (instead of the single workspace) can produce
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Archival</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Archival</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <p>
 After completing the project, I will move the project directory to a separate directory called <code>~/Documents/Archive/YYYY_{projectname}</code> (partly so that the project can be stored in a self-contained directory on a separate hard-drive). Using relative paths in scripts and programs (as described above) makes the transition simple. At the time of project archival, I will also copy a snapshot of the global <code>~/lib/</code> library into the archived project directory. This library can be loaded by setting <code>$HOME</code> to project directory (which will now contain the original library, <code>~/lib/</code>, as an immediate subdirectory, <code>./lib/</code>). For instance, if the library is archived together with the rest of the project as <code>~/Documents/Archive/{YYYY_projectname}/lib/</code>, then executing the command,
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ export HOME=~/Documents/Archive/{YYYY_projectname}
+<pre class="src src-sh">$ export <span style="font-weight: bold; font-style: italic;">HOME</span>=~/Documents/Archive/{YYYY_projectname}
 </pre>
 </div>
 <p>
@@ -333,9 +310,9 @@ in a bash shell should be sufficient, and the contents of the library can access
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">When larger data files are maintained in a separate repository</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">When larger data files are maintained in a separate repository</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 With molecular dynamics simulations, I generate a large number of large files which I backup in separately from the project directory. R, Python, and possibly other languages can read files directly from a remote server, but sometimes it is more convenient to download a chunk of data into <code>~/tmp/md/runs/</code>, which is symbolically linked to <code>./runs/</code> by <code>ln -svf ~/tmp/md/runs/ ./runs</code>. The assumption is that these files will be periodically purged from <code>~/tmp/md/runs/</code> to save hard disk space on the local machine (presumably with limited hard disk space), so if certain analyses depend on specific files in the remote hierarchy, it may be best to save these pieces of code with the data; with the code making reference to the fixed directory structure in the archive (i.e., take the code to the location of the data).
 </p>
@@ -344,7 +321,7 @@ With molecular dynamics simulations, I generate a large number of large files wh
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>

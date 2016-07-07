@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>other-customizations</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://stakahama.github.io/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/resources/css/solarized-dark.min.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -137,52 +143,51 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">other-customizations</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Editing paths</a></li>
-<li><a href="#sec-2">Spell/language check</a></li>
-<li><a href="#sec-3">Use dired+</a></li>
-<li><a href="#sec-4">AUCTeX</a></li>
-<li><a href="#sec-5">open iTerm</a></li>
+<li><a href="#orgheadline1">Editing paths</a></li>
+<li><a href="#orgheadline2">Spell/language check</a></li>
+<li><a href="#orgheadline3">Use dired+</a></li>
+<li><a href="#orgheadline4">AUCTeX</a></li>
+<li><a href="#orgheadline5">open iTerm</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Editing paths</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Editing paths</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(setenv "PATH" (concat "/anaconda/bin:/opt/local/bin:" (getenv "PATH") ))
-(setq exec-path (append '("/anaconda/bin") exec-path))
+<pre class="src src-emacs-lisp">(setenv <span style="font-style: italic;">"PATH"</span> (concat <span style="font-style: italic;">"/anaconda/bin:/opt/local/bin:"</span> (getenv <span style="font-style: italic;">"PATH"</span>) ))
+(setq exec-path (append '(<span style="font-style: italic;">"/anaconda/bin"</span>) exec-path))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Spell/language check</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Spell/language check</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">;; Ispell/Aspell (OS X)
-(setq ispell-program-name "/opt/local/bin/ispell")
-;; LanguageTool
-;; https://joelkuiper.eu/spellcheck_emacs
-(setenv "JAVA_HOME"
-	(let ((version "1.8"))
-	  (replace-regexp-in-string "\r?\n\\'" ""
-				    (shell-command-to-string
-				     (format "/usr/libexec/java_home -v %s" version)))))
-(require 'langtool)
-(setq langtool-language-tool-jar "~/programs/LanguageTool/languagetool-commandline.jar"
-      langtool-mother-tongue "en"
-      langtool-disabled-rules '("WHITESPACE_RULE"
-				"EN_UNPAIRED_BRACKETS"
-				"COMMA_PARENTHESIS_WHITESPACE"
-				"EN_QUOTES"))
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ispell/Aspell (OS X)</span>
+(setq ispell-program-name <span style="font-style: italic;">"/opt/local/bin/ispell"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">LanguageTool</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">https://joelkuiper.eu/spellcheck_emacs</span>
+(setenv <span style="font-style: italic;">"JAVA_HOME"</span>
+        (<span style="font-weight: bold;">let</span> ((version <span style="font-style: italic;">"1.8"</span>))
+          (replace-regexp-in-string <span style="font-style: italic;">"\r?\n\\'"</span> <span style="font-style: italic;">""</span>
+                                    (shell-command-to-string
+                                     (format <span style="font-style: italic;">"/usr/libexec/java_home -v %s"</span> version)))))
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">langtool</span>)
+(setq langtool-language-tool-jar <span style="font-style: italic;">"~/programs/LanguageTool/languagetool-commandline.jar"</span>
+      langtool-mother-tongue <span style="font-style: italic;">"en"</span>
+      langtool-disabled-rules '(<span style="font-style: italic;">"WHITESPACE_RULE"</span>
+                                <span style="font-style: italic;">"EN_UNPAIRED_BRACKETS"</span>
+                                <span style="font-style: italic;">"COMMA_PARENTHESIS_WHITESPACE"</span>
+                                <span style="font-style: italic;">"EN_QUOTES"</span>))
 </pre>
 </div>
 
@@ -200,20 +205,20 @@ If writing in LaTeX, sometimes I export the .tex file to .rtf using <code>latex2
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Use dired+</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Use dired+</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(require 'dired+)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">dired+</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">AUCTeX</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">AUCTeX</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> to run PDFLaTeX; <code>C-c C-c View</code> or <code>C-c C-v</code> to open pdf with Preview.
 </p>
@@ -221,30 +226,30 @@ To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> 
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(add-hook 'LaTeX-mode-hook 
-	  (lambda () 
-	    (setq TeX-PDF-mode t)
-	    (setq TeX-command-list 
-		  (let ((view-command '("View" 
-					"open -a Preview.app %s.pdf" 
-					TeX-run-discard-or-function t t 
-					:help "Run Viewer"))) ;; edit this list as necessary
-		    (mapcar (lambda (x) 
-			      (if (equal (car x) "View") view-command x))
-			    TeX-command-list)))))
+          (<span style="font-weight: bold;">lambda</span> () 
+            (setq TeX-PDF-mode t)
+            (setq TeX-command-list 
+                  (<span style="font-weight: bold;">let</span> ((view-command '(<span style="font-style: italic;">"View"</span> 
+                                        <span style="font-style: italic;">"open -a Preview.app %s.pdf"</span> 
+                                        TeX-run-discard-or-function t t 
+                                        <span style="font-weight: bold;">:help</span> <span style="font-style: italic;">"Run Viewer"</span>))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">edit this list as necessary</span>
+                    (mapcar (<span style="font-weight: bold;">lambda</span> (x) 
+                              (<span style="font-weight: bold;">if</span> (equal (car x) <span style="font-style: italic;">"View"</span>) view-command x))
+                            TeX-command-list)))))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">open iTerm</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">open iTerm</h2>
+<div class="outline-text-2" id="text-orgheadline5">
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(defun iterm-here ()
-  "from http://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/"
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">iterm-here</span> ()
+  <span style="font-style: italic;">"from http://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/"</span>
   (interactive)
-  (dired-smart-shell-command (format "open -a iTerm \"%s\"" default-directory) nil nil))
+  (dired-smart-shell-command (format <span style="font-style: italic;">"open -a iTerm \"%s\""</span> default-directory) nil nil))
 </pre>
 </div>
 
@@ -254,17 +259,17 @@ To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> 
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left">Emacs pages:</td>
-<td class="left"><a href="./index.html">main</a></td>
-<td class="left"><a href="./aprl-config.html">aprl-config</a></td>
+<td class="org-left">Emacs pages:</td>
+<td class="org-left"><a href="./index.html">main</a></td>
+<td class="org-left"><a href="./aprl-config.html">aprl-config</a></td>
 </tr>
 </tbody>
 </table>
@@ -274,7 +279,7 @@ To use with PDFLaTeX and Preview.app (Mac OS X). Use <code>C-c C-c LaTeX</code> 
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>
