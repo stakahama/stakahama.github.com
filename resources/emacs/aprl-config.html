@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Frequently-used keybindings in aprl-emacs configuration</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Frequently-used keybindings in aprl-emacs configuration</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/css/zenburn.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -142,16 +148,16 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">all (or most) modes</a></li>
-<li><a href="#sec-2">ido-mode</a></li>
-<li><a href="#sec-3">python-mode</a></li>
-<li><a href="#sec-4">ess-mode</a></li>
-<li><a href="#sec-5">tex-mode</a></li>
-<li><a href="#sec-6">shell-mode</a></li>
-<li><a href="#sec-7">elscreen</a></li>
-<li><a href="#sec-8">outline-minor-mode</a></li>
-<li><a href="#sec-9">folding-mode</a></li>
-<li><a href="#sec-10">unix (or unix-like) tools from the minibuffer</a></li>
+<li><a href="#orgheadline1">all (or most) modes</a></li>
+<li><a href="#orgheadline2">ido-mode</a></li>
+<li><a href="#orgheadline3">python-mode</a></li>
+<li><a href="#orgheadline4">ess-mode</a></li>
+<li><a href="#orgheadline5">tex-mode</a></li>
+<li><a href="#orgheadline6">shell-mode</a></li>
+<li><a href="#orgheadline7">elscreen</a></li>
+<li><a href="#orgheadline8">outline-minor-mode</a></li>
+<li><a href="#orgheadline9">folding-mode</a></li>
+<li><a href="#orgheadline10">unix (or unix-like) tools from the minibuffer</a></li>
 </ul>
 </div>
 </div>
@@ -159,53 +165,51 @@ for the JavaScript code in this tag.
 <code>aprl-emacs</code> configuration can be found at <a href="https://github.com/stakahama/aprl-emacs">https://github.com/stakahama/aprl-emacs</a>.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">all (or most) modes</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">all (or most) modes</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>C-c ;</code></td>
-<td class="left"><code>(comment-region)</code></td>
+<td class="org-left"><code>C-c ;</code></td>
+<td class="org-left"><code>(comment-region)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-u C-c ;</code></td>
-<td class="left"><code>(uncomment-region)</code></td>
+<td class="org-left"><code>C-u C-c ;</code></td>
+<td class="org-left"><code>(uncomment-region)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-M-\</code></td>
-<td class="left"><code>(indent-region)</code></td>
+<td class="org-left"><code>C-M-\</code></td>
+<td class="org-left"><code>(indent-region)</code></td>
 </tr>
 </tbody>
 </table>
 
 <ul class="org-ul">
-<li><code>C-c ;</code> toggles comments in auctex.
-</li>
-<li><code>(indent-region)</code> invokes "smart indent" in most modes.
-</li>
+<li><code>C-c ;</code> toggles comments in auctex.</li>
+<li><code>(indent-region)</code> invokes "smart indent" in most modes.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">ido-mode</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">ido-mode</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 The minibuffer seems busy at first, but will soon make sense. Flex
 matching is enabled <code>(setq ido-enable-flex-matching t)</code> for more
@@ -216,139 +220,139 @@ powerful matching (e.g., "reppdf" will match "report.pdf").
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">task</th>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">ido function</th>
+<th scope="col" class="org-left">task</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">ido function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">completion</td>
-<td class="left"><code>TAB</code></td>
-<td class="left"><code>(ido-complete)</code></td>
+<td class="org-left">completion</td>
+<td class="org-left"><code>TAB</code></td>
+<td class="org-left"><code>(ido-complete)</code></td>
 </tr>
 
 <tr>
-<td class="left">select</td>
-<td class="left"><code>RET</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left">select</td>
+<td class="org-left"><code>RET</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">exit ido-mode</td>
-<td class="left"><code>C-f</code></td>
-<td class="left"><code>(ido-fallback-command)</code></td>
+<td class="org-left">exit ido-mode</td>
+<td class="org-left"><code>C-f</code></td>
+<td class="org-left"><code>(ido-fallback-command)</code></td>
 </tr>
 
 <tr>
-<td class="left">search for buffers</td>
-<td class="left"><code>C-b</code></td>
-<td class="left"><code>(ido-enter-buffer)</code></td>
+<td class="org-left">search for buffers</td>
+<td class="org-left"><code>C-b</code></td>
+<td class="org-left"><code>(ido-enter-buffer)</code></td>
 </tr>
 
 <tr>
-<td class="left">enter dired query</td>
-<td class="left"><code>C-d</code></td>
-<td class="left"><code>(ido-enter-dired)</code></td>
+<td class="org-left">enter dired query</td>
+<td class="org-left"><code>C-d</code></td>
+<td class="org-left"><code>(ido-enter-dired)</code></td>
 </tr>
 
 <tr>
-<td class="left">edit matched text</td>
-<td class="left"><code>C-e</code></td>
-<td class="left"><code>(ido-edit-input)</code></td>
+<td class="org-left">edit matched text</td>
+<td class="org-left"><code>C-e</code></td>
+<td class="org-left"><code>(ido-edit-input)</code></td>
 </tr>
 
 <tr>
-<td class="left">commit to non-matching entry</td>
-<td class="left"><code>C-j</code></td>
-<td class="left"><code>(ido-select-text)</code></td>
+<td class="org-left">commit to non-matching entry</td>
+<td class="org-left"><code>C-j</code></td>
+<td class="org-left"><code>(ido-select-text)</code></td>
 </tr>
 
 <tr>
-<td class="left">cycle forward</td>
-<td class="left"><code>C-s</code></td>
-<td class="left"><code>(ido-next-match)</code></td>
+<td class="org-left">cycle forward</td>
+<td class="org-left"><code>C-s</code></td>
+<td class="org-left"><code>(ido-next-match)</code></td>
 </tr>
 
 <tr>
-<td class="left">cycle backward</td>
-<td class="left"><code>C-r</code></td>
-<td class="left"><code>(ido-prev-match)</code></td>
+<td class="org-left">cycle backward</td>
+<td class="org-left"><code>C-r</code></td>
+<td class="org-left"><code>(ido-prev-match)</code></td>
 </tr>
 
 <tr>
-<td class="left">kill file or buffer at head</td>
-<td class="left"><code>C-k</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left">kill file or buffer at head</td>
+<td class="org-left"><code>C-k</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">python-mode</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">python-mode</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>C-c !</code></td>
-<td class="left"><code>(py-shell)</code></td>
+<td class="org-left"><code>C-c !</code></td>
+<td class="org-left"><code>(py-shell)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-l</code></td>
-<td class="left"><code>(py-shift-region-left)</code></td>
+<td class="org-left"><code>C-c C-l</code></td>
+<td class="org-left"><code>(py-shift-region-left)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-r</code></td>
-<td class="left"><code>(py-shift-region-right)</code></td>
+<td class="org-left"><code>C-c C-r</code></td>
+<td class="org-left"><code>(py-shift-region-right)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-p</code></td>
-<td class="left"><code>(py-execute-paragraph)</code></td>
+<td class="org-left"><code>C-c C-p</code></td>
+<td class="org-left"><code>(py-execute-paragraph)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c</code></td>
-<td class="left"><code>(py-execute-region)</code></td>
+<td class="org-left"><code>C-c</code></td>
+<td class="org-left"><code>(py-execute-region)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-&lt;return&gt;</code></td>
-<td class="left"><code>(py-execute-region)</code></td>
+<td class="org-left"><code>C-&lt;return&gt;</code></td>
+<td class="org-left"><code>(py-execute-region)</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">ess-mode</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">ess-mode</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 Can also invoke on a buffer with <code>M-x r-mode</code>.
 </p>
@@ -357,107 +361,105 @@ Can also invoke on a buffer with <code>M-x r-mode</code>.
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>C-c R</code></td>
-<td class="left"><code>(ess-start-R)</code></td>
+<td class="org-left"><code>C-c R</code></td>
+<td class="org-left"><code>(ess-start-R)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-u C-c R</code></td>
-<td class="left"><code>(ess-start-R 'arg)</code></td>
+<td class="org-left"><code>C-u C-c R</code></td>
+<td class="org-left"><code>(ess-start-R 'arg)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-j</code></td>
-<td class="left"><code>(ess-eval-line)</code></td>
+<td class="org-left"><code>C-c C-j</code></td>
+<td class="org-left"><code>(ess-eval-line)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-n</code></td>
-<td class="left"><code>(ess-eval-line-and-step)</code></td>
+<td class="org-left"><code>C-c C-n</code></td>
+<td class="org-left"><code>(ess-eval-line-and-step)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-r</code></td>
-<td class="left"><code>(ess-eval-region)</code></td>
+<td class="org-left"><code>C-c C-r</code></td>
+<td class="org-left"><code>(ess-eval-region)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-&lt;enter&gt;</code></td>
-<td class="left"><code>(ess-eval-region)</code></td>
+<td class="org-left"><code>C-&lt;enter&gt;</code></td>
+<td class="org-left"><code>(ess-eval-region)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-p</code></td>
-<td class="left"><code>(ess-eval-paragraph-and-step)</code></td>
+<td class="org-left"><code>C-c C-p</code></td>
+<td class="org-left"><code>(ess-eval-paragraph-and-step)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c C-b</code></td>
-<td class="left"><code>(ess-eval-buffer)</code></td>
+<td class="org-left"><code>C-c C-b</code></td>
+<td class="org-left"><code>(ess-eval-buffer)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c p</code></td>
-<td class="left"><code>(ess-op-fig)</code></td>
+<td class="org-left"><code>C-c p</code></td>
+<td class="org-left"><code>(ess-op-fig)</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">tex-mode</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">tex-mode</h2>
+<div class="outline-text-2" id="text-orgheadline5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>C-c ]</code></td>
-<td class="left"><code>(LaTeX-close-environment)</code></td>
+<td class="org-left"><code>C-c ]</code></td>
+<td class="org-left"><code>(LaTeX-close-environment)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c e</code></td>
-<td class="left"><code>(LaTeX-enclose-expression "$")</code></td>
+<td class="org-left"><code>C-c e</code></td>
+<td class="org-left"><code>(LaTeX-enclose-expression "$")</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c j</code></td>
-<td class="left"><code>(LaTeX-insert-item-no-newline)</code></td>
+<td class="org-left"><code>C-c j</code></td>
+<td class="org-left"><code>(LaTeX-insert-item-no-newline)</code></td>
 </tr>
 </tbody>
 </table>
+
 <ul class="org-ul">
-<li><code>(LaTeX-close-environment)</code> will complete the environment which is currently open with <code>\end{environment}</code>
-</li>
-<li><code>(LaTeX-enclose-expression "$")</code>: when invoked after a word or expression, this function will enclose the subscripted (<code>_{}</code>), superscripted (<code>^{}</code>), or keyword (<code>\keyword</code>) in <code>$</code> <code>$</code>. This function can be invoked when a region is highlighted, in which case it will enclose the entire region, or with a prefix argument (<code>C-u C-c e</code>) enclose the entire word or connected expression (no space).
-</li>
-<li><code>(LaTeX-insert-item-no-newline)</code> inserts <code>\item</code> (followed by space) for use in a list environment (<code>itemize</code>, <code>enumerate</code>, <code>list</code>, etc.). For reference, the built-in function <code>(LaTeX-insert-item)</code> is invoked by <code>C-c C-j</code>.
-</li>
+<li><code>(LaTeX-close-environment)</code> will complete the environment which is currently open with <code>\end{environment}</code></li>
+<li><code>(LaTeX-enclose-expression "$")</code>: when invoked after a word or expression, this function will enclose the subscripted (<code>_{}</code>), superscripted (<code>^{}</code>), or keyword (<code>\keyword</code>) in <code>$</code> <code>$</code>. This function can be invoked when a region is highlighted, in which case it will enclose the entire region, or with a prefix argument (<code>C-u C-c e</code>) enclose the entire word or connected expression (no space).</li>
+<li><code>(LaTeX-insert-item-no-newline)</code> inserts <code>\item</code> (followed by space) for use in a list environment (<code>itemize</code>, <code>enumerate</code>, <code>list</code>, etc.). For reference, the built-in function <code>(LaTeX-insert-item)</code> is invoked by <code>C-c C-j</code>.</li>
 </ul>
 
 <p>
@@ -470,42 +472,42 @@ It is often convenient to work alongside an emacs <code>*shell*</code> or <code>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">shell-mode</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">shell-mode</h2>
+<div class="outline-text-2" id="text-orgheadline6">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>C-c p</code></td>
-<td class="left"><code>(copy-pwd)</code></td>
+<td class="org-left"><code>C-c p</code></td>
+<td class="org-left"><code>(copy-pwd)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c c</code></td>
-<td class="left"><code>(shell-mode-change-directory)</code></td>
+<td class="org-left"><code>C-c c</code></td>
+<td class="org-left"><code>(shell-mode-change-directory)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c d</code></td>
-<td class="left"><code>(dirs)</code></td>
+<td class="org-left"><code>C-c d</code></td>
+<td class="org-left"><code>(dirs)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>C-c l</code></td>
-<td class="left"><code>(clear-shell)</code></td>
+<td class="org-left"><code>C-c l</code></td>
+<td class="org-left"><code>(clear-shell)</code></td>
 </tr>
 </tbody>
 </table>
@@ -515,19 +517,16 @@ In both <code>*shell*</code> (<code>M-x shell</code> and <code>C-u M-x shell</co
 </p>
 
 <ul class="org-ul">
-<li>Split windows with <code>C-x 2</code> (horizontal split) and <code>C-x 3</code> (vertical split) and copy the paths of the shell or script with <code>M-x copy-pwd</code> (bound to <code>C-c p</code>; present working directory) and <code>C-u M-x copy-pwd</code> (<code>C-u C-c p</code>; present working directory of the other window) when necessary. 
-</li>
-<li>More useful: use <code>C-c c</code> to change the shell <code>pwd</code> to directory of other window (which is often the directory in which the script or tex file resides).
-</li>
-<li><code>*shell*</code> requires invocation of <code>(dirs)</code> to keep track of directories when aliases or shell variables are used to change paths.
-</li>
+<li>Split windows with <code>C-x 2</code> (horizontal split) and <code>C-x 3</code> (vertical split) and copy the paths of the shell or script with <code>M-x copy-pwd</code> (bound to <code>C-c p</code>; present working directory) and <code>C-u M-x copy-pwd</code> (<code>C-u C-c p</code>; present working directory of the other window) when necessary.</li>
+<li>More useful: use <code>C-c c</code> to change the shell <code>pwd</code> to directory of other window (which is often the directory in which the script or tex file resides).</li>
+<li><code>*shell*</code> requires invocation of <code>(dirs)</code> to keep track of directories when aliases or shell variables are used to change paths.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">elscreen</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">elscreen</h2>
+<div class="outline-text-2" id="text-orgheadline7">
 <p>
 Sometimes when you resize the buffer with multiple screens, the buffer will flicker with certain keystrokes. Reset with <code>C-z r</code>.
 </p>
@@ -538,9 +537,9 @@ If you want to manage many layouts through frames rather than screens, you can u
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">outline-minor-mode</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">outline-minor-mode</h2>
+<div class="outline-text-2" id="text-orgheadline8">
 <p>
 Enabled for most major modes that we use.
 </p>
@@ -549,54 +548,54 @@ Enabled for most major modes that we use.
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>M-[ a</code></td>
-<td class="left"><code>(show-all)</code></td>
+<td class="org-left"><code>M-[ a</code></td>
+<td class="org-left"><code>(show-all)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-[ t</code></td>
-<td class="left"><code>(hide-body)</code></td>
+<td class="org-left"><code>M-[ t</code></td>
+<td class="org-left"><code>(hide-body)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-[ e</code></td>
-<td class="left"><code>(show-entry)</code></td>
+<td class="org-left"><code>M-[ e</code></td>
+<td class="org-left"><code>(show-entry)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-[ c</code></td>
-<td class="left"><code>(hide-entry)</code></td>
+<td class="org-left"><code>M-[ c</code></td>
+<td class="org-left"><code>(hide-entry)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-[ s</code></td>
-<td class="left"><code>(show-subtree)</code></td>
+<td class="org-left"><code>M-[ s</code></td>
+<td class="org-left"><code>(show-subtree)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-[ d</code></td>
-<td class="left"><code>(hide-subtree)</code></td>
+<td class="org-left"><code>M-[ d</code></td>
+<td class="org-left"><code>(hide-subtree)</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">folding-mode</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">folding-mode</h2>
+<div class="outline-text-2" id="text-orgheadline9">
 <p>
 Enabled for most major modes that we use. In contrast to outline mode, I use this to hide "scratch" code I no longer need but don't want to delete or move to a separate scratch file.
 </p>
@@ -605,61 +604,57 @@ Enabled for most major modes that we use. In contrast to outline mode, I use thi
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left"><code>M-] s</code></td>
-<td class="left"><code>(folding-show-current-entry)</code></td>
+<td class="org-left"><code>M-] s</code></td>
+<td class="org-left"><code>(folding-show-current-entry)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-] x</code></td>
-<td class="left"><code>(folding-hide-current-entry)</code></td>
+<td class="org-left"><code>M-] x</code></td>
+<td class="org-left"><code>(folding-hide-current-entry)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-] t</code></td>
-<td class="left"><code>(folding-show-all)</code></td>
+<td class="org-left"><code>M-] t</code></td>
+<td class="org-left"><code>(folding-show-all)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-] &gt;</code></td>
-<td class="left"><code>(folding-shift-in)</code></td>
+<td class="org-left"><code>M-] &gt;</code></td>
+<td class="org-left"><code>(folding-shift-in)</code></td>
 </tr>
 
 <tr>
-<td class="left"><code>M-] &lt;</code></td>
-<td class="left"><code>(folding-shift-out)</code></td>
+<td class="org-left"><code>M-] &lt;</code></td>
+<td class="org-left"><code>(folding-shift-out)</code></td>
 </tr>
 </tbody>
 </table>
 
 <ul class="org-ul">
-<li><code>(folding-shift-in)</code> only shows only folded region, and <code>(folding-shift-out)</code> escapes back to view of main buffer.
-</li>
+<li><code>(folding-shift-in)</code> only shows only folded region, and <code>(folding-shift-out)</code> escapes back to view of main buffer.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10">unix (or unix-like) tools from the minibuffer</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">unix (or unix-like) tools from the minibuffer</h2>
+<div class="outline-text-2" id="text-orgheadline10">
 <ul class="org-ul">
-<li><code>M-x rgrep</code>
-</li>
-<li><code>M-x find-lisp</code> [ <code>(require 'find-lisp)</code> is found in <code>aprl-misc-settings.el</code> file]
-</li>
-<li><code>M-x shell-command</code> (also <code>M-!</code>)
-</li>
+<li><code>M-x rgrep</code></li>
+<li><code>M-x find-lisp</code> [ <code>(require 'find-lisp)</code> is found in <code>aprl-misc-settings.el</code> file]</li>
+<li><code>M-x shell-command</code> (also <code>M-!</code>)</li>
 </ul>
 
 <br>
@@ -668,17 +663,17 @@ Enabled for most major modes that we use. In contrast to outline mode, I use thi
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left">Emacs pages:</td>
-<td class="left"><a href="./index.html">main</a></td>
-<td class="left"><a href="./aprl-config.html">aprl-config</a></td>
+<td class="org-left">Emacs pages:</td>
+<td class="org-left"><a href="./index.html">main</a></td>
+<td class="org-left"><a href="./aprl-config.html">aprl-config</a></td>
 </tr>
 </tbody>
 </table>
@@ -688,7 +683,7 @@ Enabled for most major modes that we use. In contrast to outline mode, I use thi
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>

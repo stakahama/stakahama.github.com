@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>My Bookmarks List</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Bookmarks List</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Satoshi Takahama" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -57,15 +64,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -87,7 +93,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/resources/css/zenburn.css"/>
+<link rel="stylesheet" type="text/css" href="https://stakahama.github.io/css/zenburn.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -142,37 +148,37 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Seminars</a>
+<li><a href="#orgheadline2">Seminars</a>
 <ul>
-<li><a href="#sec-1-1">EPFL</a></li>
+<li><a href="#orgheadline1">EPFL</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">News and Current Events</a>
+<li><a href="#orgheadline7">News and Current Events</a>
 <ul>
-<li><a href="#sec-2-1">General</a></li>
-<li><a href="#sec-2-2">Science/Tech</a></li>
-<li><a href="#sec-2-3">Social/current affairs</a></li>
-<li><a href="#sec-2-4">Politics/economics</a></li>
+<li><a href="#orgheadline3">General</a></li>
+<li><a href="#orgheadline4">Science/Tech</a></li>
+<li><a href="#orgheadline5">Social/current affairs</a></li>
+<li><a href="#orgheadline6">Politics/economics</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">Blogs</a>
+<li><a href="#orgheadline13">Blogs</a>
 <ul>
-<li><a href="#sec-3-1">Art</a></li>
-<li><a href="#sec-3-2">Science</a></li>
-<li><a href="#sec-3-3">Politics/economics</a></li>
-<li><a href="#sec-3-4">Math</a></li>
-<li><a href="#sec-3-5">Programming</a></li>
+<li><a href="#orgheadline8">Art</a></li>
+<li><a href="#orgheadline9">Science</a></li>
+<li><a href="#orgheadline10">Politics/economics</a></li>
+<li><a href="#orgheadline11">Math</a></li>
+<li><a href="#orgheadline12">Programming</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">Forums</a>
+<li><a href="#orgheadline14">Forums</a>
 <ul>
-<li><a href="#sec-4-1">Stackexchange</a></li>
-<li><a href="#sec-4-2">Reddit</a></li>
+<li><a href="#orgheadline15">Stackexchange</a></li>
+<li><a href="#orgheadline16">Reddit</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">Reference</a></li>
-<li><a href="#sec-6">Entertainment</a></li>
-<li><a href="#sec-7">Books</a></li>
+<li><a href="#orgheadline17">Reference</a></li>
+<li><a href="#orgheadline18">Entertainment</a></li>
+<li><a href="#orgheadline19">Books</a></li>
 </ul>
 </div>
 </div>
@@ -180,392 +186,271 @@ for the JavaScript code in this tag.
 ##+OPTIONS: toc:nil
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Seminars</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">EPFL</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Seminars</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">EPFL</h3>
+<div class="outline-text-3" id="text-orgheadline1">
 <ul class="org-ul">
-<li><a href="http://enac.epfl.ch/page-17227-en.html">Environmental Engineering Seminar Series - EESS</a>
-</li>
+<li><a href="http://enac.epfl.ch/page-17227-en.html">Environmental Engineering Seminar Series - EESS</a></li>
 <li><a href="http://isic.epfl.ch/isic-seminars">Institute of Chemical Sciences and Engineering (ISIC)</a>
 <ul class="org-ul">
-<li><a href="http://isic.epfl.ch/OCseminar">Organic chemistry</a>
-</li>
-<li><a href="http://isic.epfl.ch/PCseminar">Physical chemistry</a>
-</li>
-</ul>
-</li>
-<li><a href="http://enac.epfl.ch/page-3396-en.html">Civil Engineering Seminar Series - CESS</a>
-</li>
-<li><a href="http://sti.epfl.ch/page-42995.html">School of Engineering Seminars</a>
-</li>
-<li><a href="http://sti.epfl.ch/page-77010-en.html">School of Engineering IMX Seminar Series (Materials Science)</a>
-</li>
-<li><a href="http://sti.epfl.ch/page-70462-en.html">Institute of Mechanical Engineering (IGM)</a>
-</li>
-<li><a href="http://ic.epfl.ch/seminars">School of Computer and Communication Sciences (IC)</a>
-</li>
-<li><a href="http://mathicse.epfl.ch/seminar/">Mathematics Institute of Computational Science and Engineering (MATHICSE)</a>
-</li>
-<li><a href="http://smat.epfl.ch/seminar/seminar.php">EPFL Statistics Seminar</a>
-</li>
-<li><a href="http://icmp.epfl.ch/">Institute of Condensed Matter Physics (ICMP)</a>
-</li>
-<li><a href="http://cfi.epfl.ch/Seminars">DEEP-EPFL Seminar Series in Macroeconomics</a>
-</li>
-<li><a href="http://ibi.epfl.ch/page-26291.html">Interfaculty Institute of Bioengineering</a>
-</li>
+<li><a href="http://isic.epfl.ch/OCseminar">Organic chemistry</a></li>
+<li><a href="http://isic.epfl.ch/PCseminar">Physical chemistry</a></li>
+</ul></li>
+<li><a href="http://enac.epfl.ch/page-3396-en.html">Civil Engineering Seminar Series - CESS</a></li>
+<li><a href="http://sti.epfl.ch/page-42995.html">School of Engineering Seminars</a></li>
+<li><a href="http://sti.epfl.ch/page-77010-en.html">School of Engineering IMX Seminar Series (Materials Science)</a></li>
+<li><a href="http://sti.epfl.ch/page-70462-en.html">Institute of Mechanical Engineering (IGM)</a></li>
+<li><a href="http://ic.epfl.ch/seminars">School of Computer and Communication Sciences (IC)</a></li>
+<li><a href="http://mathicse.epfl.ch/seminar/">Mathematics Institute of Computational Science and Engineering (MATHICSE)</a></li>
+<li><a href="http://smat.epfl.ch/seminar/seminar.php">EPFL Statistics Seminar</a></li>
+<li><a href="http://icmp.epfl.ch/">Institute of Condensed Matter Physics (ICMP)</a></li>
+<li><a href="http://cfi.epfl.ch/Seminars">DEEP-EPFL Seminar Series in Macroeconomics</a></li>
+<li><a href="http://ibi.epfl.ch/page-26291.html">Interfaculty Institute of Bioengineering</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">News and Current Events</h2>
-<div class="outline-text-2" id="text-2">
-</div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">General</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">News and Current Events</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">General</h3>
+<div class="outline-text-3" id="text-orgheadline3">
 <ul class="org-ul">
-<li><a href="http://www.cnn.com/">CNN.com</a>
-</li>
-<li><a href="http://google.com/news">Google News</a>
-</li>
-<li><a href="http://www.latimes.com/">Los Angeles Times</a>
-</li>
-<li><a href="http://www.nhk.or.jp/r-news/">NHKラジオニュース</a>
-</li>
-<li><a href="http://www.npr.org/">NPR : National Public Radio</a>
-</li>
-<li><a href="http://www.thedailyshow.com/">The Daily Show with Jon Stewart</a>
-</li>
-<li><a href="http://www.nytimes.com/">The New York Times</a>
-</li>
-<li><a href="http://www.theonion.com/">The Onion - America's Finest News Source</a>
-</li>
-<li><a href="http://www.washingtonpost.com/">Washington Post</a>
-</li>
+<li><a href="http://www.cnn.com/">CNN.com</a></li>
+<li><a href="http://google.com/news">Google News</a></li>
+<li><a href="http://www.latimes.com/">Los Angeles Times</a></li>
+<li><a href="http://www.nhk.or.jp/r-news/">NHKラジオニュース</a></li>
+<li><a href="http://www.npr.org/">NPR : National Public Radio</a></li>
+<li><a href="http://www.thedailyshow.com/">The Daily Show with Jon Stewart</a></li>
+<li><a href="http://www.nytimes.com/">The New York Times</a></li>
+<li><a href="http://www.theonion.com/">The Onion - America's Finest News Source</a></li>
+<li><a href="http://www.washingtonpost.com/">Washington Post</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2">Science/Tech</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">Science/Tech</h3>
+<div class="outline-text-3" id="text-orgheadline4">
 <ul class="org-ul">
-<li><a href="http://arstechnica.com/">Ars Technica</a>
-</li>
-<li><a href="http://discovermagazine.com/">Discover Magazine</a>
-</li>
-<li><a href="http://edge.org/">Edge.org</a>
-</li>
-<li><a href="http://news.ycombinator.com/">Hacker News</a>
-</li>
-<li><a href="http://nature.com/news">Nature News</a>
-</li>
-<li><a href="http://newscientist.com/">New Scientist</a>
-</li>
-<li><a href="http://www.popsci.com/">Popular Science</a>
-</li>
-<li><a href="http://sciencemag.org/">Sciencemag</a>
-</li>
-<li><a href="http://www.scientificamerican.com/">Scientific American</a>
-</li>
-<li><a href="http://seedmagazine.com/">SEED Magazine</a>
-</li>
-<li><a href="http://www.ted.com/">TED</a>
-</li>
-<li><a href="http://wired.com/">Wired</a>
-</li>
+<li><a href="http://arstechnica.com/">Ars Technica</a></li>
+<li><a href="http://discovermagazine.com/">Discover Magazine</a></li>
+<li><a href="http://edge.org/">Edge.org</a></li>
+<li><a href="http://news.ycombinator.com/">Hacker News</a></li>
+<li><a href="http://nature.com/news">Nature News</a></li>
+<li><a href="http://newscientist.com/">New Scientist</a></li>
+<li><a href="http://www.popsci.com/">Popular Science</a></li>
+<li><a href="http://sciencemag.org/">Sciencemag</a></li>
+<li><a href="http://www.scientificamerican.com/">Scientific American</a></li>
+<li><a href="http://seedmagazine.com/">SEED Magazine</a></li>
+<li><a href="http://www.ted.com/">TED</a></li>
+<li><a href="http://wired.com/">Wired</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3">Social/current affairs</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">Social/current affairs</h3>
+<div class="outline-text-3" id="text-orgheadline5">
 <ul class="org-ul">
-<li><a href="http://harpers.org/">Harper's</a>
-</li>
-<li><a href="http://www.theatlantic.com/">The Atlantic</a>
-</li>
-<li><a href="http://newyorker.com">The New Yorker</a>
-</li>
-<li><a href="http://salon.com/">Salon</a>
-</li>
-<li><a href="http://slate.com">Slate</a>
-</li>
+<li><a href="http://harpers.org/">Harper's</a></li>
+<li><a href="http://www.theatlantic.com/">The Atlantic</a></li>
+<li><a href="http://newyorker.com/">The New Yorker</a></li>
+<li><a href="http://salon.com/">Salon</a></li>
+<li><a href="http://slate.com/">Slate</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4">Politics/economics</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Politics/economics</h3>
+<div class="outline-text-3" id="text-orgheadline6">
 <ul class="org-ul">
-<li><a href="http://www.bloomberg.com/">Bloomberg</a>
-</li>
-<li><a href="http://www.ft.com/">Financial Times</a>
-</li>
-<li><a href="http://hbr.org/">Harvard Business Review</a>
-</li>
-<li><a href="http://www.economist.com/">The Economist</a>
-</li>
-<li><a href="http://online.wsj.com/">The Wall Street Journal - WSJ.com</a>
-</li>
+<li><a href="http://www.bloomberg.com/">Bloomberg</a></li>
+<li><a href="http://www.ft.com/">Financial Times</a></li>
+<li><a href="http://hbr.org/">Harvard Business Review</a></li>
+<li><a href="http://www.economist.com/">The Economist</a></li>
+<li><a href="http://online.wsj.com/">The Wall Street Journal - WSJ.com</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Blogs</h2>
-<div class="outline-text-2" id="text-3">
-</div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Art</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13">Blogs</h2>
+<div class="outline-text-2" id="text-orgheadline13">
+</div><div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8">Art</h3>
+<div class="outline-text-3" id="text-orgheadline8">
 <p>
 #- <a href="http://emmycic.livejournal.com/">Journal of Emmy C</a>
 </p>
 <ul class="org-ul">
-<li><a href="http://jzeestudio.blogspot.com/">Octopus Ink</a>
-</li>
+<li><a href="http://jzeestudio.blogspot.com/">Octopus Ink</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">Science</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9">Science</h3>
+<div class="outline-text-3" id="text-orgheadline9">
 <ul class="org-ul">
-<li><a href="http://dotearth.blogs.nytimes.com/">NYTimes DOT EARTH</a>
-</li>
-<li><a href="http://www.chemspider.com/blog">ChemSpider Blog</a>
-</li>
+<li><a href="http://dotearth.blogs.nytimes.com/">NYTimes DOT EARTH</a></li>
+<li><a href="http://www.chemspider.com/blog">ChemSpider Blog</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">Politics/economics</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Politics/economics</h3>
+<div class="outline-text-3" id="text-orgheadline10">
 <ul class="org-ul">
-<li><a href="http://www.lessig.org/">Lawrence Lessig</a>
-</li>
-<li><a href="http://robertreich.org/">Robert Reich</a>
-</li>
-<li><a href="http://krugman.blogs.nytimes.com/">NYTimes Paul Krugman Blog</a>
-</li>
-<li><a href="http://freakonomics.blogs.nytimes.com/">NYTimes Freakonomics Blog</a>
-</li>
-<li><a href="http://economix.blogs.nytimes.com/">NYTimes Economix Blog</a>
-</li>
-<li><a href="http://opinionator.blogs.nytimes.com/category/fixes/">NYTimes FIXES Opinionator Blog</a>
-</li>
+<li><a href="http://www.lessig.org/">Lawrence Lessig</a></li>
+<li><a href="http://robertreich.org/">Robert Reich</a></li>
+<li><a href="http://krugman.blogs.nytimes.com/">NYTimes Paul Krugman Blog</a></li>
+<li><a href="http://freakonomics.blogs.nytimes.com/">NYTimes Freakonomics Blog</a></li>
+<li><a href="http://economix.blogs.nytimes.com/">NYTimes Economix Blog</a></li>
+<li><a href="http://opinionator.blogs.nytimes.com/category/fixes/">NYTimes FIXES Opinionator Blog</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4">Math</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Math</h3>
+<div class="outline-text-3" id="text-orgheadline11">
 <ul class="org-ul">
-<li><a href="http://www.stat.columbia.edu/~gelman/blog/">Statistical Modeling, Causal Inference, and Social Science</a>
-</li>
-<li><a href="http://simplystatistics.org/">Simply Statistics</a>
-</li>
-<li><a href="http://terrytao.wordpress.com/">Terrance Tao What's new</a>
-</li>
+<li><a href="http://www.stat.columbia.edu/~gelman/blog/">Statistical Modeling, Causal Inference, and Social Science</a></li>
+<li><a href="http://simplystatistics.org/">Simply Statistics</a></li>
+<li><a href="http://terrytao.wordpress.com/">Terrance Tao What's new</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3-5" class="outline-3">
-<h3 id="sec-3-5">Programming</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12">Programming</h3>
+<div class="outline-text-3" id="text-orgheadline12">
 <ul class="org-ul">
-<li><a href="http://bc.tech.coop/blog/">Bill Clementson's Blog</a>
-</li>
-<li><a href="http://bio-geeks.com/">Biogeeks</a>
-</li>
-<li><a href="http://blog.revolutionanalytics.com/">Revolutions</a>
-</li>
-<li><a href="http://blog.wesmckinney.com/">Quant Pythonista</a>
-</li>
-<li><a href="http://data-sorcery.org/">Data Sorcery with Clojure</a>
-</li>
-<li><a href="http://dataspora.com/blog/">Dataspora Blog</a>
-</li>
-<li><a href="http://emacs-fu.blogspot.com/">emacs-fu</a>
-</li>
-<li><a href="http://flowingdata.com/">FlowingData | Data Visualization, Infographics, and Statistics</a>
-</li>
-<li><a href="http://www.hilarymason.com/category/blog/">Hilary Mason's Blog</a>
-</li>
-<li><a href="http://hunch.net/">hunch.net | Machine Learning (Theory)</a>
-</li>
-<li><a href="http://khinsen.wordpress.com/">Konrad Hinsen's Blog</a>
-</li>
-<li><a href="http://lambda-the-ultimate.org/">Lambda the Ultimate</a>
-</li>
-<li><a href="http://planet.scipy.org">http://planet.scipy.org</a>
-</li>
-<li><a href="http://p.einarsen.no/">Psychology of Programming</a>
-</li>
-<li><a href="http://pinard.progiciels-bpi.ca/">F. Pinard's Pseudo-blog</a>
-</li>
-<li><a href="http://planet.emacsen.org/">Planet Emacsen</a>
-</li>
-<li><a href="http://steve-yegge.blogspot.com/">Stevey's Blog Rants</a>
-</li>
-<li><a href="http://stevegrand.wordpress.com/">Steve Grand's Blog</a>
-</li>
-<li><a href="http://trey-jackson.blogspot.com/">Life Is Too Short For Bad Code</a>
-</li>
-<li><a href="http://www.colorful-data.net/">colorful data | information design</a>
-</li>
-<li><a href="http://www.drewconway.com/zia/">Zero Intelligence Agents (Drew Conway)</a>
-</li>
-<li><a href="http://www.r-bloggers.com/">R-bloggers</a>
-</li>
-<li><a href="http://blog.wolframalpha.com/">Wolfram|Alpha Blog</a>
-</li>
+<li><a href="http://bc.tech.coop/blog/">Bill Clementson's Blog</a></li>
+<li><a href="http://bio-geeks.com/">Biogeeks</a></li>
+<li><a href="http://blog.revolutionanalytics.com/">Revolutions</a></li>
+<li><a href="http://blog.wesmckinney.com/">Quant Pythonista</a></li>
+<li><a href="http://data-sorcery.org/">Data Sorcery with Clojure</a></li>
+<li><a href="http://dataspora.com/blog/">Dataspora Blog</a></li>
+<li><a href="http://emacs-fu.blogspot.com/">emacs-fu</a></li>
+<li><a href="http://flowingdata.com/">FlowingData | Data Visualization, Infographics, and Statistics</a></li>
+<li><a href="http://www.hilarymason.com/category/blog/">Hilary Mason's Blog</a></li>
+<li><a href="http://hunch.net/">hunch.net | Machine Learning (Theory)</a></li>
+<li><a href="http://khinsen.wordpress.com/">Konrad Hinsen's Blog</a></li>
+<li><a href="http://lambda-the-ultimate.org/">Lambda the Ultimate</a></li>
+<li><a href="http://planet.scipy.org/">http://planet.scipy.org/</a></li>
+<li><a href="http://p.einarsen.no/">Psychology of Programming</a></li>
+<li><a href="http://pinard.progiciels-bpi.ca/">F. Pinard's Pseudo-blog</a></li>
+<li><a href="http://planet.emacsen.org/">Planet Emacsen</a></li>
+<li><a href="http://steve-yegge.blogspot.com/">Stevey's Blog Rants</a></li>
+<li><a href="http://stevegrand.wordpress.com/">Steve Grand's Blog</a></li>
+<li><a href="http://trey-jackson.blogspot.com/">Life Is Too Short For Bad Code</a></li>
+<li><a href="http://www.colorful-data.net/">colorful data | information design</a></li>
+<li><a href="http://www.drewconway.com/zia/">Zero Intelligence Agents (Drew Conway)</a></li>
+<li><a href="http://www.r-bloggers.com/">R-bloggers</a></li>
+<li><a href="http://blog.wolframalpha.com/">Wolfram|Alpha Blog</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Forums</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14">Forums</h2>
+<div class="outline-text-2" id="text-orgheadline14">
 <ul class="org-ul">
-<li><a href="http://forums.macosxhints.com/">The macosxhints Forums - For discussing everything OS X&#x2026;</a>
-</li>
-<li><a href="http://groups.google.com/group/pystatsmodels">pystatsmodels</a>
-</li>
-<li><a href="http://tolstoy.newcastle.edu.au/R/">R mailing lists archive</a>
-</li>
-<li><a href="http://ubuntuforums.org/">Ubuntu Forums</a>
-</li>
+<li><a href="http://forums.macosxhints.com/">The macosxhints Forums - For discussing everything OS X&#x2026;</a></li>
+<li><a href="http://groups.google.com/group/pystatsmodels">pystatsmodels</a></li>
+<li><a href="http://tolstoy.newcastle.edu.au/R/">R mailing lists archive</a></li>
+<li><a href="http://ubuntuforums.org/">Ubuntu Forums</a></li>
 </ul>
 </div>
 
-<div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1">Stackexchange</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15">Stackexchange</h3>
+<div class="outline-text-3" id="text-orgheadline15">
 <ul class="org-ul">
-<li><a href="http://stackoverflow.com">stackoverflow</a>
-</li>
-<li><a href="http://superuser.com">superuser</a>
-</li>
-<li><a href="http://serverfault.com">serverfault</a>
-</li>
-<li><a href="http://stats.stackexchange.com">Cross Validated</a>
-</li>
-<li><a href="http://mathoverflow.net">MathOverflow</a>
-</li>
+<li><a href="http://stackoverflow.com/">stackoverflow</a></li>
+<li><a href="http://superuser.com/">superuser</a></li>
+<li><a href="http://serverfault.com/">serverfault</a></li>
+<li><a href="http://stats.stackexchange.com/">Cross Validated</a></li>
+<li><a href="http://mathoverflow.net/">MathOverflow</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2">Reddit</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">Reddit</h3>
+<div class="outline-text-3" id="text-orgheadline16">
 <ul class="org-ul">
-<li><a href="http://www.reddit.com/r/artificial">/r/artificial</a>
-</li>
-<li><a href="http://www.reddit.com/r/bayesian">/r/bayesian</a>
-</li>
-<li><a href="http://www.reddit.com/r/bigdata">/r/bigdata</a>
-</li>
-<li><a href="http://www.reddit.com/r/dataisbeautiful">/r/dataisbeautiful</a>
-</li>
-<li><a href="http://www.reddit.com/r/emacs">/r/emacs</a>
-</li>
-<li><a href="http://www.reddit.com/r/fortran">/r/fortran</a>
-</li>
-<li><a href="http://www.reddit.com/r/learnmath">/r/learnmath</a>
-</li>
-<li><a href="http://www.reddit.com/r/machinelearning">/r/machinelearning</a>
-</li>
-<li><a href="http://www.reddit.com/r/math">/r/math</a>
-</li>
-<li><a href="http://www.reddit.com/r/programming">/r/programming</a>
-</li>
-<li><a href="http://www.reddit.com/r/python">/r/python</a>
-</li>
-<li><a href="http://www.reddit.com/r/rstats">/r/rstats</a>
-</li>
-<li><a href="http://www.reddit.com/r/scipy">/r/scipy</a>
-</li>
-<li><a href="http://www.reddit.com/r/statistics">/r/statistics</a>
-</li>
+<li><a href="http://www.reddit.com/r/artificial">/r/artificial</a></li>
+<li><a href="http://www.reddit.com/r/bayesian">/r/bayesian</a></li>
+<li><a href="http://www.reddit.com/r/bigdata">/r/bigdata</a></li>
+<li><a href="http://www.reddit.com/r/dataisbeautiful">/r/dataisbeautiful</a></li>
+<li><a href="http://www.reddit.com/r/emacs">/r/emacs</a></li>
+<li><a href="http://www.reddit.com/r/fortran">/r/fortran</a></li>
+<li><a href="http://www.reddit.com/r/learnmath">/r/learnmath</a></li>
+<li><a href="http://www.reddit.com/r/machinelearning">/r/machinelearning</a></li>
+<li><a href="http://www.reddit.com/r/math">/r/math</a></li>
+<li><a href="http://www.reddit.com/r/programming">/r/programming</a></li>
+<li><a href="http://www.reddit.com/r/python">/r/python</a></li>
+<li><a href="http://www.reddit.com/r/rstats">/r/rstats</a></li>
+<li><a href="http://www.reddit.com/r/scipy">/r/scipy</a></li>
+<li><a href="http://www.reddit.com/r/statistics">/r/statistics</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Reference</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17">Reference</h2>
+<div class="outline-text-2" id="text-orgheadline17">
 <ul class="org-ul">
-<li><a href="http://danzig.jct.ac.il/unix_class/emacs-vi-Commands.html">Equivalence of Emacs and VIM commands</a>
-</li>
-<li><a href="http://emacro.sourceforge.net/en/tips.html">Advice from Emacs wizards</a>
-</li>
-<li><a href="http://obsidianrook.com/devnotes/elisp-for-perl-programmers.html">Emacs Lisp for Perl Programmers</a>
-</li>
-<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python">Hidden features of Python - Stack Overflow</a>
-</li>
-<li><a href="http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature">The single most useful Emacs feature - Stack Overflow</a>
-</li>
-<li><a href="http://svnbook.red-bean.com/en/1.7/svn-book.html">Version Control with Subversion</a>
-</li>
-<li><a href="http://tnerual.eriogerg.free.fr/vimqrc.html">VIM Quick Reference Card</a>
-</li>
-<li><a href="http://www.fincher.org/tips/Languages/Emacs.shtml">Emacs Lisp</a>
-</li>
-<li><a href="http://www.gnu.org/software/emacs/manual/elisp.html">Emacs Lisp manual</a>
-</li>
-<li><a href="http://xahlee.org/emacs/emacs.html">Xah's Emacs Tutorial</a>
-</li>
+<li><a href="http://danzig.jct.ac.il/unix_class/emacs-vi-Commands.html">Equivalence of Emacs and VIM commands</a></li>
+<li><a href="http://emacro.sourceforge.net/en/tips.html">Advice from Emacs wizards</a></li>
+<li><a href="http://obsidianrook.com/devnotes/elisp-for-perl-programmers.html">Emacs Lisp for Perl Programmers</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python">Hidden features of Python - Stack Overflow</a></li>
+<li><a href="http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature">The single most useful Emacs feature - Stack Overflow</a></li>
+<li><a href="http://svnbook.red-bean.com/en/1.7/svn-book.html">Version Control with Subversion</a></li>
+<li><a href="http://tnerual.eriogerg.free.fr/vimqrc.html">VIM Quick Reference Card</a></li>
+<li><a href="http://www.fincher.org/tips/Languages/Emacs.shtml">Emacs Lisp</a></li>
+<li><a href="http://www.gnu.org/software/emacs/manual/elisp.html">Emacs Lisp manual</a></li>
+<li><a href="http://xahlee.org/emacs/emacs.html">Xah's Emacs Tutorial</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">Entertainment</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgheadline18" class="outline-2">
+<h2 id="orgheadline18">Entertainment</h2>
+<div class="outline-text-2" id="text-orgheadline18">
 <p>
 #- <a href="http://www.jjazz.net/">JJazz.Net MUSIC PROGRAMS</a>
 </p>
 <ul class="org-ul">
-<li><a href="http://www.npr.org/people/4473010/david-edelstein">David Edelstein : NPR</a>
-</li>
+<li><a href="http://www.npr.org/people/4473010/david-edelstein">David Edelstein : NPR</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">Books</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgheadline19" class="outline-2">
+<h2 id="orgheadline19">Books</h2>
+<div class="outline-text-2" id="text-orgheadline19">
 <ul class="org-ul">
-<li><a href="http://www.economist.com/topics/book-reviews">Economist Book reviews</a>
-</li>
-<li><a href="http://www.newyorker.com/topics/books">The New Yorker</a>
-</li>
-<li><a href="http://www.npr.org/series/book-reviews/">NPR Book Reviews</a>
-</li>
-<li><a href="http://www.nybooks.com/">The New York Review of Books</a>
-</li>
-<li><a href="http://www.nytimes.com/pages/books/index.html">NYTimes Books</a>
-</li>
-<li><a href="http://www.nytimes.com/pages/books/review/index.html">NYTimes Sunday Book Review</a>
-</li>
-<li><a href="http://www.sciencemag.org/site/feature/data/books/index.xhtml">Science/AAAS | Collections</a>
-</li>
+<li><a href="http://www.economist.com/topics/book-reviews">Economist Book reviews</a></li>
+<li><a href="http://www.newyorker.com/topics/books">The New Yorker</a></li>
+<li><a href="http://www.npr.org/series/book-reviews/">NPR Book Reviews</a></li>
+<li><a href="http://www.nybooks.com/">The New York Review of Books</a></li>
+<li><a href="http://www.nytimes.com/pages/books/index.html">NYTimes Books</a></li>
+<li><a href="http://www.nytimes.com/pages/books/review/index.html">NYTimes Sunday Book Review</a></li>
+<li><a href="http://www.sciencemag.org/site/feature/data/books/index.xhtml">Science/AAAS | Collections</a></li>
 </ul>
 <p>
 #- <a href="http://www.ucsd.eblib.com/">UCSD EBLIB</a>
@@ -575,7 +460,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <hr>
-Generated by Org-mode 8.2.10 with Emacs 24
+Generated by Org-mode 8.3.4 with Emacs 24
 </div>
 </body>
 </html>
