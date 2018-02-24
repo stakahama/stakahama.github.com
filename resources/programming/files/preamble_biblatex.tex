@@ -33,7 +33,7 @@
         eprint=false
         }
 \newbibmacro{string+doi}[1]{%
-  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+  \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
 \AtEveryBibitem{% Clean up the bibtex rather than editing it
  \clearlist{language}
