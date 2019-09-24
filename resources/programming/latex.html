@@ -818,7 +818,7 @@ Create doi links in bibliography:
 
 <pre class="src src-latex"><span style="font-weight: bold;">\ExecuteBibliographyOptions</span>{<span style="font-weight: bold; text-decoration: underline;">url=false,eprint=false</span>}
 \newbibmacro{string+doi}[1]{<span style="font-weight: bold; font-style: italic;">%</span>
-  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+  \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{doi}{\usebibmacro{string+doi}{doi:#1}}
 </pre>
 </div>
